@@ -6,7 +6,9 @@ export const metadata = getMeta("Как это работает",
 
 function Page() {
     return (
-        <></>
+        <>
+            <h1>HOW</h1>
+        </>
     )
 }
 export default Page

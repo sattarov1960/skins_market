@@ -5,7 +5,9 @@ export const metadata = getMeta("Партнерка",
                             ["партнерская программа", "реферальная ссылка", "выгоды партнерства", "партнерские бонусы"])
 function Page() {
     return (
-        <></>
+        <>
+            <h1>Partner</h1>
+        </>
     )
 }
 export default Page

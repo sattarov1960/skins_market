@@ -6,7 +6,9 @@ export const metadata = getMeta("Выплаты",
 
 function Page() {
     return (
-        <></>
+        <>
+            <h1>Withdraw</h1>
+        </>
     )
 }
 export default Page

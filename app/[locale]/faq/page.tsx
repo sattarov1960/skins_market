@@ -6,7 +6,9 @@ export const metadata = getMeta("Ответы на вопросы (FAQ)",
 
 function Page() {
     return (
-        <></>
+        <>
+            <h1>FAQ</h1>
+        </>
     )
 }
 export default Page

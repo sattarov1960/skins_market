@@ -4,7 +4,9 @@ export const metadata = getMeta("Не найдено 404", 'Эта страни�
 
 function Page() {
     return (
-        <></>
+        <>
+            <h1>404 Error</h1>
+        </>
     )
 }
 export default Page
