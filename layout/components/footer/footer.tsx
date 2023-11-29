@@ -1,7 +1,11 @@
+'use client'
 import styles from "@/layout/components/footer/footer.module.css"
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 export function Footer() {
+    const pathname = usePathname()
     return (
         <footer className={styles.footer}>
             <div className={styles.footer_statisticPart}>
@@ -61,23 +65,23 @@ export function Footer() {
                             <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.footer_logo}/>
                         </li>
                         <div className={styles.footer_links_leftBlock_navItem}>
-                            <li className={`${styles.footer_links_leftBlock_item} ${styles.footer_links_leftBlock_item_active}`}>
-                                Главная
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/ru") || pathname.endsWith("/en") || pathname.endsWith("/") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/">Главная</Link>
                             </li>
-                            <li className={styles.footer_links_leftBlock_item}>
-                                Отзывы
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/#reviews") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/#reviews">Отзывы</Link>
                             </li>
-                            <li className={styles.footer_links_leftBlock_item}>
-                                Розыгрыши
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/how") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/how">Помощь</Link>
                             </li>
-                            <li className={styles.footer_links_leftBlock_item}>
-                                Помощь
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/faq") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/faq">FAQ</Link>
                             </li>
-                            <li className={styles.footer_links_leftBlock_item}>
-                                Партнерка
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/contact") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/contact">Контакты</Link>
                             </li>
-                            <li className={styles.footer_links_leftBlock_item}>
-                                Контакты
+                            <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/partner") ? styles.footer_links_leftBlock_item_active : null}`}>
+                                <Link href="/partner">Партнерка</Link>
                             </li>
                         </div>
                     </ul>

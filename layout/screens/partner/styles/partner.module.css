@@ -2,7 +2,7 @@
     @apply pl-[140px] overflow-hidden;
 }
 .basic_part {
-    @apply bg-[url('../img/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
 }
 .smoke_partnerProgramm {
     @apply absolute left-0 lg:-left-[140px] top-[150px] lg:top-[220px];

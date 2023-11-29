@@ -12,7 +12,7 @@
     @apply hidden 2xl:block h-[34px] w-[1px] bg-[#8A89A44D] border-none mx-[24px];
 }
 .nav_languageBlock {
-    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[99px] h-[34px];
+    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[99px] h-[34px] cursor-pointer;
 }
 .ru {
     @apply w-[18px] h-[18px];
@@ -21,7 +21,7 @@
     @apply text-[17px] text-[#B9B8D3] font-[500] leading-[16px] mx-[6px];
 }
 .nav_currencyBlock {
-    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[107px] h-[34px] ml-[16px];
+    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[107px] h-[34px] ml-[16px] cursor-pointer;
 }
 .wallet_icon {
     @apply w-[18x] h-[18px];
@@ -36,10 +36,13 @@
     @apply flex items-center;
 }
 .nav_midBlock_item {
-    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[32px] cursor-pointer;
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[32px] cursor-pointer hover:text-white;
 }
 .nav_midBlock_item_active {
-    @apply ml-0 text-[#B9B8D3];
+    @apply text-[#FFFFFF];
+}
+.nav_midBlock_item_frst {
+    @apply ml-0 ;
 }
 .nav_midBlock_item_active_line {
     @apply w-[36px] h-[2px] rounded-tl-[2px] rounded-tr-[2px] bg-[#FDCA76] mx-auto relative top-[34px];
@@ -64,4 +67,47 @@
 }
 .nav {
     @apply flex items-center;
+}
+.nav_languageBlock_addElement {
+    @apply absolute top-[40px] w-[100px] border-[1px] border-[#8A89A44D] rounded-[8px] px-[16px] py-[8px];
+}
+.nav_languageBlock_input:checked ~ .nav_languageBlock_addElement {
+    @apply block;
+}
+.nav_languageBlock_addElement_item {
+    @apply flex items-center justify-center cursor-pointer;
+}
+.nav_languageBlock_addElement_item_flag {
+    @apply w-[18px] h-[18px];
+}
+.nav_languageBlock_addElement_item_subText {
+    @apply text-[17px] text-[#B9B8D3] font-[500] opacity-50  ml-[8px];
+}
+.nav_languageBlock_addElement_item_flagEN {
+    @apply opacity-100;
+}
+.nav_languageBlock_addElement_item_text {
+    @apply text-[17px] text-[#B9B8D3] font-[500] ml-[8px];
+}
+
+.box{
+    @apply relative
+}
+.nav_currencyBlock_addElement {
+    @apply w-[107px] ml-[16px] absolute top-[40px] rounded-[8px] border-[1px] border-[#8A89A44D] py-[8px];
+}
+.nav_currencyBlock_addElement_item {
+    @apply flex items-center justify-center mt-[8px] cursor-pointer;
+}
+.nav_currencyBlock_addElement_frstItem {
+    @apply mt-0;
+}
+.nav_currencyBlock_addElement_item_text {
+    @apply text-[17px] text-[#B9B8D3] font-[500] leading-[17px] opacity-50;
+}
+.nav_currencyBlock_addElement_item_scndText {
+    @apply ml-[4px];
+}
+.nav_currencyBlock_addElement_item_lightText {
+    @apply opacity-100;
 }

@@ -1,5 +1,5 @@
 import {getMeta} from "@/utilities/meta";
-import {Help} from "@/layout/screens/help/help";
+import {Contact} from "@/layout/screens/contact/contact";
 
 export const metadata = getMeta("Помощь",
                            "Поддержка при покупке или продаже скинов Steam через удобную форму на странице Контактов. Связаться с нами легко! ",
@@ -8,7 +8,7 @@ export const metadata = getMeta("Помощь",
 function Page() {
     return (
         <>
-            <Help/>
+            <Contact/>
         </>
     )
 }

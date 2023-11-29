@@ -12,7 +12,6 @@ export function getMeta(title: string,
         applicationName: 'Name.Market',
         title: getTitle(title),
         description: description,
-        colorScheme: 'dark',
         keywords: keywords,
         robots: {
             follow: true,
@@ -25,7 +24,6 @@ export function getMeta(title: string,
             icon: '/favicon.ico',
             shortcut: '/favicon.ico',
         },
-        themeColor: 'black',
         alternates: {
             canonical: 'https://name.market',
             languages: {

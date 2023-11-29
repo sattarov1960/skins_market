@@ -30,7 +30,7 @@
     @apply flex items-center flex-wrap;
 }
 .footer_links_leftBlock_item {
-    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[48px];
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[48px] hover:text-white;
 }
 .footer_links_leftBlock_frstItem {
     @apply ml-0;
@@ -76,4 +76,7 @@
 }
 .tg_footerIcon {
     @apply w-[24px] h-[24px];
+}
+.footer_links_leftBlock_item_active{
+    @apply text-[#F7F6FF]
 }

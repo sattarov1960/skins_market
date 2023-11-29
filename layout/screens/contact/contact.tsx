@@ -1,7 +1,7 @@
-import styles from "@/layout/screens/help/styles/help.module.css"
+import styles from "@/layout/screens/contact/styles/contact.module.css"
 import Image from "next/image";
 
-export function Help() {
+export function Contact() {
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
