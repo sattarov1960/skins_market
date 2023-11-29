@@ -1,4 +1,5 @@
 import {getMeta} from "@/utilities/meta";
+import {Faq} from "@/layout/screens/faq/faq";
 
 export const metadata = getMeta("Ответы на вопросы (FAQ)",
                            "Ответы на часто задаваемые вопросы (FAQ) о продаже скинов. Узнайте, как удобно и безопасно продавать скины!",
@@ -7,7 +8,7 @@ export const metadata = getMeta("Ответы на вопросы (FAQ)",
 function Page() {
     return (
         <>
-            <h1>FAQ</h1>
+            <Faq/>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import {getMeta} from "@/utilities/meta";
+import {Partner} from "@/layout/screens/partner/partner";
 
 export const metadata = getMeta("Партнерка",
                            "Получите свою уникальную реферальную ссылку и начните зарабатывать. Присоединяйтесь к нашей партнерской программе и богатейте на продаже. ",
@@ -6,7 +7,7 @@ export const metadata = getMeta("Партнерка",
 function Page() {
     return (
         <>
-            <h1>Partner</h1>
+            <Partner/>
         </>
     )
 }

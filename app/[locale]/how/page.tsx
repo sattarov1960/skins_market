@@ -1,4 +1,5 @@
 import {getMeta} from "@/utilities/meta";
+import {How} from "@/layout/screens/how/how";
 
 export const metadata = getMeta("Как это работает",
                            "Узнайте, как легко продавать Cкины. Расскажем, как начать выгодные сделки и получить максимум от продажи предметов.",
@@ -7,7 +8,7 @@ export const metadata = getMeta("Как это работает",
 function Page() {
     return (
         <>
-            <h1>HOW</h1>
+            <How/>
         </>
     )
 }

@@ -1,4 +1,4 @@
-export function Withdraw() {
+export function Help() {
     return (
         <section>
         </section>

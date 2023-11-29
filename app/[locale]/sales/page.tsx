@@ -1,4 +1,5 @@
 import {getMeta} from "@/utilities/meta";
+import {Sales} from "@/layout/screens/sales/sales";
 
 export const metadata = getMeta("Продажи",
                            "Смотрите историю продажи предметов. Ваши обмены скинами Steam в одном месте: узнайте, что продали, по какой цене.",
@@ -8,7 +9,7 @@ export const metadata = getMeta("Продажи",
 function Page() {
     return (
         <>
-            <h1>Sales</h1>
+            <Sales/>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import {getMeta} from "@/utilities/meta";
+import {Withdraw} from "@/layout/screens/withdraw/withdraw";
 
 export const metadata = getMeta("Выплаты",
                            "Выплаты на сайте: реферальные бонусы и доходы от продажи скинов Steam. Просматривайте суммы и способы оплаты.",
@@ -7,7 +8,7 @@ export const metadata = getMeta("Выплаты",
 function Page() {
     return (
         <>
-            <h1>Withdraw</h1>
+            <Withdraw/>
         </>
     )
 }
