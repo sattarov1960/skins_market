@@ -1,0 +1,75 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.faq {
+    @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
+}
+.faq_headerPart_selledBlock {
+    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[293px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
+}
+.walletCheck_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.faq_headerPart_selledBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.faq_headerPart_mainText {
+    @apply text-center text-[23px] lg:text-[68px] text-white font-[600] leading-[30px] lg:leading-[72px] mt-[20px] lg:mt-[30px];
+}
+.faq_headerPart_subText {
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] block mt-[20px] lg:mt-[30px] text-center opacity-75 max-w-[318px] lg:max-w-none mx-auto lg:mx-0;
+}
+.faq_headerPart_subTextSpecial {
+    @apply underline underline-offset-4;
+}
+.faq_headerPart_line {
+    @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
+}
+.faq_mainPart {
+    @apply mt-[35px] lg:mt-[60px];
+}
+.faq_sub_mainPart {
+    @apply flex items-start justify-between flex-wrap lg:flex-nowrap;
+}
+.faq_mainPart_itemsLeft {
+    @apply w-full mr-0 lg:mr-[30px];
+}
+.faq_mainPart_item {
+    @apply border-[1px] border-[#8a89a41a] rounded-[4px] mt-[20px] lg:mt-[30px];
+}
+.faq_mainPart_frstItem {
+    @apply mt-0;
+}
+.faq_mainPart_item_input {
+    @apply appearance-none absolute w-0 h-0;
+}
+.faq_mainPart_item_headerPart {
+    @apply flex items-center justify-between cursor-pointer px-[16px] lg:px-[40px] py-[20px];
+}
+.faq_mainPart_item_headerPart_text {
+    @apply text-[15px] lg:text-[26px] text-[#EBEFFD] font-[600] leading-[18px] lg:leading-[32px] max-w-[239px] sm:max-w-none mr-0 lg:mr-[20px];
+}
+.plus_icon {
+    @apply w-[24px] h-[24px] rotate-0 transition duration-150 ease-in;
+}
+.faq_mainPart_item_textBlock {
+    @apply px-[16px] lg:px-[40px] pb-[32px] max-w-none lg:max-w-[715px] hidden;
+}
+.faq_mainPart_item_text {
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px];
+}
+.faq_mainPart_scndItem {
+    @apply hidden lg:block;
+}
+.faq_mainPart_frthItem {
+    @apply hidden lg:block;
+}
+.faq_mainPart_itemsRight {
+    @apply mt-[20px] lg:mt-0 w-full;
+}
+.faq_mainPart_sixthItem {
+    @apply hidden lg:block;
+}

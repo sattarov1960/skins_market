@@ -1,0 +1,108 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.faq {
+    @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
+}
+.faq_headerPart_selledBlock {
+    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[293px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
+}
+.walletCheck_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.faq_headerPart_selledBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.faq_headerPart_mainText {
+    @apply text-center text-[23px] lg:text-[68px] text-white font-[600] leading-[30px] lg:leading-[72px] mt-[20px] lg:mt-[30px];
+}
+.faq_headerPart_subText {
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] block mt-[20px] lg:mt-[30px] text-center opacity-75 max-w-[318px] lg:max-w-none mx-auto lg:mx-0;
+}
+.faq_headerPart_line {
+    @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
+}
+.how_mainPart {
+    @apply mt-[60px] lg:mt-[100px];
+}
+.how_mainPart_items {
+    @apply flex items-center justify-between flex-wrap relative;
+}
+.how_mainPart_items_smoke {
+    @apply block sm:hidden absolute -left-[20px] top-[100px];
+}
+.how_mainPart_item {
+    @apply w-[335px] lg:w-[392px] h-[131px] lg:h-[152px];
+}
+.how_mainPart_item_line {
+    @apply border-none h-[2px] bg-[#1A1A29] rounded-[16px];
+}
+.how_mainPart_subItem {
+    @apply mt-[24px] lg:mt-[40px];
+}
+.how_mainPart_subItem_numberText {
+    @apply text-[15px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[20.25px] lg:leading-[21.6px];
+}
+.how_mainPart_subItem_mainText {
+    @apply mt-[4px] lg:mt-[4px] text-[22px] lg:text-[26px] text-[#EBEFFD] font-[600] leading-[27px] lg:leading-[32px];
+}
+.how_mainPart_subItem_subText {
+    @apply block mt-[16px] lg:mt-[10px] text-[14px] lg:text-[18px] text-[#CAC6DD] font-[500] leading-[17px] lg:leading-[21px] opacity-75;
+}
+.how_mainPart_item_lineBlock {
+    @apply h-[2px] bg-[#1A1A29] rounded-[16px];
+}
+.how_mainPart_item_specialLine {
+    @apply h-[2px] border-none bg-[#FDCA76] rounded-[16px] w-[216px] lg:w-[273px];
+}
+.how_mainPart_thrdItem {
+    @apply h-[147px] lg:h-[152px];
+}
+.how_mainPart_subItemThrd {
+    @apply mt-[40px];
+}
+.how_mainPart_frthItem {
+    @apply h-[147px] lg:h-[152px];
+}
+.how_mainPart_subItemFrth {
+    @apply mt-[40px];
+}
+.how_register {
+    @apply mt-[110px] lg:mt-[318px];
+}
+.how_register_subBlock {
+    @apply mt-[110px] lg:mt-[140px];
+}
+.how_register_frstSubBlock {
+    @apply mt-0;
+}
+.how_register_subBlock_numBlock {
+    @apply w-[74px] h-[40px] border-[1px] border-[#8A89A44D] rounded-[8px] flex items-center justify-center;
+}
+.how_register_subBlock_numBlock_text {
+    @apply text-[18px] text-[#B9B8D3] font-[600] leading-[18px];
+}
+.how_register_subBlock_mainText {
+    @apply text-[26px] lg:text-[56px] text-[#FFFFFF] font-[600] leading-[32px] lg:leading-[72px] font-["TTFirsNeue"] mt-[32px];
+}
+.how_register_subBlock_subTitle {
+    @apply text-[22px] lg:text-[32px] text-[#EBEFFDB2] font-[600] leading-[27px] lg:leading-[39px] mt-[16px];
+}
+.how_register_subBlock_subText {
+    @apply block mt-[32px] text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[28px] lg:leading-[32px] opacity-75;
+}
+.howTo_image {
+    @apply mx-auto my-[80px] hidden sm:block;
+}
+.howTo_image_mobile {
+    @apply mx-auto my-[80px] block sm:hidden;
+}
+.how_register_subBlock_scndSubText {
+    @apply mt-0;
+}
+.howTo_image_2_mobile {
+    @apply my-[60px];
+}

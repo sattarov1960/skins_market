@@ -1,0 +1,102 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.smoke_partnerProgramm {
+    @apply absolute left-0 lg:-left-[140px] top-[150px] lg:top-[220px];
+}
+.contactInformation {
+    @apply pt-[80px] lg:pt-[160px] flex items-start justify-between flex-wrap;
+}
+.contactInformation_leftPart_mainText {
+    @apply text-[48px] lg:text-[74px] text-white font-[600] font-["TTFirsNeue"] leading-[62px] lg:leading-[72px] max-w-[475px];
+}
+.contactInformation_leftPart_subText {
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] mt-[24px] opacity-75 max-w-[260px] sm:max-w-none;
+}
+.contactInformation_leftPart_subText_special {
+    @apply underline underline-offset-4;
+}
+.contactInformation_leftPart_socialNetworks {
+    @apply mt-[60px] lg:mt-[71px];
+}
+.contactInformation_leftPart_socialNetworks_items {
+    @apply flex items-center justify-between flex-wrap max-w-[537px];
+}
+.contactInformation_leftPart_socialNetworks_item {
+    @apply flex items-start;
+}
+.contactInformation_leftPart_socialNetworks_subFrstItem {
+    @apply ml-[12px];
+}
+.contactInformation_leftPart_socialNetworks_subItem_subText {
+    @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px] opacity-80;
+}
+.contactInformation_leftPart_socialNetworks_subItem_mainText {
+    @apply text-[20px] text-[#CAC6DD] font-[400] leading-[20px] mt-[2px] lg:mt-[10px];
+}
+.contactInformation_leftPart_socialNetworks_subItem {
+    @apply ml-[20px];
+}
+.contactInformation_leftPart_socialNetworks_subItem_mainText_special {
+    @apply underline underline-offset-4;
+}
+.contactInformation_leftPart_socialNetworks_thrdItem {
+    @apply mt-[32px] lg:mt-[60px];
+}
+.contactInformation_leftPart_socialNetworks_frthItem {
+    @apply mt-[32px] lg:mt-[60px];
+}
+.contactInformation_line {
+    @apply mx-[10px] w-[1px] h-[444px] border-none bg-[#E1E2E2] rounded-[3px];
+}
+.contactInformation_rightPart {
+    @apply mx-[20px] md:mx-0;
+}
+.contactInformation_rightPart_mainText {
+    @apply text-[28px] lg:text-[35px] text-white font-[500] font-["TTFirsNeue"] leading-[31px] lg:leading-[39px];
+}
+.contactInformation_rightPart_forms {
+    @apply mt-[40px];
+}
+.contactInformation_rightPart_headerForms {
+    @apply flex items-center justify-between flex-wrap;
+}
+.contactInformation_rightPart_headerForm_text {
+    @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px];
+}
+.contactInformation_rightPart_headerForm_input {
+    @apply w-[335px] lg:w-[351px] h-[50px] lg:h-[57px] rounded-[12px] bg-[#22223680] px-[20px] mt-[16px] text-[18px] text-[#8A89A4] font-[500] leading-[21px];
+}
+.contactInformation_rightPart_headerForm_scnInput {
+    @apply w-[335px] lg:w-[344px];
+}
+.contactInformation_rightPart_mainForm {
+    @apply mt-[36px];
+}
+.contactInformation_rightPart_mainForm_text {
+    @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px];
+}
+.contactInformation_rightPart_mainForm_textarea {
+    @apply w-full h-[109px] bg-[#22223680] rounded-[12px] px-[20px] py-[16px] mt-[16px] text-[17px] text-[#8A89A4] font-[500] leading-[20px];
+}
+.contactInformation_rightPart_options {
+    @apply mt-[40px] flex items-center justify-between flex-wrap;
+}
+.contactInformation_rightPart_options_leftBlock {
+    @apply flex items-center flex-wrap;
+}
+.contactInformation_rightPart_options_leftBlock_customRadio {
+    @apply ml-[32px] relative cursor-pointer flex items-center;
+}
+.contactInformation_rightPart_options_leftBlock_frstCustomRadio {
+    @apply ml-0;
+}
+.contactInformation_rightPart_options_leftBlock_customRadio_text {
+    @apply text-[17px] text-[#8A89A4] font-[500] leading-[20px] ml-[35px];
+}
+.contactInformation_rightPart_options_btn {
+    @apply w-[156px] h-[49px] md:h-[50px] rounded-[48px] bg-[#FDCA76] shadow-[0px_5px_18px_0px_#1b68ff1f] text-[17px] md:text-[18px] text-black font-[500] leading-[17px] md:leading-[18px];
+}

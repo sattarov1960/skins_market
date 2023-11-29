@@ -1,0 +1,123 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('../img/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.smoke_partnerProgramm {
+    @apply absolute left-0 lg:-left-[140px] top-[150px] lg:top-[220px];
+}
+.partner_programm {
+    @apply pt-[80px] lg:pt-[135px] flex items-center flex-wrap lg:flex-nowrap justify-center lg:justify-start mx-[180px] lg:mx-0;
+}
+.partner_programm_leftPart {
+    @apply w-[880px] flex items-center justify-between;
+}
+.partner_programm_text {
+    @apply flex items-end max-w-[335px] lg:max-w-[497px] text-[#fff] text-[48px] lg:text-[74px] font-[600] font-["TTFirsNeue"] leading-[62px] lg:leading-[72px] relative lg:static;
+}
+.x_icon {
+    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] -ml-[58px] absolute lg:static right-[15px] mb-[10px];
+}
+.partner_programm_leftPart_line {
+    @apply h-[212px] w-[3px] bg-[#CAC6DD] border-none rounded-[3px] opacity-30 hidden lg:block;
+}
+.partner_programm_rightPart {
+    @apply ml-[80px];
+}
+.partner_programm_rightPart_text {
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] max-w-[630px] opacity-75;
+}
+.partner_programm_rightPart_btn {
+    @apply flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-full lg:w-[234px] h-[46px] shadow-[0px_5px_18px_0px_#1b68ff1f] mt-[40px] lg:mt-[50px];
+}
+.partner_programm_rightPart_btn_steamIcon {
+    @apply w-[24px] h-[24px];
+}
+.partner_programm_rightPart_btn_text {
+    @apply text-[#000000] text-[17px] font-[500] leading-[17px] ml-[8px];
+}
+.partner_programm_statistic {
+    @apply w-full rounded-[16px] mt-[110px] lg:mt-[125px] px-[130px] pt-[31px] lg:pt-[36px] pb-[32px] lg:pb-[37px];
+}
+.partner_programm_statistic_items {
+    @apply flex items-center justify-center flex-wrap;
+}
+.partner_programm_statistic_item_mainText {
+    @apply text-[22px] lg:text-[36px] text-[#E1E2E2] font-[700] leading-[27px] lg:leading-[32px] text-center;
+}
+.partner_programm_statistic_item_subText {
+    @apply block mt-[8px] text-[14px] lg:text-[18px] text-[#6B6E7A] lg:text-[#E1E2E2] opacity-100 lg:opacity-75 font-[500] leading-[19px] lg:leading-[26px] whitespace-normal lg:whitespace-nowrap max-w-[103px] lg:max-w-none text-center lg:text-left;
+}
+.partner_programm_statistic_items_line {
+    @apply h-[129px] bg-[#8A89A44D] w-[1px] border-none mx-[90px];
+}
+.faq {
+    @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
+}
+.faq_headerPart_selledBlock {
+    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[293px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
+}
+.walletCheck_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.faq_headerPart_selledBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.faq_headerPart_mainText {
+    @apply text-center text-[23px] lg:text-[68px] text-white font-[600] leading-[30px] lg:leading-[72px] mt-[20px] lg:mt-[30px];
+}
+.faq_headerPart_line {
+    @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
+}
+.partner_programm_instructions {
+    @apply mt-[60px] lg:mt-[85px] flex items-center justify-start relative;
+}
+.smoke_partnerInstructions {
+    @apply absolute -top-[120px] -right-[20px] lg:-right-[140px];
+}
+.partner_programm_instructions_leftPart {
+    @apply flex items-center justify-between;
+}
+.partner_programm_instructions_sub_leftPart {
+    @apply w-[780px];
+}
+.partner_programm_instructions_leftPart_yellowText {
+    @apply text-[15px] lg:text-[17px] text-[#FDCA76] font-[500] leading-[16px] lg:leading-[18px];
+}
+.partner_programm_instructions_leftPart_mainText {
+    @apply mt-[30px] lg:mt-[34px] text-[24px] lg:text-[35px] text-[#FFFFFF] font-[600] leading-[26px] lg:leading-[38px] max-w-[335px] lg:max-w-[780px];
+}
+.partner_programm_instructions_leftPart_mainTextGray {
+    @apply mt-0 text-[#B9B8D3] inline;
+}
+.partner_programm_instructions_leftPart_footerBlock {
+    @apply mt-[40px] lg:mt-[60px] flex items-start;
+}
+.partner_programm_instructions_leftPart_footerBlock_line {
+    @apply w-[40px] lg:w-[92px] h-[1px] border-none bg-[#CAC6DD] opacity-75 mt-[21px];
+}
+.partner_programm_instructions_leftPart_footerBlock_text {
+    @apply text-[15px] lg:text-[20px] text-[#CAC6DD] font-[500] lg:font-[400] leading-[23px] lg:leading-[30px] opacity-75 block max-w-[265px] lg:max-w-[510px] ml-[30px] lg:ml-[40px];
+}
+.partner_programm_instructions_sub_leftPart_line {
+    @apply h-[349px] w-[1px] border-none rounded-[3px] bg-[#CAC6DD] mx-[167px] opacity-75;
+}
+.partner_programm_instructions_rightPart_item {
+    @apply mt-[41px];
+}
+.partner_programm_instructions_rightPart_frstItem {
+    @apply mt-0;
+}
+.partner_programm_instructions_rightPart_item_headerBlock {
+    @apply flex items-center;
+}
+.partner_programm_instructions_rightPart_item_headerBlock_numText {
+    @apply text-[25px] text-[#FDCA76] font-[500] leading-[29px];
+}
+.partner_programm_instructions_rightPart_item_headerBlock_mainText {
+    @apply text-[22px] lg:text-[25px] text-[#FFFFFF] font-[500] leading-[26px] lg:leading-[29px] ml-[15px];
+}
+.partner_programm_instructions_rightPart_item_subText {
+    @apply block ml-[46px] mt-[13.5px] lg:mt-[12px] max-w-[289px] lg:max-w-[422px] text-[16px] text-[#CAC6DD] font-[500] leading-[24px] opacity-75;
+}

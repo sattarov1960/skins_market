@@ -1,0 +1,141 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.profile {
+    @apply py-[70px] lg:py-[80px] flex justify-between flex-wrap relative;
+}
+.smoke_profile {
+    @apply absolute -bottom-[50px] -left-[140px];
+}
+.profile_leftPart_headerBlock {
+    @apply flex items-center w-[335px] lg:w-[446px] h-[124px] lg:h-[168px] rounded-[16px] py-[30px] lg:py-[40px] px-[30px] lg:px-[36px];
+}
+.peopleAvatar_profile {
+    @apply w-[64px] lg:w-[88px] h-[64px] lg:h-[88px];
+}
+.profile_leftPart_sub_headerBlock {
+    @apply ml-[16px] lg:ml-[24px];
+}
+.profile_leftPart_sub_headerBlock_nameText {
+    @apply text-[18px] lg:text-[22px] text-[#FFFFFF] font-[600] leading-[20px] lg:leading-[24px];
+}
+.profile_leftPart_sub_headerBlock_priceText {
+    @apply text-[16px] lg:text-[18px] text-[#FDCA76] font-[600] leading-[18px] lg:leading-[20px] tracking-[0.18px] block mt-[6px] lg:mt-[9px];
+}
+.profile_leftPart_sub_headerBlock_login {
+    @apply ml-[20px] lg:ml-[48px] w-[32px] lg:w-[54px] h-[30px] lg:h-[50px] bg-[#22223680] rounded-[7.1px] lg:rounded-[12px] flex items-center justify-center;
+}
+.login_icon {
+    @apply w-[16px] lg:w-[27px] h-[13.2px] lg:h-[22px];
+}
+.profile_leftPart_mainBlock {
+    @apply mt-[30px] px-[24px] rounded-[16px] pb-[42px] lg:pb-0 pt-[30px] w-[335px] lg:w-[446px] h-auto lg:h-[252px];
+}
+.profile_leftPart_mainBlock_item {
+    @apply flex items-center ml-[24px] mt-[28px] lg:mt-[24px];
+}
+.profile_leftPart_mainBlock_frstItem {
+    @apply mt-[12px];
+}
+.profile_leftPart_mainBlock_item_text {
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[20px] ml-[14px];
+}
+.profile_leftPart_mainBlock_item_active {
+    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0 mt-[16px] lg:mt-[12px];
+}
+.profile_leftPart_mainBlock_item_text_active {
+    @apply text-[#EBEFFD];
+}
+.profile_leftPart_mainBlock_scndItem {
+    @apply mt-[16px] lg:mt-[12px];
+}
+.profile_rightPart {
+    @apply w-[335px] sm:w-[1164px] h-[441px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px];
+}
+.profile_rightPart_mainText {
+    @apply text-[24px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase;
+}
+.profile_rightPart_mainForm {
+    @apply mt-[40px] sm:mt-[50px];
+}
+.profile_rightPart_socialNetworks {
+    @apply flex items-start justify-between flex-wrap;
+}
+.profile_rightPart_socialNetworks_mainText {
+    @apply text-[18px] text-[#EBEFFD] font-[500] leading-[21px];
+}
+.profile_rightPart_socialNetworks_subText {
+    @apply block max-w-[255px] sm:max-w-none mt-[8px] text-[15px] text-[#424257] font-[500] leading-[17px];
+}
+.profile_rightPart_socialNetworks_inputBlock {
+    @apply mt-[16px] flex items-center justify-between relative;
+}
+.profile_rightPart_socialNetworks_input {
+    @apply w-[287px] sm:w-[335px] md:w-[508px] h-[52px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
+}
+.profile_rightPart_socialNetworks_inputBlock_icon {
+    @apply w-[14px] h-[14px] absolute right-[20px] sm:right-[24px];
+}
+.tickCircle_icon {
+    @apply w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
+}
+.addCircle_icon {
+    @apply w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
+}
+.accordion_cards {
+    @apply mt-[62px];
+}
+.accordion_input {
+    @apply hidden;
+}
+.accordion_label {
+    @apply absolute h-[51px] sm:h-[56px] w-[287px] sm:w-[335px] md:w-[508px] cursor-pointer z-10;
+}
+.accordion_cards_inputBlock {
+    @apply flex items-center justify-between relative;
+}
+.accordion_cards_input {
+    @apply bg-[#22223680] rounded-[12px] px-[20px] text-[18px] text-[#8A89A4] font-[500] leading-[21px] h-[51px] sm:h-[57px] w-[287px] sm:w-[335px] md:w-[508px];
+}
+.arrow_top_icon {
+    @apply w-[14px] h-[14px] absolute right-[24px] sm:right-[20px] duration-100;
+}
+.accordion_cards_itemsBlock {
+    @apply hidden mt-[6px] bg-[#22223680] rounded-[12px] px-[16px] pt-[12px] pb-[15px];
+}
+.accordion_cards_item {
+    @apply flex items-center justify-between;
+}
+.accordion_cards_item_leftPart {
+    @apply flex items-center;
+}
+.card_icon {
+    @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px];
+}
+.accordion_cards_item_leftPart_text {
+    @apply text-[15px] md:text-[18px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[21px] ml-[8px];
+}
+.paymentSystem_icon {
+    @apply ml-[8px] md:ml-[16px];
+}
+.paymentSystem_icon_visa {
+    @apply w-[43px] sm:w-auto h-[20px] md:h-auto;
+}
+.closeCircle_icon {
+    @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px];
+}
+.accordion_cards_items_line {
+    @apply my-[12px] md:my-[16px] border-none h-[0.75px] bg-[#8A89A41A];
+}
+.paymentSystem_icon_mastercard {
+    @apply w-[30px] md:w-auto h-[19px] sm:h-auto;
+}
+.cardAdd_icon {
+    @apply w-[24px] h-[24px];
+}
+.accordion_cards_item_leftPart_subText {
+    @apply text-[15px] md:text-[16px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[19px] block ml-[8px];
+}

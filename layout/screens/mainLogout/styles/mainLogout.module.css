@@ -1,0 +1,345 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.main_part {
+    @apply pt-[200px] lg:pt-[320px] xl:pt-[140px];
+}
+.average_sell {
+    @apply flex items-center justify-center w-[236px] lg:w-[314px] h-[36px] lg:h-[48px] rounded-[8px] border-[1px] border-[#8a89a44d];
+}
+.walletCheck_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.average_sell_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.main_part_textBlock {
+    @apply mt-[32.6px] lg:mt-[50px];
+}
+.main_part_text {
+    @apply text-[24px] sm:text-[40px] lg:text-[68px] text-white font-["TTFirsNeue"] font-[600] leading-[26px] sm:leading-[46px] lg:leading-[72px] max-w-[550px] lg:max-w-[927px];
+}
+.main_part_text_generalBlock {
+    @apply flex items-center;
+}
+.x_icon {
+    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] -ml-[58px] absolute lg:static right-[15px] mb-[10px];
+}
+.line_mainPart {
+    @apply w-[119px] sm:w-[200px] lg:w-[359px] ml-[34px] sm:ml-[55px] lg:ml-[90px];
+}
+.main_part_subText {
+    @apply text-[15px] lg:text-[21px] text-[#cac6c9bf] font-[500] leading-[19.5px] lg:leading-[32px] block max-w-[335px] lg:max-w-[663px] mt-[24px];
+}
+.mainPart_startNowBlock {
+    @apply mt-[32px] sm:mt-[68px] flex items-center flex-wrap;
+}
+.mainPart_startNowBlock_button {
+    @apply bg-[#FDCA76] flex items-center justify-center rounded-[4px] w-[252px] h-[62px] text-[22px] text-black font-[600] leading-[22px] shadow-[0px_5px_18px_0px_#1b68ff1f] cursor-pointer;
+}
+.mainPart_sub_startNowBlock {
+    @apply flex items-center ml-[40px];
+}
+.star_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.mainPart_sub_startNowBlock_text {
+    @apply text-[16px] text-[#B9B8D3] font-[500] leading-[20px] block ml-[12px];
+}
+.ak_image {
+    @apply w-full xl:w-[70%] 2xl:w-full absolute right-0 top-[75px] lg:top-[90px] 2xl:top-0;
+}
+.smoke_mainPart {
+    @apply absolute top-[150px] left-0 bottom-0 hidden lg:block;
+}
+.statistic_part {
+    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px];
+}
+.statistic_part_items {
+    @apply flex items-center justify-center lg:justify-between flex-wrap;
+}
+.statistic_part_item {
+    @apply mr-[10px] lg:mr-0;
+}
+.statistic_part_item_headerBlock {
+    @apply flex items-center;
+}
+.statistic_part_item_icon {
+    @apply w-[28px] lg:w-[34px] h-[28px] lg:h-[34px];
+}
+.statistic_part_item_headerBlock_text {
+    @apply text-[18px] lg:text-[28px] text-[#EBEFFD] font-[600] leading-[22px] lg:leading-[28px] ml-[12px] uppercase;
+}
+.statistic_part_item_subText {
+    @apply block mt-[14px] text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[19px] lg:leading-[21.6px] max-w-[145px] sm:max-w-[154px] lg:max-w-[213px];
+}
+.statistic_part_item_line {
+    @apply w-[1px] h-[96px] bg-[#8A89A44D] border-none;
+}
+.latest_deals {
+    @apply mt-[110px] lg:mt-[140px];
+}
+.latest_deals_headerPart {
+    @apply flex items-center justify-between;
+}
+.latest_deals_headerPart_text {
+    @apply text-[24px] lg:text-[32px] text-[#EBEFFD] font-[600] leading-[29px] lg:leading-[39px];
+}
+.latest_deals_headerPart_rightSwitches {
+    @apply flex items-center;
+}
+.latest_deals_headerPart_rightSwitches_switch {
+    @apply bg-[#1C1C2D40] rounded-[8.6px] w-[35px] lg:w-[43px] h-[33px] lg:h-[40px] flex items-center justify-center;
+}
+.arrows_forSwitches_icon {
+    @apply w-[11px] lg:w-[14px] h-[11px] lg:h-[14px];
+}
+.latest_deals_headerPart_rightSwitches_scndSwitch {
+    @apply ml-[8px] lg:ml-[10px];
+}
+.latest_deals_items {
+    @apply mt-[32px] lg:mt-[40px] flex items-center justify-between;
+}
+.latest_deals_item {
+    @apply w-[170px] h-[142px] rounded-[16px] pt-[16px] pb-[12px] px-[16px];
+}
+.latest_deals_item_headerBlock {
+    @apply flex items-center justify-between;
+}
+.latest_deals_item_headerBlock_text {
+    @apply text-[11px] text-[#8A89A4] font-[500] leading-[13px];
+}
+.latest_deals_item_image {
+    @apply mx-auto mt-[-10px];
+}
+.latest_deals_item_footerBlock {
+    @apply mx-auto text-center mt-[-15px];
+}
+.latest_deals_item_footerBlock_prgrf {
+    @apply text-[12px] text-[#BAC4CC] font-[600] leading-[15px];
+}
+.latest_deals_item_footerBlock_subText {
+    @apply text-[11px] text-[#8A89A4] font-[500] leading-[13px] block mt-[2px];
+}
+.latest_deals_lastDarkItem {
+    @apply brightness-[60%] mr-0;
+}
+.detail_information_forMobile {
+    @apply -mx-[20px] lg:mx-0;
+}
+.detail_information {
+    @apply mt-[110px] lg:mt-[140px] w-full rounded-[16px] px-[20px] lg:px-[60px] py-[30px] lg:py-[50px] relative;
+}
+.detail_information_headerPart {
+    @apply flex items-center justify-between;
+}
+.detail_information_headerPart_leftBlock {
+    @apply flex items-center;
+}
+.crown_icon {
+    @apply w-[24px] lg:w-[32px] h-[24px] lg:h-[32px];
+}
+.detail_information_headerPart_leftBlock_text {
+    @apply text-[18px] lg:text-[26px] text-[#EBEFFD] font-[600] leading-[22px] lg:leading-[32px] ml-[12px];
+}
+.logo_detail_information {
+    @apply w-[80px] lg:w-[124px] h-[17px] lg:h-[26px];
+}
+.detail_information_mainPart {
+    @apply mt-[20px] lg:mt-[30px];
+}
+.detail_information_mainPart_text {
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px] block max-w-[910px] lg:max-w-[1458px];
+}
+.detail_information_mainPart_specialText {
+    @apply underline underline-offset-4;
+}
+.detail_information_footerPart {
+    @apply mt-[36px] lg:mt-[25px];
+}
+.detail_information_footerPart_text {
+    @apply text-[16px] text-[#FDCA76] font-['Gilroy'] lg:font-['Lato'] font-[500] lg:font-[400] underline-offset-8 lg:underline-offset-4;
+}
+.character_forDetailInformation {
+    @apply absolute bottom-0 right-0 lg:opacity-40 opacity-20 w-[110px] lg:w-auto;
+}
+.smoke_detailInformation {
+    @apply absolute -right-[20px] lg:-right-[140px] bottom-0 hidden sm:block;
+}
+.reviews {
+    @apply mt-[105px] lg:mt-[150px];
+}
+.reviews_links {
+    @apply flex items-center;
+}
+.reviews_link {
+    @apply flex items-center justify-center w-[147px] lg:w-[163px] h-[40px] rounded-[8px] bg-[#FDCA7617];
+}
+.vk_icon {
+    @apply w-[24px] h-[24px];
+}
+.reviews_link_text {
+    @apply text-[15px] lg:text-[18px] text-[#FDCA76] font-[600] leading-[15px] lg:leading-[18px] uppercase ml-[8px];
+}
+.reviews_linkRight {
+    @apply ml-[12px] w-[121px] lg:w-[132px] h-[40px];
+}
+.reviews_mainText_and_Switches {
+    @apply flex items-center justify-between mt-[20px] lg:mt-[24px];
+}
+.reviews_mainText {
+    @apply text-[24px] lg:text-[32px] text-[#EBEFFD] font-[600] leading-[29px] lg:leading-[39px];
+}
+.reviews_switches {
+    @apply flex items-center;
+}
+.reviews_switch {
+    @apply bg-[#1C1C2D40] rounded-[8.6px] w-[35px] lg:w-[43px] h-[33px] lg:h-[40px] flex items-center justify-center;
+}
+.reviews_rightSwitch {
+    @apply ml-[10px];
+}
+.reviews_items {
+    @apply mt-[40px] flex items-center justify-start overflow-x-hidden -mr-[140px];
+}
+.reviews_item {
+    @apply w-[239px] lg:w-[345px] h-[253px] lg:h-[330px] rounded-[16px] px-[24px] lg:px-[40px] pt-[30px] lg:pt-[40px] ml-[25px] flex-[0_0_auto];
+}
+.reviews_frstItem {
+    @apply ml-0;
+}
+.reviews_item_headerBlock {
+    @apply flex items-center;
+}
+.girl_avatar_forReviews {
+    @apply w-[40px] lg:w-[60px] h-[40px] lg:h-[60px];
+}
+.reviews_item_sub_headerBlock {
+    @apply ml-[8px] lg:ml-[20px];
+}
+.reviews_item_sub_headerBlock_mainText {
+    @apply text-[18px] lg:text-[24px] text-[#EBEFFD] font-[600] leading-[23.94px] lg:leading-[31.92px];
+}
+.reviews_item_sub_headerBlock_subText {
+    @apply text-[15px] lg:text-[19px] text-[#CAC6DD] font-[500] leading-[18px] lg:leading-[22px] block mt-[4px] lg:mt-0;
+}
+.reviews_item_mainBlock {
+    @apply mt-[24px] lg:mt-[30px] max-w-[185px] lg:max-w-[255px];
+}
+.reviews_item_mainBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#EBEFFD] font-[500] leading-[19.1px] lg:leading-[24.57px] opacity-50 block h-[95px] lg:h-auto;
+}
+.reviews_item_footerBlock {
+    @apply flex items-center mt-[20px];
+}
+.reviews_item_footerBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#FDCA76] font-[500] leading-[19.1px] lg:leading-[24.57px];
+}
+.arrowRight_forReviews {
+    @apply w-[14px] lg:w-[18px] h-[12px] lg:h-[16px] ml-[6px];
+}
+.reviews_lastItem {
+    @apply w-[300px];
+}
+.faq {
+    @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
+}
+.faq_headerPart_selledBlock {
+    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[293px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
+}
+.faq_headerPart_selledBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.faq_headerPart_mainText {
+    @apply text-center text-[23px] lg:text-[68px] text-white font-[600] leading-[30px] lg:leading-[72px] mt-[20px] lg:mt-[30px];
+}
+.faq_headerPart_subText {
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] block mt-[20px] lg:mt-[30px] text-center opacity-75 max-w-[318px] lg:max-w-none mx-auto lg:mx-0;
+}
+.faq_headerPart_subTextSpecial {
+    @apply underline underline-offset-4;
+}
+.faq_headerPart_line {
+    @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
+}
+.faq_mainPart {
+    @apply mt-[35px] lg:mt-[60px];
+}
+.faq_sub_mainPart {
+    @apply flex items-start justify-between flex-wrap lg:flex-nowrap;
+}
+.faq_mainPart_itemsLeft {
+    @apply w-full mr-0 lg:mr-[30px];
+}
+.faq_mainPart_item {
+    @apply border-[1px] border-[#8a89a41a] rounded-[4px] mt-[20px] lg:mt-[30px];
+}
+.faq_mainPart_frstItem {
+    @apply mt-0;
+}
+.faq_mainPart_item_input {
+    @apply appearance-none absolute w-0 h-0;
+}
+.faq_mainPart_item_headerPart {
+    @apply flex items-center justify-between cursor-pointer px-[16px] lg:px-[40px] py-[20px];
+}
+.faq_mainPart_item_headerPart_text {
+    @apply text-[15px] lg:text-[26px] text-[#EBEFFD] font-[600] leading-[18px] lg:leading-[32px] max-w-[239px] sm:max-w-none mr-0 lg:mr-[20px];
+}
+.plus_icon {
+    @apply w-[24px] h-[24px] rotate-0 transition duration-150 ease-in;
+}
+.faq_mainPart_item_textBlock {
+    @apply px-[16px] lg:px-[40px] pb-[32px] max-w-none lg:max-w-[715px] hidden;
+}
+.faq_mainPart_item_text {
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px];
+}
+.faq_mainPart_scndItem {
+    @apply hidden lg:block;
+}
+.faq_mainPart_frthItem {
+    @apply hidden lg:block;
+}
+.faq_mainPart_itemsRight {
+    @apply mt-[20px] lg:mt-0 w-full;
+}
+.faq_mainPart_sixthItem {
+    @apply hidden lg:block;
+}
+.reference {
+    @apply mt-[110px] lg:mt-[233px] relative;
+}
+.reference_headerBlock {
+    @apply flex items-center justify-center mx-auto w-[149px] lg:w-[202px] h-[36px] lg:h-[48px] rounded-[8px] border-[1px] border-[#8A89A44D];
+}
+.reference_headerBlock_text {
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+}
+.reference_mainBlock {
+    @apply mt-[20px] lg:mt-[32px] flex items-center justify-center -mx-[10px];
+}
+.reference_mainBlock_text {
+    @apply text-[24px] lg:text-[60px] text-white font-["TTFirsNeue"] font-[600] leading-[29px] lg:leading-[72px];
+}
+.reference_mainBlock_logo {
+    @apply w-[117px] lg:w-[322px] h-[17px] lg:h-[42px] ml-[6px] lg:ml-0;
+}
+.reference_subText {
+    @apply block text-center mx-auto mt-[20px] lg:mt-[30px] text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] opacity-75 max-w-[335px] lg:max-w-none;
+}
+.reference_btn {
+    @apply w-[335px] lg:w-[298px] h-[50px] lg:h-[72px] mt-[70px] lg:mt-[60px] mx-auto flex items-center justify-center rounded-[4px] text-[18px] lg:text-[24px] text-black font-[600] leading-[18px] lg:leading-[24px] bg-[#FDCA76];
+}
+.reference_footerBlock {
+    @apply flex items-center justify-center mx-auto mt-[24px] lg:mt-[32px];
+}
+.reference_footerBlock_text {
+    @apply text-[14px] lg:text-[16px] text-[#B9B8D3] font-[500] leading-[20px] block ml-[12px];
+}
+.smoke_reference {
+    @apply absolute -bottom-[50px] sm:-bottom-[100px] -left-[120px] sm:-left-[70px] lg:-left-[140px];
+}

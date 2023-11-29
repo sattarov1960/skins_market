@@ -1,0 +1,79 @@
+.footer {
+    @apply -mt-[1px];
+    background: linear-gradient(0deg, rgba(28, 28, 45, 0.15) 0%, rgba(28, 28, 45, 0.15) 100%), #09090d
+}
+.footer_statisticPart {
+    @apply pt-[110px] lg:pt-[178px] px-[140px] relative pb-[24px] lg:pb-[40px];
+}
+.footer_statisticPart_items {
+    @apply flex items-center justify-between overflow-hidden;
+}
+.footer_statisticPart_item {
+    @apply flex items-center justify-center flex-[0_0_auto];
+}
+.footer_statisticPart_item_mainText {
+    @apply text-[18px] lg:text-[32px] text-[#EBEFFD99] font-[600] leading-[22px] lg:leading-[39px];
+}
+.footer_statisticPart_item_line {
+    @apply w-[1px] h-[32px] border-none bg-[#8A89A426] mx-[16px];
+}
+.footer_statisticPart_item_subText {
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[16.8px] lg:leading-[19.2px];
+}
+.footer_line {
+    @apply w-full h-[1px] absolute left-0 right-0 bottom-0 border-none bg-[#22223680];
+}
+.footer_links {
+    @apply py-[40px] px-[140px] flex items-center justify-between flex-wrap border-[0px] sm:border-t-[1px] border-[#22223680];
+}
+.footer_links_leftBlock_items {
+    @apply flex items-center flex-wrap;
+}
+.footer_links_leftBlock_item {
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[48px];
+}
+.footer_links_leftBlock_frstItem {
+    @apply ml-0;
+}
+.footer_logo {
+    @apply w-[167px] h-[36px];
+}
+.footer_links_leftBlock_navItem {
+    @apply flex items-center justify-center flex-wrap ml-[87px];
+}
+.footer_links_rightBlock_items {
+    @apply flex items-center;
+}
+.footer_links_rightBlock_item {
+    @apply ml-[16px] sm:ml-[24px];
+}
+.footer_links_rightBlock_frstItem {
+    @apply ml-0;
+}
+.mastercard_icon {
+    @apply w-[26px] sm:w-[38px] h-[16px] sm:h-[24px] opacity-50;
+}
+.visa_icon {
+    @apply w-[47px] sm:w-[69px] h-[15px] sm:h-[22px] opacity-50;
+}
+.bitcoin_icon {
+    @apply w-[59px] sm:w-[86px] h-[16px] sm:h-[24px] opacity-50;
+}
+.footer_links_rightBlock_specialItem {
+    @apply ml-0;
+}
+.footer_links_rightBlock_item_line {
+    @apply w-[1px] h-[32px] bg-[#8A89A480] border-none mx-[32px];
+}
+.steam_footerIcon {
+    @apply w-[28px] h-[28px];
+}
+.footer_links_rightBlock_socialNetworkItem {
+    @apply ml-[16px];
+}
+.vk_footerIcon {
+    @apply w-[30px] h-[19px];
+}
+.tg_footerIcon {
+    @apply w-[24px] h-[24px];
+}

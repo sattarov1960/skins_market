@@ -1,0 +1,67 @@
+.header {
+    @apply w-full flex items-center justify-between px-[140px] h-[75px] lg:h-[90px];
+    background: linear-gradient(#09090b, #050506);
+}
+.nav_leftBlock {
+    @apply flex items-center;
+}
+.logo {
+    @apply w-[124px] h-[26px];
+}
+.nav_line {
+    @apply hidden 2xl:block h-[34px] w-[1px] bg-[#8A89A44D] border-none mx-[24px];
+}
+.nav_languageBlock {
+    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[99px] h-[34px];
+}
+.ru {
+    @apply w-[18px] h-[18px];
+}
+.nav_languageBlock_text {
+    @apply text-[17px] text-[#B9B8D3] font-[500] leading-[16px] mx-[6px];
+}
+.nav_currencyBlock {
+    @apply hidden 2xl:flex items-center justify-center rounded-[8px] border-[1px] border-[#8A89A44D] w-[107px] h-[34px] ml-[16px];
+}
+.wallet_icon {
+    @apply w-[18x] h-[18px];
+}
+.nav_currencyBlock_text {
+    @apply text-[17px] text-[#B9B8D3] font-[500] leading-[16px] ml-[10px] mr-[4px];
+}
+.nav_midBlock {
+    @apply hidden 2xl:block ml-[82px];
+}
+.nav_midBlock_items {
+    @apply flex items-center;
+}
+.nav_midBlock_item {
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[19.8px] ml-[32px] cursor-pointer;
+}
+.nav_midBlock_item_active {
+    @apply ml-0 text-[#B9B8D3];
+}
+.nav_midBlock_item_active_line {
+    @apply w-[36px] h-[2px] rounded-tl-[2px] rounded-tr-[2px] bg-[#FDCA76] mx-auto relative top-[34px];
+}
+.nav_rightBlock {
+    @apply flex items-center;
+}
+.nav_rightBlock_button {
+    @apply flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-[96px] lg:w-[234px] h-[32px] lg:h-[46px];
+}
+.steam_icon {
+    @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
+}
+.nav_rightBlock_button_text {
+    @apply hidden lg:block text-[17px] text-[#000000] font-[500] leading-[17px] ml-[8px];
+}
+.nav_rightBlock_button_text_mobile {
+    @apply block lg:hidden text-[14px] text-black font-[500] leading-[14px] ml-[8px];
+}
+.burgerMenu_icon {
+    @apply w-[24px] lg:w-[32px] h-[24px] lg:h-[32px] ml-[16px] block 2xl:hidden;
+}
+.nav {
+    @apply flex items-center;
+}

@@ -4,6 +4,7 @@ import "@/app/globals.css"
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
 import {YandexMetrika} from "@/layout/components/yandex_metrika/metrika";
+import {TopWrap} from "@/layout/wrap/topWrap";
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'ru'}];
@@ -19,6 +20,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
     try {
         messages = (await import(`../../messages/${locale}.json`)).default;
     } catch (error) {
+        alert("Сообщения [messages] не найдены")
         notFound();
     }
 
@@ -26,7 +28,9 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
         <html lang={locale}>
         <body>
             <NextIntlClientProvider locale={locale} messages={messages}>
-                {children}
+                <TopWrap>
+                    {children}
+                </TopWrap>
             </NextIntlClientProvider>
             <YandexMetrika/>
         </body>
