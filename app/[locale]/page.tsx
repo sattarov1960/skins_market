@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
+import {MainLogout} from "@/layout/screens/mainLogout/mainLogout";
 
 export const metadata: Metadata = getMeta("Главная",
     "",
@@ -9,6 +10,8 @@ export const metadata: Metadata = getMeta("Главная",
 
 export default function Home() {
   return (
-    <></>
+    <>
+      <MainLogout/>
+    </>
   )
 }

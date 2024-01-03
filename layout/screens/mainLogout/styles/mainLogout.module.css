@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply px-[140px] overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -20,13 +20,13 @@
     @apply mt-[32.6px] lg:mt-[50px];
 }
 .main_part_text {
-    @apply text-[24px] sm:text-[40px] lg:text-[68px] text-white font-["TTFirsNeue"] font-[600] leading-[26px] sm:leading-[46px] lg:leading-[72px] max-w-[550px] lg:max-w-[927px];
+    @apply text-[24px] sm:text-[40px] lg:text-[68px] text-white font-[600] leading-[26px] sm:leading-[46px] lg:leading-[72px] max-w-[550px] lg:max-w-[927px];
 }
 .main_part_text_generalBlock {
     @apply flex items-center;
 }
 .x_icon {
-    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] -ml-[58px] absolute lg:static right-[15px] mb-[10px];
+    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] absolute lg:static right-[15px] mb-[10px];
 }
 .line_mainPart {
     @apply w-[119px] sm:w-[200px] lg:w-[359px] ml-[34px] sm:ml-[55px] lg:ml-[90px];
@@ -50,7 +50,10 @@
     @apply text-[16px] text-[#B9B8D3] font-[500] leading-[20px] block ml-[12px];
 }
 .ak_image {
-    @apply w-full xl:w-[70%] 2xl:w-full absolute right-0 top-[75px] lg:top-[90px] 2xl:top-0;
+    @apply hidden md:flex w-full xl:w-[70%] 2xl:w-full absolute right-0 top-[75px] lg:top-[90px] 2xl:top-0;
+}
+.ak_image_mobile {
+    @apply md:hidden w-full md:w-full absolute right-0 top-[75px] lg:top-[90px] md:top-0;
 }
 .smoke_mainPart {
     @apply absolute top-[150px] left-0 bottom-0 hidden lg:block;
@@ -323,7 +326,7 @@
     @apply mt-[20px] lg:mt-[32px] flex items-center justify-center -mx-[10px];
 }
 .reference_mainBlock_text {
-    @apply text-[24px] lg:text-[60px] text-white font-["TTFirsNeue"] font-[600] leading-[29px] lg:leading-[72px];
+    @apply text-[24px] lg:text-[60px] text-white font-[600] leading-[29px] lg:leading-[72px];
 }
 .reference_mainBlock_logo {
     @apply w-[117px] lg:w-[322px] h-[17px] lg:h-[42px] ml-[6px] lg:ml-0;

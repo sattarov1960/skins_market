@@ -86,7 +86,7 @@
     @apply text-[18px] text-[#B9B8D3] font-[600] leading-[18px];
 }
 .how_register_subBlock_mainText {
-    @apply text-[26px] lg:text-[56px] text-[#FFFFFF] font-[600] leading-[32px] lg:leading-[72px] font-["TTFirsNeue"] mt-[32px];
+    @apply text-[26px] lg:text-[56px] text-[#FFFFFF] font-[600] leading-[32px] lg:leading-[72px] mt-[32px];
 }
 .how_register_subBlock_subTitle {
     @apply text-[22px] lg:text-[32px] text-[#EBEFFDB2] font-[600] leading-[27px] lg:leading-[39px] mt-[16px];

@@ -14,7 +14,7 @@
     @apply w-[880px] flex items-center justify-between;
 }
 .partner_programm_text {
-    @apply flex items-end max-w-[335px] lg:max-w-[497px] text-[#fff] text-[48px] lg:text-[74px] font-[600] font-["TTFirsNeue"] leading-[62px] lg:leading-[72px] relative lg:static;
+    @apply flex items-end max-w-[335px] lg:max-w-[497px] text-[#fff] text-[48px] lg:text-[74px] font-[600] leading-[62px] lg:leading-[72px] relative lg:static;
 }
 .x_icon {
     @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] -ml-[58px] absolute lg:static right-[15px] mb-[10px];

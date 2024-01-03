@@ -11,7 +11,7 @@
     @apply pt-[80px] lg:pt-[160px] flex items-start justify-between flex-wrap;
 }
 .contactInformation_leftPart_mainText {
-    @apply text-[48px] lg:text-[74px] text-white font-[600] font-["TTFirsNeue"] leading-[62px] lg:leading-[72px] max-w-[475px];
+    @apply text-[48px] lg:text-[74px] text-white font-[600] leading-[62px] lg:leading-[72px] max-w-[475px];
 }
 .contactInformation_leftPart_subText {
     @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] mt-[24px] opacity-75 max-w-[260px] sm:max-w-none;
@@ -56,7 +56,7 @@
     @apply mx-[20px] md:mx-0;
 }
 .contactInformation_rightPart_mainText {
-    @apply text-[28px] lg:text-[35px] text-white font-[500] font-["TTFirsNeue"] leading-[31px] lg:leading-[39px];
+    @apply text-[28px] lg:text-[35px] text-white font-[500] leading-[31px] lg:leading-[39px];
 }
 .contactInformation_rightPart_forms {
     @apply mt-[40px];

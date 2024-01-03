@@ -359,7 +359,7 @@
     @apply mt-[36px] lg:mt-[25px];
 }
 .detail_information_footerPart_text {
-    @apply text-[16px] text-[#FDCA76] font-['Gilroy'] lg:font-['Lato'] font-[500] lg:font-[400] underline-offset-8 lg:underline-offset-4;
+    @apply text-[16px] text-[#FDCA76] font-[500] lg:font-[400] underline-offset-8 lg:underline-offset-4;
 }
 .character_forDetailInformation {
     @apply absolute bottom-0 right-0 lg:opacity-40 opacity-20 w-[110px] lg:w-auto;

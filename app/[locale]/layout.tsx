@@ -26,7 +26,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
 
     return (
         <html lang={locale}>
-        <body>
+        <body style={{fontFamily: "TTFirsNeue"}}>
             <NextIntlClientProvider locale={locale} messages={messages}>
                 <TopWrap>
                     {children}

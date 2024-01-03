@@ -3,8 +3,10 @@ import styles from "@/layout/components/footer/footer.module.css"
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
+import {useTranslations} from "next-intl";
 
 export function Footer() {
+    const t = useTranslations()
     const pathname = usePathname()
     return (
         <footer className={styles.footer}>
@@ -16,7 +18,7 @@ export function Footer() {
                         </p>
                         <hr className={styles.footer_statisticPart_item_line}/>
                         <span className={styles.footer_statisticPart_item_subText}>
-                            Лет работы
+                            {t("Лет работы")}
                         </span>
                     </li>
                     <li className={styles.footer_statisticPart_item}>
@@ -25,7 +27,7 @@ export function Footer() {
                         </p>
                         <hr className={styles.footer_statisticPart_item_line}/>
                         <span className={styles.footer_statisticPart_item_subText}>
-                            Продано предметов
+                            {t("Продано предметов")}
                         </span>
                     </li>
                     <li className={styles.footer_statisticPart_item}>
@@ -34,7 +36,7 @@ export function Footer() {
                         </p>
                         <hr className={styles.footer_statisticPart_item_line}/>
                         <span className={styles.footer_statisticPart_item_subText}>
-                            Счастливых клиентов
+                            {t("Счастливых клиентов")}
                         </span>
                     </li>
                     <li className={styles.footer_statisticPart_item}>
@@ -43,7 +45,7 @@ export function Footer() {
                         </p>
                         <hr className={styles.footer_statisticPart_item_line}/>
                         <span className={styles.footer_statisticPart_item_subText}>
-                            Позитивных отзывов
+                            {t("Позитивных отзывов")}
                         </span>
                     </li>
                     <li className={styles.footer_statisticPart_item}>
@@ -52,7 +54,7 @@ export function Footer() {
                         </p>
                         <hr className={styles.footer_statisticPart_item_line}/>
                         <span className={styles.footer_statisticPart_item_subText}>
-                            Минут занимает сделка
+                            {t("Минут занимает сделка")}
                         </span>
                     </li>
                 </ul>
@@ -66,22 +68,22 @@ export function Footer() {
                         </li>
                         <div className={styles.footer_links_leftBlock_navItem}>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/ru") || pathname.endsWith("/en") || pathname.endsWith("/") ? styles.footer_links_leftBlock_item_active : null}`}>
-                                <Link href="/">Главная</Link>
+                                <Link href="/">{t("Главная")}</Link>
                             </li>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/#reviews") ? styles.footer_links_leftBlock_item_active : null}`}>
-                                <Link href="/#reviews">Отзывы</Link>
+                                <Link href="/#reviews">{t("Отзывы")}</Link>
                             </li>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/how") ? styles.footer_links_leftBlock_item_active : null}`}>
-                                <Link href="/how">Помощь</Link>
+                                <Link href="/how">{t("Помощь")}</Link>
                             </li>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/faq") ? styles.footer_links_leftBlock_item_active : null}`}>
                                 <Link href="/faq">FAQ</Link>
                             </li>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/contact") ? styles.footer_links_leftBlock_item_active : null}`}>
-                                <Link href="/contact">Контакты</Link>
+                                <Link href="/contact">{t("Контакты")}</Link>
                             </li>
                             <li className={`${styles.footer_links_leftBlock_item} ${pathname.endsWith("/partner") ? styles.footer_links_leftBlock_item_active : null}`}>
-                                <Link href="/partner">Партнерка</Link>
+                                <Link href="/partner">{t("Партнерка")}</Link>
                             </li>
                         </div>
                     </ul>
@@ -101,13 +103,19 @@ export function Footer() {
                             <hr className={styles.footer_links_rightBlock_item_line}/>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_frstItem}`}>
-                            <Image src="/steam_footerIcon.svg" width={29} height={28} alt="стим" className={styles.steam_footerIcon}/>
+                            <a href="https://vk.com/tf2key">
+                                <Image src="/steam_footerIcon.svg" width={29} height={28} alt="стим" className={styles.steam_footerIcon}/>
+                            </a>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_socialNetworkItem}`}>
-                            <Image src="/vk_footerIcon.svg" width={31} height={20} alt="вк" className={styles.vk_footerIcon}/>
+                            <a href="https://vk.com/tf2key">
+                                <Image src="/vk_footerIcon.svg" width={31} height={20} alt="вк" className={styles.vk_footerIcon}/>
+                            </a>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_socialNetworkItem}`}>
-                            <Image src="/tg_footerIcon.svg" width={25} height={24} alt="тг" className={styles.tg_footerIcon}/>
+                            <a href="https://t.me/MannCoSupplyCrateKey">
+                                <Image src="/tg_footerIcon.svg" width={25} height={24} alt="тг" className={styles.tg_footerIcon}/>
+                            </a>
                         </li>
                     </ul>
                 </div>
