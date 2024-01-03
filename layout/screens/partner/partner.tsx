@@ -1,8 +1,10 @@
 import styles from "@/layout/screens/partner/styles/partner.module.css"
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 
 export function Partner() {
+    const t = useTranslations()
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -10,20 +12,19 @@ export function Partner() {
                 <div className={styles.partner_programm}>
                     <div className={styles.partner_programm_leftPart}>
                         <h2 className={styles.partner_programm_text}>
-                            Партнерская программа
+                            {t("Партнерская программа")}
                             <Image src="/x_icon.svg" width={66} height={67} alt="X icon" className={styles.x_icon}/>
                         </h2>
                         <hr className={styles.partner_programm_leftPart_line}/>
                     </div>
                     <div className={styles.partner_programm_rightPart}>
                         <p className={styles.partner_programm_rightPart_text}>
-                            Продавай игровые скины проще и быстрее. Безопасные
-                            платежи. Без скрытых комиссий или налогов.
+                            {t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}
                         </p>
                         <button className={styles.partner_programm_rightPart_btn}>
                             <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.partner_programm_rightPart_btn_steamIcon}/>
                             <p className={styles.partner_programm_rightPart_btn_text}>
-                                Войти через Steam
+                                {t("Войти через Steam")}
                             </p>
                         </button>
                     </div>
@@ -35,7 +36,7 @@ export function Partner() {
                                 $37.015+
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
-               Заработано партнёрами
+               {t("Заработано партнёрами")}
                </span>
                         </li>
                         <hr className={styles.partner_programm_statistic_items_line}/>
@@ -44,7 +45,7 @@ export function Partner() {
                                 102.279
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
-               Всего приглашенных
+               {t("Всего приглашенных")}
                </span>
                         </li>
                         <hr className={styles.partner_programm_statistic_items_line}/>
@@ -53,7 +54,7 @@ export function Partner() {
                                 $5.904
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
-               Самый богатый партнер
+               {t("Самый богатый партнер")}
                </span>
                         </li>
                         <hr className={styles.partner_programm_statistic_items_line}/>
@@ -62,7 +63,7 @@ export function Partner() {
                                 20
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
-               Приглашенных в среднем
+               {t("Приглашенных в среднем")}
                </span>
                         </li>
                     </ul>
@@ -74,11 +75,11 @@ export function Partner() {
                         <div className={styles.faq_headerPart_selledBlock}>
                             <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>
                             <p className={styles.faq_headerPart_selledBlock_text}>
-                                Зарабатывай пассивно
+                                {t("Зарабатывай пассивно")}
                             </p>
                         </div>
                         <h2 className={styles.faq_headerPart_mainText}>
-                            Как это работает?
+                            {t("Как это работает?")}
                         </h2>
                         <hr className={styles.faq_headerPart_line}/>
                     </div>
@@ -88,20 +89,19 @@ export function Partner() {
                     <div className={styles.partner_programm_instructions_leftPart}>
                         <div className={styles.partner_programm_instructions_sub_leftPart}>
                             <p className={styles.partner_programm_instructions_leftPart_yellowText}>
-                                Партнерка avan.market
+                                {t("Партнерка")} avan.market
                             </p>
                             <h2 className={styles.partner_programm_instructions_leftPart_mainText}>
-                                У вас есть друзья,
+                                 {t("У вас есть друзья,")}
                                 <p className={`${styles.partner_programm_instructions_leftPart_mainText} ${styles.partner_programm_instructions_leftPart_mainTextGray}`}>
-                                    которым вы хотите порекомендовать сделки
+                                    {t("которым вы хотите порекомендовать сделки")}
                                 </p>
-                                и
-                                получить вознаграждение?
+                                {t("и получить вознаграждение?")}
                             </h2>
                             <div className={styles.partner_programm_instructions_leftPart_footerBlock}>
                                 <hr className={styles.partner_programm_instructions_leftPart_footerBlock_line}/>
                                 <span className={styles.partner_programm_instructions_leftPart_footerBlock_text}>
-                  Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!Зарабатывайте от 1% до 3% за каждую сделку
+                  {t("Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!")} {t("Зарабатывайте от 1% до 3% за каждую сделку")}
                   </span>
                             </div>
                         </div>
@@ -115,11 +115,11 @@ export function Partner() {
                                         01
                                     </p>
                                     <h2 className={styles.partner_programm_instructions_rightPart_item_headerBlock_mainText}>
-                                        Скопируйте ссылку
+                                        {t("Скопируйте ссылку")}
                                     </h2>
                                 </div>
                                 <span className={styles.partner_programm_instructions_rightPart_item_subText}>
-               Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!
+               {t("Перейдите в профиль, Реферальная система скопируйте вашу ссылку")}
                </span>
                             </li>
                             <li className={styles.partner_programm_instructions_rightPart_item}>
@@ -128,11 +128,11 @@ export function Partner() {
                                         02
                                     </p>
                                     <h2 className={styles.partner_programm_instructions_rightPart_item_headerBlock_mainText}>
-                                        Порекомендуйте друзьям
+                                        {t("Порекомендуйте друзьям")}
                                     </h2>
                                 </div>
                                 <span className={styles.partner_programm_instructions_rightPart_item_subText}>
-                  Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!
+                  {t("Расскажите двум - трем друзьям о нашем сервисе покупки и продажи скинов")}
                   </span>
                             </li>
                             <li className={styles.partner_programm_instructions_rightPart_item}>
@@ -141,11 +141,11 @@ export function Partner() {
                                         03
                                     </p>
                                     <h2 className={styles.partner_programm_instructions_rightPart_item_headerBlock_mainText}>
-                                        Получайте деньги
+                                        {t("Получайте деньги")}
                                     </h2>
                                 </div>
                                 <span className={styles.partner_programm_instructions_rightPart_item_subText}>
-                  Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!
+                  {t("После того как ваш друг продаст предметы вам в автоматическом режиме прийдут деньги")}
                   </span>
                             </li>
                         </ul>

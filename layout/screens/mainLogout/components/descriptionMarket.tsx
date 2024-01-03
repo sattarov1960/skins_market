@@ -29,7 +29,7 @@ export function DescriptionMarket() {
             из своего личного инвентаря. Когда у вас есть
             дополнительные скины в инвентаре и вам нужны
             наличные деньги, вы можете продавать скины CS:GO на
-            Avan.Market. На данный момент мы покупаем скины
+            Avan.Market. На данный момент мы покупаем скины{t("")}
             <span className={styles.detail_information_mainPart_specialText}>
             CS:GO
             </span>
@@ -53,7 +53,7 @@ export function DescriptionMarket() {
             некоторые вещи в Counter-Strike: Global Offensive
             довольно дороги. Так почему бы вам не попытаться
             заработать хорошие деньги, продавая скины с помощью
-            Avan.Market?
+            Avan.Market?{t("")}
             </span>
                 </div>
                 <div className={styles.detail_information_footerPart}>

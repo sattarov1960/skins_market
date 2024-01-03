@@ -52,12 +52,12 @@ export function Reviews() {
             <span className={styles.reviews_item_mainBlock_text}>
             Отличный сайт! Продал АК-47 Азимов по
             рыночной цене, деньги пришли практически
-            сразу. Рекомендую.
+            сразу. Рекомендую.{t("")}
             </span>
                         </div>
                         <div className={styles.reviews_item_footerBlock}>
                             <p className={styles.reviews_item_footerBlock_text}>
-                                Читать отзыв
+                                Читать отзыв{t("")}
                             </p>
                             <Image src="/arrowRight_forReviews.svg" width={18} height={16} alt="стрелочка" className={styles.arrowRight_forReviews}/>
                         </div>
@@ -78,12 +78,12 @@ export function Reviews() {
                <span className={styles.reviews_item_mainBlock_text}>
                Отличный сайт! Продал АК-47 Азимов по
                рыночной цене, деньги пришли практически
-               сразу. Рекомендую.
+               сразу. Рекомендую.{t("")}
                </span>
                         </div>
                         <div className={styles.reviews_item_footerBlock}>
                             <p className={styles.reviews_item_footerBlock_text}>
-                                Читать отзыв
+                                Читать отзыв{t("")}
                             </p>
                             <Image src="/arrowRight_forReviews.svg" width={18} height={16} alt="стрелочка" className={styles.arrowRight_forReviews}/>
                         </div>
@@ -104,12 +104,12 @@ export function Reviews() {
                <span className={styles.reviews_item_mainBlock_text}>
                Отличный сайт! Продал АК-47 Азимов по
                рыночной цене, деньги пришли практически
-               сразу. Рекомендую.
+               сразу. Рекомендую.{t("")}
                </span>
                         </div>
                         <div className={styles.reviews_item_footerBlock}>
                             <p className={styles.reviews_item_footerBlock_text}>
-                                Читать отзыв
+                                Читать отзыв{t("")}
                             </p>
                             <Image src="/arrowRight_forReviews.svg" width={18} height={16} alt="стрелочка" className={styles.arrowRight_forReviews}/>
                         </div>
@@ -130,12 +130,12 @@ export function Reviews() {
                <span className={styles.reviews_item_mainBlock_text}>
                Отличный сайт! Продал АК-47 Азимов по
                рыночной цене, деньги пришли практически
-               сразу. Рекомендую.
+               сразу. Рекомендую.{t("")}
                </span>
                         </div>
                         <div className={styles.reviews_item_footerBlock}>
                             <p className={styles.reviews_item_footerBlock_text}>
-                                Читать отзыв
+                                Читать отзыв{t("")}
                             </p>
                             <Image src="/arrowRight_forReviews.svg" width={18} height={16} alt="стрелочка" className={styles.arrowRight_forReviews}/>
                         </div>
@@ -156,12 +156,12 @@ export function Reviews() {
             <span className={styles.reviews_item_mainBlock_text}>
             Отличный сайт! Продал АК-47 Азимов по
             рыночной цене, деньги пришли практически
-            сразу. Рекомендую.
+            сразу. Рекомендую.{t("")}
             </span>
                         </div>
                         <div className={styles.reviews_item_footerBlock}>
                             <p className={styles.reviews_item_footerBlock_text}>
-                                Читать отзыв
+                                Читать отзыв{t("")}
                             </p>
                             <Image src="/arrowRight_forReviews.svg" width={18} height={16} alt="стрелочка" className={styles.arrowRight_forReviews}/>
                         </div>

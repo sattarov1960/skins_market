@@ -1,7 +1,9 @@
 import styles from "@/layout/screens/contact/styles/contact.module.css"
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 export function Contact() {
+    const t = useTranslations()
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -9,10 +11,10 @@ export function Contact() {
                 <div className={styles.contactInformation}>
                     <div>
                         <h2 className={styles.contactInformation_leftPart_mainText}>
-                            Контактная информация
+                            {t("Контактная информация")}
                         </h2>
                         <p className={styles.contactInformation_leftPart_subText}>
-                            Напишите нам, если не нашли свой вопрос в
+                            {t("Напишите нам, если не нашли свой вопрос в")}
                             <span className={`${styles.contactInformation_leftPart_subText} ${styles.contactInformation_leftPart_subText_special}`}>FAQ</span>
                         </p>
                         <div className={styles.contactInformation_leftPart_socialNetworks}>
@@ -20,14 +22,14 @@ export function Contact() {
                                 <li className={styles.contactInformation_leftPart_socialNetworks_item}>
                                     <Image src="/telegramOriginal_icon.svg" width={32} height={33} alt="Telegram"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subFrstItem}>
-                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>Поддержка в Telegram</span>
+                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")} в Telegram</span>
                                         <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>@username</p>
                                     </div>
                                 </li>
                                 <li className={styles.contactInformation_leftPart_socialNetworks_item}>
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
-                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>Поддержка</span>
+                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")}</span>
                                         <p className={`${styles.contactInformation_leftPart_socialNetworks_subItem_mainText} ${styles.contactInformation_leftPart_socialNetworks_subItem_mainText_special}`}>pr@example.com</p>
                                     </div>
                                 </li>
@@ -35,7 +37,7 @@ export function Contact() {
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>
-                                        Сотрудничество
+                                        {t("Сотрудничество")}
                                         </span>
                                         <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>pr@example.com</p>
                                     </div>
@@ -43,7 +45,7 @@ export function Contact() {
                                 <li className={`${styles.contactInformation_leftPart_socialNetworks_item} ${styles.contactInformation_leftPart_socialNetworks_frthItem}`}>
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
-                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>Другое</span>
+                                        <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Другое")}</span>
                                         <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>pr@example.com</p>
                                     </div>
                                 </li>
@@ -52,11 +54,11 @@ export function Contact() {
                     </div>
                     <hr className={styles.contactInformation_line}/>
                     <div className={styles.contactInformation_rightPart}>
-                        <h2 className={styles.contactInformation_rightPart_mainText}>Или оставьте зявку, и мы ответим.</h2>
+                        <h2 className={styles.contactInformation_rightPart_mainText}>{t("Или оставьте зявку, и мы ответим.")}</h2>
                         <div className={styles.contactInformation_rightPart_forms}>
                             <div className={styles.contactInformation_rightPart_headerForms}>
                                 <div className={styles.contactInformation_rightPart_headerFrstForm}>
-                                    <p className={styles.contactInformation_rightPart_headerForm_text}>Ваше имя</p>
+                                    <p className={styles.contactInformation_rightPart_headerForm_text}>{t("Ваше имя")}Ваше имя</p>
                                     <input className={styles.contactInformation_rightPart_headerForm_input} placeholder="Введите имя" type="text"/>
                                 </div>
                                 <div className={styles.contactInformation_rightPart_headerScndForm}>
@@ -66,7 +68,7 @@ export function Contact() {
                             </div>
                         </div>
                         <div className={styles.contactInformation_rightPart_mainForm}>
-                            <p className={styles.contactInformation_rightPart_mainForm_text}>Сообщение</p>
+                            <p className={styles.contactInformation_rightPart_mainForm_text}>{t("Сообщение")}</p>
                             <textarea className={styles.contactInformation_rightPart_mainForm_textarea} placeholder="Опишите суть обращения"></textarea>
                         </div>
                         <div className={styles.contactInformation_rightPart_options}>
@@ -74,26 +76,26 @@ export function Contact() {
                                 <label className={`${styles.contactInformation_rightPart_options_leftBlock_customRadio} ${styles.contactInformation_rightPart_options_leftBlock_frstCustomRadio}`}>
                                     <input name="option" type="radio"/>
                                     <span></span>
-                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>Общий</span>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Общий")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                     <input name="option" type="radio"/>
                                     <span></span>
-                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>Партнерство</span>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Партнерство")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                     <input name="option" type="radio"/>
                                     <span></span>
-                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>Баг</span>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Баг")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                     <input name="option" type="radio"/>
                                     <span></span>
-                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>Другое</span>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Другое")}</span>
                                 </label>
                             </div>
                             <button className={styles.contactInformation_rightPart_options_btn}>
-                                Отправить
+                                {t("Отправить")}
                             </button>
                         </div>
                     </div>

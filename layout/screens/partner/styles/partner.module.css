@@ -39,6 +39,12 @@
 }
 .partner_programm_statistic {
     @apply w-full rounded-[16px] mt-[110px] lg:mt-[125px] px-[130px] pt-[31px] lg:pt-[36px] pb-[32px] lg:pb-[37px];
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
 }
 .partner_programm_statistic_items {
     @apply flex items-center justify-center flex-wrap;

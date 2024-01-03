@@ -1,7 +1,9 @@
 import styles from "@/layout/screens/how/styles/how.module.css"
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 export function How() {
+    const t = useTranslations()
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -10,14 +12,14 @@ export function How() {
                         <div className={styles.faq_headerPart_selledBlock}>
                             <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>
                             <p className={styles.faq_headerPart_selledBlock_text}>
-                                Продавай скины выгодно.
+                                Продавай скины выгодно.{t("")}
                             </p>
                         </div>
                         <h2 className={styles.faq_headerPart_mainText}>
-                            Как это работает?
+                            Как это работает?{t("")}
                         </h2>
                         <span className={styles.faq_headerPart_subText}>
-            Последнее обновление гайда: 08.08.2023
+            Последнее обновление гайда: 08.08.2023{t("")}
             </span>
                         <hr className={styles.faq_headerPart_line}/>
                     </div>
@@ -31,11 +33,11 @@ export function How() {
                      01.
                      </span>
                                     <p className={styles.how_mainPart_subItem_mainText}>
-                                        Регистрация
+                                        Регистрация{t("")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
                      Авторизуйтесь на сайте, используя вашу
-                     учетную запись Steam
+                     учетную запись Steam{t("")}
                      </span>
                                 </div>
                             </li>
@@ -48,11 +50,11 @@ export function How() {
                      02.
                      </span>
                                     <p className={styles.how_mainPart_subItem_mainText}>
-                                        Укажите трейд-ссылку
+                                        Укажите трейд-ссылку{t("")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
                      Укажите Trade URL и выберите скины,
-                     которые хотите продать.
+                     которые хотите продать.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -63,11 +65,11 @@ export function How() {
                03.
                </span>
                                     <p className={styles.how_mainPart_subItem_mainText}>
-                                        Выберите платежку
+                                        Выберите платежку{t("")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
                Выберите удобную платежную систему,
-               укажите реквизиты и готово!
+               укажите реквизиты и готово!{t("")}
                </span>
                                 </div>
                             </li>
@@ -78,11 +80,11 @@ export function How() {
          04.
          </span>
                                     <p className={styles.how_mainPart_subItem_mainText}>
-                                        Продайте свои скины
+                                        Продайте свои скины{t("")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
          Передайте скины трейд-боту и ожидайте
-         зачисления средств.
+         зачисления средств.{t("")}
          </span>
                                 </div>
                             </li>
@@ -99,15 +101,15 @@ export function How() {
             </span>
                         </div>
                         <h2 className={styles.how_register_subBlock_mainText}>
-                            Регистрация аккаунта
+                            Регистрация аккаунта{t("")}
                         </h2>
                         <p className={styles.how_register_subBlock_subTitle}>
-                            Какой-то подзаголовок?
+                            Какой-то подзаголовок?{t("")}
                         </p>
                         <span className={styles.how_register_subBlock_subText}>
          Это очень просто! Нажмите на кнопку “Войти через
          Steam” и используя учетную запись Steam, в которой
-         находятся ваши скины CS:GO авторизуйтесь сайте.
+         находятся ваши скины CS:GO авторизуйтесь сайте.{t("")}
          <br/>
          <br/>
          После нажатия на кнопку авторизации Вы будете
@@ -115,14 +117,14 @@ export function How() {
          систему через Вашу учетную запись Steam. Убедитесь,
          что домен авторизации на сайте Steam соответствует
          домену avan.market. У нас много поддельников, не
-         позволяйте обманывать себя.
+         позволяйте обманывать себя.{t("")}
          </span>
                         <Image src="/howTo_image.webp" width={1232} height={433} alt="HowToImage" className={styles.howTo_image}/>
                         <Image src="/howTo_mobile.webp" width={335} height={117} alt="HowToMobile" className={styles.howTo_image_mobile}/>
                         <span className={`${styles.how_register_subBlock_subText} ${styles.how_register_subBlock_scndSubText}`}>
          Это очень просто! Нажмите на кнопку “Войти через
          Steam” и используя учетную запись Steam, в которой
-         находятся ваши скины CS:GO авторизуйтесь сайте.
+         находятся ваши скины CS:GO авторизуйтесь сайте.{t("")}
          <br/>
          <br/>
          После нажатия на кнопку авторизации Вы будете
@@ -130,7 +132,7 @@ export function How() {
          систему через Вашу учетную запись Steam. Убедитесь,
          что домен авторизации на сайте Steam соответствует
          домену avan.market. У нас много поддельников, не
-         позволяйте обманывать себя.
+         позволяйте обманывать себя.{t("")}
          </span>
                     </div>
                     <div className={styles.how_register_subBlock}>
@@ -140,15 +142,15 @@ export function How() {
             </span>
                         </div>
                         <h2 className={styles.how_register_subBlock_mainText}>
-                            Укажите трейд-ссылку
+                            Укажите трейд-ссылку{t("")}
                         </h2>
                         <p className={styles.how_register_subBlock_subTitle}>
-                            Какой-то подзаголовок?
+                            Какой-то подзаголовок?{t("")}
                         </p>
                         <span className={styles.how_register_subBlock_subText}>
          Это очень просто! Нажмите на кнопку “Войти через
          Steam” и используя учетную запись Steam, в которой
-         находятся ваши скины CS:GO авторизуйтесь сайте.
+         находятся ваши скины CS:GO авторизуйтесь сайте.{t("")}
          <br/>
          <br/>
          После нажатия на кнопку авторизации Вы будете
@@ -156,14 +158,14 @@ export function How() {
          систему через Вашу учетную запись Steam. Убедитесь,
          что домен авторизации на сайте Steam соответствует
          домену avan.market. У нас много поддельников, не
-         позволяйте обманывать себя.
+         позволяйте обманывать себя.{t("")}
          </span>
                         <Image src="/howTo_2_image.webp" width={992} height={433} alt="HowTo2" className={styles.howTo_image}/>
                         <Image src="/howTo_2_mobile.webp" width={335} height={147} alt="HowTo2Mobile" className={styles.howTo_image_mobile}/>
                         <span className={`${styles.how_register_subBlock_subText} ${styles.how_register_subBlock_scndSubText}`}>
          Это очень просто! Нажмите на кнопку “Войти через
          Steam” и используя учетную запись Steam, в которой
-         находятся ваши скины CS:GO авторизуйтесь сайте.
+         находятся ваши скины CS:GO авторизуйтесь сайте.{t("")}
          <br/>
          <br/>
          После нажатия на кнопку авторизации Вы будете
@@ -171,7 +173,7 @@ export function How() {
          систему через Вашу учетную запись Steam. Убедитесь,
          что домен авторизации на сайте Steam соответствует
          домену avan.market. У нас много поддельников, не
-         позволяйте обманывать себя.
+         позволяйте обманывать себя.{t("")}
          </span>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import styles from "@/layout/screens/notFound/styles/notFound.module.css";
+import {useTranslations} from "next-intl";
 
 const ErrorIllustration = () => {
     return (
@@ -15,6 +16,7 @@ const ErrorIllustration = () => {
 };
 
 export function NotFound() {
+  const t = useTranslations()
   return (
       <main className={styles.body}>
           <ErrorIllustration/>
@@ -23,7 +25,7 @@ export function NotFound() {
               <p>Page not found</p>
               <div className={styles.buttonsCon}>
                   <div className={styles.actionLinkWrap}>
-                      <a href="/" className={styles.linkButton}>Домой</a>
+                      <a href="/" className={styles.linkButton}>{t("")}Домой</a>
                   </div>
               </div>
           </section>

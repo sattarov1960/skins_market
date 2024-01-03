@@ -12,18 +12,18 @@ export function Faq() {
                     <div className={styles.faq_headerPart_selledBlock}>
                         <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>
                         <p className={styles.faq_headerPart_selledBlock_text}>
-                            12.000+ предметов продано
+                            12.000+ предметов продано{t("")}
                         </p>
                     </div>
                     <h2 className={styles.faq_headerPart_mainText}>
-                        Часто задаваемые вопросы
+                        Часто задаваемые вопросы{t("")}
                     </h2>
                     <span className={styles.faq_headerPart_subText}>
-            Остались еще вопросы? Свяжитесь с нашей
+            Остались еще вопросы? Свяжитесь с нашей{t("")}
             <span className={styles.faq_headerPart_subTextSpecial}>
             поддержкой
             </span>
-            , они обязательно помогут!
+            , они обязательно помогут!{t("")}
             </span>
                     <hr className={styles.faq_headerPart_line}/>
                 </div>
@@ -34,7 +34,7 @@ export function Faq() {
                                 <input checked={false} className={styles.faq_mainPart_item_input} id="faq_item_1" name="faq_item_input" type="radio"/>
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_1">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
-                                        Какой график работы вашего сервиса?
+                                        Какой график работы вашего сервиса?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -51,7 +51,7 @@ export function Faq() {
                      Конечная стоимость обмена
                      формируется исходя из средних
                      показателей продаж на торговой
-                     площадке Steam.
+                     площадке Steam.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -76,7 +76,7 @@ export function Faq() {
                      Конечная стоимость обмена
                      формируется исходя из средних
                      показателей продаж на торговой
-                     площадке Steam.
+                     площадке Steam.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -85,7 +85,7 @@ export function Faq() {
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_3">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
                                         По какому курсу осуществляется
-                                        выплата в крипте?
+                                        выплата в крипте?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -102,7 +102,7 @@ export function Faq() {
                         Конечная стоимость обмена
                         формируется исходя из средних
                         показателей продаж на торговой
-                        площадке Steam.
+                        площадке Steam.{t("")}
                         </span>
                                 </div>
                             </li>
@@ -110,7 +110,7 @@ export function Faq() {
                                 <input className={styles.faq_mainPart_item_input} id="faq_item_4" name="faq_item_input" type="radio"/>
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_4">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
-                                        Почему я могу Вам доверять?
+                                        Почему я могу Вам доверять?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -127,7 +127,7 @@ export function Faq() {
                      Конечная стоимость обмена
                      формируется исходя из средних
                      показателей продаж на торговой
-                     площадке Steam.
+                     площадке Steam.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -138,7 +138,7 @@ export function Faq() {
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_5">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
                                         Как работает функция «Проверка на
-                                        Оверпрайс»?
+                                        Оверпрайс»?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -155,7 +155,7 @@ export function Faq() {
                      Конечная стоимость обмена
                      формируется исходя из средних
                      показателей продаж на торговой
-                     площадке Steam.
+                     площадке Steam.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -163,7 +163,7 @@ export function Faq() {
                                 <input className={styles.faq_mainPart_item_input} id="faq_item_6" name="faq_item_input" type="radio"/>
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_6">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
-                                        Какую комиссию вы берете за обмены?
+                                        Какую комиссию вы берете за обмены?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -180,7 +180,7 @@ export function Faq() {
                      Конечная стоимость обмена
                      формируется исходя из средних
                      показателей продаж на торговой
-                     площадке Steam.
+                     площадке Steam.{t("")}
                      </span>
                                 </div>
                             </li>
@@ -189,7 +189,7 @@ export function Faq() {
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_7">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
                                         По какому курсу осуществляется
-                                        выплата в крипте?
+                                        выплата в крипте?{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -206,7 +206,7 @@ export function Faq() {
                         Конечная стоимость обмена
                         формируется исходя из средних
                         показателей продаж на торговой
-                        площадке Steam.
+                        площадке Steam.{t("")}
                         </span>
                                 </div>
                             </li>
@@ -214,7 +214,7 @@ export function Faq() {
                                 <input className={styles.faq_mainPart_item_input} id="faq_item_8" name="faq_item_input" type="radio"/>
                                 <label className={styles.faq_mainPart_item_headerPart} form="faq_item_8">
                                     <p className={styles.faq_mainPart_item_headerPart_text}>
-                                        Прохождение верификации на сервисе
+                                        Прохождение верификации на сервисе{t("")}
                                     </p>
                                     <Image src="/plus_icon.svg" width={24} height={24} alt="плюс" className={styles.plus_icon}/>
                                 </label>
@@ -231,7 +231,7 @@ export function Faq() {
                         Конечная стоимость обмена
                         формируется исходя из средних
                         показателей продаж на торговой
-                        площадке Steam.
+                        площадке Steam.{t("")}
                         </span>
                                 </div>
                             </li>

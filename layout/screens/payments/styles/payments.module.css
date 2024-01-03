@@ -54,6 +54,18 @@
 }
 .profile_rightPart {
     @apply w-[335px] sm:w-[1164px] h-[441px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px];
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(50px);
 }
 .profile_rightPart_mainText {
     @apply text-[24px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase;
