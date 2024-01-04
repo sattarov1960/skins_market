@@ -1,10 +1,14 @@
+"use client"
 import styles from "@/layout/screens/payments/styles/payments.module.css"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {AsideCabinet} from "@/layout/components/asideCabinet/asideCabinet";
+import {useState} from "react";
+import {CardsMenu} from "@/layout/screens/payments/CardsMenu";
 
 export function Payments() {
     const t = useTranslations()
+    const [isOpenCards, setIsOpenCards] = useState(false)
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -18,7 +22,7 @@ export function Payments() {
                         </h2>
                         <div className={styles.profile_rightPart_mainForm}>
                             <div className={styles.profile_rightPart_socialNetworks}>
-                                <div>
+                                <div className={styles.cards_item_wrap}>
                                     <p className={styles.profile_rightPart_socialNetworks_mainText}>
                                         {t("Банковские карты")}
                                     </p>
@@ -29,8 +33,9 @@ export function Payments() {
                                         <input className={styles.profile_rightPart_socialNetworks_input}
                                                placeholder="4141 0000 1234 3274" type="text"/>
                                         <Image src="/mini_arrow_bot.svg" width={8} height={8} alt="Arrow"
-                                               className={styles.profile_rightPart_socialNetworks_inputBlock_icon}/>
+                                               className={styles.profile_rightPart_socialNetworks_inputBlock_icon} onClick={() => setIsOpenCards(!isOpenCards)}/>
                                     </div>
+                                    {isOpenCards && <CardsMenu/>}
                                 </div>
                                 <div>
                                     <p className={styles.profile_rightPart_socialNetworks_mainText}>

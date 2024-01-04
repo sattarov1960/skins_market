@@ -5,6 +5,7 @@ import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
 import {YandexMetrika} from "@/layout/components/yandex_metrika/metrika";
 import {TopWrap} from "@/layout/wrap/topWrap";
+import { ToastContainer } from 'react-toastify';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'ru'}];
@@ -33,6 +34,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
                 </TopWrap>
             </NextIntlClientProvider>
             <YandexMetrika/>
+            <ToastContainer />
         </body>
         </html>
     );
