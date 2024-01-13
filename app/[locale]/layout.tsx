@@ -6,6 +6,7 @@ import {getMeta} from "@/utilities/meta";
 import {YandexMetrika} from "@/layout/components/yandex_metrika/metrika";
 import {TopWrap} from "@/layout/wrap/topWrap";
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'ru'}];

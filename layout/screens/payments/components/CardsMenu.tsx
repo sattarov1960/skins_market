@@ -1,3 +1,5 @@
+"use client"
+
 import styles from "@/layout/screens/payments/styles/payments.module.css"
 import Image from "next/image"
 import cardIcon from "@/public/card_icon.svg"
@@ -7,6 +9,8 @@ import {useTranslations} from "next-intl";
 import Link from "next/link"
 import axios from "axios";
 import {toast} from "react-toastify";
+import {useEffect} from "react";
+import {usePaymentsStore} from "@/storage/client/payments";
 
 
 interface CardProps {
@@ -16,6 +20,8 @@ interface CardProps {
 
 const Card = ({ pan, img }: CardProps) => {
     const t = useTranslations()
+    const paymentStore = usePaymentsStore()
+
     const deleteCard = async () => {
         const toastId = toast(t("Удаляем карту"), {
             position: "bottom-right",
@@ -38,6 +44,7 @@ const Card = ({ pan, img }: CardProps) => {
                     isLoading: false,
                     autoClose: 5000
                 });
+                paymentStore.delCard(pan)
             }
             else{
                 toast.update(toastId, {
@@ -68,7 +75,7 @@ const Card = ({ pan, img }: CardProps) => {
                         height={24}
                         className={styles.card_icon}
                     />
-                    <p className={styles.accordion_cards_item_leftPart_text}>{pan}</p>
+                    <p className={styles.accordion_cards_item_leftPart_text} onClick={() => paymentStore.setActiveCard({pan: pan, img: img})}>{pan}</p>
                     <Image
                         src={img}
                         alt="card provider"
@@ -94,28 +101,12 @@ const Card = ({ pan, img }: CardProps) => {
 
 export const CardsMenu = () => {
     const t = useTranslations()
-    const cards = [
-        {
-            pan: "4141 0000 1234 3274",
-            img: "/visa_icon.svg",
-        },
-        {
-            pan: "4141 0000 1234 3274",
-            img: "/mastercard_icon.svg",
-        },
-        {
-            pan: "4141 0000 1234 3274",
-            img: "/mastercard_icon.svg",
-        },
-    ];
-    const addCard = () => {
-        console.log("add card")
-    }
+    const paymentStore = usePaymentsStore()
     return (
             <div className={styles.accordion_cards_itemsBlock}>
                 <ul>
                     {
-                        cards.map((card, index) => (
+                        paymentStore.cards.map((card, index) => (
                             <Card key={index} pan={card.pan} img={card.img} />
                         ))
                     }

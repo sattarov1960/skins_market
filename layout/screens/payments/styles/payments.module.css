@@ -89,7 +89,7 @@
     @apply mt-[16px] flex items-center justify-between relative;
 }
 .profile_rightPart_socialNetworks_input {
-    @apply w-[287px] sm:w-[335px] md:w-[508px] h-[52px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
+    @apply flex items-center cursor-pointer w-[287px] sm:w-[335px] md:w-[508px] h-[52px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
 }
 .profile_rightPart_socialNetworks_inputBlock_icon {
     @apply cursor-pointer w-[14px] h-[14px] absolute right-[20px] sm:right-[24px];
@@ -119,7 +119,7 @@
     @apply w-[14px] h-[14px] absolute right-[24px] sm:right-[20px] duration-100;
 }
 .accordion_cards_itemsBlock {
-    @apply w-[287px] sm:w-[335px] md:w-[508px] absolute bottom-[-230px] z-50 mt-[6px] bg-[#191927] rounded-[12px] px-[16px] pt-[12px] pb-[15px];
+    @apply w-[287px] sm:w-[335px] md:w-[508px] absolute top-[56px] z-50 mt-[6px] bg-[#191927] rounded-[12px] px-[16px] pt-[12px] pb-[15px];
 }
 .accordion_cards_ul {
     @apply flex flex-col;
@@ -134,7 +134,7 @@
     @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px];
 }
 .accordion_cards_item_leftPart_text {
-    @apply hover:text-white duration-150 text-[15px] md:text-[18px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[21px] ml-[8px];
+    @apply hover:text-white cursor-pointer duration-150 text-[15px] md:text-[18px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[21px] ml-[8px];
 }
 .paymentSystem_icon {
     @apply ml-[8px] md:ml-[16px];
