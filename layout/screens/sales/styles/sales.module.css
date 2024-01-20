@@ -1,0 +1,159 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply /*bg-none xl:*/bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.profile_rightPart_mainBlockNothing_img_wrap{
+    @apply w-full flex flex-col items-center mt-[160px] gap-y-[30px]
+}
+.profile_rightPart_mainBlockNothing{
+    @apply text-[#8A89A4] text-center text-[24px] font-medium leading-[27px]
+}
+.profile {
+    @apply py-[70px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+}
+.smoke_profile {
+    @apply absolute -bottom-[50px] -left-[140px];
+}
+.profile_leftPart_headerBlock {
+    @apply flex items-center w-[335px] lg:w-[446px] h-[124px] lg:h-[168px] rounded-[16px] py-[30px] lg:py-[40px] px-[30px] lg:px-[36px];
+}
+.peopleAvatar_profile {
+    @apply w-[64px] lg:w-[88px] h-[64px] lg:h-[88px];
+}
+.profile_leftPart_sub_headerBlock {
+    @apply ml-[16px] lg:ml-[24px];
+}
+.profile_leftPart_sub_headerBlock_nameText {
+    @apply text-[18px] lg:text-[22px] text-[#FFFFFF] font-[600] leading-[20px] lg:leading-[24px];
+}
+.profile_leftPart_sub_headerBlock_priceText {
+    @apply text-[16px] lg:text-[18px] text-[#FDCA76] font-[600] leading-[18px] lg:leading-[20px] tracking-[0.18px] block mt-[6px] lg:mt-[9px];
+}
+.profile_leftPart_sub_headerBlock_login {
+    @apply ml-[20px] lg:ml-[48px] w-[32px] lg:w-[54px] h-[30px] lg:h-[50px] bg-[#22223680] rounded-[7.1px] lg:rounded-[12px] flex items-center justify-center;
+}
+.login_icon {
+    @apply w-[16px] lg:w-[27px] h-[13.2px] lg:h-[22px];
+}
+.profile_leftPart_mainBlock {
+    @apply mt-[30px] px-[24px] rounded-[16px] pt-[30px] w-[335px] lg:w-[446px] h-[316px] lg:h-[300px];
+}
+.profile_leftPart_mainBlock_item {
+    @apply flex items-center ml-[24px] mt-[28px] lg:mt-[24px];
+}
+.profile_leftPart_mainBlock_frstItem {
+    @apply mt-[12px];
+}
+.profile_leftPart_mainBlock_item_text {
+    @apply text-[18px] text-[#8A89A4] font-[600] leading-[20px] ml-[14px];
+}
+.profile_leftPart_mainBlock_item_active {
+    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0 mt-[12px];
+}
+.profile_leftPart_mainBlock_item_text_active {
+    @apply text-[#EBEFFD];
+}
+.profile_leftPart_mainBlock_fifthItem {
+    @apply mt-[16px] lg:mt-[12px];
+}
+.profile_rightPart {
+    @apply w-full lg:w-[1164px] h-[726px] lg:h-[635px] rounded-[16px] pl-[20px] pr-[12px] lg:pl-[56px] lg:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0;
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(50px);
+}
+.profile_rightPart_mainText {
+    @apply text-[24px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase;
+}
+.profile_rightPart_mainBlock {
+    @apply mt-[35px] lg:mt-[50px] max-h-[594px] lg:max-h-[460px] overflow-y-scroll pr-[8px] lg:pr-[16px];
+}
+.profile_rightPart_mainBlock_table {
+    @apply hidden lg:table table-auto w-full;
+}
+.profile_rightPart_mainBlock_table_body_subItem {
+    @apply row-span-1 rounded-t-[12px] rounded-b-[12px] rounded-l-none rounded-r-none;
+}
+.profile_rightPart_mainBlock_table_body_subFrstItem {
+    @apply rounded-t-[12px] rounded-b-[12px] rounded-l-[12px] rounded-r-none pl-[39px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_text {
+    @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px] uppercase;
+}
+.profile_rightPart_mainBlock_table_body_subItem_sumBlock {
+    @apply w-[87px] h-[32px] rounded-[8px] border-[1px] border-[#8A89A41A] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_paymentMethodBlock {
+    @apply px-[12px] py-[8px] w-max rounded-[8px] border-[1px] border-[#8A89A41A] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_paymentMethodBlock_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_statusBlock {
+    @apply rounded-[8px] w-[80px] h-[32px] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_statusBlock_text {
+    @apply text-[14px] font-[500] leading-[16px];
+}
+.profile_rightPart_mainBlock_table_body_subLastItem {
+    @apply rounded-t-[12px] rounded-b-[12px] rounded-r-[12px] rounded-l-none w-[75px] pr-[37px];
+}
+.profile_rightPart_mainBlock_table_body_stubItem {
+    @apply h-[8px];
+}
+.profile_rightPart_mainBlock_mobilePart {
+    @apply block lg:hidden;
+}
+.profile_rightPart_mainBlock_mobilePart_item_header {
+    @apply flex items-center justify-between;
+}
+.profile_rightPart_mainBlock_mobilePart_item_header_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_header_paymentBlock {
+    @apply border-[1px] border-[#8A89A41A] rounded-[8px] px-[12px] py-[8px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer {
+    @apply flex items-center justify-between mt-[23px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_priceBlock {
+    @apply border-[1px] border-[#8A89A41A] rounded-[8px] px-[17px] py-[6px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_priceBlock_text {
+    @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_statusBlock {
+    @apply text-[14px] text-[#8AF59B] font-[500] leading-[16px];
+}
+.profile_rightPart_mainBlock_table_header_item {
+    @apply col-span-1 text-start text-[18px] text-[#8A89A4] font-[500] leading-[21px] pb-[20px];
+}
+.profile_rightPart_mainBlock_table_body_item {
+    @apply h-[63px] bg-[#22223680];
+}
+.profile_rightPart_mainBlock_table_body_subItem_skins {
+    @apply w-[270px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_skinsBlock {
+    @apply flex items-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_statusBlock_success{
+    @apply bg-[#222C31] text-[#8AF59B]
+}
+.profile_rightPart_mainBlock_table_body_subItem_statusBlock_pending{
+    @apply bg-[#F5C48A17] text-[#F5C48A]
+}
+.profile_rightPart_mainBlock_table_body_subItem_statusBlock_error{
+    @apply bg-[#2D232F] text-[#F58A8A]
+}

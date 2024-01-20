@@ -17,7 +17,7 @@
     @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] mt-[24px] opacity-75 max-w-[260px] sm:max-w-none;
 }
 .contactInformation_leftPart_subText_special {
-    @apply underline underline-offset-4;
+    @apply underline underline-offset-4 ml-[6px];
 }
 .contactInformation_leftPart_socialNetworks {
     @apply mt-[60px] lg:mt-[71px];
@@ -62,7 +62,7 @@
     @apply mt-[40px];
 }
 .contactInformation_rightPart_headerForms {
-    @apply flex items-center justify-between flex-wrap;
+    @apply flex items-center justify-between flex-wrap gap-x-[33px];
 }
 .contactInformation_rightPart_headerForm_text {
     @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px];

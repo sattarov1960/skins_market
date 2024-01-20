@@ -1,0 +1,210 @@
+.main {
+    @apply pl-[140px] overflow-hidden;
+}
+.basic_part {
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+}
+.profile {
+    @apply pt-[70px] pb-[125px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+}
+.smoke_profile {
+    @apply absolute -bottom-[50px] -left-[140px];
+}
+.profile_rightPart {
+    @apply w-full xl:w-[1164px] h-[815px] xl:h-[635px] rounded-[16px] pl-[20px] pr-[20px] xl:pl-[56px] xl:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0;
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(50px);
+}
+.profile_rightPart_headerBlock {
+    @apply flex items-center justify-between flex-wrap;
+}
+.profile_rightPart_headerBlock_mainText {
+    @apply text-[24px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase;
+}
+.profile_rightPart_headerBlock_info {
+    @apply flex items-center flex-wrap;
+}
+.profile_rightPart_headerBlock_info_item {
+    @apply flex items-center justify-center bg-[#22223680] rounded-[12px] px-[24px] py-[12px] w-[286px];
+}
+.profile_rightPart_headerBlock_info_item_icon {
+    @apply w-[19px] h-[19px];
+}
+.profile_rightPart_headerBlock_info_item_text {
+    @apply text-[18px] text-[#EBEFFD] font-[500] leading-[19px] ml-[8px];
+}
+.profile_rightPart_headerBlock_info_scndItem {
+    @apply ml-[16px] w-[147px] cursor-pointer;
+}
+.profile_rightPart_headerBlock_info_item_textYellow {
+    @apply text-[#FDCA76];
+}
+.profile_rightPart_sub_headerBlock {
+    @apply flex items-center justify-between flex-wrap mt-[36px];
+}
+.profile_rightPart_sub_headerBlock_leftInfo {
+    @apply w-[391px];
+}
+.profile_rightPart_sub_headerBlock_leftInfo_item {
+    @apply flex items-center justify-between bg-[#22223680] rounded-[12px] px-[24px] h-[50px];
+}
+.profile_rightPart_sub_headerBlock_leftInfo_subItem {
+    @apply flex items-center;
+}
+.profile_rightPart_sub_headerBlock_leftInfo_item_text {
+    @apply text-[14px] md:text-[16px] text-[#8A89A4] font-[500] leading-[16px] md:leading-[19px];
+}
+.profile_rightPart_sub_headerBlock_leftInfo_subItem_line {
+    @apply h-[50px] w-[1px] bg-[#8A89A44D] border-none mx-[16px] -my-[10px];
+}
+.profile_rightPart_sub_headerBlock_leftInfo_item_textBold {
+    @apply font-[700];
+}
+.copy_icon {
+    @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px] cursor-pointer;
+}
+.profile_rightPart_sub_headerBlock_leftInfo_scndItem {
+    @apply mt-[9px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo {
+    @apply flex items-center;
+}
+.profile_rightPart_sub_headerBlock_rightInfo_item {
+    @apply bg-[#22223680] rounded-[12px] h-[110px] pt-[20px] pb-[16px] text-center ml-[8px] md:ml-[16px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo_frstItem {
+    @apply w-[107px] md:w-[185px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo_item_icon {
+    @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px] mx-auto;
+}
+.profile_rightPart_sub_headerBlock_rightInfo_item_mainText {
+    @apply text-[13px] md:text-[16px] text-[#EBEFFD] font-[700] leading-[17px] md:leading-[19px] mt-[12px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo_item_subText {
+    @apply text-[12px] md:text-[14px] text-[#8A89A4] font-[500] leading-[14px] md:leading-[16px] uppercase mt-[4px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo_scndItem {
+    @apply w-[105px] md:w-[190px];
+}
+.profile_rightPart_sub_headerBlock_rightInfo_thrdItem {
+    @apply w-[111px] md:w-[230px];
+}
+.profile_rightPart_mainBlock {
+    @apply mt-[36px] max-h-[518px] xl:max-h-[362px] overflow-y-scroll pr-[8px] lg:pr-[16px];
+}
+.profile_rightPart_mainBlock_table {
+    @apply hidden xl:table table-auto w-full;
+}
+.profile_rightPart_mainBlock_table_body_subItem {
+    @apply row-span-1 rounded-t-[12px] rounded-b-[12px] rounded-l-none rounded-r-none;
+}
+.profile_rightPart_mainBlock_table_body_subFrstItem {
+    @apply rounded-t-[12px] rounded-b-[12px] rounded-l-[12px] rounded-r-none pl-[39px] w-[10%];
+}
+.profile_avatar_icon{
+    @apply cursor-pointer rounded-full
+}
+.profile_rightPart_mainBlock_table_body_subItem_text {
+    @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px] ml-[12px];
+}
+.profile_rightPart_mainBlock_table_body_subScndItem {
+    @apply w-[16%];
+}
+.profile_rightPart_mainBlock_table_body_subItem_avatarBlock {
+    @apply flex items-center justify-start;
+}
+.profile_rightPart_mainBlock_table_body_subThrdItem {
+    @apply w-[20%];
+}
+.profile_rightPart_mainBlock_table_body_subItem_paymentMethodBlock {
+    @apply pl-[12px] pr-[16px] py-[7px] w-max rounded-[8px] border-[1px] border-[#8A89A41A] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_paymentMethodBlock_icon {
+    @apply w-[20px] h-[20px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_paymentMethodBlock_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px] ml-[8px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_date_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[16px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_exchangedBlock {
+    @apply bg-[#FDCA7617] rounded-[8px] w-[110px] h-[35px] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_exchangedBlock_text {
+    @apply text-[16px] text-[#FDCA76] font-[500] leading-[18px];
+}
+.profile_rightPart_mainBlock_table_body_subLastItem {
+    @apply rounded-t-[12px] rounded-b-[12px] rounded-r-[12px] rounded-l-none w-[75px] pr-[37px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_earnedBlock {
+    @apply bg-[#8AF59B17] rounded-[8px] w-[88px] h-[35px] flex items-center justify-center;
+}
+.profile_rightPart_mainBlock_table_body_subItem_earnedBlock_text {
+    @apply text-[16px] text-[#8AF59B] font-[500] leading-[18px];
+}
+.profile_rightPart_mainBlock_table_body_stubItem {
+    @apply h-[8px];
+}
+.profile_rightPart_mainBlock_mobilePart {
+    @apply block xl:hidden;
+}
+.profile_rightPart_mainBlock_mobilePart_item_header {
+    @apply flex items-center justify-between;
+}
+.profile_rightPart_mainBlock_mobilePart_item_header_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[16px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main {
+    @apply flex items-center justify-between mt-[14px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock {
+    @apply flex items-center;
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock_img {
+    @apply w-[32px] h-[32px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock_text {
+    @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px] ml-[5px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_steamIDBlock {
+    @apply flex items-center border-[1px] border-[#8A89A41A] rounded-[8px] pl-[12px] pr-[16px] h-[36px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_steamIDBlock_img {
+    @apply w-[20px] h-[20px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_steamIDBlock_text {
+    @apply text-[13px] text-[#EBEFFD] font-[500] leading-[15px] ml-[8px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_sub_exchangedBlock {
+    @apply bg-[#FDCA7617] rounded-[8px] py-[8px] mt-[4px] w-[110px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_sub_exchangedBlock_text {
+    @apply text-[16px] text-[#FDCA76] font-[500] leading-[19px] text-center;
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_sub_earnedBlock {
+    @apply bg-[#8AF59B17] rounded-[8px] py-[8px] mt-[4px] w-[88px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_footer_sub_earnedBlock_text {
+    @apply text-[16px] text-[#8AF59B] font-[500] leading-[19px] text-center;
+}
+.profile_rightPart_mainBlock_table_header_frstItem {
+    @apply pl-[39px];
+}
+.profile_rightPart_mainBlock_table_header_item {
+    @apply col-span-1 text-start text-[18px] text-[#8A89A4] font-[500] leading-[21px] pb-[20px];
+}
+.profile_rightPart_mainBlock_table_body_item {
+    @apply h-[63px] bg-[#22223680];
+}

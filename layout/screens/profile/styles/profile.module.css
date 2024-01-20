@@ -37,14 +37,11 @@
 .profile_leftPart_mainBlock_item {
     @apply flex items-center ml-[24px] mt-[28px] lg:mt-[24px];
 }
-.profile_leftPart_mainBlock_frstItem {
-    @apply mt-[12px];
+.profile_leftPart_mainBlock_item_active {
+    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0 mt-[16px] lg:mt-[12px];
 }
 .profile_leftPart_mainBlock_item_text {
     @apply text-[18px] text-[#8A89A4] font-[600] leading-[20px] ml-[14px];
-}
-.profile_leftPart_mainBlock_item_active {
-    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0 mt-[16px] lg:mt-[12px];
 }
 .profile_leftPart_mainBlock_item_text_active {
     @apply text-[#EBEFFD];
@@ -73,8 +70,32 @@
 .profile_rightPart_mainForm {
     @apply mt-[40px] sm:mt-[50px];
 }
-.cards_item_wrap{
-    @apply relative
+.profile_rightPart_mainForm_headerBlock {
+    @apply flex items-center;
+}
+.exchange_icon {
+    @apply w-[18px] h-[18px];
+}
+.profile_rightPart_mainForm_headerBlock_text {
+    @apply text-[18px] sm:text-[16px] text-[#EBEFFD] font-[700] leading-[22px] uppercase ml-[6px];
+}
+.profile_rightPart_mainForm_headerBlock_subItem {
+    @apply w-[84px] h-[27px] flex items-center justify-center bg-[#6D5D3E] rounded-[6px] ml-[14px];
+}
+.profile_rightPart_mainForm_headerBlock_subItem_text {
+    @apply text-[12px] text-[#FFFFFF] font-[600] leading-[16px] uppercase;
+}
+.profile_rightPart_mainForm_inputBlock {
+    @apply mt-[18px] flex items-center justify-between;
+}
+.profile_rightPart_mainForm_input {
+    @apply w-full h-[51px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
+}
+.profile_rightPart_mainForm_inputBlock_btn {
+    @apply hidden sm:block w-[164px] h-[56px] bg-[#FDCA76] rounded-[10px] text-[14px] text-black font-[600] leading-[17px] uppercase ml-[28px];
+}
+.profile_rightPart_line {
+    @apply w-full h-[1px] bg-[#8A89A44D] border-none my-[40px] sm:my-[36px];
 }
 .profile_rightPart_socialNetworks {
     @apply flex items-start justify-between flex-wrap;
@@ -89,74 +110,14 @@
     @apply mt-[16px] flex items-center justify-between relative;
 }
 .profile_rightPart_socialNetworks_input {
-    @apply flex items-center cursor-pointer w-[287px] sm:w-[335px] md:w-[508px] h-[52px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
+    @apply w-[287px] sm:w-[335px] md:w-[508px] h-[52px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
 }
-.profile_rightPart_socialNetworks_inputBlock_icon {
-    @apply cursor-pointer w-[14px] h-[14px] absolute right-[20px] sm:right-[24px];
+.edit_icon {
+    @apply w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
 }
 .tickCircle_icon {
     @apply cursor-pointer w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
 }
 .addCircle_icon {
     @apply cursor-pointer w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
-}
-.edit_icon {
-    @apply w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] absolute right-[20px] sm:right-[24px];
-}
-.accordion_cards {
-    @apply mt-[62px];
-}
-.accordion_input {
-    @apply hidden;
-}
-.accordion_label {
-    @apply absolute h-[51px] sm:h-[56px] w-[287px] sm:w-[335px] md:w-[508px] cursor-pointer z-10;
-}
-.accordion_cards_inputBlock {
-    @apply flex items-center justify-between relative;
-}
-.accordion_cards_input {
-    @apply bg-[#22223680] rounded-[12px] px-[20px] text-[18px] text-[#8A89A4] font-[500] leading-[21px] h-[51px] sm:h-[57px] w-[287px] sm:w-[335px] md:w-[508px];
-}
-.arrow_top_icon {
-    @apply w-[14px] h-[14px] absolute right-[24px] sm:right-[20px] duration-100;
-}
-.accordion_cards_itemsBlock {
-    @apply w-[287px] sm:w-[335px] md:w-[508px] absolute top-[56px] z-50 mt-[6px] bg-[#191927] rounded-[12px] px-[16px] pt-[12px] pb-[15px];
-}
-.accordion_cards_ul {
-    @apply flex flex-col;
-}
-.accordion_cards_item {
-    @apply flex items-center justify-between;
-}
-.accordion_cards_item_leftPart {
-    @apply flex items-center;
-}
-.card_icon {
-    @apply w-[20px] md:w-[24px] h-[20px] md:h-[24px];
-}
-.accordion_cards_item_leftPart_text {
-    @apply hover:text-white cursor-pointer duration-150 text-[15px] md:text-[18px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[21px] ml-[8px];
-}
-.paymentSystem_icon {
-    @apply ml-[8px] md:ml-[16px];
-}
-.paymentSystem_icon_visa {
-    @apply w-[43px] sm:w-auto h-[20px] md:h-auto;
-}
-.closeCircle_icon {
-    @apply cursor-pointer w-[20px] md:w-[24px] h-[20px] md:h-[24px];
-}
-.accordion_cards_items_line {
-    @apply my-[12px] md:my-[16px] border-none h-[0.75px] bg-[#8A89A41A];
-}
-.paymentSystem_icon_mastercard {
-    @apply w-[30px] md:w-auto h-[19px] sm:h-auto;
-}
-.cardAdd_icon {
-    @apply w-[24px] h-[24px];
-}
-.accordion_cards_item_leftPart_subText {
-    @apply hover:text-white duration-150 text-[15px] md:text-[16px] text-[#8A89A4] font-[500] leading-[18px] md:leading-[19px] block ml-[8px];
 }

@@ -20,10 +20,11 @@ export const metadata: Metadata = getMeta("Главная",
 export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactChild, params: { locale: string } }) {
     let messages;
     try {
-        messages = (await import(`../../messages/${locale}.json`)).default;
+        if (locale !== "_next"){
+            messages = (await import(`../../messages/${locale}.json`)).default;
+        }
     } catch (error) {
-        alert("Сообщения [messages] не найдены")
-        notFound();
+        console.log("Не нашел сообщения для локали", locale)
     }
 
     return (
