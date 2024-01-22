@@ -2,16 +2,9 @@ import styles from "@/layout/screens/referrals/styles/referrals.module.css";
 import Image from "next/image";
 import {RefTableItemI} from "@/interface/components/refTableItem";
 import Link from "next/link";
+import {formatCurrency} from "@/utilities/formatCyrrency";
 
 export const RefTableItem = ({cost, id, earned, steamId, steamIcon, date, steamUserName}: RefTableItemI) => {
-    function formatCurrency(value: number) {
-        return new Intl.NumberFormat('ru-RU', {
-            style: 'decimal',
-            currency: 'RUB',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        }).format(value);
-    }
     return (
         <>
             <tr className={styles.profile_rightPart_mainBlock_table_body_item}>
@@ -50,7 +43,7 @@ export const RefTableItem = ({cost, id, earned, steamId, steamIcon, date, steamU
                     <div
                         className={styles.profile_rightPart_mainBlock_table_body_subItem_exchangedBlock}>
                         <p className={styles.profile_rightPart_mainBlock_table_body_subItem_exchangedBlock_text}>
-                            {formatCurrency(cost)} ₽
+                            {formatCurrency(cost)}
                         </p>
                     </div>
                 </td>
@@ -58,7 +51,7 @@ export const RefTableItem = ({cost, id, earned, steamId, steamIcon, date, steamU
                     <div
                         className={styles.profile_rightPart_mainBlock_table_body_subItem_earnedBlock}>
                         <p className={styles.profile_rightPart_mainBlock_table_body_subItem_earnedBlock_text}>
-                            {formatCurrency(earned)} ₽
+                            {formatCurrency(earned)}
                         </p>
                     </div>
                 </td>

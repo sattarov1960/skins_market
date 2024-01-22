@@ -48,16 +48,16 @@
     backdrop-filter: blur(50px);
 }
 .profile_leftPart_mainBlock_item {
-    @apply flex items-center ml-[24px] mt-[28px] lg:mt-[0px] lg:h-[48px] text-[#8A89A4] hover:text-[#EBEFFD];
+    @apply flex items-center ml-[24px] h-[48px] text-[#8A89A4] hover:text-[#EBEFFD];
 }
 .profile_leftPart_mainBlock_frstItem {
     @apply mt-[12px];
 }
 .profile_leftPart_mainBlock_item_text {
-    @apply text-[18px]  font-[600] leading-[20px] ml-[14px];
+    @apply text-[18px]  font-[600] leading-[20px] ml-[14px] whitespace-nowrap;
 }
 .profile_leftPart_mainBlock_item_active {
-    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0 mt-[16px] lg:mt-[0px];
+    @apply bg-[#22223680] h-[48px] px-[24px] rounded-[12px] ml-0;
     color: #EBEFFD !important;
 }
 .profile_leftPart_mainBlock_scndItem {

@@ -76,7 +76,7 @@ export const WithdrawItemMobile = ({date, payment, id, status, amount}: Withdraw
             break
     }
     return (
-        <li>
+        <li className={styles.profile_rightPart_mainBlock_mobilePart_wrap}>
             <div className={styles.profile_rightPart_mainBlock_mobilePart_item_header}>
                 <p className={styles.profile_rightPart_mainBlock_mobilePart_item_header_text}>
                     #{id}

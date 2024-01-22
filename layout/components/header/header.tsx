@@ -118,6 +118,7 @@ function Wallet() {
 export function Header() {
     const t = useTranslations()
     const pathname = usePathname()
+
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -158,7 +159,7 @@ export function Header() {
                 </div>
             </nav>
             <div className={styles.nav_rightBlock}>
-                <button className={styles.nav_rightBlock_button}>
+                <Link href={`${process.env.api}/login`} className={styles.nav_rightBlock_button}>
                     <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.steam_icon}/>
                     <p className={styles.nav_rightBlock_button_text}>
                         {t("Войти через Steam")}
@@ -166,7 +167,7 @@ export function Header() {
                     <p className={styles.nav_rightBlock_button_text_mobile}>
                         {t("Войти")}
                     </p>
-                </button>
+                </Link>
                 <Image src="/burgerMenu_icon.svg" width={24} height={24} alt="меню" className={styles.burgerMenu_icon}/>
             </div>
         </header>

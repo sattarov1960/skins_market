@@ -61,7 +61,8 @@ export function Footer() {
                 <hr className={styles.footer_line}/>
             </div>
             <div className={styles.footer_links}>
-                <div>
+                <Image src="/logo.svg" width={122} height={18} alt="лого" className={`${styles.footer_logo} ${styles.footer_logo_mobile}`}/>
+                <div className={styles.footer_nav_wrap}>
                     <ul className={styles.footer_links_leftBlock_items}>
                         <li className={`${styles.footer_links_leftBlock_item} ${styles.footer_links_leftBlock_frstItem}`}>
                             <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.footer_logo}/>
@@ -88,38 +89,44 @@ export function Footer() {
                         </div>
                     </ul>
                 </div>
-                <div>
+                <div className={styles.footer_nav_wrap}>
                     <ul className={styles.footer_links_rightBlock_items}>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_frstItem}`}>
-                            <Image src="/mastercard_icon.svg" width={39} height={24} alt="карта" className={styles.mastercard_icon}/>
+                            <Image src="/mastercard_icon.svg" width={39} height={24} alt="карта"
+                                   className={styles.mastercard_icon}/>
                         </li>
                         <li className={styles.footer_links_rightBlock_item}>
-                            <Image src="/visa_icon.svg" width={69} height={23} alt="карта" className={styles.visa_icon}/>
+                            <Image src="/visa_icon.svg" width={69} height={23} alt="карта"
+                                   className={styles.visa_icon}/>
                         </li>
                         <li className={styles.footer_links_rightBlock_item}>
-                            <Image src="/bitcoin_icon.svg" width={87} height={24} alt="биток" className={styles.bitcoin_icon}/>
+                            <Image src="/bitcoin_icon.svg" width={87} height={24} alt="биток"
+                                   className={styles.bitcoin_icon}/>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_specialItem}`}>
                             <hr className={styles.footer_links_rightBlock_item_line}/>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_frstItem}`}>
                             <a href="https://vk.com/tf2key">
-                                <Image src="/steam_footerIcon.svg" width={29} height={28} alt="стим" className={styles.steam_footerIcon}/>
+                                <Image src="/steam_footerIcon.svg" width={29} height={28} alt="стим"
+                                       className={styles.steam_footerIcon}/>
                             </a>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_socialNetworkItem}`}>
                             <a href="https://vk.com/tf2key">
-                                <Image src="/vk_footerIcon.svg" width={31} height={20} alt="вк" className={styles.vk_footerIcon}/>
+                                <Image src="/vk_footerIcon.svg" width={31} height={20} alt="вк"
+                                       className={styles.vk_footerIcon}/>
                             </a>
                         </li>
                         <li className={`${styles.footer_links_rightBlock_item} ${styles.footer_links_rightBlock_socialNetworkItem}`}>
                             <a href="https://t.me/MannCoSupplyCrateKey">
-                                <Image src="/tg_footerIcon.svg" width={25} height={24} alt="тг" className={styles.tg_footerIcon}/>
+                                <Image src="/tg_footerIcon.svg" width={25} height={24} alt="тг"
+                                       className={styles.tg_footerIcon}/>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </footer>
-        );
+    );
 }

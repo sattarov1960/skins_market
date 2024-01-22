@@ -6,8 +6,37 @@ import {AsideCabinet} from "@/layout/components/asideCabinet/asideCabinet";
 import {Table} from "@/layout/screens/sales/components/table";
 import {useSalesStore} from "@/storage/client/sales";
 import {Nothing} from "@/layout/screens/sales/components/nothing";
+import axios from "axios";
+import {toast} from "react-toastify";
+import {useTranslations} from "next-intl";
 export function Sales() {
     const salesStore = useSalesStore()
+    const t = useTranslations()
+    const loadSales = async () => {
+        try{
+            const resp = await axios.get(`${process.env.api}/`)
+            if (resp.data.status){
+
+            }
+            else{
+                toast.error(t("Ошибка при загрузке данных"), {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    isLoading: false,
+                })
+                console.log(`Ошибка при загрузке продаж пользователя: ${resp.data.error}`)
+            }
+        }
+        catch (e) {
+            console.log(`Ошибка при загрузке продаж пользователя: ${e}`)
+        }
+    }
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -19,9 +48,9 @@ export function Sales() {
                         <h2 className={styles.profile_rightPart_mainText}>
                             Ваши продажи
                         </h2>
-                        {salesStore.items.length ? <div className={styles.profile_rightPart_mainBlock}>
+                        {salesStore.items.length ?
                                 <Table/>
-                            </div> :
+                            :
                             <Nothing/>}
                     </div>
                 </div>

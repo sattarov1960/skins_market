@@ -1,6 +1,6 @@
-import {SalesItemI} from "@/interface/components/salesItem";
+import {SalesItemRowI} from "@/interface/components/salesItem";
 
 export interface SalesItemsI{
-    items: SalesItemI[]
-    setItems: (items: SalesItemI[]) => void
+    items: SalesItemRowI[]
+    setItems: (items: SalesItemRowI[]) => void
 }

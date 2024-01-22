@@ -13,7 +13,7 @@ export const Nothing = () => {
                 <p className={styles.profile_rightPart_mainBlockNothing}>Кажется, тут пока ничего
                     нет.</p>
                 <p className={styles.profile_rightPart_mainBlockNothing}>Пора сделать
-                    первую <u><Link href={`${process.env.current}/`}>продажу</Link></u>?</p>
+                    первую <u><Link href={`${process.env.current}/`} style={{color: "#EBEFFD"}}>продажу?</Link></u></p>
             </div>
         </div>
     )

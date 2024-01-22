@@ -1,6 +1,7 @@
 import styles from "@/layout/screens/partner/styles/partner.module.css"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import Link from "next/link";
 
 
 export function Partner() {
@@ -21,12 +22,12 @@ export function Partner() {
                         <p className={styles.partner_programm_rightPart_text}>
                             {t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}
                         </p>
-                        <button className={styles.partner_programm_rightPart_btn}>
+                        <Link href={`${process.env.api}/login`} className={styles.partner_programm_rightPart_btn}>
                             <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.partner_programm_rightPart_btn_steamIcon}/>
                             <p className={styles.partner_programm_rightPart_btn_text}>
                                 {t("Войти через Steam")}
                             </p>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.partner_programm_statistic}>
@@ -92,7 +93,7 @@ export function Partner() {
                                 {t("Партнерка")} avan.market
                             </p>
                             <h2 className={styles.partner_programm_instructions_leftPart_mainText}>
-                                 {t("У вас есть друзья,")}
+                                {t("У вас есть друзья,")}
                                 <p className={`${styles.partner_programm_instructions_leftPart_mainText} ${styles.partner_programm_instructions_leftPart_mainTextGray}`}>
                                     {t("которым вы хотите порекомендовать сделки")}
                                 </p>
@@ -101,14 +102,15 @@ export function Partner() {
                             <div className={styles.partner_programm_instructions_leftPart_footerBlock}>
                                 <hr className={styles.partner_programm_instructions_leftPart_footerBlock_line}/>
                                 <span className={styles.partner_programm_instructions_leftPart_footerBlock_text}>
-                  {t("Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!")} {t("Зарабатывайте от 1% до 3% за каждую сделку")}
-                  </span>
+                                    {t("Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!")} {t("Зарабатывайте от 1% до 3% за каждую сделку")}
+                                </span>
                             </div>
+                            <hr className={styles.partner_programm_instructions_sub_leftPart_line_mobile}/>
                         </div>
                         <hr className={styles.partner_programm_instructions_sub_leftPart_line}/>
                     </div>
                     <div>
-                        <ul>
+                        <ul className={styles.partner_programm_instructions_sub_rightPart_wrap}>
                             <li className={`${styles.partner_programm_instructions_rightPart_item} ${styles.partner_programm_instructions_rightPart_frstItem}`}>
                                 <div className={styles.partner_programm_instructions_rightPart_item_headerBlock}>
                                     <p className={styles.partner_programm_instructions_rightPart_item_headerBlock_numText}>
@@ -153,7 +155,5 @@ export function Partner() {
                 </div>
             </section>
         </main>
-
-
     );
 }

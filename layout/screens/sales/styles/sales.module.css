@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply lg:pl-[140px] lg:overflow-hidden;
 }
 .basic_part {
     @apply /*bg-none xl:*/bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -11,7 +11,7 @@
     @apply text-[#8A89A4] text-center text-[24px] font-medium leading-[27px]
 }
 .profile {
-    @apply py-[70px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+    @apply py-[70px] lg:py-[80px] flex justify-center lg:gap-x-[30px] flex-wrap relative;
 }
 .smoke_profile {
     @apply absolute -bottom-[50px] -left-[140px];
@@ -59,7 +59,7 @@
     @apply mt-[16px] lg:mt-[12px];
 }
 .profile_rightPart {
-    @apply w-full lg:w-[1164px] h-[726px] lg:h-[635px] rounded-[16px] pl-[20px] pr-[12px] lg:pl-[56px] lg:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0;
+    @apply w-full lg:w-[1164px] h-[726px] lg:h-[635px] rounded-[16px] pl-[20px] pr-[12px] lg:pl-[56px] lg:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0 max-sm:mt-[50px];
     background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.2) 0%,
@@ -81,6 +81,9 @@
 }
 .profile_rightPart_mainBlock_table {
     @apply hidden lg:table table-auto w-full;
+}
+.table_thead{
+    @apply sticky top-0 h-[25px] bg-[#0E0E16] z-10
 }
 .profile_rightPart_mainBlock_table_body_subItem {
     @apply row-span-1 rounded-t-[12px] rounded-b-[12px] rounded-l-none rounded-r-none;
@@ -115,17 +118,29 @@
 .profile_rightPart_mainBlock_mobilePart {
     @apply block lg:hidden;
 }
+.profile_rightPart_mainBlock_mobilePart_item_wrap{
+    @apply py-[16px] px-[24px] rounded-lg bg-opacity-50 bg-[#222236] backdrop-blur-[60px] mt-3 w-auto h-auto
+}
 .profile_rightPart_mainBlock_mobilePart_item_header {
     @apply flex items-center justify-between;
 }
 .profile_rightPart_mainBlock_mobilePart_item_header_text {
     @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px];
 }
+.profile_rightPart_mainBlock_mobilePart_item_main {
+    @apply flex items-center justify-start mt-[22px] max-sm:gap-[6px];
+}
 .profile_rightPart_mainBlock_mobilePart_item_header_paymentBlock {
     @apply border-[1px] border-[#8A89A41A] rounded-[8px] px-[12px] py-[8px];
 }
 .profile_rightPart_mainBlock_mobilePart_item_footer {
     @apply flex items-center justify-between mt-[23px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_sumBlock {
+    @apply border-[1px] border-[#8A89A41A] px-[12px] py-[8px] rounded-[8px];
+}
+.profile_rightPart_mainBlock_mobilePart_item_main_sumBlock_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px];
 }
 .profile_rightPart_mainBlock_mobilePart_item_footer_priceBlock {
     @apply border-[1px] border-[#8A89A41A] rounded-[8px] px-[17px] py-[6px];
@@ -134,7 +149,7 @@
     @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px];
 }
 .profile_rightPart_mainBlock_mobilePart_item_footer_statusBlock {
-    @apply text-[14px] text-[#8AF59B] font-[500] leading-[16px];
+    @apply text-[14px] font-[500] leading-[16px] rounded-[8px] py-[8px] mt-[4px] w-[88px] text-center;
 }
 .profile_rightPart_mainBlock_table_header_item {
     @apply col-span-1 text-start text-[18px] text-[#8A89A4] font-[500] leading-[21px] pb-[20px];
@@ -146,7 +161,7 @@
     @apply w-[270px];
 }
 .profile_rightPart_mainBlock_table_body_subItem_skinsBlock {
-    @apply flex items-center;
+    @apply flex items-center gap-x-2;
 }
 .profile_rightPart_mainBlock_table_body_subItem_statusBlock_success{
     @apply bg-[#222C31] text-[#8AF59B]
@@ -156,4 +171,22 @@
 }
 .profile_rightPart_mainBlock_table_body_subItem_statusBlock_error{
     @apply bg-[#2D232F] text-[#F58A8A]
+}
+.image{
+    @apply w-16 h-16 bg-cover bg-center overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-150
+}
+.profile_rightPart_mainBlock_table_body_subItem_skinsBlock_quantity_text {
+    @apply text-[14px] text-[#EBEFFD] font-[500] leading-[16px];
+}
+.profile_rightPart_mainBlock_table_body_subItem_skinsBlock_quantity {
+    @apply w-[42px] h-[32px] border-[1px] border-[#8A89A41A] rounded-[8px] flex items-center justify-center ml-[9px] cursor-pointer
+}
+.profile_rightPart_mainBlock::-webkit-scrollbar {
+    @apply w-[3px];
+}
+.profile_rightPart_mainBlock::-webkit-scrollbar-thumb {
+    @apply bg-[#FDCA76] rounded-[12px] border-none;
+}
+.profile_rightPart_mainBlock::-webkit-scrollbar-track {
+    @apply bg-[#8A89A408] mt-0 lg:mt-[45px];
 }

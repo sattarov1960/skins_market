@@ -1,11 +1,10 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
 }
 .profile {
-    @apply py-[70px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+    @apply py-[70px] lg:py-[80px] flex justify-center lg:gap-x-[30px] flex-wrap relative;
 }
 .smoke_profile {
     @apply absolute -bottom-[50px] -left-[140px];
@@ -53,7 +52,7 @@
     @apply mt-[16px] lg:mt-[12px];
 }
 .profile_rightPart {
-    @apply w-[335px] sm:w-[1164px] h-[441px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px];
+    @apply w-[335px] sm:w-[1164px] h-[441px] h-auto max-sm:pb-[50px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px] max-sm:mt-[50px];
     background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.2) 0%,
@@ -68,10 +67,10 @@
     backdrop-filter: blur(50px);
 }
 .profile_rightPart_mainText {
-    @apply text-[24px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase;
+    @apply text-[21.5px] sm:text-[28px] text-white font-[600] leading-[26px] sm:leading-[30px] uppercase whitespace-nowrap;
 }
 .profile_rightPart_mainForm {
-    @apply mt-[40px] sm:mt-[50px];
+    @apply sm:mt-[50px];
 }
 .cards_item_wrap{
     @apply relative
@@ -80,7 +79,7 @@
     @apply flex items-start justify-between flex-wrap;
 }
 .profile_rightPart_socialNetworks_mainText {
-    @apply text-[18px] text-[#EBEFFD] font-[500] leading-[21px];
+    @apply text-[18px] text-[#EBEFFD] font-[500] leading-[21px] max-sm:mt-[40px];
 }
 .profile_rightPart_socialNetworks_subText {
     @apply block max-w-[255px] sm:max-w-none mt-[8px] text-[15px] text-[#424257] font-[500] leading-[17px];

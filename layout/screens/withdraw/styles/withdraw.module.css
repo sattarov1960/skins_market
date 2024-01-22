@@ -1,11 +1,11 @@
 .main {
-    @apply lg:pl-[140px] overflow-hidden;
+    @apply lg:pl-[140px] lg:overflow-hidden;
 }
 .basic_part {
     @apply /*bg-none xl:*/bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
 }
 .profile {
-    @apply pt-[70px] pb-[78px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+    @apply pt-[70px] pb-[78px] lg:py-[80px] flex justify-center lg:gap-x-[30px] flex-wrap relative;
 }
 .smoke_profile {
     @apply absolute -bottom-[50px] -left-[140px];
@@ -53,7 +53,7 @@
     @apply mt-[16px] lg:mt-[12px];
 }
 .profile_rightPart {
-    @apply w-full lg:w-[1164px] h-[735px] lg:h-[635px] rounded-[16px] pl-[20px] pr-[12px] lg:pl-[56px] lg:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0;
+    @apply w-full lg:w-[1164px] h-[735px] lg:h-[635px] rounded-[16px] pl-[20px] pr-[12px] lg:pl-[56px] lg:pr-[40px] pt-[45px] sm:pt-[48px] -mx-[20px] sm:mx-0 max-sm:mt-[51px];
     background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.2) 0%,
@@ -127,6 +127,9 @@
 .profile_rightPart_mainBlock_mobilePart_item_header {
     @apply flex items-center justify-between;
 }
+.profile_rightPart_mainBlock_mobilePart_wrap{
+    @apply py-[12px] px-[24px] rounded-lg bg-opacity-50 bg-[#222236] backdrop-blur-[60px] mt-3 w-auto h-auto
+}
 .profile_rightPart_mainBlock_mobilePart_item_header_text {
     @apply text-[14px] text-[#EBEFFD] font-[500] leading-[14px];
 }
@@ -143,17 +146,21 @@
     @apply text-[16px] text-[#EBEFFD] font-[500] leading-[18px];
 }
 .profile_rightPart_mainBlock_mobilePart_item_footer_statusBlock {
-    @apply text-[14px] font-[500] leading-[16px];
+    @apply text-[14px] font-[500] leading-[16px] rounded-[8px] py-[8px] px-[12px];
 }
 .profile_rightPart_mainBlock_table_header_item {
     @apply col-span-1 text-start text-[18px] text-[#8A89A4] font-[500] leading-[21px] pb-[20px];
 }
+
 .profile_rightPart_mainBlock::-webkit-scrollbar {
     @apply w-[3px];
 }
 .profile_rightPart_mainBlock::-webkit-scrollbar-thumb {
-    @apply bg-[#FDCA76] rounded-[12px];
+    @apply bg-[#FDCA76] rounded-[12px] border-none;
 }
 .profile_rightPart_mainBlock::-webkit-scrollbar-track {
     @apply bg-[#8A89A408] mt-0 lg:mt-[45px];
+}
+.table_thead{
+    @apply sticky top-0 h-[25px] bg-[#0E0E16] z-10
 }

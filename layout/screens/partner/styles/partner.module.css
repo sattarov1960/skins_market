@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply sm:pl-[140px] sm:overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -8,13 +8,13 @@
     @apply absolute left-0 lg:-left-[140px] top-[150px] lg:top-[220px];
 }
 .partner_programm {
-    @apply pt-[80px] lg:pt-[135px] flex items-center flex-wrap lg:flex-nowrap justify-center lg:justify-start mx-[180px] lg:mx-0;
+    @apply pt-[80px] lg:pt-[135px] flex items-center flex-wrap justify-center lg:flex-nowrap lg:justify-start sm:mx-[180px] lg:mx-0;
 }
 .partner_programm_leftPart {
-    @apply w-[880px] flex items-center justify-between;
+    @apply w-[880px] flex items-center justify-center sm:justify-between;
 }
 .partner_programm_text {
-    @apply flex items-end max-w-[335px] lg:max-w-[497px] text-[#fff] text-[48px] lg:text-[74px] font-[600] leading-[62px] lg:leading-[72px] relative lg:static;
+    @apply flex justify-center items-end lg:max-w-[497px] text-[#fff] text-[48px] lg:text-[74px] font-[600] leading-[62px] lg:leading-[72px] relative lg:static;
 }
 .x_icon {
     @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] -ml-[58px] absolute lg:static right-[15px] mb-[10px];
@@ -23,13 +23,13 @@
     @apply h-[212px] w-[3px] bg-[#CAC6DD] border-none rounded-[3px] opacity-30 hidden lg:block;
 }
 .partner_programm_rightPart {
-    @apply ml-[80px];
+    @apply sm:ml-[80px] max-sm:mt-[32px];
 }
 .partner_programm_rightPart_text {
     @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] max-w-[630px] opacity-75;
 }
 .partner_programm_rightPart_btn {
-    @apply flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-full lg:w-[234px] h-[46px] shadow-[0px_5px_18px_0px_#1b68ff1f] mt-[40px] lg:mt-[50px];
+    @apply cursor-pointer flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-full lg:w-[234px] h-[46px] shadow-[0px_5px_18px_0px_#1b68ff1f] mt-[40px] lg:mt-[50px];
 }
 .partner_programm_rightPart_btn_steamIcon {
     @apply w-[24px] h-[24px];
@@ -77,25 +77,25 @@
     @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
 }
 .partner_programm_instructions {
-    @apply mt-[60px] lg:mt-[85px] flex items-center justify-start relative;
+    @apply lg:mt-[85px] flex items-center justify-start relative flex-wrap;
 }
 .smoke_partnerInstructions {
     @apply absolute -top-[120px] -right-[20px] lg:-right-[140px];
 }
 .partner_programm_instructions_leftPart {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between max-sm:mx-[20px];
 }
 .partner_programm_instructions_sub_leftPart {
     @apply w-[780px];
 }
 .partner_programm_instructions_leftPart_yellowText {
-    @apply text-[15px] lg:text-[17px] text-[#FDCA76] font-[500] leading-[16px] lg:leading-[18px];
+    @apply text-[15px] lg:text-[17px] text-[#FDCA76] font-[500] leading-[16px] lg:leading-[18px] max-sm:mt-[60px];
 }
 .partner_programm_instructions_leftPart_mainText {
     @apply mt-[30px] lg:mt-[34px] text-[24px] lg:text-[35px] text-[#FFFFFF] font-[600] leading-[26px] lg:leading-[38px] max-w-[335px] lg:max-w-[780px];
 }
 .partner_programm_instructions_leftPart_mainTextGray {
-    @apply mt-0 text-[#B9B8D3] inline;
+    @apply mt-0 text-[#B9B8D3] inline mx-[5px];
 }
 .partner_programm_instructions_leftPart_footerBlock {
     @apply mt-[40px] lg:mt-[60px] flex items-start;
@@ -107,7 +107,13 @@
     @apply text-[15px] lg:text-[20px] text-[#CAC6DD] font-[500] lg:font-[400] leading-[23px] lg:leading-[30px] opacity-75 block max-w-[265px] lg:max-w-[510px] ml-[30px] lg:ml-[40px];
 }
 .partner_programm_instructions_sub_leftPart_line {
-    @apply h-[349px] w-[1px] border-none rounded-[3px] bg-[#CAC6DD] mx-[167px] opacity-75;
+    @apply h-[349px] w-[1px] border-none rounded-[3px] bg-[#CAC6DD] mx-[167px] opacity-75 max-sm:hidden;
+}
+.partner_programm_instructions_sub_leftPart_line_mobile {
+    @apply h-[1px] w-full border-none rounded-[3px] bg-[#CAC6DD] mx-[-20px] opacity-75 my-[60px] sm:hidden;
+}
+.partner_programm_instructions_sub_rightPart_wrap{
+    @apply max-sm:mx-[20px]
 }
 .partner_programm_instructions_rightPart_item {
     @apply mt-[41px];

@@ -1,5 +1,5 @@
 .header {
-    @apply w-full flex items-center justify-between px-[140px] h-[75px] lg:h-[90px];
+    @apply w-full flex items-center justify-between px-[20px] sm:px-[140px] h-[75px] lg:h-[90px];
     background: linear-gradient(#09090b, #050506);
 }
 .nav_leftBlock {
@@ -51,7 +51,7 @@
     @apply flex items-center;
 }
 .nav_rightBlock_button {
-    @apply flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-[96px] lg:w-[234px] h-[32px] lg:h-[46px];
+    @apply cursor-pointer flex items-center justify-center bg-[#FDCA76] rounded-[48px] w-[96px] lg:w-[234px] h-[32px] lg:h-[46px];
 }
 .steam_icon {
     @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
@@ -94,7 +94,7 @@
 }
 
 .box{
-    @apply relative
+    @apply relative hidden sm:block
 }
 .nav_currencyBlock_addElement {
     @apply w-[107px] ml-[16px] absolute top-[40px] rounded-[8px] border-[1px] border-[#8A89A44D] py-[8px] z-50;

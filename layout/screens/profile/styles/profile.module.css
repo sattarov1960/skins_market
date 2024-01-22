@@ -1,11 +1,11 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply 2xl:pl-[140px];
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
 }
 .profile {
-    @apply py-[70px] lg:py-[80px] flex justify-between lg:justify-center lg:gap-x-[30px] flex-wrap relative;
+    @apply py-[70px] lg:py-[80px] flex justify-center lg:justify-center lg:gap-x-[30px] flex-wrap relative;
 }
 .smoke_profile {
     @apply absolute -bottom-[50px] -left-[140px];
@@ -50,7 +50,7 @@
     @apply mt-[16px] lg:mt-[12px];
 }
 .profile_rightPart {
-    @apply w-[335px] sm:w-[1164px] h-[441px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px];
+    @apply  max-lg:mt-[30px] w-[335px] sm:w-[1164px] h-auto max-sm:pb-[50px] sm:h-[635px] rounded-[16px] px-[24px] sm:px-[56px] pt-[45px] sm:pt-[48px];
     background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.2) 0%,
@@ -86,19 +86,19 @@
     @apply text-[12px] text-[#FFFFFF] font-[600] leading-[16px] uppercase;
 }
 .profile_rightPart_mainForm_inputBlock {
-    @apply mt-[18px] flex items-center justify-between;
+    @apply mt-[18px] flex items-center justify-between max-lg:flex-col max-lg:gap-y-[15px];
 }
 .profile_rightPart_mainForm_input {
     @apply w-full h-[51px] sm:h-[56px] bg-[#22223680] rounded-[12px] px-[20px] sm:px-[24px] text-[16px] sm:text-[18px] text-[#8A89A4] font-[500] leading-[19px] sm:leading-[21px];
 }
 .profile_rightPart_mainForm_inputBlock_btn {
-    @apply hidden sm:block w-[164px] h-[56px] bg-[#FDCA76] rounded-[10px] text-[14px] text-black font-[600] leading-[17px] uppercase ml-[28px];
+    @apply w-full h-[51px] sm:w-[164px] sm:h-[56px] bg-[#FDCA76] rounded-[10px] text-[14px] text-black font-[600] leading-[17px] uppercase sm:ml-[28px];
 }
 .profile_rightPart_line {
-    @apply w-full h-[1px] bg-[#8A89A44D] border-none my-[40px] sm:my-[36px];
+    @apply w-full h-[1px] bg-[#8A89A44D] border-none my-[20px] sm:my-[36px];
 }
 .profile_rightPart_socialNetworks {
-    @apply flex items-start justify-between flex-wrap;
+    @apply flex items-start justify-between flex-wrap max-sm:gap-[20px];
 }
 .profile_rightPart_socialNetworks_mainText {
     @apply text-[18px] text-[#EBEFFD] font-[500] leading-[21px];

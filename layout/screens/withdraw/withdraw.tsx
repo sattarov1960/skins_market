@@ -16,9 +16,6 @@ import {useTranslations} from "next-intl";
 
 
 export function Withdraw() {
-    // const items: WithdrawItemData[] = [
-    //     {"date": "13.08.2023", "payment": "bankCard", "id": "1", "status": "success", "amount": 23.241},
-    // ]
     const itemsStore = useWithdrawItemsStore()
     const t = useTranslations()
     useEffect(() => {

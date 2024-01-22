@@ -6,7 +6,7 @@ export const Table = ({items}: {items: WithdrawItemData[]}) => {
     return (
         <div className={styles.profile_rightPart_mainBlock}>
             <table className={styles.profile_rightPart_mainBlock_table}>
-                <thead>
+                <thead className={styles.table_thead}>
                 <tr className={styles.profile_rightPart_mainBlock_table_header_items}>
                     <th className={`${styles.profile_rightPart_mainBlock_table_header_item} ${styles.profile_rightPart_mainBlock_table_header_frstItem}`}>
                         #
