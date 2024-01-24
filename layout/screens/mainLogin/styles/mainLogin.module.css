@@ -1,14 +1,16 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply sm:pl-[140px] sm:overflow-hidden;
 }
 .basic_part {
-    @apply bg-[url('../img/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
 }
 .inventory_and_recieve {
-    @apply pt-[40px] lg:pt-[70px] mx-0 sm:px-[20px] lg:px-[140px] flex items-center flex-wrap justify-between;
+    @apply pt-[40px] lg:pt-[70px] mx-0 sm:px-[20px] lg:px-[140px] flex items-center flex-wrap justify-center gap-x-[44px];
 }
 .inventoryBlock {
-    @apply w-[665px] lg:w-[798px] h-[512px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
+    @apply relative w-[665px] lg:w-[798px] h-[512px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(50px);
 }
 .inventoryBlock_header {
     @apply flex items-center lg:items-start justify-between flex-wrap;
@@ -29,13 +31,13 @@
     @apply w-[14px] lg:w-[18px] h-[14px] lg:h-[16px];
 }
 .inventoryBlock_filtersInfo_rightPart_text {
-    @apply text-[12px] lg:text-[16px] text-[#9EAFEB99] font-[500] leading-[14px] lg:leading-[19px] block ml-[4px] underline underline-offset-4;
+    @apply hover:text-white duration-150  text-[12px] lg:text-[16px] text-[#9EAFEB99] font-[500] leading-[14px] lg:leading-[19px] block ml-[4px] underline underline-offset-4 cursor-pointer;
 }
 .inventoryBlock_header_sub_rightPart_items {
     @apply flex items-center justify-between bg-[#1C1C2D66] rounded-[12px] h-[38px] max-w-[335px] lg:max-w-[347px] px-[4px] mt-[12px] lg:mt-0;
 }
 .inventoryBlock_header_sub_rightPart_item {
-    @apply bg-[#222236CC] flex items-start rounded-[12px] px-[12px] py-[8px];
+    @apply cursor-pointer bg-[#222236CC] flex items-start rounded-[12px] px-[12px] py-[8px];
 }
 .cs_icon {
     @apply w-[12px] h-[16px];
@@ -62,7 +64,7 @@
     @apply flex items-center;
 }
 .inventoryBlock_sub_filters_leftPart_item {
-    @apply hidden lg:flex items-center relative bg-[#22223680] rounded-[12px] h-[38px] px-[16px] ml-[8px];
+    @apply hidden cursor-pointer lg:flex items-center relative bg-[#22223680] rounded-[12px] h-[38px] px-[16px] ml-[8px];
 }
 .inventoryBlock_sub_filters_leftPart_frstItem {
     @apply flex relative bg-transparent px-0 h-auto rounded-none ml-0;
@@ -71,16 +73,19 @@
     @apply w-[18px] h-[18px] absolute right-[16px] top-[9px];
 }
 .inventoryBlock_sub_filters_leftPart_item_input {
-    @apply bg-[#22223680] rounded-[12px] px-[16px] h-[38px] w-[210px] lg:w-[205px] text-[16px] text-[#8A89A4] font-[500] leading-[20px];
+    @apply bg-[#22223680] rounded-[12px] pl-[16px] pr-[46px] h-[38px] w-[210px] lg:w-[205px] text-[16px] text-[#8A89A4] font-[500] leading-[20px];
 }
 .inventoryBlock_sub_filters_leftPart_item_text {
-    @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px];
+    @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px] cursor-pointer;
 }
 .mini_arrow_bot_filters {
     @apply w-[8px] h-[8px] ml-[6px] rotate-0 duration-150;
 }
+.mini_arrow_bot_filters_rotate{
+    @apply rotate-180
+}
 .inventoryBlock_sub_filters_rightPart_item {
-    @apply flex items-center relative;
+    @apply flex items-center relative cursor-pointer z-10;
 }
 .iinventoryBlock_sub_filters_rightPart_item_text {
     @apply text-[14px] lg:text-[16px] text-[#8A89A4] font-[500] leading-[16px] lg:leading-[19px];
@@ -88,11 +93,15 @@
 .inventoryBlock_cards {
     @apply mt-[20px] lg:mt-[24px];
 }
-.inventoryBlock_cardsItems {
-    @apply grid grid-cols-5 gap-[11.5px] lg:gap-[12px] max-h-[353px] lg:max-h-[474px] overflow-y-scroll pr-[10px] lg:pr-[12px] -mr-[10px] lg:mr-0;
+.inventoryBlock_cardsItemsNothing {
+    @apply min-h-[474px] flex items-center flex-col;
 }
 .inventoryBlock_cardsItem {
-    @apply w-[104px] lg:w-[130px] h-[110px] lg:h-[150px] rounded-[16px] px-[12px] lg:px-[16px] pt-[11px] lg:pt-[16px] relative;
+    @apply w-[104px] lg:w-[130px] h-[110px] lg:h-[150px] rounded-[16px] px-[12px] lg:px-[16px] pt-[11px] lg:pt-[16px] relative border-[#FDCA7680] border-[0px] hover:scale-110  duration-75 hover:brightness-125 hover:border-[1px];
+    backdrop-filter: blur(60px);
+}
+.inventoryBlock_cardsItemActive {
+    @apply border-[1px] border-[#FDCA7680];
 }
 .inventoryBlock_cardsItem_headerPart {
     @apply flex items-center justify-between;
@@ -101,10 +110,10 @@
     @apply text-[13px] lg:text-[14px] text-[#FDCA76] font-[600] leading-[16px] lg:leading-[17px] uppercase;
 }
 .inventoryBlock_cardsItem_img {
-    @apply w-[75px] lg:w-[90px] h-[56px] lg:h-[67px] mx-auto relative z-10;
+    @apply w-[75px] lg:w-[90px] h-[56px] lg:h-[90px] mx-auto relative z-10 mt-[-10px];
 }
 .inventoryBlock_cardsItem_mainPart {
-    @apply -mt-[13px] lg:-mt-[10px];
+    @apply -mt-[13px] lg:-mt-[23px];
 }
 .inventoryBlock_cardsItem_mainPart_textModel {
     @apply text-[12px] lg:text-[14px] text-[#969DA7] font-[600] leading-[15px] lg:leading-[17px];
@@ -113,28 +122,31 @@
     @apply text-[10px] lg:text-[12px] text-[#BAC4CC] font-[600] leading-[12px] lg:leading-[15px] mt-[3px] lg:my-[1px];
 }
 .inventoryBlock_cardsItem_mainPart_subText {
-    @apply text-[11px] text-[#6B6E7A] font-[500] leading-[13px] hidden lg:block;
+    @apply text-[#6B6E7A] font-[500] leading-[13px] hidden lg:block whitespace-nowrap;
 }
 .blur_violet {
     @apply absolute top-[20px] ml-[5px];
 }
 .inventoryBlock_filtersInfo {
-    @apply flex items-center justify-between;
+    @apply w-full flex items-center justify-between absolute bottom-[36px] left-[0px] sm:px-[50px];
 }
 .inventoryBlock_filtersInfo_leftPart {
     @apply w-full lg:w-auto;
 }
 .inventoryBlock_filtersInfo_leftPart_items {
-    @apply flex items-center justify-between lg:justify-start flex-wrap;
+    @apply flex items-center justify-between lg:justify-start flex-wrap sm:gap-x-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_item {
-    @apply bg-[#22223680] pt-[12px] pb-[10px] px-[16px] flex items-center ml-[12px] rounded-[12px];
+    @apply bg-[#22223680] pt-[12px] pb-[10px] px-[16px] h-[42px] flex items-center rounded-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_frstItem {
     @apply block ml-0 shadow-[0px_2px_0px_0px_#202133_inset,_0px_2px_0px_0px_#202133_inset] w-full lg:w-auto text-center lg:text-start cursor-pointer;
 }
 .inventoryBlock_filtersInfo_leftPart_item_subText {
     @apply text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
+}
+.inventoryBlock_filtersInfo_leftPart_item_subTextHover {
+    @apply  hover:text-white duration-150 text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
 }
 .inventoryBlock_filtersInfo_leftPart_scndItem {
     @apply ml-0 mt-0 w-[161.5px] lg:w-auto h-[38px] lg:h-auto justify-center;
@@ -150,6 +162,8 @@
 }
 .recieveBlock {
     @apply w-[665px] lg:w-[798px] h-[710px] lg:h-[750px] px-[20px] lg:px-[50px] rounded-[16px] pb-[32px] pt-[24px] lg:py-[36px];
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(50px);
 }
 .recieveBlock_headerPart {
     @apply flex items-center justify-between;
@@ -187,8 +201,11 @@
 .recieveBlock_sub_headerPart_item_mainText {
     @apply text-[26px] text-[#8A89A4] font-[600] leading-[28px];
 }
+.recieveBlock_sub_headerPart_item_mainTextPrice_rub{
+    @apply font-[500] text-[#FDCA76];
+}
 .recieveBlock_sub_headerPart_item_mainTextPrice {
-    @apply ml-[8px] font-[500];
+    @apply ml-[8px] font-[500] text-[#FDCA76];
 }
 .recieveBlock_sub_headerPart_scndItem {
     @apply mt-[8px] lg:mt-0 h-[39px] lg:h-[57px] w-[186px] px-[11px] lg:px-[20px] lg:w-auto;
@@ -218,7 +235,7 @@
     @apply mt-[16px] grid grid-cols-4 lg:grid-cols-5 gap-[11.5px] lg:gap-[8px];
 }
 .recieveBlock_paymentMethod_item {
-    @apply w-auto lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center opacity-60;
+    @apply w-auto lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center;
 }
 .recieveBlock_paymentMethod_item_active {
     @apply border-[1px] border-[#FDCA76];
@@ -255,6 +272,8 @@
 }
 .statistic_part {
     @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px];
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
+    backdrop-filter: blur(60px);
 }
 .statistic_part_items {
     @apply flex items-center justify-center lg:justify-between flex-wrap;
@@ -366,4 +385,117 @@
 }
 .smoke_detailInformation {
     @apply absolute -right-[20px] lg:-right-[140px] bottom-0 hidden sm:block;
+}
+.sadSmile_img {
+    @apply w-[48px] lg:w-auto h-[48px] lg:h-auto mx-auto;
+}
+.sadSmile_img_blur {
+}
+.inventoryBlock_sub_tradeLink{
+    @apply bg-[url('/sadSmile_img_blur.webp')] w-[171px] h-[171px] flex items-center justify-center mt-[85px]
+}
+.inventoryBlock_tradeLink_text {
+    @apply max-w-[276px] lg:max-w-[418px] text-[18px] lg:text-[24px] text-[#424257] font-[500] leading-[21px] lg:leading-[27px] text-center -mt-[24px];
+}
+.inventoryBlock_tradeLink_button {
+     @apply hover:text-white duration-150 w-[190px] lg:w-[207px] h-[39px] lg:h-[41px] text-center text-[16px] lg:text-[18px] text-[#8A89A4] font-[500] leading-[20px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] mt-[24px] flex justify-center items-center mx-auto;
+}
+#itemsRarity {
+    @apply absolute w-0 h-0 appearance-none;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlock{
+    @apply absolute top-[50px] z-10 w-[152px] left-0 px-[16px] py-[12px];
+    border-radius: 12px;
+    background: rgba(34, 34, 54, 0.75);
+    backdrop-filter: blur(60px);
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItem {
+    @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px] mt-[8px];
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemWear {
+    @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px] mt-[8px] hover:text-white duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemBlue {
+    @apply text-[#6F86EF] hover:text-blue-400 duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemViolet {
+    @apply text-[#AB57EE] hover:text-violet-400 duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemOrange {
+    @apply text-[#ED9E03] hover:text-orange-400 duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemRed {
+    @apply text-[#FF374F] hover:text-red-400 duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockItemPink {
+    @apply text-[#EE35AC] hover:text-pink-400 duration-150;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockFrstItem {
+    @apply mt-0;
+}
+.inventoryBlock_sub_filters_leftPart_rarityAddBlockFrstItem_active {
+    color: white !important;
+}
+.inventoryBlock_sub_filters_rightPart_item_addBlock_point {
+    @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px] mt-[8px] whitespace-nowrap hover:text-white duration-150;
+}
+.inventoryBlock_sub_filters_rightPart_item_addBlock_frstPoint {
+    @apply mt-0;
+}
+.inventoryBlock_sub_filters_rightPart_item_addBlock {
+    @apply absolute top-[29px] right-0 px-[16px] py-[12px] bg-[#1e1e30] rounded-[12px] w-[144px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point {
+    @apply flex items-center justify-between;
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_scndPoint {
+    @apply justify-start;
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg {
+    @apply relative;
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_mainImg {
+    @apply w-[66px] h-[54px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg_blur {
+    @apply absolute -top-[10px] left-[10px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock {
+    @apply ml-[16px] w-[110px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_headerPart {
+    @apply flex items-center justify-between min-w-[91px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_headerPart_modelText {
+    @apply whitespace-nowrap text-[14px] text-[#969DA7] font-[600] leading-[17px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_headerPart_priceText {
+    @apply whitespace-nowrap text-[11px] text-[#FDCA76] font-[600] leading-[13px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_mainPart {
+    @apply mt-[2px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_mainPart_text {
+    @apply whitespace-nowrap text-[12px] text-[#BAC4CC] font-[600] leading-[15px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock_mainPart_subText {
+    @apply whitespace-nowrap text-[11px] text-[#6B6E7A] font-[500] leading-[13px] block mt-[2px];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion_line {
+    @apply border-none my-[16px] h-[0.75px] bg-[#8A89A44D];
+}
+.inventoryBlock_sub_filters_leftPart_item_addAccordion {
+    @apply absolute z-10 top-[44px] w-[210px] lg:w-[205px] bg-[#191928] rounded-[12px] h-[180px] px-[16px] py-[12px] overflow-y-auto;
+}
+.inventoryBlock_cardsItems {
+    @apply -mt-[10px] min-h-[500px] grid grid-cols-5 auto-rows-[150px] py-[15px] gap-[11.5px] lg:gap-[12px] max-h-[353px] lg:max-h-[500px] overflow-y-auto px-[10px] lg:pr-[12px] -mr-[10px] lg:mr-0;
+}
+.inventoryBlock_cardsItems::-webkit-scrollbar {
+    @apply w-[3px];
+}
+.inventoryBlock_cardsItems::-webkit-scrollbar-thumb {
+    @apply bg-[#FDCA76] rounded-[12px] border-none;
+}
+.inventoryBlock_cardsItems::-webkit-scrollbar-track {
+    @apply bg-[#8A89A408];
 }

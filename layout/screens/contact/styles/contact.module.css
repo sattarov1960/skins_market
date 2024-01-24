@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply sm:pl-[140px] sm:overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -14,10 +14,10 @@
     @apply text-[48px] lg:text-[74px] text-white font-[600] leading-[62px] lg:leading-[72px] max-w-[475px];
 }
 .contactInformation_leftPart_subText {
-    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] mt-[24px] opacity-75 max-w-[260px] sm:max-w-none;
+    @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] mt-[24px] opacity-100 max-w-[260px] sm:max-w-none;
 }
 .contactInformation_leftPart_subText_special {
-    @apply underline underline-offset-4 ml-[6px];
+    @apply underline underline-offset-4 ml-[6px] cursor-pointer hover:text-white duration-150;
 }
 .contactInformation_leftPart_socialNetworks {
     @apply mt-[60px] lg:mt-[71px];
@@ -50,7 +50,7 @@
     @apply mt-[32px] lg:mt-[60px];
 }
 .contactInformation_line {
-    @apply mx-[10px] w-[1px] h-[444px] border-none bg-[#E1E2E2] rounded-[3px];
+    @apply mx-[10px] max-sm:mt-[60px] max-sm:mb-[73px] w-full h-[1px] sm:w-[1px] sm:h-[444px] border-none bg-[#E1E2E2] rounded-[3px];
 }
 .contactInformation_rightPart {
     @apply mx-[20px] md:mx-0;
@@ -62,13 +62,16 @@
     @apply mt-[40px];
 }
 .contactInformation_rightPart_headerForms {
-    @apply flex items-center justify-between flex-wrap gap-x-[33px];
+    @apply max-sm:gap-y-[32px] max-sm:flex-wrap-reverse flex items-center justify-between flex-wrap gap-x-[33px];
 }
 .contactInformation_rightPart_headerForm_text {
     @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px];
 }
 .contactInformation_rightPart_headerForm_input {
     @apply w-[335px] lg:w-[351px] h-[50px] lg:h-[57px] rounded-[12px] bg-[#22223680] px-[20px] mt-[16px] text-[18px] text-[#8A89A4] font-[500] leading-[21px];
+}
+.contactInformation_rightPart_headerForm_input::placeholder {
+    @apply text-[18px] text-[#8A89A4] font-[500] leading-[21px];
 }
 .contactInformation_rightPart_headerForm_scnInput {
     @apply w-[335px] lg:w-[344px];
@@ -79,24 +82,34 @@
 .contactInformation_rightPart_mainForm_text {
     @apply text-[16px] text-[#CAC6DD] font-[500] leading-[16px];
 }
+
 .contactInformation_rightPart_mainForm_textarea {
     @apply w-full h-[109px] bg-[#22223680] rounded-[12px] px-[20px] py-[16px] mt-[16px] text-[17px] text-[#8A89A4] font-[500] leading-[20px];
 }
 .contactInformation_rightPart_options {
-    @apply mt-[40px] flex items-center justify-between flex-wrap;
+    @apply mt-[40px] flex items-center justify-between flex-wrap max-sm:justify-center;
 }
 .contactInformation_rightPart_options_leftBlock {
-    @apply flex items-center flex-wrap;
-}
-.contactInformation_rightPart_options_leftBlock_customRadio {
-    @apply ml-[32px] relative cursor-pointer flex items-center;
+    @apply max-sm:gap-y-[15px] grid grid-cols-2 grid-rows-2 sm:flex sm:items-center sm:flex-wrap;
 }
 .contactInformation_rightPart_options_leftBlock_frstCustomRadio {
     @apply ml-0;
 }
+.contactInformation_rightPart_options_btn {
+    @apply max-sm:mt-[40px] w-[156px] h-[49px] md:h-[50px] rounded-[48px] bg-[#FDCA76] shadow-[0px_5px_18px_0px_#1b68ff1f] text-[17px] md:text-[18px] text-black font-[500] leading-[17px] md:leading-[18px];
+}
 .contactInformation_rightPart_options_leftBlock_customRadio_text {
     @apply text-[17px] text-[#8A89A4] font-[500] leading-[20px] ml-[35px];
 }
-.contactInformation_rightPart_options_btn {
-    @apply w-[156px] h-[49px] md:h-[50px] rounded-[48px] bg-[#FDCA76] shadow-[0px_5px_18px_0px_#1b68ff1f] text-[17px] md:text-[18px] text-black font-[500] leading-[17px] md:leading-[18px];
+.contactInformation_rightPart_options_leftBlock_customRadio .checkmark {
+    @apply absolute left-0 w-[28px] h-[28px] bg-[#22223680] rounded-[50%];
+}
+.contactInformation_rightPart_options_leftBlock_customRadio input:checked {
+    @apply opacity-100 border-none absolute;
+}
+.contactInformation_rightPart_options_leftBlock_customRadio input {
+    @apply opacity-0 absolute;
+}
+.contactInformation_rightPart_options_leftBlock_customRadio {
+    @apply sm:ml-[32px] relative cursor-pointer flex items-center;
 }

@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply sm:pl-[140px] sm:overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -8,13 +8,13 @@
     @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
 }
 .faq_headerPart_selledBlock {
-    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[293px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
+    @apply flex items-center justify-center border-[1px] border-[#8A89A44D] w-[235px] lg:w-[330px] h-[36px] lg:h-[48px] rounded-[8px] mx-auto;
 }
 .walletCheck_icon {
     @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
 }
 .faq_headerPart_selledBlock_text {
-    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px];
+    @apply text-[14px] lg:text-[18px] text-[#B9B8D3] font-[600] leading-[14px] lg:leading-[18px] ml-[10px] whitespace-nowrap;
 }
 .faq_headerPart_mainText {
     @apply text-center text-[23px] lg:text-[68px] text-white font-[600] leading-[30px] lg:leading-[72px] mt-[20px] lg:mt-[30px];
@@ -23,13 +23,13 @@
     @apply text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] block mt-[20px] lg:mt-[30px] text-center opacity-75 max-w-[318px] lg:max-w-none mx-auto lg:mx-0;
 }
 .faq_headerPart_subTextSpecial {
-    @apply underline underline-offset-4;
+    @apply underline underline-offset-4 ml-[6px] hover:text-white duration-150;
 }
 .faq_headerPart_line {
     @apply hidden w-full h-[1px] border-none mt-[35px] lg:mt-[60px];
 }
 .faq_mainPart {
-    @apply mt-[35px] lg:mt-[60px];
+    @apply mt-[35px] lg:mt-[60px] sm:min-h-[530px];
 }
 .faq_sub_mainPart {
     @apply flex items-start justify-between flex-wrap lg:flex-nowrap;
@@ -56,10 +56,10 @@
     @apply w-[24px] h-[24px] rotate-0 transition duration-150 ease-in;
 }
 .faq_mainPart_item_textBlock {
-    @apply px-[16px] lg:px-[40px] pb-[32px] max-w-none lg:max-w-[715px] hidden;
+    @apply px-[16px] lg:px-[40px] pb-[32px] max-w-none transition duration-500 ease-out;
 }
 .faq_mainPart_item_text {
-    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px];
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px] whitespace-pre-wrap;
 }
 .faq_mainPart_scndItem {
     @apply hidden lg:block;

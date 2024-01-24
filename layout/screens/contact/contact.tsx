@@ -6,6 +6,7 @@ import {useContactStore} from "@/storage/client/contact";
 import {toast} from "react-toastify";
 import axios from "axios";
 import React, { useState } from 'react';
+import Link from "next/link";
 
 
 export function Contact() {
@@ -92,7 +93,7 @@ export function Contact() {
                         </h2>
                         <p className={styles.contactInformation_leftPart_subText}>
                             {t("Напишите нам, если не нашли свой вопрос в")}
-                            <span className={`${styles.contactInformation_leftPart_subText} ${styles.contactInformation_leftPart_subText_special}`}>FAQ</span>
+                            <Link href={`${process.env.current}/faq`} className={`${styles.contactInformation_leftPart_subText} ${styles.contactInformation_leftPart_subText_special}`}>FAQ</Link>
                         </p>
                         <div className={styles.contactInformation_leftPart_socialNetworks}>
                             <ul className={styles.contactInformation_leftPart_socialNetworks_items}>
@@ -152,22 +153,22 @@ export function Contact() {
                             <div className={styles.contactInformation_rightPart_options_leftBlock}>
                                 <label className={`${styles.contactInformation_rightPart_options_leftBlock_customRadio} ${styles.contactInformation_rightPart_options_leftBlock_frstCustomRadio}`}>
                                   <input name="option" type="radio" value="Общий" checked={contactStore.selectedOption === 'Общий'} onChange={handleOptionChange}/>
-                                  <span></span>
+                                  <span className={styles.checkmark}></span>
                                   <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Общий")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                   <input name="option" type="radio" value="Партнерство" checked={contactStore.selectedOption === 'Партнерство'} onChange={handleOptionChange}/>
-                                  <span></span>
+                                  <span className={styles.checkmark}></span>
                                   <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Партнерство")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                   <input name="option" type="radio" value="Баг" checked={contactStore.selectedOption === 'Баг'} onChange={handleOptionChange}/>
-                                  <span></span>
+                                  <span className={styles.checkmark}></span>
                                   <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Баг")}</span>
                                 </label>
                                 <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
                                   <input name="option" type="radio" value="Другое" checked={contactStore.selectedOption === 'Другое'} onChange={handleOptionChange}/>
-                                  <span></span>
+                                  <span className={styles.checkmark}></span>
                                   <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Другое")}</span>
                                 </label>
                             </div>
