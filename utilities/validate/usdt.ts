@@ -21,3 +21,4 @@ export function validateTronAddress(wallet: string) {
         return true;
     }
 }
+

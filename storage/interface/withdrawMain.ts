@@ -5,7 +5,11 @@ export type StatusPaymentSystemType = {
 export interface WithdrawMainI {
     workingPaymentSystem: StatusPaymentSystemType;
     activePaymentSystem: string;
+    wallet: string
+    email: string;
     setActivePaymentSystem: (paymentSystem: string) => void;
+    setWallet: (wallet: string) => void;
+    setEmail: (email: string) => void;
 }
 
 export const StatusPaymentSystem: StatusPaymentSystemType = {

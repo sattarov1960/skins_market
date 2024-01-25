@@ -1,11 +1,11 @@
 .main {
-    @apply sm:pl-[140px] sm:overflow-hidden;
+    @apply w-full flex items-center flex-col;
 }
 .basic_part {
-    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+    @apply mt-[40px] lg:mt-[70px] bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full lg:pl-0;
 }
 .inventory_and_recieve {
-    @apply pt-[40px] lg:pt-[70px] mx-0 sm:px-[20px] lg:px-[140px] flex items-center flex-wrap justify-center gap-x-[44px];
+    @apply mx-0 flex items-center flex-wrap justify-center gap-x-[44px];
 }
 .inventoryBlock {
     @apply relative w-[665px] lg:w-[798px] h-[512px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
@@ -73,7 +73,7 @@
     @apply w-[18px] h-[18px] absolute right-[16px] top-[9px];
 }
 .inventoryBlock_sub_filters_leftPart_item_input {
-    @apply bg-[#22223680] rounded-[12px] pl-[16px] pr-[46px] h-[38px] w-[210px] lg:w-[205px] text-[16px] text-[#8A89A4] font-[500] leading-[20px];
+    @apply outline-0 bg-[#22223680] rounded-[12px] pl-[16px] pr-[46px] h-[38px] w-[210px] lg:w-[205px] text-[16px] text-[#8A89A4] font-[500] leading-[20px];
 }
 .inventoryBlock_sub_filters_leftPart_item_text {
     @apply text-[16px] text-[#8A89A4] font-[500] leading-[19px] cursor-pointer;
@@ -94,7 +94,7 @@
     @apply mt-[20px] lg:mt-[24px];
 }
 .inventoryBlock_cardsItemsNothing {
-    @apply min-h-[474px] flex items-center flex-col;
+    @apply min-h-[474px] flex items-center flex-col !important;
 }
 .inventoryBlock_cardsItem {
     @apply w-[104px] lg:w-[130px] h-[110px] lg:h-[150px] rounded-[16px] px-[12px] lg:px-[16px] pt-[11px] lg:pt-[16px] relative border-[#FDCA7680] border-[0px] hover:scale-110  duration-75 hover:brightness-125 hover:border-[1px];
@@ -161,7 +161,7 @@
     @apply hidden lg:flex items-center;
 }
 .recieveBlock {
-    @apply w-[665px] lg:w-[798px] h-[710px] lg:h-[750px] px-[20px] lg:px-[50px] rounded-[16px] pb-[32px] pt-[24px] lg:py-[36px];
+    @apply relative w-[665px] lg:w-[798px] h-[710px] lg:h-[750px] px-[20px] lg:px-[50px] rounded-[16px] pb-[32px] pt-[24px] lg:py-[36px];
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
     backdrop-filter: blur(50px);
 }
@@ -184,7 +184,7 @@
     @apply text-[14px] lg:text-[18px] text-[#8A89A4] font-[500] leading-[16px] lg:leading-[21px];
 }
 .recieveBlock_headerPart_rightBlock_subText_mainText {
-    @apply text-[14px] lg:text-[18px] text-[#FDCA76] font-[500] leading-[16px] lg:leading-[21px];
+    @apply text-[14px] lg:text-[18px] text-[#FDCA76] font-[500] leading-[16px] lg:leading-[21px] ml-[5px];
 }
 .recieveBlock_sub_headerPart {
     @apply w-full lg:w-auto mt-[25px] lg:mt-[30px];
@@ -235,10 +235,13 @@
     @apply mt-[16px] grid grid-cols-4 lg:grid-cols-5 gap-[11.5px] lg:gap-[8px];
 }
 .recieveBlock_paymentMethod_item {
-    @apply w-auto lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center;
+    @apply w-auto lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center cursor-pointer;
 }
 .recieveBlock_paymentMethod_item_active {
     @apply border-[1px] border-[#FDCA76];
+}
+.recieveBlock_paymentMethod_item_inactive {
+    @apply opacity-50;
 }
 .tether_paymentMethod_icon {
     @apply w-[24px] lg:w-auto h-[24px] lg:h-auto;
@@ -258,20 +261,35 @@
 .recieveBlock_formFields {
     @apply mt-[24px] lg:mt-[32px];
 }
+.recieveBlock_formFields_inactive {
+    @apply opacity-50;
+}
 .recieveBlock_form {
-    @apply w-full h-[52px] lg:h-[57px] rounded-[12px] px-[20px] bg-[#22223680] text-[18px] text-[#8A89A4] font-[500] leading-[21px];
+    @apply outline-0 w-full h-[52px] lg:h-[57px] rounded-[12px] px-[20px] bg-[#22223680] text-[18px] text-[#8A89A4] font-[500] leading-[21px];
+}
+.recieveBlock_form_error{
+    @apply border-[1px] border-red-700 !important
+}
+.recieveBlock_form_error_text{
+    @apply mt-[5px] text-[14px] text-red-700
 }
 .recieveBlock_scndForm {
     @apply mt-[12px];
 }
 .recieveBlock_mainButton {
-    @apply mt-[50px] lg:mt-[88px] w-full h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-[#FDCA76] font-[600] leading-[20px] lg:leading-[24px];
+    @apply absolute bottom-[71px] mt-[50px] lg:mt-[88px] w-[698px] h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-white font-[600] leading-[20px] lg:leading-[24px];
+}
+.recieveBlock_mainButton_ready{
+    @apply text-[#FDCA76] !important
+}
+.recieveBlock_mainButton_inactive{
+    @apply opacity-60
 }
 .smoke_mainPart {
     @apply absolute top-[150px] left-0 bottom-0 hidden lg:block;
 }
 .statistic_part {
-    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px];
+    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px] w-full;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
     backdrop-filter: blur(60px);
 }

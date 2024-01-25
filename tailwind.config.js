@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   content: [
     './layout/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',

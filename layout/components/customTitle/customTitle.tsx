@@ -13,7 +13,7 @@ export const CustomTooltip = ({ children, tooltipText }: { children: React.React
                 <div
                     style={{
                         position: 'absolute',
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        backgroundColor: '#31313F',
                         color: 'whitesmoke',
                         padding: '10px',
                         borderRadius: '5px',
@@ -27,6 +27,7 @@ export const CustomTooltip = ({ children, tooltipText }: { children: React.React
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',
                         WebkitLineClamp: 12,
+                        whiteSpace: "pre-line"
                     }}
                 >
                     {tooltipText}

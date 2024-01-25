@@ -4,13 +4,17 @@ import {WithdrawMainI} from "@/storage/interface/withdrawMain";
 
 
 export const useWithdrawMainStore = create<WithdrawMainI>((set) => ({
-    activePaymentSystem: "Cards",
-    setActivePaymentSystem: (paymentSystem) => set({ activePaymentSystem: paymentSystem }),
+    activePaymentSystem: "",
+    wallet: "",
+    email: "",
     workingPaymentSystem: {
-        "Cards": false,
-        "Qiwi": false,
-        "Bitcoin": false,
-        "SBP": false,
-        "USDT TRC20": false
-    }
+        "MIR": true,
+        "SBP": true,
+        "Qiwi": true,
+        "BTC": true,
+        "USDT TRC20": true
+    },
+    setWallet: (wallet) => set({ wallet }),
+    setEmail: (email) => set({ email }),
+    setActivePaymentSystem: (paymentSystem) => set({ activePaymentSystem: paymentSystem }),
 }));

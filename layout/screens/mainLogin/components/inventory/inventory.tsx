@@ -3,18 +3,21 @@ import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useInventoryStore} from "@/storage/client/inventory";
-import {ItemInventory} from "@/layout/screens/mainLogin/components/item";
+import {ItemInventory} from "@/layout/screens/mainLogin/components/inventory/item";
 import {useEffect, useState} from "react";
 import {formatCurrency} from "@/utilities/formatCyrrency";
-import {FilterRarity, FilterWear, SortingPrice} from "@/layout/screens/mainLogin/components/filter";
-import {SearchItems} from "@/layout/screens/mainLogin/components/searchItems";
-import {Nothing} from "@/layout/screens/mainLogin/components/nothing";
+import {FilterRarity, FilterWear, SortingPrice} from "@/layout/screens/mainLogin/components/inventory/filter";
+import {SearchItems} from "@/layout/screens/mainLogin/components/inventory/searchItems";
+import {Nothing} from "@/layout/screens/mainLogin/components/inventory/nothing";
+import {useUserStore} from "@/storage/client/user";
+import {NotTradeLink} from "@/layout/screens/mainLogin/components/inventory/notTradeLink";
 
 
 
 
 export const Inventory = () => {
     const inventoryStore = useInventoryStore()
+    const userStore = useUserStore();
 
     const t = useTranslations()
     useEffect(() => {
@@ -153,9 +156,8 @@ export const Inventory = () => {
                 </div>
             </div>
             <div className={styles.inventoryBlock_cards}>
-                <ul className={`${inventoryStore.viewItems.length ? styles.inventoryBlock_cardsItems : styles.inventoryBlock_cardsItemsNothing}`}>
-                    {inventoryStore.viewItems.length ? inventoryStore.viewItems.map((item, index) => <ItemInventory {...item} key={index}/>) : <Nothing/>}
-                    {/*<NotTradeLink/>*/}
+                <ul className={`${userStore.tradeLink ?  (inventoryStore.viewItems.length ? styles.inventoryBlock_cardsItems : styles.inventoryBlock_cardsItemsNothing) : styles.inventoryBlock_cardsItemsNothing}`}>
+                    {userStore.tradeLink ? (inventoryStore.viewItems.length ? inventoryStore.viewItems.map((item, index) => <ItemInventory {...item} key={index}/>) : <Nothing/>) : <NotTradeLink/>}
                 </ul>
             </div>
             <div className={styles.inventoryBlock_filtersInfo}>

@@ -4,7 +4,6 @@
 body{
     background: linear-gradient(0deg, rgba(28, 28, 45, 0.15) 0%, rgba(28, 28, 45, 0.15) 100%), #09090d
 }
-
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 2px;
