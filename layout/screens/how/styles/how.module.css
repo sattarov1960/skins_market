@@ -34,6 +34,11 @@
 .how_mainPart_items_smoke {
     @apply block sm:hidden absolute -left-[20px] top-[100px];
 }
+@keyframes expandWidth {
+    0% { width: 0px; }
+    100% { width: 392px; }
+}
+
 .how_mainPart_item {
     @apply w-[335px] lg:w-[392px] h-[131px] lg:h-[152px];
 }
@@ -56,10 +61,24 @@
     @apply h-[2px] bg-[#1A1A29] rounded-[16px];
 }
 .how_mainPart_item_specialLine {
-    @apply h-[2px] border-none bg-[#FDCA76] rounded-[16px] w-[216px] lg:w-[273px];
+    @apply h-[2px] border-none bg-[#FDCA76] rounded-[16px] w-[0px] lg:w-[0px];
+    animation: expandWidth 2.5s forwards;
+}
+.how_mainPart_frstItem{
+    animation-delay: 0s !important;
+}
+.how_mainPart_scndItem{
+    animation-delay: 2.5s !important;
+}
+.how_mainPart_thrdItem_line{
+    animation-delay: 5s !important;
+}
+.how_mainPart_frthItem_line{
+    animation-delay: 7.5s !important;
 }
 .how_mainPart_thrdItem {
     @apply h-[147px] lg:h-[152px];
+
 }
 .how_mainPart_subItemThrd {
     @apply mt-[40px];

@@ -1,7 +1,8 @@
 export type LastItemProps = {
-    name: string;
+    skinName: string;
     price: number;
     time: number;
     title: string;
     img: string;
+    rarity: string;
 };

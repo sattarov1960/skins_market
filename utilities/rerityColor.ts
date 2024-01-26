@@ -37,10 +37,10 @@ export const getRarityColor = (rarity: string) => {
 
 export const getRarityBGColor = (rarity: string) => {
     if (rarity === `Consumer`){
-        return "Белый"
+        return "linear-gradient(180deg, rgba(0, 0, 0, 0.00) -36.67%, rgba(255, 255, 255, 0.20) 100%), rgba(18, 18, 22, 0.40)" // Белый
     }
     else if (rarity === `Contraband`){
-        return "Бордовый"
+        return "linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(136, 106, 8, 0.20) 100%), rgba(18, 18, 22, 0.40)" // yellow
     }
     else if (rarity === 'Industrial' || rarity === 'Mil-spec' || rarity === 'Distinguished' || rarity === 'High Grade') {
         return "linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.20) 100%), rgba(18, 18, 22, 0.40)" // Красный
@@ -52,7 +52,7 @@ export const getRarityBGColor = (rarity: string) => {
         return "linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(128, 47, 56, 0.20) 100%), rgba(18, 18, 22, 0.40)" // Розовый
     }
     else{
-        return "Черный"
+        return "linear-gradient(180deg, rgba(0, 0, 0, 0.00) -36.67%, rgba(255, 255, 255, 0.20) 100%), rgba(18, 18, 22, 0.40)" // Черный
     }
 }
 

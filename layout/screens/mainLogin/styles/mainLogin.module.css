@@ -367,7 +367,14 @@
 }
 .detail_information {
     @apply mt-[110px] lg:mt-[140px] w-full rounded-[16px] px-[20px] lg:px-[60px] py-[30px] lg:py-[50px] relative;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
 }
+
 .detail_information_headerPart {
     @apply flex items-center justify-between;
 }

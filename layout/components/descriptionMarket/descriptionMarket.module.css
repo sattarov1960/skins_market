@@ -1,0 +1,48 @@
+.detail_information_forMobile {
+    @apply -mx-[20px] lg:mx-0;
+}
+.detail_information {
+    @apply mt-[110px] lg:mt-[140px] w-full rounded-[16px] px-[20px] lg:px-[60px] py-[30px] lg:py-[50px] relative;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -34.33%,
+            rgba(47, 60, 134, 0.05) 100%
+    ),
+    rgba(28, 28, 45, 0.25);
+}
+.detail_information_headerPart {
+    @apply flex items-center justify-between;
+}
+.detail_information_headerPart_leftBlock {
+    @apply flex items-center;
+}
+.crown_icon {
+    @apply w-[24px] lg:w-[32px] h-[24px] lg:h-[32px];
+}
+.detail_information_headerPart_leftBlock_text {
+    @apply text-[18px] lg:text-[26px] text-[#EBEFFD] font-[600] leading-[22px] lg:leading-[32px] ml-[12px];
+}
+.logo_detail_information {
+    @apply w-[80px] lg:w-[124px] h-[17px] lg:h-[26px];
+}
+.detail_information_mainPart {
+    @apply mt-[20px] lg:mt-[30px];
+}
+.detail_information_mainPart_text {
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px] block max-w-[910px] lg:max-w-[1458px];
+}
+.detail_information_mainPart_specialText {
+    @apply underline underline-offset-4;
+}
+.detail_information_footerPart {
+    @apply mt-[36px] lg:mt-[25px];
+}
+.detail_information_footerPart_text {
+    @apply text-[16px] text-[#FDCA76] font-['Gilroy'] lg:font-['Lato'] font-[500] lg:font-[400] underline-offset-8 lg:underline-offset-4;
+}
+.character_forDetailInformation {
+    @apply absolute bottom-0 right-0 lg:opacity-40 opacity-20 w-[110px] lg:w-auto;
+}
+.smoke_detailInformation {
+    @apply absolute -right-[20px] lg:right-[-244px] 4xl:right-[-450px] bottom-0 hidden sm:block;
+}

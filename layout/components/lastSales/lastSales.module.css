@@ -1,0 +1,48 @@
+.latest_deals {
+    @apply mt-[110px] lg:mt-[140px];
+}
+.latest_deals_lastDarkItem {
+    @apply brightness-150 mr-0;
+}
+.latest_deals_item {
+    @apply w-[170px] h-[142px] rounded-[16px] pt-[16px] pb-[12px] px-[16px];
+}
+.latest_deals_item_headerBlock {
+    @apply flex items-center justify-between;
+}
+.latest_deals_item_headerBlock_text {
+    @apply text-[11px] text-[#8A89A4] font-[500] leading-[13px];
+}
+.latest_deals_item_image {
+    @apply mx-auto mt-[-10px] w-[127px] h-[94px] z-10;
+}
+.latest_deals_item_footerBlock {
+    @apply mx-auto text-center mt-[-15px];
+}
+.latest_deals_item_footerBlock_prgrf {
+    @apply text-[12px] text-[#BAC4CC] font-[600] leading-[15px];
+}
+.latest_deals_item_footerBlock_subText {
+    @apply text-[11px] text-[#8A89A4] font-[500] leading-[13px] block mt-[2px];
+}
+.latest_deals_items {
+    @apply mt-[32px] lg:mt-[40px] max-w-[1640px]
+}
+.latest_deals_headerPart {
+    @apply flex items-center justify-between;
+}
+.latest_deals_headerPart_text {
+    @apply text-[24px] lg:text-[32px] text-[#EBEFFD] font-[600] leading-[29px] lg:leading-[39px];
+}
+.latest_deals_headerPart_rightSwitches {
+    @apply flex items-center;
+}
+.latest_deals_headerPart_rightSwitches_switch {
+    @apply bg-[#1C1C2D40] rounded-[8.6px] w-[35px] lg:w-[43px] h-[33px] lg:h-[40px] flex items-center justify-center cursor-pointer;
+}
+.latest_deals_headerPart_rightSwitches_scndSwitch {
+    @apply ml-[8px] lg:ml-[10px];
+}
+.arrows_forSwitches_icon {
+    @apply w-[11px] lg:w-[14px] h-[11px] lg:h-[14px];
+}

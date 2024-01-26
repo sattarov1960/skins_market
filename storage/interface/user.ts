@@ -1,4 +1,5 @@
 export interface User{
+    auth: boolean;
     steamIcon: string;
     steamUserName: string;
     totalSales: number;
@@ -10,4 +11,5 @@ export interface User{
     setTradeLink: (link: string) => void;
     setSteamUserName: (name: string) => void;
     setTotalSales: (total: number) => void;
+    setAuth: (auth: boolean) => void;
 }
