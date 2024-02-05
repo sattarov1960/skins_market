@@ -1,11 +1,11 @@
 .main {
-    @apply w-full flex items-center flex-col;
+    @apply w-full flex items-center flex-col relative;
 }
 .basic_part {
     @apply mt-[40px] lg:mt-[70px] bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full lg:pl-0;
 }
 .inventory_and_recieve {
-    @apply mx-0 flex items-center flex-wrap justify-center gap-x-[44px];
+    @apply mx-0 flex items-center flex-wrap justify-center gap-x-[44px] gap-y-[36px] max-2_5xl:flex-col;
 }
 .inventoryBlock {
     @apply relative w-[665px] lg:w-[798px] h-[512px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
@@ -161,7 +161,7 @@
     @apply hidden lg:flex items-center;
 }
 .recieveBlock {
-    @apply relative w-[665px] lg:w-[798px] h-[710px] lg:h-[750px] px-[20px] lg:px-[50px] rounded-[16px] pb-[32px] pt-[24px] lg:py-[36px];
+    @apply relative w-[375px] md:w-[665px] lg:w-[798px] h-[710px] lg:h-[750px] px-[20px] lg:px-[50px] rounded-[16px] pb-[32px] pt-[24px] lg:py-[36px];
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
     backdrop-filter: blur(50px);
 }
@@ -277,7 +277,7 @@
     @apply mt-[12px];
 }
 .recieveBlock_mainButton {
-    @apply absolute bottom-[71px] mt-[50px] lg:mt-[88px] w-[698px] h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-white font-[600] leading-[20px] lg:leading-[24px];
+    @apply absolute bottom-[71px] mt-[50px] lg:mt-[88px] lg:w-[698px] h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-white font-[600] leading-[20px] lg:leading-[24px];
 }
 .recieveBlock_mainButton_ready{
     @apply text-[#FDCA76] !important
@@ -288,16 +288,22 @@
 .smoke_mainPart {
     @apply absolute top-[150px] left-0 bottom-0 hidden lg:block;
 }
+.statistic_wrap{
+    @apply w-full flex justify-center px-[20px]
+}
 .statistic_part {
-    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px] w-full;
+    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px] w-full max-w-[1640px];
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
     backdrop-filter: blur(60px);
 }
 .statistic_part_items {
-    @apply flex items-center justify-center lg:justify-between flex-wrap;
+    @apply max-lg:gap-y-[75px] max-lg:px-[20px] grid grid-cols-2 grid-rows-2 lg:flex items-center justify-center lg:justify-between;
 }
 .statistic_part_item {
-    @apply mr-[10px] lg:mr-0;
+    @apply mr-[10px] lg:mr-0 max-2_5xl:w-[230px] ;
+}
+.statistic_part_item_hr {
+    @apply max-2_5xl:hidden;
 }
 .statistic_part_item_headerBlock {
     @apply flex items-center;
@@ -409,7 +415,7 @@
     @apply absolute bottom-0 right-0 lg:opacity-40 opacity-20 w-[110px] lg:w-auto;
 }
 .smoke_detailInformation {
-    @apply absolute -right-[20px] lg:-right-[140px] bottom-0 hidden sm:block;
+    @apply absolute right-0 bottom-0 hidden sm:block;
 }
 .sadSmile_img {
     @apply w-[48px] lg:w-auto h-[48px] lg:h-auto mx-auto;

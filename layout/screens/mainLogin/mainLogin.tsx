@@ -13,15 +13,16 @@ export function MainLogin() {
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
-                <div className={styles.inventory_and_recieve}>
-                    <Inventory/>
-                    <Withdraw/>
-                </div>
-                <Image src="/smoke_mainPart.webp" width={318} height={627} alt="дым" className={styles.smoke_mainPart}/>
-                <Statistics/>
-                <LastSales/>
-                <DescriptionMarket/>
+                    <div className={styles.inventory_and_recieve}>
+                        {/*<Inventory/>*/}
+                        <Withdraw/>
+                    </div>
+                    <Image src="/smoke_mainPart.webp" width={318} height={627} alt="дым" className={styles.smoke_mainPart}/>
             </section>
+            <Statistics/>
+            <LastSales/>
+            <DescriptionMarket/>
+            <Image src="/smoke_detailInformation.webp" width={162} height={869} alt="дым" className={styles.smoke_detailInformation}/>
         </main>
     );
 }

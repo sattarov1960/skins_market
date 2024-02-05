@@ -1,5 +1,4 @@
 .detail_information_forMobile {
-    @apply -mx-[20px] lg:mx-0;
 }
 .detail_information {
     @apply mt-[110px] lg:mt-[140px] w-full rounded-[16px] px-[20px] lg:px-[60px] py-[30px] lg:py-[50px] relative;
@@ -44,5 +43,5 @@
     @apply absolute bottom-0 right-0 lg:opacity-40 opacity-20 w-[110px] lg:w-auto;
 }
 .smoke_detailInformation {
-    @apply absolute -right-[20px] lg:right-[-244px] 4xl:right-[-450px] bottom-0 hidden sm:block;
+    @apply absolute -right-[20px] lg:right-[-244px] 4xl:right-[-450px] bottom-0 hidden 3xl:block;
 }

@@ -17,7 +17,7 @@ export function DescriptionMarket() {
                     <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.logo_detail_information}/>
                 </div>
                 <div className={styles.detail_information_mainPart}>
-            <span className={styles.detail_information_mainPart_text}>
+                    <span className={styles.detail_information_mainPart_text}>
             <span className={styles.detail_information_mainPart_specialText}>
             Avan.market
             </span>
@@ -57,7 +57,6 @@ export function DescriptionMarket() {
             </span>
                 </div>
                 <Image src="/character_forDetailInformation.webp" width={171} height={186} alt="человек" className={styles.character_forDetailInformation}/>
-                <Image src="/smoke_detailInformation.webp" width={162} height={869} alt="дым" className={styles.smoke_detailInformation}/>
             </div>
         </section>
     )

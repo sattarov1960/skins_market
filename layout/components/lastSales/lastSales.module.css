@@ -1,8 +1,14 @@
+.latest_deals_wrap{
+    @apply w-full max-w-[1640px] px-[20px]
+}
 .latest_deals {
-    @apply mt-[110px] lg:mt-[140px];
+    @apply mt-[110px] lg:mt-[140px] w-full;
 }
 .latest_deals_lastDarkItem {
     @apply brightness-150 mr-0;
+}
+.latest_deals_item_wrap{
+    @apply w-full h-full relative
 }
 .latest_deals_item {
     @apply w-[170px] h-[142px] rounded-[16px] pt-[16px] pb-[12px] px-[16px];
@@ -26,10 +32,10 @@
     @apply text-[11px] text-[#8A89A4] font-[500] leading-[13px] block mt-[2px];
 }
 .latest_deals_items {
-    @apply mt-[32px] lg:mt-[40px] max-w-[1640px]
+    @apply mt-[32px] lg:mt-[40px] max-w-[1640px] w-full h-[142px] overflow-hidden flex
 }
 .latest_deals_headerPart {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between w-full;
 }
 .latest_deals_headerPart_text {
     @apply text-[24px] lg:text-[32px] text-[#EBEFFD] font-[600] leading-[29px] lg:leading-[39px];
@@ -42,6 +48,9 @@
 }
 .latest_deals_headerPart_rightSwitches_scndSwitch {
     @apply ml-[8px] lg:ml-[10px];
+}
+.latest_deals_headerPart_rightSwitches_scndSwitch_active{
+    @apply brightness-150
 }
 .arrows_forSwitches_icon {
     @apply w-[11px] lg:w-[14px] h-[11px] lg:h-[14px];

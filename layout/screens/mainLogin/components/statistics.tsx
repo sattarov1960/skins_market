@@ -5,7 +5,7 @@ import {useTranslations} from "next-intl";
 export const Statistics = () => {
     const t = useTranslations()
     return (
-        <section>
+        <section className={styles.statistic_wrap}>
             <div className={styles.statistic_part}>
                 <ul className={styles.statistic_part_items}>
                     <li className={styles.statistic_part_item}>
@@ -17,10 +17,10 @@ export const Statistics = () => {
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
-               {t("В среднем занимает сделка с момента регистрации")}
-               </span>
+                            {t("Занимает сделка с момента регистрации")}
+                        </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={`${styles.statistic_part_item} ${styles.statistic_part_item_hr}`}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>
@@ -32,10 +32,10 @@ export const Statistics = () => {
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
-               {t("Всего куплено предметов за время работы")}
-               </span>
+                            {t("Всего куплено предметов за время работы")}
+                        </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={`${styles.statistic_part_item} ${styles.statistic_part_item_hr}`}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>
@@ -47,10 +47,10 @@ export const Statistics = () => {
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
-               {t("Приватное и безопасное проведение платежа")}
-               </span>
+                            {t("Приватное и безопасное проведение платежа")}
+                        </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={`${styles.statistic_part_item} ${styles.statistic_part_item_hr}`}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>
@@ -62,8 +62,8 @@ export const Statistics = () => {
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
-               {t("Никаких скрытых комиссий, налогов и платежей.")}
-               </span>
+                            {t("Никаких скрытых и комиссий платежей.")}
+                        </span>
                     </li>
                 </ul>
             </div>
