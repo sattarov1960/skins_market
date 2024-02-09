@@ -8,7 +8,7 @@
     @apply mx-0 flex items-center flex-wrap justify-center gap-x-[44px] gap-y-[36px] max-2_5xl:flex-col;
 }
 .inventoryBlock {
-    @apply relative w-[665px] lg:w-[798px] h-[512px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
+    @apply relative w-[375px] lg:w-[798px] h-[670px] lg:h-[750px] rounded-[6px] sm:rounded-[16px] pt-[24px] lg:pt-[33px] pb-[25px] lg:pb-[36px] pl-[20px] lg:pl-[50px] pr-[20px] lg:pr-[38px];
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) -34.33%, rgba(47, 60, 134, 0.05) 100%), rgba(28, 28, 45, 0.25);
     backdrop-filter: blur(50px);
 }
@@ -134,13 +134,13 @@
     @apply w-full lg:w-auto;
 }
 .inventoryBlock_filtersInfo_leftPart_items {
-    @apply flex items-center justify-between lg:justify-start flex-wrap sm:gap-x-[12px];
+    @apply flex items-center justify-between lg:justify-start flex-wrap gap-y-[10px] sm:gap-x-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_item {
-    @apply bg-[#22223680] pt-[12px] pb-[10px] px-[16px] h-[42px] flex items-center rounded-[12px];
+    @apply bg-[#22223680] pt-[12px] px-[16px] h-[42px] flex items-center rounded-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_frstItem {
-    @apply block ml-0 shadow-[0px_2px_0px_0px_#202133_inset,_0px_2px_0px_0px_#202133_inset] w-full lg:w-auto text-center lg:text-start cursor-pointer;
+    @apply mx-[20px] block shadow-[0px_2px_0px_0px_#202133_inset,_0px_2px_0px_0px_#202133_inset] w-full lg:w-auto text-center lg:text-start cursor-pointer;
 }
 .inventoryBlock_filtersInfo_leftPart_item_subText {
     @apply text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
@@ -149,13 +149,13 @@
     @apply  hover:text-white duration-150 text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
 }
 .inventoryBlock_filtersInfo_leftPart_scndItem {
-    @apply ml-0 mt-0 w-[161.5px] lg:w-auto h-[38px] lg:h-auto justify-center;
+    @apply max-lg:ml-[20px] w-[161.5px] lg:w-auto h-[38px] lg:h-auto justify-center;
+}
+.inventoryBlock_filtersInfo_leftPart_thrdItem {
+    @apply max-lg:mr-[20px] w-[161.5px] lg:w-auto h-[39px] lg:h-auto justify-center;
 }
 .inventoryBlock_filtersInfo_leftPart_item_mainText {
     @apply text-[14px] lg:text-[16px] text-[#FDCA76] font-[600] leading-[17px] lg:leading-[20px] ml-[4px];
-}
-.inventoryBlock_filtersInfo_leftPart_thrdItem {
-    @apply mt-0 w-[161.5px] lg:w-auto h-[39px] lg:h-auto justify-center;
 }
 .inventoryBlock_filtersInfo_rightPart {
     @apply hidden lg:flex items-center;
@@ -429,7 +429,7 @@
 .sadSmile_img_blur {
 }
 .inventoryBlock_sub_tradeLink{
-    @apply bg-[url('/sadSmile_img_blur.webp')] w-[171px] h-[171px] flex items-center justify-center mt-[85px]
+    @apply bg-[url('/sadSmile_img_blur.webp')] w-[171px] h-[171px] flex items-center justify-center mt-[-30px] lg:mt-[85px]
 }
 .inventoryBlock_tradeLink_text {
     @apply max-w-[276px] lg:max-w-[418px] text-[18px] lg:text-[24px] text-[#424257] font-[500] leading-[21px] lg:leading-[27px] text-center -mt-[24px];
@@ -525,7 +525,7 @@
     @apply absolute z-10 top-[44px] w-[210px] lg:w-[205px] bg-[#191928] rounded-[12px] h-[180px] px-[16px] py-[12px] overflow-y-auto;
 }
 .inventoryBlock_cardsItems {
-    @apply -mt-[10px] min-h-[500px] grid grid-cols-5 auto-rows-[150px] py-[15px] gap-[11.5px] lg:gap-[12px] max-h-[353px] lg:max-h-[500px] overflow-y-auto px-[10px] lg:pr-[12px] -mr-[10px] lg:mr-0;
+    @apply -mt-[10px] min-h-[370px] lg:min-h-[500px] grid grid-cols-3 lg:grid-cols-5 auto-rows-[110px] lg:auto-rows-[150px] py-[15px] gap-[11.5px] lg:gap-[12px] max-h-[353px] lg:max-h-[500px] overflow-y-auto px-[10px] lg:pr-[12px] -mr-[10px] lg:mr-0;
 }
 .inventoryBlock_cardsItems::-webkit-scrollbar {
     @apply w-[3px];
