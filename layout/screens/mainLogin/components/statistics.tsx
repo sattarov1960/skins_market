@@ -28,7 +28,7 @@ export const Statistics = () => {
                             <Image src="/layer_icon.svg" width={35} height={34} alt="слои"
                                    className={styles.statistic_part_item_icon}/>
                             <p className={styles.statistic_part_item_headerBlock_text}>
-                                {t("12 тысяч")}
+                                12 {t("тысяч")}
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
@@ -62,7 +62,7 @@ export const Statistics = () => {
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
-                            {t("Никаких скрытых и комиссий платежей.")}
+                            {t("Никаких скрытых и комиссий платежей")}
                         </span>
                     </li>
                 </ul>

@@ -28,7 +28,7 @@ export const PaymentMethod = ({
                             ${withdrawMainStore.activePaymentSystem === "SBP" && styles.recieveBlock_paymentMethod_item_active}`}
                         onClick={() => handlePaymentSystemClick("SBP")}>
                         <Image src="/sbp_paymentMethod_icon.svg" width={81} height={27} alt="sbp"
-                               className={styles.tron_paymentMethod_icon}/>
+                               className={styles.sbp_paymentMethod_icon}/>
                     </li>
                 </CustomTooltip>
                 <CustomTooltip tooltipText={captionPS("MIR")}>
@@ -36,7 +36,7 @@ export const PaymentMethod = ({
                             ${!isActivePaymentSystem("MIR") && styles.recieveBlock_paymentMethod_item_inactive}
                             ${withdrawMainStore.activePaymentSystem === "MIR" && styles.recieveBlock_paymentMethod_item_active}`}
                         onClick={() => handlePaymentSystemClick("MIR")}>
-                        <Image src="/mir_paymentMethod_icon.svg" width={38} height={11} alt="mir"/>
+                        <Image src="/mir_paymentMethod_icon.svg" width={38} height={11} alt="mir" className={styles.sbp_paymentMethod_icon}/>
                     </li>
                 </CustomTooltip>
                 <CustomTooltip tooltipText={captionPS("Qiwi")}>

@@ -232,10 +232,10 @@
     @apply text-[16px] lg:text-[18px] text-[#8A89A4] font-[500] leading-[19px] lg:leading-[21px];
 }
 .recieveBlock_paymentMethod_items {
-    @apply mt-[16px] grid grid-cols-4 lg:grid-cols-5 gap-[11.5px] lg:gap-[8px];
+    @apply mt-[16px] grid grid-cols-3 lg:grid-cols-5 gap-[11.5px] lg:gap-[8px];
 }
 .recieveBlock_paymentMethod_item {
-    @apply w-auto lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center cursor-pointer;
+    @apply w-[104px] lg:w-[133px] h-[60px] lg:h-[72px] bg-[#22223680] rounded-[12px] flex items-center justify-center cursor-pointer;
 }
 .recieveBlock_paymentMethod_item_active {
     @apply border-[1px] border-[#FDCA76];
@@ -258,6 +258,12 @@
 .tron_paymentMethod_icon {
     @apply w-[23px] lg:w-auto h-[24px] lg:h-auto;
 }
+.sbp_paymentMethod_icon {
+    @apply w-[71px] lg:w-auto h-[24px] lg:h-auto;
+}
+.mir_paymentMethod_icon {
+    @apply w-[71px] lg:w-auto h-[24px] lg:h-auto;
+}
 .recieveBlock_formFields {
     @apply mt-[24px] lg:mt-[32px];
 }
@@ -277,7 +283,7 @@
     @apply mt-[12px];
 }
 .recieveBlock_mainButton {
-    @apply absolute bottom-[71px] mt-[50px] lg:mt-[88px] lg:w-[698px] h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-white font-[600] leading-[20px] lg:leading-[24px];
+    @apply absolute bottom-[71px] mt-[50px] lg:mt-[88px] w-[335px] lg:w-[698px] h-[60px] lg:h-[71px] bg-[#22223680] rounded-[48px] shadow-[0px_2px_0px_0px_#202133_inset] text-[20px] lg:text-[24px] text-white font-[600] leading-[20px] lg:leading-[24px];
 }
 .recieveBlock_mainButton_ready{
     @apply text-[#FDCA76] !important
