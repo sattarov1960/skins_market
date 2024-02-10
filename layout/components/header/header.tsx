@@ -92,22 +92,22 @@ function Wallet() {
                             RUB
                         </p>
                     </li>
-                    <li className={`${styles.nav_currencyBlock_addElement_item} ${storeWallet.activeName == "UAH" ? styles.nav_currencyBlock_addElement_item_active : null}`} onClick={() => storeWallet.setActiveName("UAH")}>
-                        <p className={styles.nav_currencyBlock_addElement_item_text}>
-                            ₴
-                        </p>
-                        <p className={`${styles.nav_currencyBlock_addElement_item_text} ${styles.nav_currencyBlock_addElement_item_scndText}`}>
-                            UAH
-                        </p>
-                    </li>
-                    <li className={`${styles.nav_currencyBlock_addElement_item} ${storeWallet.activeName == "KZT" ? styles.nav_currencyBlock_addElement_item_active : null}`} onClick={() => storeWallet.setActiveName("KZT")}>
-                        <p className={styles.nav_currencyBlock_addElement_item_text}>
-                            ₸
-                        </p>
-                        <p className={`${styles.nav_currencyBlock_addElement_item_text} ${styles.nav_currencyBlock_addElement_item_scndText}`}>
-                            KZT
-                        </p>
-                    </li>
+                    {/*<li className={`${styles.nav_currencyBlock_addElement_item} ${storeWallet.activeName == "UAH" ? styles.nav_currencyBlock_addElement_item_active : null}`} onClick={() => storeWallet.setActiveName("UAH")}>*/}
+                    {/*    <p className={styles.nav_currencyBlock_addElement_item_text}>*/}
+                    {/*        ₴*/}
+                    {/*    </p>*/}
+                    {/*    <p className={`${styles.nav_currencyBlock_addElement_item_text} ${styles.nav_currencyBlock_addElement_item_scndText}`}>*/}
+                    {/*        UAH*/}
+                    {/*    </p>*/}
+                    {/*</li>*/}
+                    {/*<li className={`${styles.nav_currencyBlock_addElement_item} ${storeWallet.activeName == "KZT" ? styles.nav_currencyBlock_addElement_item_active : null}`} onClick={() => storeWallet.setActiveName("KZT")}>*/}
+                    {/*    <p className={styles.nav_currencyBlock_addElement_item_text}>*/}
+                    {/*        ₸*/}
+                    {/*    </p>*/}
+                    {/*    <p className={`${styles.nav_currencyBlock_addElement_item_text} ${styles.nav_currencyBlock_addElement_item_scndText}`}>*/}
+                    {/*        KZT*/}
+                    {/*    </p>*/}
+                    {/*</li>*/}
                 </ul>
             </div> : null}
         </section>

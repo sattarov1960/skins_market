@@ -200,16 +200,19 @@
     @apply flex items-center;
 }
 .reviews_switch {
-    @apply bg-[#1C1C2D40] rounded-[8.6px] w-[35px] lg:w-[43px] h-[33px] lg:h-[40px] flex items-center justify-center;
+    @apply bg-[#1C1C2D40] rounded-[8.6px] w-[35px] lg:w-[43px] h-[33px] lg:h-[40px] flex items-center justify-center cursor-pointer;
 }
 .reviews_rightSwitch {
     @apply ml-[10px];
 }
+.reviews_items_wrap {
+    @apply mt-[40px];
+}
 .reviews_items {
-    @apply mt-[40px] flex items-center justify-start overflow-x-hidden -mr-[140px];
+    @apply flex items-center justify-start overflow-hidden;
 }
 .reviews_item {
-    @apply w-[239px] lg:w-[345px] h-[253px] lg:h-[330px] rounded-[16px] px-[24px] lg:px-[40px] pt-[30px] lg:pt-[40px] ml-[25px] flex-[0_0_auto];
+    @apply w-[239px] lg:w-[345px] h-[253px] lg:h-[330px] rounded-[16px] px-[24px] lg:px-[40px] pt-[30px] lg:pt-[40px] flex-[0_0_auto];
     background: linear-gradient(
             180deg,
             rgb(76 43 43 / 0%) -34.33%,
@@ -240,6 +243,9 @@
 }
 .reviews_item_mainBlock_text {
     @apply text-[14px] lg:text-[18px] text-[#EBEFFD] font-[500] leading-[19.1px] lg:leading-[24.57px] opacity-50 block h-[95px] lg:h-auto;
+}
+.reviews_item_footerBlock_wrap {
+    @apply mt-[20px];
 }
 .reviews_item_footerBlock {
     @apply flex items-center mt-[20px];
