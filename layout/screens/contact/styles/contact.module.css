@@ -1,5 +1,5 @@
 .main {
-    @apply sm:pl-[140px] sm:overflow-hidden;
+    @apply sm:pl-[140px] sm:overflow-hidden max-w-[1920px] mx-auto;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;

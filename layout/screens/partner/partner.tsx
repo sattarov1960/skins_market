@@ -1,3 +1,4 @@
+"use client"
 import styles from "@/layout/screens/partner/styles/partner.module.css"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
@@ -147,7 +148,7 @@ export function Partner() {
                                     </h2>
                                 </div>
                                 <span className={styles.partner_programm_instructions_rightPart_item_subText}>
-                  {t("После того как ваш друг продаст предметы вам в автоматическом режиме прийдут деньги")}
+                  {t("После того как ваш друг продаст предметы вам в автоматическом режиме прейдут деньги")}
                   </span>
                             </li>
                         </ul>

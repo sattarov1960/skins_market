@@ -1,11 +1,11 @@
 .main {
-    @apply px-[140px] overflow-hidden;
+    @apply sm:px-[40px] lg:px-[100px] xl:px-[140px] overflow-hidden max-w-[1920px] mx-auto;
 }
 .basic_part {
-    @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
+    @apply sm:bg-[url('/bg_mainPart.webp')] bg-cover bg-center bg-no-repeat h-full;
 }
 .main_part {
-    @apply pt-[200px] lg:pt-[320px] xl:pt-[140px];
+    @apply max-sm:mx-[20px] pt-[300px] lg:pt-[320px] xl:pt-[185px] relative z-[10];
 }
 .average_sell {
     @apply flex items-center justify-center w-[236px] lg:w-[314px] h-[36px] lg:h-[48px] rounded-[8px] border-[1px] border-[#8a89a44d];
@@ -23,10 +23,10 @@
     @apply text-[24px] sm:text-[40px] lg:text-[68px] text-white font-[600] leading-[26px] sm:leading-[46px] lg:leading-[72px] max-w-[550px] lg:max-w-[927px];
 }
 .main_part_text_generalBlock {
-    @apply flex items-center;
+    @apply flex items-center whitespace-nowrap;
 }
 .x_icon {
-    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] absolute lg:static right-[15px] mb-[10px];
+    @apply w-[38px] lg:w-[66px] h-[38px] lg:h-[66px] mx-[5.5px] lg:ml-[20px] lg:mr-[10px];
 }
 .line_mainPart {
     @apply w-[119px] sm:w-[200px] lg:w-[359px] ml-[34px] sm:ml-[55px] lg:ml-[90px];
@@ -38,10 +38,10 @@
     @apply mt-[32px] sm:mt-[68px] flex items-center flex-wrap;
 }
 .mainPart_startNowBlock_button {
-    @apply bg-[#FDCA76] flex items-center justify-center rounded-[4px] w-[252px] h-[62px] text-[22px] text-black font-[600] leading-[22px] shadow-[0px_5px_18px_0px_#1b68ff1f] cursor-pointer;
+    @apply bg-[#FDCA76] flex items-center justify-center rounded-[4px] w-full md:w-[252px] h-[62px] text-[22px] text-black font-[600] leading-[22px] shadow-[0px_5px_18px_0px_#1b68ff1f] cursor-pointer;
 }
 .mainPart_sub_startNowBlock {
-    @apply flex items-center ml-[40px];
+    @apply flex items-center ml-[40px] max-sm:mt-[24px] max-sm:mx-auto;
 }
 .star_icon {
     @apply w-[20px] lg:w-[24px] h-[20px] lg:h-[24px];
@@ -50,22 +50,30 @@
     @apply text-[16px] text-[#B9B8D3] font-[500] leading-[20px] block ml-[12px];
 }
 .ak_image {
-    @apply hidden md:flex w-full xl:w-[70%] 2xl:w-full absolute right-0 top-[75px] lg:top-[90px] 2xl:top-0;
+    @apply hidden md:flex w-full xl:w-[100%] 2xl:w-full absolute right-0 top-[75px] sm:top-[160px] lg:top-[120px] xl:top-[40px] 2xl:top-0 ;
 }
 .ak_image_mobile {
-    @apply md:hidden w-full md:w-full absolute right-0 top-[75px] lg:top-[90px] md:top-0;
+    @apply md:hidden w-full md:w-full absolute right-0 top-[-20px] lg:top-[90px] md:top-0;
 }
 .smoke_mainPart {
     @apply absolute top-[150px] left-0 bottom-0 hidden lg:block;
 }
 .statistic_part {
-    @apply mt-[38px] lg:mt-[44px] px-0 lg:px-[10px] xl:px-[40px] 2xl:px-[84.5px] pt-[36px] pb-[30px] rounded-[16px];
+    @apply mt-[110px] lg:mt-[120px] relative z-[10] max-sm:mx-[20px];
 }
 .statistic_part_items {
-    @apply flex items-center justify-center lg:justify-between flex-wrap;
+    @apply grid grid-cols-2 grid-rows-2 xl:flex items-center xl:justify-between flex-wrap;
+    grid-template-rows: 99px 74px 99px;
 }
 .statistic_part_item {
     @apply mr-[10px] lg:mr-0;
+}
+.statistic_part_item_hr_mobile {
+    @apply col-span-2 h-[2px] xl:hidden;
+    border: 1px solid rgba(138, 137, 164, 0.3);
+}
+.statistic_part_item_hr {
+    @apply mr-[10px] lg:mr-0 max-xl:hidden;
 }
 .statistic_part_item_headerBlock {
     @apply flex items-center;
@@ -172,6 +180,9 @@
 .smoke_detailInformation {
     @apply absolute -right-[20px] lg:-right-[140px] bottom-0 hidden sm:block;
 }
+.reviews_wrap{
+    @apply max-sm:ml-[20px]
+}
 .reviews {
     @apply mt-[105px] lg:mt-[150px];
 }
@@ -188,10 +199,10 @@
     @apply text-[15px] lg:text-[18px] text-[#FDCA76] font-[600] leading-[15px] lg:leading-[18px] uppercase ml-[8px];
 }
 .reviews_linkRight {
-    @apply ml-[12px] w-[121px] lg:w-[132px] h-[40px];
+    @apply w-[121px] lg:w-[132px] h-[40px];
 }
 .reviews_mainText_and_Switches {
-    @apply flex items-center justify-between mt-[20px] lg:mt-[24px];
+    @apply flex items-center justify-between mt-[20px] lg:mt-[24px] max-sm:mr-[20px];
 }
 .reviews_mainText {
     @apply text-[24px] lg:text-[32px] text-[#EBEFFD] font-[600] leading-[29px] lg:leading-[39px];
@@ -206,7 +217,11 @@
     @apply ml-[10px];
 }
 .reviews_items_wrap {
-    @apply mt-[40px];
+    @apply mt-[40px] relative;
+}
+.reviews_lastItem {
+    @apply max-sm:w-[116px] max-sm:h-[250px] absolute right-0 top-0 z-10;
+    background: linear-gradient(270.00deg, rgb(12, 12, 18) 10.119%,rgba(12, 12, 18, 0) 100%);
 }
 .reviews_items {
     @apply flex items-center justify-start overflow-hidden;
@@ -255,9 +270,6 @@
 }
 .arrowRight_forReviews {
     @apply w-[14px] lg:w-[18px] h-[12px] lg:h-[16px] ml-[6px];
-}
-.reviews_lastItem {
-    @apply w-[300px];
 }
 .faq {
     @apply pt-[110px] lg:pt-[100px] pr-0 lg:pr-[70px] xl:pr-0;
@@ -325,6 +337,9 @@
 .faq_mainPart_sixthItem {
     @apply hidden lg:block;
 }
+.reference_wrap{
+    @apply max-lg:mt-[110px]
+}
 .reference {
     @apply relative;
 }
@@ -359,5 +374,5 @@
     @apply absolute -bottom-[50px] sm:-bottom-[100px] -left-[120px] sm:-left-[70px] lg:-left-[140px];
 }
 .faq_section_wrap{
-    @apply mt-[170px]
+    @apply max-sm:mx-[20px]
 }

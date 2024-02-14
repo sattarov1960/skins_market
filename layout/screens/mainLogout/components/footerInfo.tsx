@@ -6,7 +6,7 @@ import {useTranslations} from "next-intl";
 export function FooterInfo() {
     const t = useTranslations()
     return (
-        <section>
+        <section className={styles.reference_wrap}>
             <div className={styles.reference}>
                 <div className={styles.reference_headerBlock}>
                     <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>

@@ -33,14 +33,12 @@ export function Top() {
                   </button>
                   <div className={styles.mainPart_sub_startNowBlock}>
                       <Image src="/star_icon.svg" width={24} height={24} alt="звезда" className={styles.star_icon}/>
-                      <span className={styles.mainPart_sub_startNowBlock_text}>
-               {t("Читать отзывы")}
-               </span>
+                      <span className={styles.mainPart_sub_startNowBlock_text}>{t("Читать отзывы")}</span>
                   </div>
               </div>
           </div>
-          <Image src="/ak_mobile.webp" width={375} height={722} alt="ак" className={styles.ak_image_mobile}/>
-          <Image src="/ak.webp" width={1905} height={1358} alt="ак" className={styles.ak_image}/>
+          <Image priority={true} src="/ak_mobile.webp" width={375} height={722} alt="ак" className={styles.ak_image_mobile}/>
+          <Image priority={true} src="/ak.webp" width={1905} height={1358} alt="ак" className={styles.ak_image} quality={100}/>
           <Image src="/smoke_mainPart.webp" width={318} height={627} alt="дым" className={styles.smoke_mainPart}/>
       </section>
   );

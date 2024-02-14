@@ -118,12 +118,20 @@ function Wallet() {
 export function Header() {
     const t = useTranslations()
     const pathname = usePathname()
-
+    const scrollInto = () => {
+        const element = document.querySelector('#reviews')
+        if (!element) return
+        element.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <div className={styles.nav_leftBlock}>
-                    <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.logo}/>
+                    <Link href="/">
+                        <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.logo}/>
+                    </Link>
                     <hr className={styles.nav_line}/>
                     <Language/>
                     <Wallet/>
@@ -136,7 +144,7 @@ export function Header() {
                                 <div className={styles.nav_midBlock_item_active_line}/> : null}
                         </li>
                         <li className={`${styles.nav_midBlock_item} ${pathname.endsWith("/#reviews") ? styles.nav_midBlock_item_active : null}`}>
-                            <Link href="/#reviews">{t("Отзывы")}</Link>
+                            <Link href="/" onClick={scrollInto}>{t("Отзывы")}</Link>
                             {pathname.endsWith("#reviews") ? <div className={styles.nav_midBlock_item_active_line}/> : null}
                         </li>
                         <li className={`${styles.nav_midBlock_item} ${pathname.endsWith("/how") ? styles.nav_midBlock_item_active : null}`}>

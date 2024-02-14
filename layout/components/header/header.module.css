@@ -1,5 +1,5 @@
 .header {
-    @apply w-full flex items-center justify-between px-[20px] sm:px-[140px] h-[75px] lg:h-[90px];
+    @apply w-full flex items-center justify-between px-[20px] sm:px-[140px] h-[75px] lg:h-[90px] relative z-[10];
     background: linear-gradient(#09090b, #050506);
 }
 .nav_leftBlock {

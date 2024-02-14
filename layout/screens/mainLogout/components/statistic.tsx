@@ -19,7 +19,7 @@ export function Statistic() {
                {t("В среднем занимает сделка с момента регистрации")}
                </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={styles.statistic_part_item_hr}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>
@@ -33,7 +33,8 @@ export function Statistic() {
                {t("Всего куплено предметов за время работы")}
                </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={styles.statistic_part_item_hr_mobile}></li>
+                    <li className={styles.statistic_part_item_hr}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>
@@ -47,7 +48,7 @@ export function Statistic() {
                {t("Приватное и безопасное проведение платежа")}
                </span>
                     </li>
-                    <li className={styles.statistic_part_item}>
+                    <li className={styles.statistic_part_item_hr}>
                         <hr className={styles.statistic_part_item_line}/>
                     </li>
                     <li className={styles.statistic_part_item}>

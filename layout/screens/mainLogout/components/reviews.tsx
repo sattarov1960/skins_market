@@ -14,17 +14,18 @@ import {useEffect} from "react";
 export function Reviews() {
     const t = useTranslations()
     return (
-        <section>
+        <section id="reviews" className={styles.reviews_wrap}>
             <div className={styles.reviews}>
                 <div className={styles.reviews_links}>
                     <button className={`${styles.reviews_link} ${styles.reviews_linkRight}`}>
                         <Image src="/vk_icon.svg" width={24} height={24} alt="вк" className={styles.vk_icon}/>
-                        <p className={styles.reviews_link_text}>
-                            VK.COM
-                        </p>
+                        <Link href="https://t.me/good_ak777">
+                            <p className={styles.reviews_link_text}>
+                                VK.COM
+                            </p>
+                        </Link>
                     </button>
                 </div>
-
                 <SliderReviews/>
             </div>
         </section>
@@ -39,14 +40,17 @@ export const SliderReviews = () => {
         slideChanged() {
             console.log('slide changed');
         },
-        slides: {perView: 1, spacing: 16},
+        slides: {perView: 1.4, spacing: 16},
         breakpoints: {
+            '(min-width: 800px)': {
+                slides: {perView: 2, spacing: 25},
+            },
+            '(min-width: 1300px)': {
+                slides: {perView: 3, spacing: 25},
+            },
             '(min-width: 1640px)': {
                 slides: {perView: 4, spacing: 25},
-            },
-            '(min-width: 2112px)': {
-                slides: {perView: 6, spacing: 25},
-            },
+            }
         },
         dragSpeed: 1,
         loop: true,
@@ -91,6 +95,7 @@ export const SliderReviews = () => {
                 </div>
             </div>
             <div className={styles.reviews_items_wrap}>
+                <div className={styles.reviews_lastItem}></div>
                 <div ref={sliderRef}
                      className={`${styles.reviews_items} keen-slider`}>
                     {reviewStore.reviews.map((value, index) => <Review {...value} key={index}/>)}

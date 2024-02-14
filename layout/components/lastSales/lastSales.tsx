@@ -10,6 +10,8 @@ import {formatCurrency} from "@/utilities/formatCyrrency";
 import 'swiper/css';
 import React, {useEffect, useState} from "react";
 import {useKeenSlider} from "keen-slider/react";
+import { usePathname } from 'next/navigation'
+import {useUserStore} from "@/storage/client/user";
 
 
 function LastItem({ skinName, price, time, title, img, rarity }: LastItemProps){
@@ -57,12 +59,40 @@ export function LastSales() {
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(false)
     const lastSalesStore = useLastSalesStore()
-    const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-        slideChanged() {
-            console.log('slide changed');
-        },
-        slides: {perView: 1, spacing: 16},
-        breakpoints: {
+    const userStore = useUserStore()
+    const getBreakpoint = () => {
+        if (userStore.auth) {
+            return {
+                '(min-width: 0x)': {
+                    slides: {perView: 1, spacing: 16},
+                },
+                '(min-width: 280px)': {
+                    slides: {perView: 2, spacing: 16},
+                },
+                '(min-width: 450px)': {
+                    slides: {perView: 3, spacing: 16},
+                },
+                '(min-width: 620px)': {
+                    slides: {perView: 4, spacing: 16},
+                },
+                '(min-width: 790x)': {
+                    slides: {perView: 5, spacing: 16},
+                },
+                '(min-width: 1130px)': {
+                    slides: {perView: 6, spacing: 16},
+                },
+                '(min-width: 1300px)': {
+                    slides: {perView: 7, spacing: 16},
+                },
+                '(min-width: 1470px)': {
+                    slides: {perView: 8, spacing: 16},
+                },
+                '(min-width: 1640px)': {
+                    slides: {perView: 9, spacing: 16},
+                },
+            }
+        }
+        return {
             '(min-width: 0x)': {
                 slides: {perView: 1, spacing: 16},
             },
@@ -90,7 +120,14 @@ export function LastSales() {
             '(min-width: 1640px)': {
                 slides: {perView: 9, spacing: 16},
             },
+        }
+    }
+    const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+        slideChanged() {
+            console.log('slide changed');
         },
+        slides: {perView: 1, spacing: 16},
+        breakpoints: getBreakpoint(),
         dragSpeed: 1,
         loop: true,
     });
@@ -138,13 +175,15 @@ export function LastSales() {
                         </button>
                     </div>
                 </div>
-                <div
-                    ref={sliderRef}
-                    className={`${styles.latest_deals_items} keen-slider`}
-                >
-                    {lastSalesStore.items.map((item, index) => (
-                        <LastItem key={index} {...item} />
-                    ))}
+                <div className={styles.latest_deals_slider_wrap}>
+                    <div
+                        ref={sliderRef}
+                        className={`${styles.latest_deals_items} keen-slider`}
+                    >
+                        {lastSalesStore.items.map((item, index) => (
+                            <LastItem key={index} {...item} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
