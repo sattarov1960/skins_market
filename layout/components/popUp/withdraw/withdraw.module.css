@@ -1,0 +1,81 @@
+.withdraw_section_wrap{
+    @apply overflow-hidden w-[335px] h-[565px] xl:h-[488px] xl:w-[580px] relative px-[24px] xl:px-[32px];
+    border-radius: 16px;
+    backdrop-filter: blur(120px);
+    background: rgb(13, 14, 21);
+}
+.withdraw_close_icon{
+    @apply absolute top-[16px] right-[16px] w-[14px] h-[14px];
+}
+.withdraw_h1{
+    @apply mt-[24px] text-[20px] leading-[24px] font-normal;
+    color: rgb(235, 239, 253);
+}
+.withdraw_payments_methods_wrap{
+    @apply flex flex-wrap gap-[7px] xl:gap-x-[11px]
+}
+.withdraw_payments_method{
+    @apply mt-[24px] xl:mt-[34px] rounded-[10px] xl:rounded-[12px] w-[140px] h-[68px] xl:w-[166px] xl:h-[82px] flex justify-center items-center;
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
+}
+.withdraw_payments_wallet_wrap{
+    @apply mt-[24px] xl:mt-[50px] w-[287px] h-[40px] px-[9px] flex items-center justify-start gap-x-[12px]
+}
+.withdraw_payments_wallet_right{
+    @apply max-xl:hidden w-[160px] h-[57px] flex items-center justify-center gap-x-[8px];
+    border-radius: 12px;
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
+}
+.withdraw_payments_wallet_right_text{
+    color: rgb(151, 152, 179);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.withdraw_payments_wallet_right_icon{
+    width: 27px;
+    height: 27px;
+}
+.withdraw_payments_wallet_left_input{
+    @apply text-[13px] font-medium leading-[15px] xl:text-[16px] xl:leading-[19px];
+    color: rgb(138, 137, 164);
+}
+.withdraw_payments_wallet_btm_wrap{
+    @apply mt-[8px] xl:mt-[12px] max-xl:gap-y-[8px] xl:gap-x-[19px] flex flex-col xl:flex-row w-full justify-between items-center;
+}
+.withdraw_payments_wallet_btm_item{
+    @apply w-[287px] h-[43px] xl:w-[259px] xl:h-[53px] flex items-center justify-between gap-x-[8px];
+    border-radius: 12px;
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
+}
+.withdraw_payments_wallet_btm_text{
+    @apply text-[15px] xl:text-[16px] xl:leading-[110%];
+    color: rgb(138, 137, 164);
+    font-weight: 700;
+}
+.withdraw_payments_hr{
+    @apply w-[580px] mt-[24px] xl:mt-[32px] ml-[-30px];
+    border: 1px solid rgba(138, 137, 164, 0.3);
+}
+.withdraw_payments_btm_wrap{
+    @apply max-xl:gap-y-[8px] mt-[24px] xl:mt-[32px] flex items-center justify-between w-full flex-col xl:flex-row;
+}
+.withdraw_payments_btm_item{
+    @apply w-[287px] h-[52px] xl:w-[259px] xl:h-[56px] flex items-center justify-center gap-x-[8px] px-[16px] xl:px-[24px];
+}
+.withdraw_payments_btm_left_text{
+    @apply text-[16px] xl:text-[18px] font-medium leading-[110%];
+    color: rgb(138, 137, 164);
+}
+.withdraw_payments_btm_left_right_text{
+    @apply font-medium text-[14px] leading-[110%];
+    color: rgba(138, 137, 164, 0.5);
+}
+.withdraw_payments_btm_right_text {
+    @apply text-[16px] xl:text-[18px] font-semibold leading-[110%];
+    color: rgb(253, 202, 118);
+}

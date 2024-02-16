@@ -11,7 +11,7 @@ export const metadata: Metadata = getMeta("Главная",
 export default function Home() {
   return (
     <>
-      <MainLogout/>
+      <MainLogin/>
     </>
   )
 }
