@@ -1,0 +1,130 @@
+.trade_wrap{
+    @apply overflow-hidden w-[335px] h-[755px] rounded-[16px] xl:w-[960px] xl:h-[558px] px-[24px] xl:px-[48px] py-[24px] xl:pt-[40px] xl:pb-[35px];
+    backdrop-filter: blur(120px);
+    background: rgb(13, 14, 21);
+}
+.trade_h1{
+    @apply text-[20px] font-medium leading-[24px] text-left xl:text-[32px] xl:leading-[38px];
+    color: rgb(235, 239, 253);
+
+}
+.trade_img_small{
+    @apply w-[36px] h-[36px] xl:w-[48px] xl:h-[48px] rounded-full;
+}
+.trade_img_big{
+    @apply w-[44px] h-[44px] xl:w-[56px] xl:h-[56px] rounded-full;
+}
+.trade_part_wrap{
+    @apply mt-[24px] xl:mt-[40px];
+}
+.trade_part_top_wrap{
+    @apply flex items-center
+}
+.trade_parts_wrap{
+    @apply w-full flex flex-col xl:flex-row xl:justify-between
+}
+.trade_part_sent{
+    @apply text-[16px] font-medium leading-[19px] ml-[8px] xl:text-[18px] xl:leading-[21px];
+    color: rgb(138, 137, 164);
+
+}
+.trade_part_sent_p{
+    @apply text-[16px] font-semibold xl:font-semibold leading-[110%] ml-[8px];
+    color: rgb(138, 137, 164);
+}
+.trade_part_sent_p_wrap{
+    @apply mt-[12px] xl:mt-[19px] text-left w-[287px] xl:w-[300px] h-[60px]  backdrop-blur-[100px] xl:backdrop-blur-[120px] rounded-[12px] flex items-center px-[20px];
+    background: rgba(34, 34, 54, 0.5);
+}
+.trade_part_items_scroll_wrap{
+    @apply h-[144px] xl:h-[168px] overflow-y-auto mt-[12px] xl:mt-[19px] overflow-x-hidden pr-[5px]
+}
+.trade_part_items_wrap{
+    @apply grid grid-cols-3 gap-[10px] w-[287px] xl:grid-cols-4 xl:gap-[8px] xl:w-[464px]
+}
+.trade_part_item{
+    @apply select-none backdrop-blur-[100px] rounded-[10px] flex justify-center items-center w-[89px] h-[67px] xl:rounded-[12px] xl:w-[110px] xl:h-[80px] xl:backdrop-blur-[120px];
+    background: rgba(34, 34, 54, 0.5);
+}
+.trade_part_item_img{
+    @apply w-[54px] h-[40px] xl:w-[65px] xl:h-[50px];
+}
+.trade_part_hr_mobile{
+    @apply w-[287px] h-[2px] mt-[24px] xl:h-[235px] xl:w-[2px] xl:mt-[40px];
+    border: 1px solid rgba(138, 137, 164, 0.3);
+}
+.trade_part_hr_desktop{
+    @apply w-[960px] ml-[-48px] mt-[24px] xl:mt-[78px] mb-[38px];
+    border: 1px solid rgba(138, 137, 164, 0.3);
+}
+.trade_part_state_wrap{
+    @apply px-[12px] w-[287px] xl:w-[300px] h-[35px] flex justify-between items-center rounded-[8px] mt-[39px] xl:mt-[73px];
+}
+.trade_part_state_wrap_green {
+    background: rgba(138, 245, 155, 0.09);
+}
+.trade_part_state_wrap_blue {
+    background: rgba(153, 138, 245, 0.09);
+}
+.trade_part_state_wrap_red {
+    background: rgba(245, 138, 138, 0.09);
+}
+.trade_part_state_span{
+    @apply text-[16px] leading-[19px] font-normal;
+
+}
+.trade_part_state_span_green{
+    color: rgb(138, 245, 155);
+}
+.trade_part_state_span_blue{
+    color: rgba(153, 138, 245, 0.09);
+}
+.trade_part_state_span_red{
+    color: rgba(245, 138, 138, 0.09);
+}
+.trade_part_state_icon{
+    @apply w-[20px] h-[20px] animate-spin;
+    animation: spin 2s linear infinite;
+}
+.trade_part_footer_wrap{
+    @apply w-full flex justify-between items-center flex-col xl:flex-row;
+}
+.trade_part_footer_left_wrap{
+    @apply flex gap-[7px] xl:gap-[20px]
+}
+.trade_part_footer_btn_left_wrap{
+    @apply flex flex-col items-start
+}
+.trade_part_footer_bot_span{
+    @apply text-[16px] font-medium leading-[21px] xl:text-[26px] xl:leading-[31px];
+    color: rgb(235, 239, 253);
+
+}
+.trade_part_footer_bot_span_gray{
+    @apply text-[16px] font-medium leading-[110%] xl:text-[18px] xl:leading-[110%];
+    color: rgb(138, 137, 164);
+
+}
+.trade_part_footer_right{
+    @apply flex gap-[8px] xl:gap-[12px] max-sm:flex-col max-sm:mt-[24px];
+}
+.trade_part_footer_right_item{
+    @apply w-[287px] h-[50px] xl:w-[225px] xl:h-[56px] flex items-center justify-center rounded-[12px] backdrop-blur-[120px] cursor-pointer gap-x-[8px];
+    background: rgba(34, 34, 54, 0.5);
+}
+.trade_part_footer_right_span{
+    @apply text-[16px] font-semibold;
+    color: rgb(138, 137, 164);
+}
+.trade_part_footer_right_img{
+    @apply w-[24px] h-[24px]
+}
+.trade_part_items_scroll_wrap::-webkit-scrollbar {
+    @apply w-[3px];
+}
+.trade_part_items_scroll_wrap::-webkit-scrollbar-thumb {
+    @apply bg-[#FDCA76] rounded-[12px] border-none;
+}
+.trade_part_items_scroll_wrap::-webkit-scrollbar-track {
+    @apply bg-[#8A89A408];
+}

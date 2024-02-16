@@ -12,7 +12,7 @@ interface ErrorProps {
 
 function Error(error: ErrorProps){
     return (
-        <section>
+        <section className={`${styles.error_trade_wrap} ${error.msg ?? styles.unknown_error_trade_wrap}`}>
             <Image className={styles.error_trade_img} src={error_img} alt=""/>
             <Image className={styles.error_trade_close_icon} src={close_popup} alt=""/>
             {error.msg ? <h1 className={styles.error_trade_h1}>Ошибка создания трейда!</h1> :

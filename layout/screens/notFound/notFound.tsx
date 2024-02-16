@@ -22,7 +22,7 @@ export function NotFound() {
           <ErrorIllustration/>
           <section className={`${styles.messageBox}`}>
               <h1>404</h1>
-              <p>Page not found</p>
+              <p>Id not found</p>
               <div className={styles.buttonsCon}>
                   <div className={styles.actionLinkWrap}>
                       <a href="/" className={styles.linkButton}>{t("")}Домой</a>

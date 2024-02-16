@@ -1,5 +1,5 @@
 .success_trade_wrap{
-    @apply rounded-[16px] w-[335px] h-[463px] relative xl:w-[558px] xl:h-[573px];
+    @apply rounded-[16px] w-[335px] h-[484px] relative xl:w-[558px] xl:h-[573px] pt-[50px] xl:pt-[64px];
     backdrop-filter: blur(120px);
     background: rgb(13, 14, 21);
 }
@@ -7,7 +7,7 @@
     @apply absolute top-[16px] right-[16px] w-[14px] h-[14px];
 }
 .success_trade_img{
-    @apply w-[160px] h-[160px] mt-[50px] mx-auto xl:w-[206px] xl:h-[206px] xl:mt-[64px];
+    @apply w-[160px] h-[160px] mx-auto xl:w-[206px] xl:h-[206px] ;
 }
 .success_trade_h1{
     @apply xl:text-[32px] xl:leading-[39px] mx-auto text-[22px] font-semibold mt-[32px] leading-[27px] xl:mt-[32px];
