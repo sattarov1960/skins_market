@@ -1,0 +1,28 @@
+.success_trade_wrap{
+    @apply rounded-[16px] w-[335px] h-[463px] relative xl:w-[558px] xl:h-[573px];
+    backdrop-filter: blur(120px);
+    background: rgb(13, 14, 21);
+}
+.success_trade_close_icon{
+    @apply absolute top-[16px] right-[16px] w-[14px] h-[14px];
+}
+.success_trade_img{
+    @apply w-[160px] h-[160px] mt-[50px] mx-auto xl:w-[206px] xl:h-[206px] xl:mt-[64px];
+}
+.success_trade_h1{
+    @apply xl:text-[32px] xl:leading-[39px] mx-auto text-[22px] font-semibold mt-[32px] leading-[27px] xl:mt-[32px];
+    color: rgb(235, 239, 253);
+}
+.success_trade_p{
+    @apply opacity-75 text-[16px] leading-[130%] xl:text-[21px] font-medium mt-[16px] xl:leading-[32px] xl:mt-[16px];
+    color: rgb(202, 198, 221);
+}
+.success_trade_button{
+    @apply rounded-[48px] w-[287px] h-[54px] flex items-center justify-center mt-[32px] mx-auto xl:w-[415px] xl:h-[56px] xl:mt-[48px];
+    box-shadow: inset 0px 2px 0px 0px rgb(32, 33, 51);
+    background: rgba(34, 34, 54, 0.5);
+}
+.success_trade_button_text{
+    @apply text-[16px] font-semibold leading-[19px] xl:text-[18px];
+    color: rgb(255, 255, 255);
+}

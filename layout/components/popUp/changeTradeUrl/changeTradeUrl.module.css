@@ -1,0 +1,5 @@
+.change_url_wrap{
+    @apply rounded-[16px] w-[335px] h-[432px] relative xl:w-[610px] xl:h-[501px];
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.35);
+}
