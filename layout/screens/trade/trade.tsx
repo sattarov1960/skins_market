@@ -11,7 +11,7 @@ export function Trade({id}: {id: string | undefined}) {
     return (
         <main className={styles.main_trade_wrap}>
             <PopUp isOpen={true} close={() => null}>
-                <ChangeTradeUrlPopUp/>
+                <WithdrawPopUp/>
             </PopUp>
         </main>
 
