@@ -5,25 +5,29 @@
     background: rgb(13, 14, 21);
 }
 .withdraw_close_icon{
-    @apply absolute top-[16px] right-[16px] w-[14px] h-[14px];
+    @apply absolute top-[16px] right-[16px] w-[14px] h-[14px] cursor-pointer;
 }
 .withdraw_h1{
-    @apply mt-[24px] text-[20px] leading-[24px] font-normal;
+    @apply mt-[24px] text-[20px] leading-[24px] font-normal text-left;
     color: rgb(235, 239, 253);
 }
 .withdraw_payments_methods_wrap{
     @apply flex flex-wrap gap-[7px] xl:gap-x-[11px]
 }
 .withdraw_payments_method{
-    @apply mt-[24px] xl:mt-[34px] rounded-[10px] xl:rounded-[12px] w-[140px] h-[68px] xl:w-[166px] xl:h-[82px] flex justify-center items-center;
+    @apply mt-[24px] xl:mt-[34px] rounded-[10px] xl:rounded-[12px] w-[140px] h-[68px] xl:w-[166px] xl:h-[82px] flex justify-center items-center cursor-pointer;
     backdrop-filter: blur(120px);
     background: rgba(34, 34, 54, 0.5);
 }
 .withdraw_payments_wallet_wrap{
-    @apply mt-[24px] xl:mt-[50px] w-[287px] h-[40px] px-[9px] flex items-center justify-start gap-x-[12px]
+    @apply max-xl:px-[16px] mt-[24px] xl:mt-[50px] w-[287px] h-[40px] xl:w-[520px] xl:h-[57px] flex items-center justify-start gap-x-[12px] overflow-hidden;
+    border-radius: 12px;
+
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
 }
 .withdraw_payments_wallet_right{
-    @apply max-xl:hidden w-[160px] h-[57px] flex items-center justify-center gap-x-[8px];
+    @apply max-xl:hidden w-[240px] h-[57px] flex items-center justify-center gap-x-[8px];
     border-radius: 12px;
     backdrop-filter: blur(120px);
     background: rgba(34, 34, 54, 0.5);
@@ -31,23 +35,25 @@
 .withdraw_payments_wallet_right_text{
     color: rgb(151, 152, 179);
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 18px;
     text-transform: uppercase;
+    @apply whitespace-nowrap;
 }
 .withdraw_payments_wallet_right_icon{
-    width: 27px;
+    width: 37px;
     height: 27px;
 }
 .withdraw_payments_wallet_left_input{
-    @apply text-[13px] font-medium leading-[15px] xl:text-[16px] xl:leading-[19px];
+    @apply text-[13px] font-medium leading-[15px] xl:text-[16px] xl:leading-[19px] w-full h-full !outline-none;
     color: rgb(138, 137, 164);
+    background-color: rgba(0, 0, 0, 0%);
 }
 .withdraw_payments_wallet_btm_wrap{
     @apply mt-[8px] xl:mt-[12px] max-xl:gap-y-[8px] xl:gap-x-[19px] flex flex-col xl:flex-row w-full justify-between items-center;
 }
 .withdraw_payments_wallet_btm_item{
-    @apply w-[287px] h-[43px] xl:w-[259px] xl:h-[53px] flex items-center justify-between gap-x-[8px];
+    @apply max-xl:px-[16px] w-[287px] h-[43px] xl:w-[259px] xl:h-[53px] flex items-center justify-start gap-x-[8px] xl:px-[24px];
     border-radius: 12px;
     backdrop-filter: blur(120px);
     background: rgba(34, 34, 54, 0.5);
@@ -62,20 +68,26 @@
     border: 1px solid rgba(138, 137, 164, 0.3);
 }
 .withdraw_payments_btm_wrap{
-    @apply max-xl:gap-y-[8px] mt-[24px] xl:mt-[32px] flex items-center justify-between w-full flex-col xl:flex-row;
+    @apply max-xl:gap-y-[8px] xl:gap-x-[19px] mt-[24px] xl:mt-[32px] flex items-center justify-between w-full flex-col xl:flex-row;
 }
 .withdraw_payments_btm_item{
-    @apply w-[287px] h-[52px] xl:w-[259px] xl:h-[56px] flex items-center justify-center gap-x-[8px] px-[16px] xl:px-[24px];
+    @apply w-[287px] h-[52px] xl:w-[259px] xl:h-[56px] flex items-center justify-between xl:justify-start gap-x-[8px] rounded-[12px];
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
 }
 .withdraw_payments_btm_left_text{
-    @apply text-[16px] xl:text-[18px] font-medium leading-[110%];
+    @apply text-[16px] xl:text-[18px] font-medium leading-[110%] ml-[16px] xl:ml-[24px] w-[160px] !outline-none;
     color: rgb(138, 137, 164);
+    background-color: rgba(0, 0, 0, 0%);
 }
 .withdraw_payments_btm_left_right_text{
-    @apply font-medium text-[14px] leading-[110%];
+    @apply font-medium text-[14px] leading-[110%] cursor-pointer hover:text-white duration-150 mr-[16px];
     color: rgba(138, 137, 164, 0.5);
 }
 .withdraw_payments_btm_right_text {
     @apply text-[16px] xl:text-[18px] font-semibold leading-[110%];
     color: rgb(253, 202, 118);
+}
+.withdraw_payments_btm_right_icon{
+    @apply w-[19px] h-[19px]
 }

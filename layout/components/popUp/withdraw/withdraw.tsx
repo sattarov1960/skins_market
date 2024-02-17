@@ -7,7 +7,7 @@ import close_popup from "@/public/close_popup.svg";
 
 function Withdraw(){
     return (
-        <section>
+        <section className={styles.withdraw_section_wrap}>
             <h1 className={styles.withdraw_h1}>Вывод средств</h1>
             <Image className={styles.withdraw_close_icon} src={close_popup} alt=""/>
             <div className={styles.withdraw_payments_methods_wrap}>
@@ -20,8 +20,8 @@ function Withdraw(){
             </div>
             <div className={styles.withdraw_payments_wallet_wrap}>
                 <div className={styles.withdraw_payments_wallet_right}>
-                    <Image className={styles.withdraw_payments_wallet_right_text} height={27} width={27} alt="" src="/sbp_paymentMethod_icon.svg"/>
-                    <span className={styles.withdraw_payments_wallet_right_icon}>USDT TRC20</span>
+                    <Image className={styles.withdraw_payments_wallet_right_icon} height={27} width={27} alt="" src="/sbp_paymentMethod_icon.svg"/>
+                    <span className={styles.withdraw_payments_wallet_right_text}>СБП</span>
                 </div>
                 <input placeholder={"Введите ваш кошелек"} className={styles.withdraw_payments_wallet_left_input}/>
             </div>
@@ -41,8 +41,8 @@ function Withdraw(){
                     <input className={styles.withdraw_payments_btm_left_text} placeholder={"Введите сумму"}/>
                     <span className={styles.withdraw_payments_btm_left_right_text}>ВСЕ</span>
                 </div>
-                <div className={styles.withdraw_payments_btm_item}>
-                    <Image src={cards} alt="" width={19} height={19}/>
+                <div className={styles.withdraw_payments_btm_item} style={{cursor: "pointer", justifyContent: "center"}}>
+                    <Image className={styles.withdraw_payments_btm_right_icon} src={cards} alt="" width={19} height={19}/>
                     <span className={styles.withdraw_payments_btm_right_text}>Вывести</span>
                 </div>
             </div>

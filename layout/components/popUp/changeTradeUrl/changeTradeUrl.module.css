@@ -16,7 +16,7 @@
     @apply max-xl:w-[250px] mx-auto mt-[16px] xl:mt-[8px] font-normal text-[16px] leading-[130%] text-center text-[#CAC6DDFF] xl:text-[21px] xl:leading-[32px] opacity-75;
 }
 .change_url_p_underline{
-    @apply underline hover:text-white duration-150 hover:opacity-100
+    @apply underline hover:text-white duration-150 hover:opacity-100 !outline-0
 }
 .change_url_input{
     @apply text-[14px] xl:text-[18px] xl:leading-[21px] font-medium leading-[16px] rounded-[12px] px-[20px] py-[16px] w-[287px] h-[48px] xl:w-[520px] xl:h-[56px] mt-[25px] xl:mt-[56px];
