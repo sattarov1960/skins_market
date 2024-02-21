@@ -4,13 +4,18 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useInventoryStore} from "@/storage/client/inventory";
 import {ItemInventory} from "@/layout/screens/mainLogin/components/inventory/item";
-import {useEffect, useState} from "react";
+import {SetStateAction, useEffect, useState} from "react";
 import {formatCurrency} from "@/utilities/formatCyrrency";
 import {FilterRarity, FilterWear, SortingPrice} from "@/layout/screens/mainLogin/components/inventory/filter";
 import {SearchItems} from "@/layout/screens/mainLogin/components/inventory/searchItems";
 import {Nothing} from "@/layout/screens/mainLogin/components/inventory/nothing";
 import {useUserStore} from "@/storage/client/user";
 import {NotTradeLink} from "@/layout/screens/mainLogin/components/inventory/notTradeLink";
+import {PopUp} from "@/layout/components/popUp/popUp";
+import ChangeTradeUrlPopUp from "@/layout/components/popUp/changeTradeUrl/changeTradeUrl";
+import axios from "axios";
+import {toast} from "react-toastify";
+import {LoadingInventory} from "@/layout/screens/mainLogin/components/inventory/loadingInventory";
 
 
 
@@ -18,8 +23,44 @@ import {NotTradeLink} from "@/layout/screens/mainLogin/components/inventory/notT
 export const Inventory = () => {
     const inventoryStore = useInventoryStore()
     const userStore = useUserStore();
-
     const t = useTranslations()
+    const [isSelectedItems, setIsSelectedItems] = useState(false)
+    const [isOpenChangeUrl, setOpenChangeUrl] = useState(false)
+    const [isLoadingInventory, setIsLoadingInventory] = useState(true)
+    const loadItems = async () => {
+        try{
+            setIsLoadingInventory(true)
+            // inventoryStore.setItems(inventoryStore.items.filter((value) => value.appId !== inventoryStore.activeGame))
+            const resp = await axios.get(`${process.env.api}/get_inventory`, {withCredentials: true})
+            if (resp.data.status){
+                inventoryStore.setItems(resp.data.items)
+            }
+            else {
+                console.log("Ошибка загрузки инвентаря")
+                toast.error(t("Ошибка загрузки инвентаря"),{
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                })
+            }
+        }
+        catch (e) {
+            console.log(`Ошибка загрузки инвентаря ${e}`)
+        }
+        finally {
+            setIsLoadingInventory(false)
+        }
+    }
+    useEffect(() => {
+        loadItems()
+    }, [
+        userStore.tradeLink, inventoryStore.activeGame
+    ]);
     useEffect(() => {
         const { items, activeGame, filterMarketHashName, filterRarity, filterWear, sortingPrice } = inventoryStore;
         let viewItems;
@@ -90,114 +131,133 @@ export const Inventory = () => {
         console.log("Все в инвентаре", items.length, viewItems.length)
         inventoryStore.setViewItems(viewItems);
     }, [inventoryStore.activeGame, inventoryStore.filterMarketHashName, inventoryStore.sortingPrice, inventoryStore.filterWear, inventoryStore.filterRarity]);
-    const [isSelectedItems, setIsSelectedItems] = useState(false)
     return (
-        <div className={styles.inventoryBlock}>
-            <div className={styles.inventoryBlock_header}>
-                <div className={styles.inventoryBlock_header_leftPart}>
-                    <Image src="/steam_icon.svg" width={24} height={24} alt="иконка стима"
-                           className={styles.inventoryBlock_header_steam_icon}/>
-                    <h2 className={styles.inventoryBlock_header_leftPart_text}>
-                        {t("ваш инвентарь")}
-                    </h2>
-                </div>
-                <div className={styles.inventoryBlock_filtersInfo_rightPart_mobile}>
-                    <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
-                    <span className={styles.inventoryBlock_filtersInfo_rightPart_text}>
-                  {t("Изменить Trade-URL")}
-                  </span>
-                </div>
-                <div>
+        <>
+            <div className={styles.inventoryBlock}>
+                <div className={styles.inventoryBlock_header}>
+                    <div className={styles.inventoryBlock_header_leftPart}>
+                        <Image src="/steam_icon.svg" width={24} height={24} alt="иконка стима"
+                               className={styles.inventoryBlock_header_steam_icon}/>
+                        <h2 className={styles.inventoryBlock_header_leftPart_text}>
+                            {t("ваш инвентарь")}
+                        </h2>
+                    </div>
+                    <div className={styles.inventoryBlock_filtersInfo_rightPart_mobile}
+                         onClick={() => setOpenChangeUrl(true)}>
+                        <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
+                        <span
+                            className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
+                    </div>
                     <div>
-                        <ul className={styles.inventoryBlock_header_sub_rightPart_items}>
-                            <li className={styles.inventoryBlock_header_sub_rightPart_item} onClick={() => inventoryStore.setActiveGame(730)}>
-                                <Image src={`/cs_icon${inventoryStore.activeGame === 730 ? "" : "_inactive"}.svg`} width={12} height={16} alt="иконка"
-                                       className={styles.cs_icon}/>
-                                <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 730 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
-                                    CS:GO
+                        <div>
+                            <ul className={styles.inventoryBlock_header_sub_rightPart_items}>
+                                <li className={styles.inventoryBlock_header_sub_rightPart_item}
+                                    onClick={() => inventoryStore.setActiveGame(730)}>
+                                    <Image src={`/cs_icon${inventoryStore.activeGame === 730 ? "" : "_inactive"}.svg`}
+                                           width={12} height={16} alt="иконка"
+                                           className={styles.cs_icon}/>
+                                    <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 730 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
+                                        CS:GO
+                                    </p>
+                                </li>
+                                <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
+                                <li className={styles.inventoryBlock_header_sub_rightPart_item}
+                                    onClick={() => inventoryStore.setActiveGame(570)}>
+                                    <Image src={`/dota_icon${inventoryStore.activeGame === 570 ? "" : "_inactive"}.svg`}
+                                           width={14} height={14} alt="иконка"
+                                           className={styles.dota_icon}/>
+                                    <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 570 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
+                                        DOTA 2
+                                    </p>
+                                </li>
+                                <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
+                                <li className={styles.inventoryBlock_header_sub_rightPart_item}
+                                    onClick={() => inventoryStore.setActiveGame(252490)}>
+                                    <Image
+                                        src={`/rust_icon${inventoryStore.activeGame === 252490 ? "" : "_inactive"}.svg`}
+                                        width={14} height={14} alt="иконка"
+                                        className={styles.dota_icon}/>
+                                    <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 252490 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
+                                        RUST
+                                    </p>
+                                </li>
+                                <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
+                                <li className={styles.inventoryBlock_header_sub_rightPart_item}
+                                    onClick={() => inventoryStore.setActiveGame(440)}>
+                                    <Image src={`/tf_icon${inventoryStore.activeGame === 440 ? "" : "_inactive"}.svg`}
+                                           width={14} height={14} alt="иконка"
+                                           className={styles.dota_icon}/>
+                                    <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 440 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
+                                        TF2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.inventoryBlock_filters}>
+                    <div className={styles.inventoryBlock_sub_filters}>
+                        <ul className={styles.inventoryBlock_sub_filters_leftPart_items}>
+                            <SearchItems/>
+                            {inventoryStore.activeGame === 730 && <FilterWear/>}
+                            {inventoryStore.activeGame === 730 && <FilterRarity/>}
+                        </ul>
+                        <SortingPrice/>
+                    </div>
+                </div>
+                <div className={styles.inventoryBlock_cards}>
+                    {userStore.tradeLink && isLoadingInventory ? <LoadingInventory/> :
+                        <ul className={`${userStore.tradeLink ? (inventoryStore.viewItems.length ? styles.inventoryBlock_cardsItems : styles.inventoryBlock_cardsItemsNothing) : styles.inventoryBlock_cardsItemsNothing}`}>
+                            {userStore.tradeLink ? (inventoryStore.viewItems.length ? inventoryStore.viewItems.map((item, index) =>
+                                <ItemInventory {...item} key={index}/>) : <Nothing/>) : <NotTradeLink/>}
+                        </ul>}
+
+                </div>
+                <div className={styles.inventoryBlock_filtersInfo}>
+                    <div className={styles.inventoryBlock_filtersInfo_leftPart}>
+                        <ul className={styles.inventoryBlock_filtersInfo_leftPart_items}>
+                            {inventoryStore.viewItems.length ?
+                                <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_frstItem}`}
+                                    onClick={() => {
+                                        if (isSelectedItems) {
+                                            inventoryStore.unSelectAllItems()
+                                        } else {
+                                            inventoryStore.selectAllItems()
+                                        }
+                                        setIsSelectedItems(!isSelectedItems)
+                                    }}>
+                                    <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subTextHover}>
+                                        {t("Выбрать все")}
+                                    </span>
+                                </li> : null}
+                            <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_scndItem}`}>
+                            <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subText}>
+                                {t("Всего:")}
+                            </span>
+                                <p className={styles.inventoryBlock_filtersInfo_leftPart_item_mainText}>
+                                    {formatCurrency(inventoryStore.viewItems.reduce((sum, item) => sum + item.price, 0))}
                                 </p>
                             </li>
-                            <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
-                            <li className={styles.inventoryBlock_header_sub_rightPart_item} onClick={() => inventoryStore.setActiveGame(570)}>
-                                <Image src={`/dota_icon${inventoryStore.activeGame === 570 ? "" : "_inactive"}.svg`} width={14} height={14} alt="иконка"
-                                       className={styles.dota_icon}/>
-                                <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 570 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
-                                    DOTA 2
-                                </p>
-                            </li>
-                            <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
-                            <li className={styles.inventoryBlock_header_sub_rightPart_item} onClick={() => inventoryStore.setActiveGame(252490)}>
-                                <Image src={`/rust_icon${inventoryStore.activeGame === 252490 ? "" : "_inactive"}.svg`} width={14} height={14} alt="иконка"
-                                       className={styles.dota_icon}/>
-                                <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 252490 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
-                                    RUST
-                                </p>
-                            </li>
-                            <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
-                            <li className={styles.inventoryBlock_header_sub_rightPart_item} onClick={() => inventoryStore.setActiveGame(440)}>
-                                <Image src={`/tf_icon${inventoryStore.activeGame === 440 ? "" : "_inactive"}.svg`} width={14} height={14} alt="иконка"
-                                       className={styles.dota_icon}/>
-                                <p className={`${styles.inventoryBlock_header_sub_rightPart_item_text} ${inventoryStore.activeGame === 440 && styles.inventoryBlock_header_sub_rightPart_item_text_active}`}>
-                                    TF2
+                            <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_thrdItem}`}>
+                                <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subText}>
+                                    {t("Выбрано:")}
+                                </span>
+                                <p className={styles.inventoryBlock_filtersInfo_leftPart_item_mainText}>
+                                    {inventoryStore.items.filter((value, index, array) => value.isSelected).length}
                                 </p>
                             </li>
                         </ul>
                     </div>
+                    <div className={styles.inventoryBlock_filtersInfo_rightPart} onClick={() => setOpenChangeUrl(true)}>
+                        <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
+                        <span
+                            className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
+                    </div>
                 </div>
             </div>
-            <div className={styles.inventoryBlock_filters}>
-                <div className={styles.inventoryBlock_sub_filters}>
-                    <ul className={styles.inventoryBlock_sub_filters_leftPart_items}>
-                        <SearchItems/>
-                        {inventoryStore.activeGame === 730 && <FilterWear/>}
-                        {inventoryStore.activeGame === 730 && <FilterRarity/>}
-                    </ul>
-                    <SortingPrice/>
-                </div>
-            </div>
-            <div className={styles.inventoryBlock_cards}>
-                <ul className={`${userStore.tradeLink ?  (inventoryStore.viewItems.length ? styles.inventoryBlock_cardsItems : styles.inventoryBlock_cardsItemsNothing) : styles.inventoryBlock_cardsItemsNothing}`}>
-                    {userStore.tradeLink ? (inventoryStore.viewItems.length ? inventoryStore.viewItems.map((item, index) => <ItemInventory {...item} key={index}/>) : <Nothing/>) : <NotTradeLink/>}
-                </ul>
-            </div>
-            <div className={styles.inventoryBlock_filtersInfo}>
-                <div className={styles.inventoryBlock_filtersInfo_leftPart}>
-                    <ul className={styles.inventoryBlock_filtersInfo_leftPart_items}>
-                        {inventoryStore.viewItems.length ?
-                            <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_frstItem}`} onClick={() => {
-                                if (isSelectedItems) {inventoryStore.unSelectAllItems()}
-                                else {inventoryStore.selectAllItems()}
-                                setIsSelectedItems(!isSelectedItems)
-                            }}>
-                            <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subTextHover}>
-                                {t("Выбрать все")}
-                            </span>
-                            </li> : null}
-                        <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_scndItem}`}>
-                            <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subText}>
-                                {t("Всего:")}
-                            </span>
-                            <p className={styles.inventoryBlock_filtersInfo_leftPart_item_mainText}>
-                                {formatCurrency(inventoryStore.viewItems.reduce((sum, item) => sum + item.price, 0))}
-                            </p>
-                        </li>
-                        <li className={`${styles.inventoryBlock_filtersInfo_leftPart_item} ${styles.inventoryBlock_filtersInfo_leftPart_thrdItem}`}>
-                            <span className={styles.inventoryBlock_filtersInfo_leftPart_item_subText}>
-                                {t("Выбрано:")}
-                            </span>
-                            <p className={styles.inventoryBlock_filtersInfo_leftPart_item_mainText}>
-                                {inventoryStore.items.filter((value, index, array) => value.isSelected).length}
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div className={styles.inventoryBlock_filtersInfo_rightPart}>
-                    <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
-                    <span className={styles.inventoryBlock_filtersInfo_rightPart_text}>
-                        {t("Изменить Trade-URL")}
-                    </span>
-                </div>
-            </div>
-        </div>
+            <PopUp isOpen={isOpenChangeUrl} close={setOpenChangeUrl}>
+                <ChangeTradeUrlPopUp close={setOpenChangeUrl} setTradeLink={userStore.setTradeLink}/>
+            </PopUp>
+        </>
     )
 }

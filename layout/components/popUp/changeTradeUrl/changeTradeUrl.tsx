@@ -4,18 +4,20 @@ import close_popup from "@/public/close_popup.svg"
 import Link from "next/link"
 import styles from "@/layout/components/popUp/changeTradeUrl/changeTradeUrl.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
 import {useTranslations} from "next-intl";
+import {validateTradeLink} from "@/utilities/validate/tradeLink";
 
-function changeTradeUrl(){
+function ChangeTradeUrl({close, setTradeLink}: {close: Dispatch<SetStateAction<boolean>>, setTradeLink: any}){
     const t = useTranslations()
     const [tradeUrl, setTradeUrl] = useState<string>("")
     const changeTradeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTradeUrl(e.target.value)
     }
-    const saveTradeUrl = async () => {
+    const saveTradeUrl = async (e: any) => {
+        e.preventDefault();
         const toastId = toast(t("Сохраняем TRADE-URL"), {
             position: "bottom-right",
             autoClose: 5000,
@@ -28,23 +30,31 @@ function changeTradeUrl(){
             isLoading: true
         });
         try{
-            const response = await axios.post(`${process.env.api}/save_trade_url`, {
-                tradeUrl: tradeUrl
-            }, {
-                withCredentials: true
-            })
+            const isValidTradeUrl = validateTradeLink(tradeUrl)
+            if (!isValidTradeUrl){
+                toast.update(toastId, {
+                    render: `${t("Некорректный")} TRADE-URL`,
+                    type: toast.TYPE.ERROR,
+                    isLoading: false,
+                    autoClose: 5000
+                });
+                return;
+            }
+            const response = await axios.post(`${process.env.api}/save_trade_url`, {tradeUrl: tradeUrl}, {withCredentials: true})
             if (response.data.status){
                 toast.update(toastId, {
-                    render: t("TRADE-URL успешно сохранен"),
+                    render: `TRADE-URL ${t("успешно сохранен")}`,
                     type: toast.TYPE.SUCCESS,
                     isLoading: false,
                     autoClose: 5000
                 });
+                setTradeLink(tradeUrl)
+                close(false)
             }
         }
         catch (e) {
             toast.update(toastId, {
-                render: t("Произошла ошибка при сохранении TRADE-URL"),
+                render: `${t("Произошла ошибка при сохранении")} TRADE-URL`,
                 type: toast.TYPE.ERROR,
                 isLoading: false,
                 autoClose: 5000
@@ -52,17 +62,17 @@ function changeTradeUrl(){
         }
     }
     return (
-        <section className={styles.change_url_wrap}>
+        <form onSubmit={(e) => saveTradeUrl(e)} className={styles.change_url_wrap}>
             <Image className={styles.change_url_icon} src={exchange_trade_url} alt=""/>
-            <Image className={styles.error_trade_close_icon} src={close_popup} alt=""/>
-            <h1 className={styles.change_url_h1}>Изменение TRADE-URL</h1>
-            <p className={styles.change_url_p}>Для обмена в Steam вам необходимо указать <br/> ссылку на трейд. <Link className={styles.change_url_p_underline} href={"https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url"} target={"_blank"}>Узнать свой Trade URL</Link></p>
-            <input placeholder={"Введите ссылку на трейд"} className={styles.change_url_input} value={tradeUrl} onChange={(e) => changeTradeUrl(e)} type="text"/>
-            <button className={styles.change_url_btn}>
-                <p className={styles.change_url_btn_p}>Сохранить</p>
+            <Image className={styles.error_trade_close_icon} src={close_popup} alt="" onClick={() => close(false)}/>
+            <h1 className={styles.change_url_h1}>{t("Изменение")}TRADE-URL</h1>
+            <p className={styles.change_url_p}>{t("Для обмена в Steam вам необходимо указать")}<br/>{t("ссылку на трейд")} <Link className={styles.change_url_p_underline} href={"https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url"} target={"_blank"}>{t("Узнать свой")}Trade URL</Link></p>
+            <input required={true} placeholder={"Введите ссылку на трейд"} className={styles.change_url_input} value={tradeUrl} onChange={(e) => changeTradeUrl(e)} type="text"/>
+            <button type="submit" className={styles.change_url_btn}>
+                <p className={styles.change_url_btn_p}>{t("Сохранить")}</p>
             </button>
-        </section>
+        </form>
     )
 }
 
-export default changeTradeUrl;
+export default ChangeTradeUrl;

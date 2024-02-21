@@ -28,7 +28,7 @@
     @apply flex items-center lg:hidden;
 }
 .swap_icon {
-    @apply w-[14px] lg:w-[18px] h-[14px] lg:h-[16px];
+    @apply w-[14px] lg:w-[18px] h-[14px] lg:h-[16px] cursor-pointer;
 }
 .inventoryBlock_filtersInfo_rightPart_text {
     @apply hover:text-white duration-150  text-[12px] lg:text-[16px] text-[#9EAFEB99] font-[500] leading-[14px] lg:leading-[19px] block ml-[4px] underline underline-offset-4 cursor-pointer;
@@ -137,22 +137,22 @@
     @apply flex items-center justify-between lg:justify-start flex-wrap gap-y-[10px] sm:gap-x-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_item {
-    @apply bg-[#22223680] pt-[12px] px-[16px] h-[42px] flex items-center rounded-[12px];
+    @apply bg-[#22223680] px-[16px] h-[38px] flex items-center rounded-[12px];
 }
 .inventoryBlock_filtersInfo_leftPart_frstItem {
-    @apply mx-[20px] block shadow-[0px_2px_0px_0px_#202133_inset,_0px_2px_0px_0px_#202133_inset] w-full lg:w-auto text-center lg:text-start cursor-pointer;
+    @apply pt-[6px] lg:pt-[6px] mx-[20px] block shadow-[0px_2px_0px_0px_#202133_inset,_0px_2px_0px_0px_#202133_inset] w-full lg:w-auto text-center lg:text-start cursor-pointer lg:h-[38px];
 }
 .inventoryBlock_filtersInfo_leftPart_item_subText {
     @apply text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
 }
 .inventoryBlock_filtersInfo_leftPart_item_subTextHover {
-    @apply  hover:text-white duration-150 text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
+    @apply hover:text-white duration-150 text-[14px] lg:text-[16px] text-[#8A89A4] font-[600] leading-[17px] lg:leading-[20px];
 }
 .inventoryBlock_filtersInfo_leftPart_scndItem {
-    @apply max-lg:ml-[20px] w-[161.5px] lg:w-auto h-[38px] lg:h-auto justify-center;
+    @apply max-lg:ml-[20px] w-[161.5px] lg:w-auto h-[38px] justify-center;
 }
 .inventoryBlock_filtersInfo_leftPart_thrdItem {
-    @apply max-lg:mr-[20px] w-[161.5px] lg:w-auto h-[39px] lg:h-auto justify-center;
+    @apply max-lg:mr-[20px] w-[161.5px] lg:w-auto h-[39px] justify-center;
 }
 .inventoryBlock_filtersInfo_leftPart_item_mainText {
     @apply text-[14px] lg:text-[16px] text-[#FDCA76] font-[600] leading-[17px] lg:leading-[20px] ml-[4px];
@@ -430,6 +430,23 @@
 }
 .inventoryBlock_sub_tradeLink{
     @apply bg-[url('/sadSmile_img_blur.webp')] w-[171px] h-[171px] flex items-center justify-center mt-[-30px] lg:mt-[85px]
+}
+.inventoryBlock_loading_inventory_wrap{
+    @apply w-full flex flex-col items-center
+}
+.inventoryBlock_loading_inventory_icon{
+    @apply w-[42px] h-[48px] lg:w-[62px] lg:h-[70px] mt-[61px] lg:mt-[138px] animate-spin;
+    animation: spin 4s linear infinite;
+}
+.inventoryBlock_loading_inventory_text{
+    @apply text-[16px] leading-[20px] uppercase font-bold lg:text-[22px] lg:leading-[27px] lg:mt-[24px] mt-[20px];
+    color: rgb(235, 239, 253);
+    text-align: center;
+}
+.inventoryBlock_loading_inventory_h2{
+    @apply text-[18px] leading-[21px] font-normal lg:text-[24px] lg:leading-[27px] lg:mt-[24px] mt-[20px] w-[300px] lg:w-[580px];
+    color: rgb(66, 66, 87);
+    text-align: center;
 }
 .inventoryBlock_tradeLink_text {
     @apply max-w-[276px] lg:max-w-[418px] text-[18px] lg:text-[24px] text-[#424257] font-[500] leading-[21px] lg:leading-[27px] text-center -mt-[24px];

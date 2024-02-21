@@ -1,9 +1,9 @@
 import {Dialog, Transition} from "@headlessui/react";
-import React, {Fragment} from "react";
+import React, {Dispatch, Fragment, SetStateAction} from "react";
 import styles from "@/layout/components/popUp/popUp.module.css";
 
 export function PopUp (
-    {isOpen, close, children}: {isOpen: boolean, close: () => void, children: React.ReactNode}
+    {isOpen, close, children}: {isOpen: boolean, close: Dispatch<SetStateAction<boolean>>, children: React.ReactNode}
 ) {
     return (
         <Transition appear show={isOpen} as={Fragment}>

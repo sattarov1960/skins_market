@@ -65,6 +65,18 @@
 .burgerMenu_icon {
     @apply w-[24px] lg:w-[32px] h-[24px] lg:h-[32px] ml-[16px] block 2xl:hidden;
 }
+.user_wrap{
+    @apply flex items-center gap-x-[16px] relative
+}
+.user_icon{
+    @apply h-[36px] w-[36px] lg:w-[48px] lg:h-[48px] rounded-full
+}
+.caret_icon{
+    @apply max-sm:hidden sm:w-[12px] sm:h-[12px] cursor-pointer
+}
+.linear_menu{
+    @apply sm:hidden w-[24px] h-[24px] cursor-pointer
+}
 .nav {
     @apply flex items-center;
 }
@@ -113,4 +125,19 @@
 }
 .nav_currencyBlock_addElement_item_active {
     @apply opacity-100;
+}
+.header_menu_wrap{
+    @apply flex flex-col items-start gap-y-[12px] absolute right-0 top-[75px] rounded-[12px] w-[163px] h-[168px] pl-[16px] pt-[14px];
+    backdrop-filter: blur(120px);
+    background: rgba(34, 34, 54, 0.5);
+}
+.header_menu_item_wrap{
+    @apply cursor-pointer flex gap-x-[8px]
+}
+.header_menu_item_icon{
+
+}
+.header_menu_item_text{
+    @apply text-[16px] font-medium leading-[110%];
+    color: rgb(138, 137, 164);
 }

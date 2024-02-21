@@ -18,7 +18,7 @@ import {SubHeaderPart} from "@/layout/screens/mainLogin/components/withdraw/SubH
 import {PaymentMethod} from "@/layout/screens/mainLogin/components/withdraw/PaymentMethod";
 import {FormFields} from "@/layout/screens/mainLogin/components/withdraw/FormFields";
 
-export const Withdraw = () => {
+export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const t = useTranslations()
     const [isWalletError, setIsWalletError] = useState<boolean | undefined>(undefined)
     const [isEmailError, setIsEmailError] = useState<boolean | undefined>(undefined)
@@ -203,23 +203,27 @@ export const Withdraw = () => {
         }
     }
 
-    const isReadyTrade = () => {
+    const isReadyTrade = (e?: any) => {
         const isValidPaymentSystem = isActivePaymentSystem(withdrawMainStore.activePaymentSystem)
         const isValidWallet = validateWallet()
         const isValidEmail = validateEmail(withdrawMainStore.email)
+        if (e){
+            e.preventDefault()
+            createTrade()
+        }
         return isValidPaymentSystem && isValidWallet && isValidEmail
     }
     return (
-        <div className={styles.recieveBlock}>
+        <form onSubmit={(e) => isReadyTrade(e)} className={styles.recieveBlock}>
             <HeaderPart getCommission={getCommission} />
             <SubHeaderPart getWithdrawalPriceWithCommission={getWithdrawalPriceWithCommission} getMinimalWithdrawalPrice={getMinimalWithdrawalPrice} activePaymentSystem={withdrawMainStore.activePaymentSystem} />
             <hr className={`${styles.recieveBlock_delimiter_line} ${styles.recieveBlock_delimiter_frstLine}`}/>
             <PaymentMethod isActivePaymentSystem={isActivePaymentSystem} handlePaymentSystemClick={handlePaymentSystemClick} captionPS={captionPS} />
             <hr className={styles.recieveBlock_delimiter_line}/>
             <FormFields isActivePaymentSystem={isActivePaymentSystem} isWalletError={isWalletError} getPlaceholder={getPlaceholder} BlurInput={BlurInput} focusInput={focusInput} isEmailError={isEmailError} setEmail={withdrawMainStore.setEmail} email={withdrawMainStore.email} wallet={withdrawMainStore.wallet} />
-            <button className={`${styles.recieveBlock_mainButton} ${isReadyTrade() && styles.recieveBlock_mainButton_ready} ${!inventoryStore.items.length && styles.recieveBlock_mainButton_inactive}`}>
+            <button type="submit" className={`${styles.recieveBlock_mainButton} ${isReadyTrade() && styles.recieveBlock_mainButton_ready} ${!inventoryStore.items.length && styles.recieveBlock_mainButton_inactive}`}>
                 {t("Продать скины")}
             </button>
-        </div>
+        </form>
     )
 }

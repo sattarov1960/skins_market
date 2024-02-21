@@ -222,7 +222,7 @@ export const useReferralsStore = create<ReferralsI>((set) => ({
             steamUserName: "@BuyerSkinsBot"
         }
     ],
-    referralBalance: 0,
+    referralBalance: 100,
     referralCode: 'b651ed2f9d98',
     inviteLink: 'https://name.market?ref=b651ed2f9d98',
     totalCostSalesReferrals: 0,
