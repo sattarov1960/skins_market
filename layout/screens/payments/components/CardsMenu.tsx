@@ -9,7 +9,6 @@ import {useTranslations} from "next-intl";
 import Link from "next/link"
 import axios from "axios";
 import {toast} from "react-toastify";
-import {useEffect} from "react";
 import {usePaymentsStore} from "@/storage/client/payments";
 
 

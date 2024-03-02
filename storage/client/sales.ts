@@ -39,15 +39,16 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
                     rarity: "Contraband"
                 },
             ],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
+
         {
             date: "13.08.2023",
             status: "pending",
             amount: 100,
             items: [],
-            payment: "qiwi",
+            payment: "Qiwi",
             id: 1
         },
         {
@@ -55,7 +56,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "error",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -63,7 +64,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -71,7 +72,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "bankCard",
+            payment: "SBP",
             id: 1
         },
         {
@@ -79,7 +80,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "pending",
             amount: 100,
             items: [],
-            payment: "qiwi",
+            payment: "Qiwi",
             id: 1
         },
         {
@@ -87,7 +88,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "error",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -95,7 +96,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -103,7 +104,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "bankCard",
+            payment: "SBP",
             id: 1
         },
         {
@@ -111,7 +112,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "pending",
             amount: 100,
             items: [],
-            payment: "qiwi",
+            payment: "Qiwi",
             id: 1
         },
         {
@@ -119,7 +120,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "error",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -127,7 +128,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -135,7 +136,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "bankCard",
+            payment: "MIR",
             id: 1
         },
         {
@@ -143,7 +144,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "pending",
             amount: 100,
             items: [],
-            payment: "qiwi",
+            payment: "Qiwi",
             id: 1
         },
         {
@@ -151,7 +152,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "error",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
         {
@@ -159,7 +160,7 @@ export const useSalesStore = create<SalesItemsI>((set) => ({
             status: "success",
             amount: 100,
             items: [],
-            payment: "usdtTrc20",
+            payment: "USDT TRC20",
             id: 1
         },
     ],

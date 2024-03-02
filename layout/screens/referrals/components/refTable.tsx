@@ -1,6 +1,5 @@
 "use client"
 import styles from "@/layout/screens/referrals/styles/referrals.module.css";
-import Image from "next/image";
 import {RefTableItem} from "@/layout/screens/referrals/components/refTableItem";
 import {useReferralsStore} from "@/storage/client/referrals";
 import {useTranslations} from "next-intl";

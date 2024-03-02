@@ -2,7 +2,7 @@
 import styles from "@/layout/components/header/header.module.css"
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import {useTranslations} from "next-intl";
 import {useUserStore} from "@/storage/client/user";
 import linear_menu from "@/public/linear_menu.svg";
 import {HeaderMenu} from "@/layout/components/header/headerMenu";

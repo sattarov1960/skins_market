@@ -4,15 +4,12 @@ import styles from "@/layout/screens/withdraw/styles/withdraw.module.css"
 import Image from "next/image";
 import {AsideCabinet} from "@/layout/components/asideCabinet/asideCabinet";
 import {Nothing} from "@/layout/screens/withdraw/components/nothing";
-import {WithdrawItemData} from "@/interface/components/withdrawItemData";
 import {Table} from "@/layout/screens/withdraw/components/table";
 import {useEffect} from "react";
 import axios from "axios";
 import {useWithdrawItemsStore} from "@/storage/client/withdraw";
 import {toast} from "react-toastify";
 import {useTranslations} from "next-intl";
-
-
 
 
 export function Withdraw() {

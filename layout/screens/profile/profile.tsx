@@ -49,7 +49,7 @@ export function Profile() {
     }, []);
     const saveData = async (key: string, value: string) => {
         let status = false
-        let text = ""
+        let text: "Неверный формат E-mail" | "Неверный формат Telegram" | "Неверный формат трейд ссылки" | "" = ""
         if (key === "email"){
             status = validateEmail(value)
             text = "Неверный формат E-mail"

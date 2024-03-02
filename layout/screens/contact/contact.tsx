@@ -5,7 +5,7 @@ import {useTranslations} from "next-intl";
 import {useContactStore} from "@/storage/client/contact";
 import {toast} from "react-toastify";
 import axios from "axios";
-import React, { useState } from 'react';
+import React from 'react';
 import Link from "next/link";
 
 
@@ -132,22 +132,22 @@ export function Contact() {
                     </div>
                     <hr className={styles.contactInformation_line}/>
                     <div className={styles.contactInformation_rightPart}>
-                        <h2 className={styles.contactInformation_rightPart_mainText}>{t("Или оставьте зявку, и мы ответим.")}</h2>
+                        <h2 className={styles.contactInformation_rightPart_mainText}>{t("Или оставьте зявку, и мы ответим")}</h2>
                         <div className={styles.contactInformation_rightPart_forms}>
                             <div className={styles.contactInformation_rightPart_headerForms}>
                                 <div className={styles.contactInformation_rightPart_headerFrstForm}>
                                     <p className={styles.contactInformation_rightPart_headerForm_text}>{t("Ваше имя")}</p>
-                                    <input className={styles.contactInformation_rightPart_headerForm_input} placeholder="Введите имя" type="text" onChange={(e) => contactStore.setName(e.target.value)}/>
+                                    <input className={styles.contactInformation_rightPart_headerForm_input} placeholder={t("Введите имя")} type="text" onChange={(e) => contactStore.setName(e.target.value)}/>
                                 </div>
                                 <div className={styles.contactInformation_rightPart_headerScndForm}>
                                     <p className={styles.contactInformation_rightPart_headerForm_text}>Telegram</p>
-                                    <input className={`${styles.contactInformation_rightPart_headerForm_input} ${styles.contactInformation_rightPart_headerForm_scnInput}`} placeholder="Введите Telegram" type="text"  onChange={(e) => contactStore.setTelegram(e.target.value)}/>
+                                    <input className={`${styles.contactInformation_rightPart_headerForm_input} ${styles.contactInformation_rightPart_headerForm_scnInput}`} placeholder={t("Введите Telegram")} type="text"  onChange={(e) => contactStore.setTelegram(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.contactInformation_rightPart_mainForm}>
                             <p className={styles.contactInformation_rightPart_mainForm_text}>{t("Сообщение")}</p>
-                            <textarea className={styles.contactInformation_rightPart_mainForm_textarea} placeholder="Опишите суть обращения" onChange={(e) => contactStore.setText(e.target.value)}></textarea>
+                            <textarea className={styles.contactInformation_rightPart_mainForm_textarea} placeholder={t("Опишите суть обращения")} onChange={(e) => contactStore.setText(e.target.value)}></textarea>
                         </div>
                         <div className={styles.contactInformation_rightPart_options}>
                             <div className={styles.contactInformation_rightPart_options_leftBlock}>

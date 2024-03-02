@@ -1,0 +1,1 @@
+export type rarityT = 'Base Grade' | 'Standard' | 'Consumer' | 'Industrial' | 'Mil-spec' | 'Restricted' | 'Classified' | 'Covert' | 'Contraband' | 'Distinguished' | 'Exceptional' | 'Superior' | 'Master' | 'High Grade' | 'Remarkable' | 'Exotic' | 'Extraordinary';

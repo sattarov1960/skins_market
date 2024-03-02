@@ -9,6 +9,7 @@ import {Nothing} from "@/layout/screens/sales/components/nothing";
 import axios from "axios";
 import {toast} from "react-toastify";
 import {useTranslations} from "next-intl";
+
 export function Sales() {
     const salesStore = useSalesStore()
     const t = useTranslations()

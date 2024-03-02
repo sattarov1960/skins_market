@@ -1,4 +1,5 @@
 import {InventoryItemI} from "@/interface/components/inventoryItem";
+import {priceT} from "@/interface/types/price";
 
 export interface InventoryI{
     items: InventoryItemI[]
@@ -9,7 +10,7 @@ export interface InventoryI{
     filterWear: string
     filterRarity: string
     filterMarketHashName: string
-    sortingPrice: string
+    sortingPrice: priceT
     setItems: (items: InventoryItemI[]) => void,
     setActiveGame: (gameId: number) => void
     setViewItems: (items: InventoryItemI[]) => void
@@ -21,5 +22,5 @@ export interface InventoryI{
     setFilterMarketHashName: (filterMarketHashName: string) => void
     setFilterWear: (filterWear: string) => void
     setFilterRarity: (filterRarity: string) => void
-    setSortingPrice: (sortingPrice: string) => void
+    setSortingPrice: (sortingPrice: priceT) => void
 }

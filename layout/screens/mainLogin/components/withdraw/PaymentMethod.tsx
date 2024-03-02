@@ -1,4 +1,4 @@
-import { CustomTooltip } from "@/layout/components/customTitle/customTitle";
+import {CustomTooltip} from "@/layout/components/customTitle/customTitle";
 import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import {useTranslations} from "next-intl";
 import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
@@ -63,9 +63,9 @@ export const PaymentMethod = ({
                             ${!isActivePaymentSystem("USDT TRC20") && styles.recieveBlock_paymentMethod_item_inactive}
                             ${withdrawMainStore.activePaymentSystem === "USDT TRC20" && isActivePaymentSystem("USDT TRC20") && styles.recieveBlock_paymentMethod_item_active}`}
                         onClick={() => handlePaymentSystemClick("USDT TRC20")}>
-                        <Image src="/tether_paymentMethod_icon.svg" width={28} height={28} alt="Tether"
+                        <Image src="/tether_paymentMethod_icon.svg" width={28} height={28} alt="USDT TRC20"
                                className={styles.tether_paymentMethod_icon}/>
-                        <Image src="/tether_paymentMethod_iconText.svg" width={46} height={12} alt="Tether"
+                        <Image src="/tether_paymentMethod_iconText.svg" width={46} height={12} alt="USDT TRC20"
                                className={styles.paymentMethod_iconText}/>
                     </li>
                 </CustomTooltip>

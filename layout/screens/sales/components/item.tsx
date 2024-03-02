@@ -66,7 +66,7 @@ export const SalesItem = ({ id, amount, payment, status, date, items }: SalesIte
                                         }}>
                                         </div>
                                         <Image
-                                            src={`https://community.akamai.steamstatic.com/economy/image/${item.image}/360fx360f`}
+                                            src={`https://community.steamstatic.com/economy/image/${item.image}/360fx360f`}
                                             alt={item.marketHashName}
                                             layout="fill"
                                             objectFit="cover"
@@ -162,7 +162,7 @@ export const SalesItemMobile = ({ id, amount, payment, status, date, items }: Sa
                                 }}>
                                 </div>
                                 <Image
-                                    src={`https://community.akamai.steamstatic.com/economy/image/${item.image}/360fx360f`}
+                                    src={`https://community.steamstatic.com/economy/image/${item.image}/360fx360f`}
                                     alt={item.marketHashName}
                                     layout="fill"
                                     objectFit="cover"

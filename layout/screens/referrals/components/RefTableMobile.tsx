@@ -1,5 +1,4 @@
 import styles from "@/layout/screens/referrals/styles/referrals.module.css";
-import Image from "next/image";
 import {useReferralsStore} from "@/storage/client/referrals";
 import {RefTableItemMobile} from "@/layout/screens/referrals/components/refTableItemMobile";
 

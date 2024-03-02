@@ -1,7 +1,10 @@
+import {statusT} from "@/interface/types/status";
+import {paymentT} from "@/interface/types/payment";
+
 export interface WithdrawItemData {
     date: string,
-    payment: string,
+    payment: paymentT,
     id: string,
-    status: string,
+    status: statusT,
     amount: number
 }

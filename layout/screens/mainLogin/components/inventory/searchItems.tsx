@@ -7,8 +7,6 @@ import {useInventoryStore} from "@/storage/client/inventory";
 import {formatCurrency} from "@/utilities/formatCyrrency";
 import {getRarityBlurImage} from "@/utilities/rerityColor";
 import {useEffect, useRef, useState} from "react";
-import {KMPSearch} from "@/utilities/kmpSearch";
-import {number} from "prop-types";
 
 export const SearchItems = () => {
     const inventoryStore = useInventoryStore()

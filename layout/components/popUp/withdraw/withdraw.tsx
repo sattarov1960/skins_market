@@ -16,7 +16,7 @@ import axios from "axios";
 function Withdraw(){
     const refStore = useReferralsStore()
     const t = useTranslations()
-    const [active, setActive] = useState<string>("SBP")
+    const [active, setActive] = useState<"SBP" | "QIWI">("SBP")
     const [count, setCount] = useState<number>()
     const [wallet, setWallet] = useState<string>("")
     const getPaymentIcon = (payment: string) => {

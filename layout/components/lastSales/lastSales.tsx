@@ -10,7 +10,6 @@ import {formatCurrency} from "@/utilities/formatCyrrency";
 import 'swiper/css';
 import React, {useEffect, useState} from "react";
 import {useKeenSlider} from "keen-slider/react";
-import { usePathname } from 'next/navigation'
 import {useUserStore} from "@/storage/client/user";
 
 

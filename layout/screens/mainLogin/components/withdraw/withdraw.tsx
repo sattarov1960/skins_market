@@ -1,12 +1,9 @@
 "use client"
 import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
-import Image from "next/image";
 import {useTranslations} from "next-intl";
-import {formatCurrency} from "@/utilities/formatCyrrency";
 import {useInventoryStore} from "@/storage/client/inventory";
 import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
-import {CustomTooltip} from "@/layout/components/customTitle/customTitle";
-import {ChangeEvent, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import {validateEmail} from "@/utilities/validate/email";
 import {validatePhoneNumber} from "@/utilities/validate/phone";

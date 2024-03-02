@@ -16,7 +16,7 @@ export function How() {
                         <div className={styles.faq_headerPart_selledBlock}>
                             <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>
                             <p className={styles.faq_headerPart_selledBlock_text}>
-                                {t("Продавай скины выгодно.")}
+                                {t("Продавай скины выгодно")}
                             </p>
                         </div>
                         <h2 className={styles.faq_headerPart_mainText}>
@@ -57,7 +57,7 @@ export function How() {
                                         {t("Укажите трейд-ссылку")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
-                                        {t("Укажите Trade URL и выберите скины, которые хотите продать.")}
+                                        {t("Укажите Trade URL и выберите скины, которые хотите продать")}
                                      </span>
                                 </div>
                             </li>
@@ -89,7 +89,7 @@ export function How() {
                                         {t("Продайте свои скины")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
-                                        {t("Передайте скины трейд-боту и ожидайте зачисления средств.")}
+                                        {t("Передайте скины трейд-боту и ожидайте зачисления средств")}
                                     </span>
                                 </div>
                             </li>

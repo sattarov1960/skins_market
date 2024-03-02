@@ -4,7 +4,7 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useInventoryStore} from "@/storage/client/inventory";
 import {ItemInventory} from "@/layout/screens/mainLogin/components/inventory/item";
-import {SetStateAction, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {formatCurrency} from "@/utilities/formatCyrrency";
 import {FilterRarity, FilterWear, SortingPrice} from "@/layout/screens/mainLogin/components/inventory/filter";
 import {SearchItems} from "@/layout/screens/mainLogin/components/inventory/searchItems";
@@ -16,8 +16,6 @@ import ChangeTradeUrlPopUp from "@/layout/components/popUp/changeTradeUrl/change
 import axios from "axios";
 import {toast} from "react-toastify";
 import {LoadingInventory} from "@/layout/screens/mainLogin/components/inventory/loadingInventory";
-
-
 
 
 export const Inventory = () => {

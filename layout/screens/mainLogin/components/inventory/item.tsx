@@ -28,7 +28,7 @@ export const ItemInventory = ({price, gunName, skinName, wear, marketHashName, i
                 <p className={styles.inventoryBlock_cardsItem_headerPart_text}>{formatCurrency(price)}</p>
                 <p className={styles.inventoryBlock_cardsItem_headerPart_text}>{addInfoItem()}</p>
             </div>
-            <Image src={`https://community.akamai.steamstatic.com/economy/image/${img}/360fx360f`} width={90}
+            <Image src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={90}
                    height={90} alt="gun" className={styles.inventoryBlock_cardsItem_img}/>
             <Image src={blurImage} width={92} height={92} alt="блюр" className={styles.blur_violet}/>
             <div className={styles.inventoryBlock_cardsItem_mainPart}>

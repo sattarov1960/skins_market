@@ -5,8 +5,10 @@ import {locales} from './navigation';
 
 const publicPages = [
     '/',
-    '/login'
-    // (/secret requires auth)
+    '/how',
+    '/faq',
+    '/contact',
+    '/partner',
 ];
 
 const intlMiddleware = createIntlMiddleware({
@@ -27,7 +29,7 @@ const authMiddleware = withAuth(
             }
         },
         pages: {
-            signIn: '/login'
+            signIn: '/login',
         }
     }
 );

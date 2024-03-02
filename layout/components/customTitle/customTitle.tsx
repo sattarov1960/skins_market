@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {ReactNode, useState} from 'react';
 
-export const CustomTooltip = ({ children, tooltipText }: { children: React.ReactNode, tooltipText: string }) => {
+export const CustomTooltip = ({ children, tooltipText }: { children: ReactNode, tooltipText: string }) => {
     const [showTooltip, setShowTooltip] = useState(false);
 
     return (

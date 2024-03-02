@@ -1,7 +1,6 @@
 "use client"
 import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
-import {ChangeEvent} from "react";
 import {useTranslations} from "next-intl";
 
 // FormFields.tsx
