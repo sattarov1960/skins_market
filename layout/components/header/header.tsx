@@ -15,6 +15,7 @@ import {Navigate} from "@/layout/components/header/navigate";
 export function Header() {
     const t = useTranslations()
     const userStore = useUserStore()
+    const {data: session} = useSession()
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -28,7 +29,7 @@ export function Header() {
                 </div>
                 <Navigate/>
             </nav>
-            {userStore.auth ? <div className={styles.nav_rightBlock}>
+            {!userStore.auth ? <div className={styles.nav_rightBlock}>
                 <Link href={`${process.env.api}/login`} className={styles.nav_rightBlock_button}>
                     <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.steam_icon}/>
                     <p className={styles.nav_rightBlock_button_text}>

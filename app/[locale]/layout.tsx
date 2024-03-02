@@ -7,8 +7,7 @@ import {TopWrap} from "@/layout/wrap/topWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ReactNode} from 'react';
-import {SessionProvider} from "next-auth/react";
-import {session} from "next-auth/core/routes";
+import {NextAuthProvider} from "@/layout/wrap/session";
 
 
 export const metadata: Metadata = getMeta("Главная",
@@ -16,22 +15,24 @@ export const metadata: Metadata = getMeta("Главная",
                                        ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'Name.Market', 'нейм маркет'])
 type Props = {
     children: ReactNode;
-    params: {locale: string};
+    params: any;
 };
 
-export default function LocaleLayout({children, params: {locale}}: Props) {
+export default function Layout({children, params}: Props) {
     const messages = useMessages();
     return (
-        <html lang={locale}>
-        <body style={{fontFamily: "TTFirsNeue"}}>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-                <TopWrap>
-                    {children}
-                </TopWrap>
-            </NextIntlClientProvider>
-            <YandexMetrika/>
-            <ToastContainer />
-        </body>
-        </html>
+            <html lang={params.locale}>
+            <body style={{fontFamily: "TTFirsNeue"}}>
+                <NextAuthProvider>
+                    <NextIntlClientProvider locale={params.locale} messages={messages}>
+                        <TopWrap>
+                            {children}
+                        </TopWrap>
+                    </NextIntlClientProvider>
+                    <YandexMetrika/>
+                    <ToastContainer />
+                </NextAuthProvider>
+            </body>
+            </html>
     );
 }

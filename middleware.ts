@@ -25,7 +25,7 @@ const authMiddleware = withAuth(
     {
         callbacks: {
             authorized: ({token}) => {
-                return false;
+                return true;
             }
         },
         pages: {
