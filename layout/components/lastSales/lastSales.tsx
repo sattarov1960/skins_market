@@ -43,7 +43,7 @@ function LastItem({ skinName, price, time, title, img, rarity }: LastItemProps){
                     transform: 'translate(-50%, -50%)'
                 }}>
                 </div>
-                <Image src={`https://community.akamai.steamstatic.com/economy/image/${img}/360fx360f`} width={127}
+                <Image src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={127}
                        height={94} alt={skinName} className={styles.latest_deals_item_image}/>
                 <div className={styles.latest_deals_item_footerBlock}>
                     <p className={styles.latest_deals_item_footerBlock_prgrf}>{skinName}</p>

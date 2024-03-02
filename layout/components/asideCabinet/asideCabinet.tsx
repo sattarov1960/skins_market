@@ -32,7 +32,7 @@ export const AsideCabinet = () => {
     return (
         <div>
             <div className={styles.profile_leftPart_headerBlock}>
-                <Image src={`https://avatars.akamai.steamstatic.com/${userStore.steamIcon}_full.jpg`} width={88} height={88} alt="аватар"
+                <Image src={`https://avatars.steamstatic.com/${userStore.steamIcon}_full.jpg`} width={88} height={88} alt="аватар"
                        className={styles.peopleAvatar_profile}/>
                 <div className={styles.profile_leftPart_sub_headerBlock}>
                     <p className={styles.profile_leftPart_sub_headerBlock_nameText}>

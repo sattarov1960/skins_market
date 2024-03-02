@@ -101,7 +101,7 @@ export const SearchItem = ({
             <li className={`${styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point} ${styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_scndPoint}`} onClick={() => {inventoryStore.setFilterMarketHashName(marketHashName); onClick(); inventoryStore.setSearchQuery(marketHashName)}}>
                 <div className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg}>
                     <Image className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_mainImg}
-                           src={`https://community.akamai.steamstatic.com/economy/image/${img}/360fx360f`} width={90}
+                           src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={90}
                            height={67} alt="gun"/>
                     <Image
                         className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg_blur}

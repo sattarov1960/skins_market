@@ -12,7 +12,7 @@ module.exports = withNextIntl({
         localhost_api: process.env.NODE_ENV === 'production' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8001',
     },
     images: {
-        domains: ['community.akamai.steamstatic.com', "avatars.akamai.steamstatic.com", "avatars.steamstatic.com", "community.steamstatic.com"],
+        domains: ["avatars.steamstatic.com", "community.steamstatic.com"],
         remotePatterns: [
             {
                 protocol: 'https',

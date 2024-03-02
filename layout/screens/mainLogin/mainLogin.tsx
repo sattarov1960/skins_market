@@ -12,9 +12,13 @@ import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
 import {useTradeStore} from "@/storage/client/trade";
 import axios from "axios";
 import {toast} from "react-toastify";
+import {Session} from 'next-auth';
 
+type Props = {
+    session: Session | null;
+};
 
-export function MainLogin() {
+export function MainLogin({session}: Props) {
     const t = useTranslations()
     const withdrawMainStore = useWithdrawMainStore()
     const tradeStore = useTradeStore()

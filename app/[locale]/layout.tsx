@@ -1,5 +1,4 @@
-import {NextIntlClientProvider} from 'next-intl';
-import {notFound} from 'next/navigation';
+import {NextIntlClientProvider, useMessages} from 'next-intl';
 import "@/app/globals.css"
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
@@ -7,26 +6,19 @@ import {YandexMetrika} from "@/layout/components/yandex_metrika/metrika";
 import {TopWrap} from "@/layout/wrap/topWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {ReactNode} from 'react';
 
-export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'ru'}];
-}
 
 export const metadata: Metadata = getMeta("Главная",
                                       "",
                                        ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'Name.Market', 'нейм маркет'])
+type Props = {
+    children: ReactNode;
+    params: {locale: string};
+};
 
-
-export default async function LocaleLayout({ children, params: { locale } }: { children: React.ReactChild, params: { locale: string } }) {
-    let messages;
-    try {
-        if (locale !== "_next"){
-            messages = (await import(`../../messages/${locale}.json`)).default;
-        }
-    } catch (error) {
-        console.log("Не нашел сообщения для локали", locale)
-    }
-
+export default function LocaleLayout({children, params: {locale}}: Props) {
+    const messages = useMessages();
     return (
         <html lang={locale}>
         <body style={{fontFamily: "TTFirsNeue"}}>

@@ -18,7 +18,7 @@ export const RefTableItemMobile = ({cost, id, earned, steamId, steamIcon, date, 
             <div className={styles.profile_rightPart_mainBlock_mobilePart_item_main}>
                 <div className={styles.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock}>
                     <Link href={`https://steamcommunity.com/profiles/${steamId}`}>
-                        <Image src={`https://avatars.akamai.steamstatic.com/${steamIcon}_full.jpg`} width={40} height={40} alt={steamUserName}  className={styles.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock_img}/>
+                        <Image src={`https://avatars.steamstatic.com/${steamIcon}_full.jpg`} width={40} height={40} alt={steamUserName}  className={styles.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock_img}/>
                     </Link>
                     <p className={styles.profile_rightPart_mainBlock_mobilePart_item_main_avatarBlock_text}>
                         {steamUserName}
