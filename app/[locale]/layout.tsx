@@ -7,6 +7,8 @@ import {TopWrap} from "@/layout/wrap/topWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ReactNode} from 'react';
+import {SessionProvider} from "next-auth/react";
+import {session} from "next-auth/core/routes";
 
 
 export const metadata: Metadata = getMeta("Главная",

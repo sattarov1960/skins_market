@@ -1,4 +1,5 @@
 'use client'
+import { useSession } from "next-auth/react"
 import styles from "@/layout/components/header/header.module.css"
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +15,6 @@ import {Navigate} from "@/layout/components/header/navigate";
 export function Header() {
     const t = useTranslations()
     const userStore = useUserStore()
-
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>

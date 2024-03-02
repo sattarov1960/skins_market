@@ -12,5 +12,5 @@ export const metadata: Metadata = getMeta("Главная",
 
 export default async function Home() {
     const session = await getServerSession(auth);
-    return <MainLogin session={session}/>;
+    return session ? <MainLogin session={session}/> : <MainLogout/>;
 }
