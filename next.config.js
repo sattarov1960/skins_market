@@ -7,9 +7,9 @@ module.exports = withNextIntl({
         ENVIRONMENT: process.env.NODE_ENV === 'production' ? 'deploy' : 'development',
     },
     env: {
-        api: process.env.NODE_ENV === 'production' ? 'https://tf2key.ru/api' : 'http://127.0.0.1:8001',
+        api: process.env.NODE_ENV === 'production' ? 'https://tf2key.ru/api' : 'http://127.0.0.1:8003',
         current: process.env.NODE_ENV === 'production' ? 'https://tf2key.ru' : 'http://127.0.0.1:3000',
-        localhost_api: process.env.NODE_ENV === 'production' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8001',
+        localhost_api: process.env.NODE_ENV === 'production' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8003',
     },
     images: {
         domains: ["avatars.steamstatic.com", "community.steamstatic.com"],

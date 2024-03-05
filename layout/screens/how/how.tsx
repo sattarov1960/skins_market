@@ -3,11 +3,9 @@
 import styles from "@/layout/screens/how/styles/how.module.css"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
-import {useUserStore} from "@/storage/client/user";
 
 export function How() {
     const t = useTranslations()
-    const userStore = useUserStore()
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -70,7 +68,7 @@ export function How() {
                                     03.
                                     </span>
                                     <p className={styles.how_mainPart_subItem_mainText}>
-                                        Выберите платежку{t("")}
+                                        {t("Выберите платежку")}
                                     </p>
                                     <span className={styles.how_mainPart_subItem_subText}>
                                         {t("Выберите удобную платежную систему, укажите реквизиты и готово!")}

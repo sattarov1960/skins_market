@@ -14,7 +14,11 @@ export function Language() {
     const pathname = usePathname();
 
     const changeLanguage = (language: string) => {
-        router.push(pathname.replace("/" + locale, "/" + language));
+        const newPath = pathname.startsWith(`/${locale}`)
+            ? pathname.replace(`/${locale}`, `/${language}`)
+            : `/${language}${pathname}`;
+        console.log(newPath);
+        router.push(newPath);
     };
 
 

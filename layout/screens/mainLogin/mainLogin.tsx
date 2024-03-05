@@ -12,17 +12,9 @@ import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
 import {useTradeStore} from "@/storage/client/trade";
 import axios from "axios";
 import {toast} from "react-toastify";
-import {Session} from "next-auth";
-
-interface MainLoginProps {
-    session: Session | null;
-}
 
 
-export function MainLogin({ session }: MainLoginProps) {
-    const t = useTranslations()
-    const withdrawMainStore = useWithdrawMainStore()
-    const tradeStore = useTradeStore()
+export function MainLogin() {
     const [isOpenTradePopUp, setIsOpenTradePopUp] = useState<boolean>(false)
     const createTrade = async () => {
         setIsOpenTradePopUp(true)

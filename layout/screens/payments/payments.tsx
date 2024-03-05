@@ -166,7 +166,7 @@ export function Payments() {
                                         <div
                                             className={styles.profile_rightPart_socialNetworks_input}
                                             onClick={() => setIsOpenCards(!isOpenCards)}
-                                        >{paymentStore.activeCard.pan ? paymentStore.activeCard.pan : "Добавить карту"}</div>
+                                        >{paymentStore.activeCard.pan ? paymentStore.activeCard.pan : t("Добавить карту")}</div>
                                         <Image src="/mini_arrow_bot.svg" width={8} height={8} alt="Arrow" onClick={() => setIsOpenCards(!isOpenCards)}
                                                className={styles.profile_rightPart_socialNetworks_inputBlock_icon}/>
                                         {isOpenCards && <CardsMenu/>}
@@ -184,7 +184,7 @@ export function Payments() {
                                         <input className={styles.profile_rightPart_socialNetworks_input}
                                                value={qiwi}
                                                onChange={(e) => setQiwi(e.target.value)}
-                                               placeholder={paymentStore.qiwi ? "" : "Ваш номер телефона"} type="text"/>
+                                               placeholder={paymentStore.qiwi ? "" : t("Ваш номер телефона")} type="text"/>
                                         {(qiwi !== paymentStore.qiwi) || qiwi === "" ?
                                             <Image src="/addCircle_icon.svg" width={24} height={24} alt="Circle"
                                                    className={styles.addCircle_icon} onClick={() => savePaymentsData("qiwi")}/> :
@@ -205,7 +205,7 @@ export function Payments() {
                      </span>
                                     <div className={styles.profile_rightPart_socialNetworks_inputBlock}>
                                         <input className={styles.profile_rightPart_socialNetworks_input} value={usdtTrc20}
-                                               placeholder={paymentStore.usdtTrc20 ? "" : "Адреса пока нет..."} type="text" onChange={(e) => setUsdtTrc20(e.target.value)}/>
+                                               placeholder={paymentStore.usdtTrc20 ? "" : t("Адреса пока нет")} type="text" onChange={(e) => setUsdtTrc20(e.target.value)}/>
                                         {(usdtTrc20 !== paymentStore.usdtTrc20) || usdtTrc20 === "" ?
                                             <Image src="/addCircle_icon.svg" width={24} height={24} alt="Circle"
                                                    className={styles.addCircle_icon} onClick={() => savePaymentsData("usdtTrc20")}/> :

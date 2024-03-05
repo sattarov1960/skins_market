@@ -7,7 +7,6 @@ import {TopWrap} from "@/layout/wrap/topWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ReactNode} from 'react';
-import {NextAuthProvider} from "@/layout/wrap/session";
 
 
 export const metadata: Metadata = getMeta("Главная",
@@ -23,15 +22,13 @@ export default function Layout({children, params}: Props) {
     return (
             <html lang={params.locale}>
             <body style={{fontFamily: "TTFirsNeue"}}>
-                <NextAuthProvider>
-                    <NextIntlClientProvider locale={params.locale} messages={messages}>
-                        <TopWrap>
-                            {children}
-                        </TopWrap>
-                    </NextIntlClientProvider>
-                    <YandexMetrika/>
-                    <ToastContainer />
-                </NextAuthProvider>
+                <NextIntlClientProvider locale={params.locale} messages={messages}>
+                    <TopWrap>
+                        {children}
+                    </TopWrap>
+                </NextIntlClientProvider>
+                <YandexMetrika/>
+                <ToastContainer />
             </body>
             </html>
     );

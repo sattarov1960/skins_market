@@ -182,7 +182,7 @@ export function Profile() {
                                     <span className={styles.profile_rightPart_socialNetworks_subText}>{t("Пожалуйста укажите ваш Telegram для связи")}</span>
                                     <div className={styles.profile_rightPart_socialNetworks_inputBlock}>
                                         <input className={styles.profile_rightPart_socialNetworks_input}
-                                               placeholder="Ваш Telegram" type="text" value={telegramUserName} onChange={(e) => setTelegramUserName(e.target.value)}/>
+                                               placeholder={t("Ваш Telegram")} type="text" value={telegramUserName} onChange={(e) => setTelegramUserName(e.target.value)}/>
                                         {(telegramUserName !== userStore.telegramUserName) || telegramUserName === "" ?
                                             <Image src="/addCircle_icon.svg" width={24} height={24} alt="Circle"
                                                    className={styles.addCircle_icon} onClick={() => saveData("telegramUserName", telegramUserName)}/> :
@@ -197,7 +197,7 @@ export function Profile() {
                                     </p>
                                     <span className={styles.profile_rightPart_socialNetworks_subText}>{t("Тут можно изменить ваш e-mail адрес")}</span>
                                     <div className={styles.profile_rightPart_socialNetworks_inputBlock}>
-                                        <input className={styles.profile_rightPart_socialNetworks_input} placeholder="Somemail@gmail.com"
+                                        <input className={styles.profile_rightPart_socialNetworks_input} placeholder={t("Ваша электронная почта")}
                                                value={email} type="text" onChange={(e) => setEmail(e.target.value)}/>
                                         {(email !== userStore.email) || email === "" ?
                                             <Image src="/addCircle_icon.svg" width={24} height={24} alt="Circle"

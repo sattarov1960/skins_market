@@ -53,7 +53,7 @@ export function Withdraw() {
                     <AsideCabinet/>
                     <div className={styles.profile_rightPart}>
                         <h2 className={styles.profile_rightPart_mainText}>
-                            Ваши выводы
+                            {t("Ваши выводы")}
                         </h2>
                         {itemsStore.items.length ? <Table items={itemsStore.items}/> : <Nothing/>}
                     </div>

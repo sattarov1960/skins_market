@@ -47,7 +47,7 @@ export function Sales() {
                     <AsideCabinet/>
                     <div className={styles.profile_rightPart}>
                         <h2 className={styles.profile_rightPart_mainText}>
-                            Ваши продажи
+                            {t("Ваши продажи")}
                         </h2>
                         {salesStore.items.length ?
                                 <Table/>
