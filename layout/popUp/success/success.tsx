@@ -3,7 +3,7 @@ import success from "@/public/success_trade.svg"
 import close_popup from "@/public/close_popup.svg"
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/layout/components/popUp/success/styles.module.css"
+import styles from "@/layout/popUp/success/styles.module.css"
 import {useTranslations} from "next-intl";
 
 function Success(){

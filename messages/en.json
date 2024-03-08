@@ -127,7 +127,7 @@
   "Похоже у вас не указана ссылка на трейд": "It seems you haven't specified a trade link",
   "Указать в профиле": "Specify in the profile",
   "Редкость": "Rarity",
-  "От дорогих": "From the expensive ones",
+  "От дорогих": "From expensive",
   "По количеству": "By quantity",
   "Продать скины CS:GO за реальные деньги!": "Sell CS:GO skins for real money!",
   "Никаких скрытых и комиссий платежей": "No hidden fees and payment commissions",
@@ -211,7 +211,7 @@
   "Засекреченное": "Classified",
   "Тайное": "Covert",
   "Редкое": "Rare",
-  "От дешевых": "From the cheapest",
+  "От дешевых": "From cheapest",
   "По новизне": "By novelty",
   "По качеству": "By quality",
   "Неверный формат USDT кошелька": "Invalid USDT wallet format",
@@ -243,5 +243,7 @@
   "Адреса пока нет": "No address yet...",
   "Ваши продажи": "Your sales",
   "Ваши выводы": "Your withdrawals",
+  "Название скина": "Skin name",
+  "Unknown": "Unknown",
   "": ""
 }

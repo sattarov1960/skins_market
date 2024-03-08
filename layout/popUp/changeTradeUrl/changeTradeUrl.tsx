@@ -2,7 +2,7 @@
 import exchange_trade_url from "@/public/exchange_trade_url.svg"
 import close_popup from "@/public/close_popup.svg"
 import Link from "next/link"
-import styles from "@/layout/components/popUp/changeTradeUrl/changeTradeUrl.module.css";
+import styles from "@/layout/popUp/changeTradeUrl/changeTradeUrl.module.css";
 import Image from "next/image";
 import {Dispatch, SetStateAction, useState} from "react";
 import axios from "axios";
@@ -40,7 +40,9 @@ function ChangeTradeUrl({close, setTradeLink}: {close: Dispatch<SetStateAction<b
                 });
                 return;
             }
-            const response = await axios.post(`${process.env.api}/save_trade_url`, {tradeUrl: tradeUrl}, {withCredentials: true})
+            const response = await axios.post(`${process.env.api}/save_user_profile`,
+                {tradeLink: tradeUrl, email: null, telegramUserName: null},
+                {withCredentials: true})
             if (response.data.status){
                 toast.update(toastId, {
                     render: `TRADE-URL ${t("успешно сохранен")}`,
@@ -50,6 +52,14 @@ function ChangeTradeUrl({close, setTradeLink}: {close: Dispatch<SetStateAction<b
                 });
                 setTradeLink(tradeUrl)
                 close(false)
+            }
+            else{
+                toast.update(toastId, {
+                    render: `${t("Произошла ошибка при сохранении")} TRADE-URL`,
+                    type: toast.TYPE.ERROR,
+                    isLoading: false,
+                    autoClose: 5000
+                });
             }
         }
         catch (e) {

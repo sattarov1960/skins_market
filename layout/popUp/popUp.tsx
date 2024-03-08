@@ -1,6 +1,6 @@
 import {Dialog, Transition} from "@headlessui/react";
 import React, {Dispatch, Fragment, SetStateAction} from "react";
-import styles from "@/layout/components/popUp/popUp.module.css";
+import styles from "@/layout/popUp/popUp.module.css";
 
 export function PopUp (
     {isOpen, close, children}: {isOpen: boolean, close: Dispatch<SetStateAction<boolean>>, children: React.ReactNode}

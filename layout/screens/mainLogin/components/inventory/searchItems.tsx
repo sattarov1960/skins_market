@@ -12,6 +12,7 @@ export const SearchItems = () => {
     const inventoryStore = useInventoryStore()
     const [isOpen, setIsOpen] = useState(false)
     const node = useRef();
+    const t = useTranslations()
     const handleClickOutside = (e: { target: any; }) => {
         // @ts-ignore
         if (node.current.contains(e.target)) {
@@ -59,7 +60,7 @@ export const SearchItems = () => {
             <Image src="/search_icon.svg" width={18} height={19} alt="лупа"
                    className={styles.search_icon}/>
             <input className={styles.inventoryBlock_sub_filters_leftPart_item_input}
-                   placeholder="Название скина" type="text" value={inventoryStore.searchQuery}
+                   placeholder={t("Название скина")} type="text" value={inventoryStore.searchQuery}
                    onChange={(e) => changeSearchQuery(e)} onFocus={() => inventoryStore.searchResult.length ? setIsOpen(true) : null}/>
             {isOpen &&
             <div className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion}>

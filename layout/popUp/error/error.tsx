@@ -2,7 +2,7 @@ import error_img from "@/public/error_trade.svg"
 import close_popup from "@/public/close_popup.svg"
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/layout/components/popUp/error/styles.module.css"
+import styles from "@/layout/popUp/error/styles.module.css"
 import {useTranslations} from "next-intl";
 
 interface ErrorProps {

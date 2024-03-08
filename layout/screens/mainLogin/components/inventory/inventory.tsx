@@ -11,8 +11,8 @@ import {SearchItems} from "@/layout/screens/mainLogin/components/inventory/searc
 import {Nothing} from "@/layout/screens/mainLogin/components/inventory/nothing";
 import {useUserStore} from "@/storage/client/user";
 import {NotTradeLink} from "@/layout/screens/mainLogin/components/inventory/notTradeLink";
-import {PopUp} from "@/layout/components/popUp/popUp";
-import ChangeTradeUrlPopUp from "@/layout/components/popUp/changeTradeUrl/changeTradeUrl";
+import {PopUp} from "@/layout/popUp/popUp";
+import ChangeTradeUrlPopUp from "@/layout/popUp/changeTradeUrl/changeTradeUrl";
 import axios from "axios";
 import {toast} from "react-toastify";
 import {LoadingInventory} from "@/layout/screens/mainLogin/components/inventory/loadingInventory";
@@ -29,9 +29,13 @@ export const Inventory = () => {
         try{
             setIsLoadingInventory(true)
             // inventoryStore.setItems(inventoryStore.items.filter((value) => value.appId !== inventoryStore.activeGame))
-            const resp = await axios.get(`${process.env.api}/get_inventory`, {withCredentials: true})
+            const resp = await axios.get(`${process.env.api}/get_inventory`, {withCredentials: true,
+                params: {
+                    app_id: inventoryStore.activeGame,
+                }})
             if (resp.data.status){
                 inventoryStore.setItems(resp.data.items)
+                inventoryStore.setViewItems(resp.data.items)
             }
             else {
                 console.log("Ошибка загрузки инвентаря")
@@ -54,11 +58,7 @@ export const Inventory = () => {
             setIsLoadingInventory(false)
         }
     }
-    useEffect(() => {
-        loadItems()
-    }, [
-        userStore.tradeLink, inventoryStore.activeGame
-    ]);
+    useEffect(() => {loadItems()}, [userStore.tradeLink, inventoryStore.activeGame]);
     useEffect(() => {
         const { items, activeGame, filterMarketHashName, filterRarity, filterWear, sortingPrice } = inventoryStore;
         let viewItems;
@@ -248,8 +248,7 @@ export const Inventory = () => {
                     </div>
                     <div className={styles.inventoryBlock_filtersInfo_rightPart} onClick={() => setOpenChangeUrl(true)}>
                         <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
-                        <span
-                            className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
+                        <span className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
                     </div>
                 </div>
             </div>

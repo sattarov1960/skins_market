@@ -17,9 +17,7 @@ export function Payments() {
     const paymentStore = usePaymentsStore()
     const [qiwi, setQiwi] = useState(paymentStore.qiwi)
     const [usdtTrc20, setUsdtTrc20] = useState(paymentStore.usdtTrc20)
-    useEffect(() => {
-        loadPaymentsData()
-    }, [])
+
     const loadPaymentsData = async () => {
         try{
             const response = await axios.get(`${process.env.api}/payments_data`, {withCredentials: true})
@@ -50,6 +48,9 @@ export function Payments() {
             console.log(`Error Loading Bank Card error = ${e}`)
         }
     }
+    useEffect(() => {
+        // loadPaymentsData()
+    }, [])
 
     const savePaymentsData = async (changeField: string) => {
         switch (changeField) {
@@ -60,7 +61,7 @@ export function Payments() {
                 paymentStore.setUsdtTrc20(usdtTrc20)
                 break
         }
-        if (changeField === "usdtTrc20" && validateTronAddress(usdtTrc20)){
+        if (changeField === "usdtTrc20" && !validateTronAddress(usdtTrc20)){
             toast.error(t("Неверный формат USDT кошелька"), {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -100,9 +101,9 @@ export function Payments() {
             isLoading: true,
         })
         try{
-            const response = await axios.post(`${process.env.api}/payments_data`, {
-                qiwi: paymentStore.qiwi,
-                usdtTrc20: paymentStore.usdtTrc20
+            const response = await axios.post(`${process.env.api}/save_payments_data`, {
+                qiwi: qiwi,
+                usdtTrc20: usdtTrc20
             }, {withCredentials: true})
             const data = response.data
             if (data.status){

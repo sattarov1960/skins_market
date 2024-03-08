@@ -17,36 +17,7 @@ export function Profile() {
     const [telegramUserName, setTelegramUserName] = useState(userStore.telegramUserName);
     const [tradeLink, setTradeLink] = useState(userStore.tradeLink);
     const [email, setEmail] = useState(userStore.email);
-    const loadUserData = async () => {
-        try{
-            const resp = await axios.get(`${process.env.current}/user_profile`, {withCredentials: true});
-            const data = resp.data
-            if (data.status){
-                userStore.setTelegramUserName(data.telegramUserName)
-                userStore.setTradeLink(data.tradeLink)
-            }
-            else{
-                toast.error(t("Ошибка при загрузке данных"), {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    isLoading: false,
-                })
-                console.log(`Не удалось загрузить данные пользователя data = ${data}`)
-            }
-        }
-        catch (e){
-            console.log(`Не удалось загрузить данные пользователя error = ${e}`)
-        }
-    }
-    useEffect(() => {
-        loadUserData()
-    }, []);
+
     const saveData = async (key: string, value: string) => {
         let status = false
         let text: "Неверный формат E-mail" | "Неверный формат Telegram" | "Неверный формат трейд ссылки" | "" = ""
@@ -55,7 +26,6 @@ export function Profile() {
             text = "Неверный формат E-mail"
         }
         else if (key === "telegramUserName"){
-            console.log(value)
             status = value.length > 4 && (value.includes("@") || value.includes("t.me"))
             text = "Неверный формат Telegram"
         }
@@ -104,7 +74,7 @@ export function Profile() {
             isLoading: true,
         })
         try {
-            const response = await axios.post(`${process.env.current}/save_user_profile`, {
+            const response = await axios.post(`${process.env.api}/save_user_profile`, {
                 telegramUserName: telegramUserName,
                 tradeLink: tradeLink ,
                 email: email,
@@ -158,7 +128,7 @@ export function Profile() {
                                 <p className={styles.profile_rightPart_mainForm_headerBlock_text}>
                                     {t("ссылка на трейд")}
                                 </p>
-                                <Link href={"https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url"}>
+                                <Link href={"https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url"} target={"_blank"}>
                                     <div className={styles.profile_rightPart_mainForm_headerBlock_subItem}>
                                         <p className={styles.profile_rightPart_mainForm_headerBlock_subItem_text}>
                                             {t("Где взять")}?

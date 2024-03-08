@@ -15,10 +15,10 @@ export function validateTronAddress(wallet: string) {
         const addressWithoutCheckSum = bytes.subarray(0, bytes.length - 4).toString("hex");
         const doubleHash = sha256(sha256(addressWithoutCheckSum));
         const expectedCheckSum = doubleHash.slice(0, 8);
-        return !(expectedCheckSum === checkSum)
+        return expectedCheckSum === checkSum
     } catch (e) {
         console.log("Failed to validate tron address, treating as the address is wrong");
-        return true;
+        return false;
     }
 }
 

@@ -10,8 +10,8 @@ const publicPages = [
     '/partner',
 ];
 
-
-async function fetchTokens(getTokens: string, response: NextResponse) {
+async function fetchTokens(getTokens: string, response: NextResponse, request: NextRequest) {
+    let foundTokens = false
     try{
         const resp = await fetch(process.env.localhost_api + "/get_tokens", {
             headers: {
@@ -20,24 +20,25 @@ async function fetchTokens(getTokens: string, response: NextResponse) {
             }
         });
         const data = await resp.json();
-        if (data.error){
-            console.log(data.errorMsg)
+        if (!data.status){
+            console.log("Ошибка получения fetchTokens: " + data.errorMsg)
         }
         else{
             response.cookies.set('refresh_token_cookie', data.refreshToken);
             response.cookies.set('refresh_token_expiry', data.refreshTokenExpiry);
             response.cookies.set('access_token_cookie', data.accessToken);
             response.cookies.set('access_token_cookie_expiry', data.accessTokenExpiry);
+            foundTokens = true
         }
     }
     catch (e) {
         console.log(`Ошибка получения токенов ${e}`)
     }
     response.cookies.delete('getTokens');
-    return response;
+    return {response, request, foundTokens};
 }
 
-async function refreshJwt(refreshToken: string, response: NextResponse) {
+async function refreshJwt(refreshToken: string, response: NextResponse, request: NextRequest) {
     try{
         const resp = await fetch(process.env.localhost_api + "/refresh_jwt", {
             headers: {
@@ -46,9 +47,8 @@ async function refreshJwt(refreshToken: string, response: NextResponse) {
             }
         });
         const data = await resp.json();
-        if (data.error){
-            console.debug("Обновляю access токен" + data.errorMsg)
-            return null;
+        if (!data.status){
+            console.debug("Ошибка обновления refreshJwt: " + data.errorMsg)
         }
         response.cookies.set('access_token_cookie', data.accessToken);
         response.cookies.set('access_token_cookie_expiry', data.accessTokenExpiry);
@@ -56,21 +56,35 @@ async function refreshJwt(refreshToken: string, response: NextResponse) {
     catch (e) {
         console.log(`Ошибка обновления токена ${e}`)
     }
-    return response;
+    return {response, request};
 }
 
 export default async function middleware(request: NextRequest) {
+    let tokenChange = false
+    let foundTokens
     const handleI18nRouting = createIntlMiddleware({
         locales,
         localePrefix: 'as-needed',
         defaultLocale: 'ru'
     });
-    const response =  handleI18nRouting(request)
+    let response =  handleI18nRouting(request)
+    // Проверка публична ли страница
+    const publicPathnameRegex = RegExp(
+        `^(/(${locales.join('|')}))?(${publicPages
+            .flatMap((p) => (p === '/' ? ['', '/'] : p))
+            .join('|')})/?$`,
+        'i'
+    );
+    const isPublicPage = publicPathnameRegex.test(request.nextUrl.pathname);
 
     // Способ авторизации по кнопке авторизоваться на сайте
     let getTokens = request.cookies.get('getTokens')
     if (getTokens !== undefined){
-        return await fetchTokens(getTokens.value, response);
+        tokenChange = true;
+        ({response, request, foundTokens} = await fetchTokens(getTokens.value, response, request));
+        if (!foundTokens){
+            return isPublicPage ? response : NextResponse.redirect(process.env.current as string, {headers: response.headers});
+        }
     }
 
     // Проверка и обновление access токена
@@ -82,7 +96,8 @@ export default async function middleware(request: NextRequest) {
         if (date > expiry){
             let refreshToken = request.cookies.get('refresh_token_cookie')
             if (refreshToken !== undefined){
-                return await refreshJwt(refreshToken.value, response);
+                tokenChange = true;
+                ({response, request} = await refreshJwt(refreshToken.value, response, request));
             }
         }
     }
@@ -91,17 +106,11 @@ export default async function middleware(request: NextRequest) {
     const refreshToken = request.cookies.get('refresh_token_cookie')
     const accessToken = request.cookies.get('access_token_cookie')
     if (refreshToken !== undefined && accessToken === undefined){
-        return await refreshJwt(refreshToken.value, response);
+        tokenChange = true;
+        ({response, request} = await refreshJwt(refreshToken.value, response, request));
     }
 
     // Проверка авторизации на страницах требующих авторизации
-    const publicPathnameRegex = RegExp(
-        `^(/(${locales.join('|')}))?(${publicPages
-            .flatMap((p) => (p === '/' ? ['', '/'] : p))
-            .join('|')})/?$`,
-        'i'
-    );
-    const isPublicPage = publicPathnameRegex.test(request.nextUrl.pathname);
     if (!isPublicPage){
         const accessToken = request.cookies.get('access_token_cookie')
         if (accessToken === undefined){
@@ -112,9 +121,13 @@ export default async function middleware(request: NextRequest) {
             return response
         }
     }
+
+    // Необходимо чтобы после авторизации на steam код страница уже загружалась с сессией
+    if (tokenChange){
+        return NextResponse.redirect(request.url, {headers: response.headers})
+    }
     return response
 }
-
 
 function generateLoginPath() {
     const params = new URLSearchParams({

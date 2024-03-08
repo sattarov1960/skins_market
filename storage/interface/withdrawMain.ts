@@ -1,21 +1,26 @@
-export type StatusPaymentSystemType = {
-    [key: string]: boolean;
-}
 
 export interface WithdrawMainI {
-    workingPaymentSystem: StatusPaymentSystemType;
+    workingPaymentSystem: PaymentSystems;
     activePaymentSystem: string;
     wallet: string
     email: string;
+    setWorkingPaymentSystem: (workingPaymentSystem: PaymentSystems) => void;
     setActivePaymentSystem: (paymentSystem: string) => void;
     setWallet: (wallet: string) => void;
     setEmail: (email: string) => void;
 }
 
-export const StatusPaymentSystem: StatusPaymentSystemType = {
-    "Cards": false,
-    "Qiwi": false,
-    "Bitcoin": false,
-    "SBP": false,
-    "USDT TRC20": false
+interface PaymentSystem {
+    active: boolean;
+    minPrice: number;
+    commission: number;
+    fixedCommission: number;
+    caption: string;
+    id: number;
+    placeholder: string;
+    validateType: string;
+}
+
+interface PaymentSystems {
+    [key: string]: PaymentSystem;
 }

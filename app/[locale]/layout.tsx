@@ -3,7 +3,7 @@ import "@/app/globals.css"
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
 import {YandexMetrika} from "@/layout/components/yandex_metrika/metrika";
-import {TopWrap} from "@/layout/wrap/topWrap";
+import {DataWrap} from "@/layout/wrap/dataWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ReactNode} from 'react';
@@ -23,9 +23,9 @@ export default function Layout({children, params}: Props) {
             <html lang={params.locale}>
             <body style={{fontFamily: "TTFirsNeue"}}>
                 <NextIntlClientProvider locale={params.locale} messages={messages}>
-                    <TopWrap>
+                    <DataWrap>
                         {children}
-                    </TopWrap>
+                    </DataWrap>
                 </NextIntlClientProvider>
                 <YandexMetrika/>
                 <ToastContainer />

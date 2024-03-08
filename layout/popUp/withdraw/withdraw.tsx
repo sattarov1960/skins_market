@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import styles from "@/layout/components/popUp/withdraw/withdraw.module.css";
+import styles from "@/layout/popUp/withdraw/withdraw.module.css";
 import moneys from "@/public/moneys.svg"
 import money_change from "@/public/money-change.svg"
 import cards from "@/public/cards.svg"

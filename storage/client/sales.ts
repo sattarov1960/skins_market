@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import {User} from "@/storage/interface/user";
 import {SalesItemsI} from "@/storage/interface/salesItems";
 
 

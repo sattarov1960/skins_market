@@ -1,7 +1,8 @@
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
-import {MainLogout} from "@/layout/screens/mainLogout/mainLogout";
-import {MainLogin} from "@/layout/screens/mainLogin/mainLogin";
+import {MainPage} from "@/layout/wrap/mainPage";
+import { cookies } from 'next/headers';
+
 
 export const metadata: Metadata = getMeta("Главная",
     "",
@@ -9,16 +10,18 @@ export const metadata: Metadata = getMeta("Главная",
 
 
 async function Page() {
-    try{
-        const dynamicData = await fetch( `${process.env.localhost_api}/user`, { cache: 'no-store', credentials: "include" })
-        const data = await dynamicData.json()
-        console.log(data)
+    const cookie = cookies().toString()
+    let isAuth = false;
+    if (cookie.includes("access_token_cookie")){
+        try{
+            const dynamicData = await fetch( `${process.env.localhost_api}/user`, { cache: 'no-store', headers: {Cookie: cookie}})
+            isAuth = dynamicData.status === 200;
+        }
+        catch (e) {
+            console.log("Ошибка загрузки авторизации")
+        }
     }
-    catch (e){
-        console.log(`Ошибка запроса к серверу при получении данных пользователя: ${e}`)
-    }
-    const isAuth = false
-    return isAuth ? <MainLogin/> : <MainLogout/>;
+    return <MainPage isAuth={isAuth}/>;
 }
 
 export default Page

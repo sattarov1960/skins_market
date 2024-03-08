@@ -58,10 +58,10 @@ export const getRarityBGColor = (rarity: string) => {
 
 export const getRarityBlurImage = (rarity: string) => {
     if (rarity === `Consumer`){
-        return "Белый"
+        return "/blur_white.svg"
     }
     else if (rarity === `Contraband`){
-        return "Бордовый"
+        return "/blur_burgundy.svg"
     }
     else if (rarity === 'Industrial' || rarity === 'Mil-spec' || rarity === 'Distinguished' || rarity === 'High Grade') {
         return "/blur_blue.svg"
@@ -73,6 +73,6 @@ export const getRarityBlurImage = (rarity: string) => {
         return "/blur_red.svg"
     }
     else{
-        return "Черный"
+        return "/blur_white.svg"
     }
 }

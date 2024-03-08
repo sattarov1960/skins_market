@@ -14,6 +14,7 @@ import {HeaderPart} from "@/layout/screens/mainLogin/components/withdraw/HeaderP
 import {SubHeaderPart} from "@/layout/screens/mainLogin/components/withdraw/SubHeaderPart";
 import {PaymentMethod} from "@/layout/screens/mainLogin/components/withdraw/PaymentMethod";
 import {FormFields} from "@/layout/screens/mainLogin/components/withdraw/FormFields";
+import axios from "axios";
 
 export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const t = useTranslations()
@@ -27,6 +28,41 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
             setActivePaymentSystem("")
         }
     }, [inventoryStore.items]);
+    useEffect(() => {
+        // loadWorkingPaymentSystem()
+    }, [])
+
+    const loadWorkingPaymentSystem = async () => {
+        try{
+            const resp = await axios.get(`${process.env.api}/working_payment_system`, {withCredentials: true})
+            if (resp.data.status){
+                withdrawMainStore.setWorkingPaymentSystem(resp.data.workingPaymentSystem)
+            }
+            else{
+                console.log(`Error getting working payment system`)
+                toast.error("Ошибка получения рабочих платежных систем", {
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true
+                })
+            }
+        }
+        catch (e){
+            console.log(`Error getting working payment system: ${e}`)
+            toast.error("Ошибка получения рабочих платежных систем", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+            })
+        }
+    }
+
     const focusInput = (e: any) => {
         if (!isActivePaymentSystem(withdrawMainStore.activePaymentSystem)) {
             toast.error("Выберите способ оплаты", {
@@ -42,19 +78,12 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     }
 
     const getPlaceholder = () => {
-        switch (withdrawMainStore.activePaymentSystem) {
-            case "MIR":
-                return "Ваша карта MIR"
-            case "SBP":
-                return "Ваш номер телефона"
-            case "Qiwi":
-                return "Ваш Qiwi-кошелек"
-            case "BTC":
-                return "Ваш BTC-кошелек"
-            case "USDT TRC20":
-                return "Ваш USDT-кошелек"
-            default:
-                return "Ваш кошелек"
+        const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
+        if (ps?.placeholder) {
+            return ps.placeholder
+        }
+        else{
+            return "Ваш кошелек"
         }
     }
 
@@ -65,7 +94,8 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     }
 
     const isActivePaymentSystem = (paymentSystem: string) => {
-        if (withdrawMainStore.workingPaymentSystem[paymentSystem]) {
+        const ps = withdrawMainStore.workingPaymentSystem[paymentSystem]
+        if (ps?.active) {
             return getWithdrawalPrice() >= getMinimalWithdrawalPrice(paymentSystem)
         }
         return false;
@@ -75,64 +105,36 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     }
 
     const getMinimalWithdrawalPrice = (paymentSystem: string) => {
-        switch (paymentSystem) {
-            case "MIR":
-                return 100
-            case "SBP":
-                return 500
-            case "Qiwi":
-                return 10
-            case "BTC":
-                return 1000
-            case "USDT TRC20":
-                return 1000
-            default:
-                return 0
+        const ps = withdrawMainStore.workingPaymentSystem[paymentSystem]
+        if (ps?.minPrice) {
+            return ps.minPrice
+        }
+        else{
+            return 0
         }
     }
 
     const getCommission = () => {
+        let ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
         const withdrawPrice = getWithdrawalPrice()
-        if (withdrawMainStore.activePaymentSystem === ""){
+        if (ps?.minPrice && ps?.fixedCommission){
+            return (withdrawPrice * (ps.commission / 100)) + ps.fixedCommission
+        }
+        else {
             return 0
         }
-        let withdrawComPrice = 0
-        switch (withdrawMainStore.activePaymentSystem) {
-            case "MIR":
-                if (withdrawPrice > 2500)
-                    withdrawComPrice = withdrawPrice * 0.05
-                else
-                    withdrawComPrice = withdrawPrice * 0.03 + 50
-                break
-            case "SBP":
-                withdrawComPrice = 0
-                break
-            case "Qiwi":
-                withdrawComPrice = withdrawPrice * 0.05
-                break
-            case "BTC":
-                withdrawComPrice = withdrawPrice * 0.003 + 882.6
-                break
-            case "USDT TRC20":
-                withdrawComPrice = withdrawPrice * 0.003 + 266.64
-                break
-            default:
-                withdrawComPrice = 0
-                break
-        }
-        return withdrawComPrice
     }
 
     const validateWallet = () : boolean => {
-        switch (withdrawMainStore.activePaymentSystem) {
-            case "MIR":
+        const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
+        switch (ps?.validateType) {
+            case "bankcard":
                 return  validateCardNumber(withdrawMainStore.wallet)
-            case "SBP":
-            case "Qiwi":
+            case "phone number":
                 return validatePhoneNumber(withdrawMainStore.wallet)
-            case "BTC":
+            case "btc":
                 return validateBitcoinAddress(withdrawMainStore.wallet)
-            case "USDT TRC20":
+            case "usdt trc20":
                 return validateTronAddress(withdrawMainStore.wallet)
             default:
                 return false
@@ -179,24 +181,12 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     }
 
     const captionPS = (paymentSystem: string) => {
-        const withdrawPrice = getWithdrawalPrice()
-        switch (paymentSystem) {
-            case "MIR":
-                if (withdrawPrice > 2500)
-                    return "Минимальная сумма обмена для MIR 2500₽.\nКомиссия 5%"
-                else{
-                    return "Минимальная сумма обмена для MIR 100₽.\nКомиссия 3% + 50₽"
-                }
-            case "SBP":
-                return "Минимальная сумма обмена для СБП 500₽.\nКомиссия 0%\nДоступен не всегда, вывод может занять до 24 часов"
-            case "Qiwi":
-                return "Минимальная сумма обмена для Qiwi 10₽.\nКомиссия 5%"
-            case "BTC":
-                return "Минимальная сумма обмена для BTC 1000₽.\nКомиссия 0.3% + 882.6₽"
-            case "USDT TRC20":
-                return "Минимальная сумма обмена для USDT TRC20 1000₽.\nКомиссия 0.3% + 266.64₽"
-            default:
-                return ""
+        const ps = withdrawMainStore.workingPaymentSystem[paymentSystem]
+        if (ps?.active) {
+            return ps.caption
+        }
+        else{
+            return ""
         }
     }
 
