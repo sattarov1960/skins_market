@@ -39,7 +39,7 @@ export function Header() {
     }, [pathname, searchParams]);
     const login = () => {
         const authId = Math.random().toString(16).slice(2);
-        Cookies.set('getTokens', authId, { expires: 1, path: process.env.api });
+        Cookies.set('getTokens', authId, { path: process.env.api });
         window.location.href = authUrl;
     }
     return (

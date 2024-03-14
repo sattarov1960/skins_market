@@ -9,7 +9,13 @@ export const metadata: Metadata = getMeta("Главная",
     ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'Name.Market', 'нейм маркет'])
 
 
-async function Page() {
+async function Page({
+                        params,
+                        searchParams,
+                    }: {
+    params: { slug: string };
+    searchParams?: { [key: string]: string | string[] | undefined };
+}) {
     const cookie = cookies().toString()
     let isAuth = false;
     if (cookie.includes("access_token_cookie")){
@@ -21,7 +27,7 @@ async function Page() {
             console.log("Ошибка загрузки авторизации")
         }
     }
-    return <MainPage isAuth={isAuth}/>;
+    return <MainPage isAuth={isAuth} params={params} searchParams={searchParams}/>;
 }
 
 export default Page

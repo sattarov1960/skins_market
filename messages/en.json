@@ -245,5 +245,25 @@
   "Ваши выводы": "Your withdrawals",
   "Название скина": "Skin name",
   "Unknown": "Unknown",
+  "Мы не можем купить этот скин": "We can't\nbuy this skin",
+
+  "LOW_SALES_WEEK": "Few sales per week",
+  "LOW_SALES_MONTH": "Few sales per month",
+  "LOW_SALES_3PLUS_MONTHS": "Few sales for 3+ months",
+  "LOW_SALES_OVERALL": "Few sales ever",
+
+  "NO_SALES_WEEK": "No sales for the week",
+  "NO_SALES_MONTH": "No sales for the month",
+  "NO_SALES_3PLUS_MONTHS": "No sales for 3+ months",
+  "NO_SALES_OVERALL": "No sales ever",
+  "price is outdated": "Price is outdated",
+  "Ваш кошелек": "Your wallet",
+  "Ваша карта MIR": "Your MIR card",
+  "Ваш Qiwi-кошелек": "Your Qiwi wallet",
+  "Ваш BTC-кошелек": "Your BTC wallet",
+  "Ваш USDT-кошелек": "Your USDT wallet",
+  "Электронная почта": "Email",
+  "": "",
+  "": "",
   "": ""
 }

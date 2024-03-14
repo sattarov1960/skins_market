@@ -18,9 +18,6 @@ export const FormFields = ({
     BlurInput: (inputName: string) => void,
     focusInput: (e: React.FocusEvent<HTMLInputElement>) => void,
     isEmailError: boolean | undefined ,
-    setEmail: (email: string) => void,
-    email: string,
-    wallet: string
 }) => {
     const t = useTranslations()
     const withdrawMainStore = useWithdrawMainStore()
@@ -40,7 +37,7 @@ export const FormFields = ({
             <input
                 required={true}
                 className={`${styles.recieveBlock_form} ${styles.recieveBlock_scndForm} ${isEmailError && styles.recieveBlock_form_error}`}
-                placeholder="Электронная почта"
+                placeholder={t("Электронная почта")}
                 type="text"
                 onChange={(e) => withdrawMainStore.setEmail(e.target.value)}
                 onBlur={() => BlurInput("email")}

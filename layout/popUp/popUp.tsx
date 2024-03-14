@@ -3,11 +3,11 @@ import React, {Dispatch, Fragment, SetStateAction} from "react";
 import styles from "@/layout/popUp/popUp.module.css";
 
 export function PopUp (
-    {isOpen, close, children}: {isOpen: boolean, close: Dispatch<SetStateAction<boolean>>, children: React.ReactNode}
+    {isOpen, close, children}: {isOpen: boolean, close?: Dispatch<SetStateAction<boolean>>, children: React.ReactNode}
 ) {
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" className={styles.dialog} onClose={close}>
+            <Dialog as="div" className={styles.dialog} onClose={close || (() => null)}>
                 <div className={styles.dialog_div_wrap}>
                     <div className={styles.dialog_div}>
                         <Transition.Child

@@ -1,0 +1,3 @@
+interface appIdI{
+    appId: number
+}

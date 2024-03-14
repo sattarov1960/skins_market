@@ -16,22 +16,27 @@ import ChangeTradeUrlPopUp from "@/layout/popUp/changeTradeUrl/changeTradeUrl";
 import axios from "axios";
 import {toast} from "react-toastify";
 import {LoadingInventory} from "@/layout/screens/mainLogin/components/inventory/loadingInventory";
+import { usePathname, useRouter } from "next/navigation";
+import reloadImg from "@/public/reload.svg"
 
 
 export const Inventory = () => {
     const inventoryStore = useInventoryStore()
     const userStore = useUserStore();
+    const router = useRouter();
+    const pathname = usePathname();
     const t = useTranslations()
     const [isSelectedItems, setIsSelectedItems] = useState(false)
     const [isOpenChangeUrl, setOpenChangeUrl] = useState(false)
     const [isLoadingInventory, setIsLoadingInventory] = useState(true)
-    const loadItems = async () => {
+    const loadItems = async (cache: boolean) => {
         try{
             setIsLoadingInventory(true)
             // inventoryStore.setItems(inventoryStore.items.filter((value) => value.appId !== inventoryStore.activeGame))
             const resp = await axios.get(`${process.env.api}/get_inventory`, {withCredentials: true,
                 params: {
                     app_id: inventoryStore.activeGame,
+                    nocache: cache
                 }})
             if (resp.data.status){
                 inventoryStore.setItems(resp.data.items)
@@ -58,11 +63,11 @@ export const Inventory = () => {
             setIsLoadingInventory(false)
         }
     }
-    useEffect(() => {loadItems()}, [userStore.tradeLink, inventoryStore.activeGame]);
+    useEffect(() => {loadItems(false)}, [userStore.tradeLink, inventoryStore.activeGame]);
     useEffect(() => {
         const { items, activeGame, filterMarketHashName, filterRarity, filterWear, sortingPrice } = inventoryStore;
-        let viewItems;
 
+        let viewItems;
         if (filterMarketHashName){
             viewItems = items.filter(item => item.appId === activeGame && item.marketHashName == filterMarketHashName);
             console.log("Обновляю инвентарь filterMarketHashName true")
@@ -126,9 +131,22 @@ export const Inventory = () => {
                 viewItems = viewItems.sort((a, b) => countItems[b.marketHashName] - countItems[a.marketHashName]);
                 break
         }
-        console.log("Все в инвентаре", items.length, viewItems.length)
+
         inventoryStore.setViewItems(viewItems);
-    }, [inventoryStore.activeGame, inventoryStore.filterMarketHashName, inventoryStore.sortingPrice, inventoryStore.filterWear, inventoryStore.filterRarity]);
+    }, [inventoryStore.items, inventoryStore.activeGame, inventoryStore.filterMarketHashName, inventoryStore.sortingPrice, inventoryStore.filterWear, inventoryStore.filterRarity]);
+
+    const setGame = (appId: number) => {
+        inventoryStore.setActiveGame(appId)
+        const gameNames: { [key: number]: string } = {
+            570: "dota2",
+            252490: "rust",
+            440: "tf2"
+        };
+
+        const gameName = gameNames[appId] || "";
+        const query = gameName ? `?game=${gameName}` : "";
+        router.replace(`${pathname}${query}`);
+    }
     return (
         <>
             <div className={styles.inventoryBlock}>
@@ -150,7 +168,7 @@ export const Inventory = () => {
                         <div>
                             <ul className={styles.inventoryBlock_header_sub_rightPart_items}>
                                 <li className={styles.inventoryBlock_header_sub_rightPart_item}
-                                    onClick={() => inventoryStore.setActiveGame(730)}>
+                                    onClick={() => setGame(730)}>
                                     <Image src={`/cs_icon${inventoryStore.activeGame === 730 ? "" : "_inactive"}.svg`}
                                            width={12} height={16} alt="иконка"
                                            className={styles.cs_icon}/>
@@ -160,7 +178,7 @@ export const Inventory = () => {
                                 </li>
                                 <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
                                 <li className={styles.inventoryBlock_header_sub_rightPart_item}
-                                    onClick={() => inventoryStore.setActiveGame(570)}>
+                                    onClick={() => setGame(570)}>
                                     <Image src={`/dota_icon${inventoryStore.activeGame === 570 ? "" : "_inactive"}.svg`}
                                            width={14} height={14} alt="иконка"
                                            className={styles.dota_icon}/>
@@ -170,7 +188,7 @@ export const Inventory = () => {
                                 </li>
                                 <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
                                 <li className={styles.inventoryBlock_header_sub_rightPart_item}
-                                    onClick={() => inventoryStore.setActiveGame(252490)}>
+                                    onClick={() => setGame(252490)}>
                                     <Image
                                         src={`/rust_icon${inventoryStore.activeGame === 252490 ? "" : "_inactive"}.svg`}
                                         width={14} height={14} alt="иконка"
@@ -181,7 +199,7 @@ export const Inventory = () => {
                                 </li>
                                 <hr className={styles.inventoryBlock_header_sub_rightPart_items_line}/>
                                 <li className={styles.inventoryBlock_header_sub_rightPart_item}
-                                    onClick={() => inventoryStore.setActiveGame(440)}>
+                                    onClick={() => setGame(440)}>
                                     <Image src={`/tf_icon${inventoryStore.activeGame === 440 ? "" : "_inactive"}.svg`}
                                            width={14} height={14} alt="иконка"
                                            className={styles.dota_icon}/>
@@ -199,6 +217,9 @@ export const Inventory = () => {
                             <SearchItems/>
                             {inventoryStore.activeGame === 730 && <FilterWear/>}
                             {inventoryStore.activeGame === 730 && <FilterRarity/>}
+                            <button className={styles.inventoryBlock_sub_filters_reloadInvetory} onClick={() => loadItems(true)}>
+                                <Image className={styles.inventoryBlock_sub_filters_reloadInvetory_icon} src={reloadImg} alt="reload inventory" width={13} height={15}/>
+                            </button>
                         </ul>
                         <SortingPrice/>
                     </div>

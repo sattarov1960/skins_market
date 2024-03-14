@@ -9,7 +9,7 @@ const sha256 = (str: string) => {
 
 export function validateTronAddress(wallet: string) {
     try {
-        if (wallet.length !== 34) return true
+        if (wallet.length !== 34) return false
         const bytes = Buffer.from(bs58.decode(wallet));
         const checkSum = bytes.subarray(bytes.length - 4).toString("hex");
         const addressWithoutCheckSum = bytes.subarray(0, bytes.length - 4).toString("hex");

@@ -9,10 +9,12 @@ import axios from "axios";
 import {toast} from "react-toastify";
 import {useTranslations} from "next-intl";
 import {validateTradeLink} from "@/utilities/validate/tradeLink";
+import {useUserStore} from "@/storage/client/user";
 
 function ChangeTradeUrl({close, setTradeLink}: {close: Dispatch<SetStateAction<boolean>>, setTradeLink: any}){
     const t = useTranslations()
-    const [tradeUrl, setTradeUrl] = useState<string>("")
+    const userStore = useUserStore()
+    const [tradeUrl, setTradeUrl] = useState<string>(userStore.tradeLink || "")
     const changeTradeUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTradeUrl(e.target.value)
     }

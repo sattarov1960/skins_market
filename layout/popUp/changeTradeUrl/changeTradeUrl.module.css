@@ -1,5 +1,5 @@
 .change_url_wrap{
-    @apply px-[24px] xl:px-[45px] rounded-[16px] w-[335px] h-[432px] relative xl:w-[610px] xl:h-[521px] pt-[31px] xl:pt-[40px];
+    @apply px-[24px] xl:px-[45px] rounded-[16px] w-[335px] h-[432px] relative xl:w-[610px] xl:h-[521px] pt-[31px] xl:pt-[40px] z-50;
     backdrop-filter: blur(12px);
     background: #09090E;
 }

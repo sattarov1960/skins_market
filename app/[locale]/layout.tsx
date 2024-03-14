@@ -7,6 +7,7 @@ import {DataWrap} from "@/layout/wrap/dataWrap";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ReactNode} from 'react';
+import {Jivo} from "@/layout/components/jivo/jivo";
 
 
 export const metadata: Metadata = getMeta("Главная",
@@ -28,6 +29,7 @@ export default function Layout({children, params}: Props) {
                     </DataWrap>
                 </NextIntlClientProvider>
                 <YandexMetrika/>
+                <Jivo/>
                 <ToastContainer />
             </body>
             </html>

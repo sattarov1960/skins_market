@@ -2,18 +2,24 @@ import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import {useTranslations} from "next-intl";
 import {formatCurrency} from "@/utilities/formatCyrrency";
 import Image from "next/image";
+import {useInventoryStore} from "@/storage/client/inventory";
+import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
 
 // SubHeaderPart.tsx
 export const SubHeaderPart = ({
                                   getWithdrawalPriceWithCommission,
                                   getMinimalWithdrawalPrice,
-                                  activePaymentSystem
                               }: {
     getWithdrawalPriceWithCommission: () => number,
     getMinimalWithdrawalPrice: (paymentSystem: string) => number,
-    activePaymentSystem: string
 }) => {
+    const withdrawMainStore = useWithdrawMainStore()
     const t = useTranslations()
+
+    const setPromotionalCode = (e: React.ChangeEvent<HTMLInputElement>) => {
+        withdrawMainStore.setPromotionalCode(e.target.value)
+    }
+
     return (
         <div className={styles.recieveBlock_sub_headerPart}>
             <ul className={styles.recieveBlock_sub_headerPart_items}>
@@ -27,15 +33,11 @@ export const SubHeaderPart = ({
                 </li>
                 <li className={`${styles.recieveBlock_sub_headerPart_item} ${styles.recieveBlock_sub_headerPart_scndItem}`}>
               <span className={styles.recieveBlock_sub_headerPart_item_subText}>
-                  {t("Минимальная сумма:")} {activePaymentSystem ? getMinimalWithdrawalPrice(activePaymentSystem) : "10"}₽
+                  {t("Минимальная сумма:")} {withdrawMainStore.activePaymentSystem ? getMinimalWithdrawalPrice(withdrawMainStore.activePaymentSystem) : "10"}₽
               </span>
                 </li>
                 <li className={`${styles.recieveBlock_sub_headerPart_item} ${styles.recieveBlock_sub_headerPart_thrdItem}`}>
-                                <span className={styles.recieveBlock_sub_headerPart_item_subText}>
-                                {t("Промокод")}
-                                </span>
-                    <Image src="/checkCircle_icon.svg" width={20} height={21} alt="галочка"
-                           className={styles.checkCircle_icon}/>
+                    <input placeholder={t("Промокод")} spellCheck={"false"} className={styles.recieveBlock_sub_headerPart_item_subText} type="text" value={withdrawMainStore.promotionalCode} onChange={setPromotionalCode}/>
                 </li>
             </ul>
         </div>

@@ -94,17 +94,13 @@ export const SearchItem = ({
     const t = useTranslations()
     const inventoryStore = useInventoryStore()
     const isLastItem = index === inventoryStore.searchResult.length - 1
-    const blurImage = getRarityBlurImage(rarity)
     return (
         <>
             <li className={`${styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point} ${styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_scndPoint}`} onClick={() => {inventoryStore.setFilterMarketHashName(marketHashName); onClick(); inventoryStore.setSearchQuery(marketHashName)}}>
                 <div className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg}>
                     <Image className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_mainImg}
-                           src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={90}
-                           height={67} alt="gun"/>
-                    <Image
-                        className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_blockForImg_blur}
-                        src={blurImage} alt="блюр" width={92} height={92}/>
+                           src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={120}
+                           height={120} alt="gun"/>
                 </div>
                 <div className={styles.inventoryBlock_sub_filters_leftPart_item_addAccordion_point_subBlock}>
                     <div

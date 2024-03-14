@@ -17,4 +17,7 @@ export interface InventoryItemI{
     id: string
     isSelected: boolean
     isNew: boolean
+    available: boolean
+    msgAvailable: string
+    marketTradableRestriction: number
 }

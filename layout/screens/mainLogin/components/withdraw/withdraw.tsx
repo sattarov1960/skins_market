@@ -15,6 +15,10 @@ import {SubHeaderPart} from "@/layout/screens/mainLogin/components/withdraw/SubH
 import {PaymentMethod} from "@/layout/screens/mainLogin/components/withdraw/PaymentMethod";
 import {FormFields} from "@/layout/screens/mainLogin/components/withdraw/FormFields";
 import axios from "axios";
+import {useTradeStore} from "@/storage/client/trade";
+import trade from "@/layout/popUp/trade/trade";
+import {getAppIdByName} from "@/utilities/getAppIdByName";
+import {round} from "@/utilities/round";
 
 export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const t = useTranslations()
@@ -22,6 +26,7 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const [isEmailError, setIsEmailError] = useState<boolean | undefined>(undefined)
     const inventoryStore = useInventoryStore()
     const withdrawMainStore = useWithdrawMainStore()
+    const tradeStore = useTradeStore()
     useEffect(() => {
         let {activePaymentSystem, setActivePaymentSystem} = withdrawMainStore
         if (!isActivePaymentSystem(activePaymentSystem)) {
@@ -29,7 +34,7 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
         }
     }, [inventoryStore.items]);
     useEffect(() => {
-        // loadWorkingPaymentSystem()
+        loadWorkingPaymentSystem()
     }, [])
 
     const loadWorkingPaymentSystem = async () => {
@@ -80,10 +85,10 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const getPlaceholder = () => {
         const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
         if (ps?.placeholder) {
-            return ps.placeholder
+            return t(ps.placeholder)
         }
         else{
-            return "Ваш кошелек"
+            return t("Ваш кошелек")
         }
     }
 
@@ -153,31 +158,13 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
         if (withdrawMainStore.activePaymentSystem === ""){
             return withdrawPrice
         }
-        let withdrawComPrice = 0
-        switch (withdrawMainStore.activePaymentSystem) {
-            case "MIR":
-                if (withdrawPrice > 2500)
-                    withdrawComPrice = withdrawPrice * 0.95
-                else
-                    withdrawComPrice = withdrawPrice * 0.97 - 50
-                break
-            case "SBP":
-                withdrawComPrice = withdrawPrice
-                break
-            case "Qiwi":
-                withdrawComPrice = withdrawPrice * 0.95
-                break
-            case "BTC":
-                withdrawComPrice = withdrawPrice * 0.97 - 882.6
-                break
-            case "USDT TRC20":
-                withdrawComPrice = withdrawPrice * 0.97 - 266.64
-                break
-            default:
-                withdrawComPrice = 0
-                break
+        const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
+        if (ps?.commission && ps?.fixedCommission){
+            return withdrawPrice - getCommission()
         }
-        return withdrawComPrice
+        else {
+            return withdrawPrice
+        }
     }
 
     const captionPS = (paymentSystem: string) => {
@@ -190,25 +177,40 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
         }
     }
 
-    const isReadyTrade = (e?: any) => {
+
+    const validate = (e?: any) => {
         const isValidPaymentSystem = isActivePaymentSystem(withdrawMainStore.activePaymentSystem)
         const isValidWallet = validateWallet()
         const isValidEmail = validateEmail(withdrawMainStore.email)
-        if (e){
+        let isValid = isValidPaymentSystem && isValidWallet && isValidEmail
+        if (e) {
             e.preventDefault()
+            sell(isValid)
+        }
+        return isValid
+    }
+    const sell = (isValid: boolean) => {
+        let items = inventoryStore.viewItems.filter((value) => value.isSelected)
+        const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
+        if (items.length > 0 && isValid && ps){
+            tradeStore.setPromocode(withdrawMainStore.promotionalCode)
+            tradeStore.setEmail(withdrawMainStore.email)
+            tradeStore.setPaymentMethodId(ps.id)
+            tradeStore.setGameId(inventoryStore.activeGame)
+            tradeStore.setItemsGive(items)
+            tradeStore.setPrice(round(getWithdrawalPriceWithCommission(), 2))
             createTrade()
         }
-        return isValidPaymentSystem && isValidWallet && isValidEmail
     }
     return (
-        <form onSubmit={(e) => isReadyTrade(e)} className={styles.recieveBlock}>
+        <form onSubmit={(e) => validate(e)} className={styles.recieveBlock}>
             <HeaderPart getCommission={getCommission} />
-            <SubHeaderPart getWithdrawalPriceWithCommission={getWithdrawalPriceWithCommission} getMinimalWithdrawalPrice={getMinimalWithdrawalPrice} activePaymentSystem={withdrawMainStore.activePaymentSystem} />
+            <SubHeaderPart getWithdrawalPriceWithCommission={getWithdrawalPriceWithCommission} getMinimalWithdrawalPrice={getMinimalWithdrawalPrice} />
             <hr className={`${styles.recieveBlock_delimiter_line} ${styles.recieveBlock_delimiter_frstLine}`}/>
             <PaymentMethod isActivePaymentSystem={isActivePaymentSystem} handlePaymentSystemClick={handlePaymentSystemClick} captionPS={captionPS} />
             <hr className={styles.recieveBlock_delimiter_line}/>
-            <FormFields isActivePaymentSystem={isActivePaymentSystem} isWalletError={isWalletError} getPlaceholder={getPlaceholder} BlurInput={BlurInput} focusInput={focusInput} isEmailError={isEmailError} setEmail={withdrawMainStore.setEmail} email={withdrawMainStore.email} wallet={withdrawMainStore.wallet} />
-            <button type="submit" className={`${styles.recieveBlock_mainButton} ${isReadyTrade() && styles.recieveBlock_mainButton_ready} ${!inventoryStore.items.length && styles.recieveBlock_mainButton_inactive}`}>
+            <FormFields isActivePaymentSystem={isActivePaymentSystem} isWalletError={isWalletError} getPlaceholder={getPlaceholder} BlurInput={BlurInput} focusInput={focusInput} isEmailError={isEmailError}/>
+            <button type="submit" className={`${styles.recieveBlock_mainButton} ${validate() && styles.recieveBlock_mainButton_ready} ${!inventoryStore.items.length && styles.recieveBlock_mainButton_inactive}`}>
                 {t("Продать скины")}
             </button>
         </form>

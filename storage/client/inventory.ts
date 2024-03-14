@@ -26,7 +26,9 @@ export const useInventoryStore = create<InventoryI>((set) => ({
     }),
     selectAllItems: () => set((state) => {
         const items = state.viewItems.map((item) => {
-            item.isSelected = true;
+            if (item.isTradable && item.available){
+                item.isSelected = true;
+            }
             return item;
         });
         return { viewItems: items };

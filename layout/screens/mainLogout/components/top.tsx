@@ -23,9 +23,7 @@ export function Top() {
                       {t("по приятной стоимости")}
                       <Image src="/line_mainPart.svg" width={361} height={13} alt="линия" className={styles.line_mainPart}/>
                   </h1>
-                  <span className={styles.main_part_subText}>
-                            {t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}
-            </span>
+                  <span className={styles.main_part_subText}>{t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}</span>
               </div>
               <div className={styles.mainPart_startNowBlock}>
                   <button className={styles.mainPart_startNowBlock_button}>
@@ -37,9 +35,9 @@ export function Top() {
                   </div>
               </div>
           </div>
-          <Image priority={true} src="/ak_mobile.webp" width={375} height={722} alt="ак" className={styles.ak_image_mobile}/>
-          <Image priority={true} src="/ak.webp" width={1905} height={1358} alt="ак" className={styles.ak_image} quality={100}/>
-          <Image src="/smoke_mainPart.webp" width={318} height={627} alt="дым" className={styles.smoke_mainPart}/>
+          <Image priority={true} src="/ak_mobile.webp" width={375} height={722} alt="ak" className={styles.ak_image_mobile} quality={100}/>
+          <Image priority={true} src="/ak.webp" width={1905} height={1358} alt="ak" className={styles.ak_image} quality={100}/>
+          <Image src="/smoke_mainPart.webp" width={318} height={627} alt="smoke" className={styles.smoke_mainPart}/>
       </section>
   );
 }

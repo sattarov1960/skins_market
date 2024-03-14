@@ -1,26 +1,17 @@
 "use client"
 import {useLocale} from "next-intl";
 import {useState} from "react";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import styles from "@/layout/components/header/header.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Language() {
     let activePath
     let activeName
     const locale = useLocale()
     const [isChecked, setIsChecked] = useState(false);
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const changeLanguage = (language: string) => {
-        const newPath = pathname.startsWith(`/${locale}`)
-            ? pathname.replace(`/${locale}`, `/${language}`)
-            : `/${language}${pathname}`;
-        console.log(newPath);
-        router.push(newPath);
-    };
-
+    const searchParams = useSearchParams()
 
     const handleChange = () => {
         setIsChecked(!isChecked);
@@ -38,6 +29,10 @@ export function Language() {
             activeName = "RU"
             activePath = "/ru_icon.svg"
     }
+    const getPath = (language: string) => {
+        const addSearchParams = searchParams.toString() ? `?${searchParams.toString()}` : ""
+        return `${process.env.current}/${language}/${window.location.pathname.split("/").slice(["ru", "en", "ua", "blr"].includes(window.location.pathname.split("/")[1]) ? 2 : 1).join("/")}${addSearchParams}`
+    }
     return (
         <section className={styles.box}>
             <div className={styles.nav_languageBlock} onClick={handleChange}>
@@ -49,17 +44,21 @@ export function Language() {
             </div>
             {isChecked ? <div className={styles.nav_languageBlock_addElement}>
                 <ul>
-                    <li className={`${styles.nav_languageBlock_addElement_item} ${activeName === "RU" ? styles.nav_languageBlock_addElement_item_active : null}`} onClick={() => changeLanguage("ru")}>
-                        <Image src="/ru_dark_icon.svg" width={122} height={18} alt="ru" className={styles.nav_languageBlock_addElement_item_flag}/>
-                        <p className={styles.nav_languageBlock_addElement_item_subText}>
-                            RU
-                        </p>
+                    <li>
+                        <Link href={getPath("ru")} className={`${styles.nav_languageBlock_addElement_item} ${activeName === "RU" ? styles.nav_languageBlock_addElement_item_active : null}`}>
+                            <Image src="/ru_dark_icon.svg" width={122} height={18} alt="ru" className={styles.nav_languageBlock_addElement_item_flag}/>
+                            <p className={styles.nav_languageBlock_addElement_item_subText}>
+                                RU
+                            </p>
+                        </Link>
                     </li>
-                    <li className={`${styles.nav_languageBlock_addElement_item} ${activeName === "EN" ? styles.nav_languageBlock_addElement_item_active : null}`} onClick={() => changeLanguage("en")}>
-                        <Image src="/en_icon.svg" width={122} height={18} className={styles.nav_languageBlock_addElement_item_flag} alt="en" />
-                        <p className={styles.nav_languageBlock_addElement_item_text}>
-                            EN
-                        </p>
+                    <li>
+                        <Link href={getPath("en")} className={`${styles.nav_languageBlock_addElement_item} ${activeName === "EN" ? styles.nav_languageBlock_addElement_item_active : null}`}>
+                            <Image src="/en_icon.svg" width={122} height={18} className={styles.nav_languageBlock_addElement_item_flag} alt="en" />
+                            <p className={styles.nav_languageBlock_addElement_item_text}>
+                                EN
+                            </p>
+                        </Link>
                     </li>
                 </ul>
             </div> : null}

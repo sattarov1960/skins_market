@@ -1,0 +1,1 @@
+export type withdrawPlaceholder = "Ваша карта MIR" | "Ваш Qiwi-кошелек" | "Ваш BTC-кошелек" | "Ваш USDT-кошелек" | "Ваш номер телефона";
