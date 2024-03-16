@@ -1,5 +1,5 @@
 .main {
-    @apply pl-[140px] overflow-hidden;
+    @apply px-[20px] 2xl:pl-[140px] 4xl:px-[240px] overflow-hidden;
 }
 .basic_part {
     @apply bg-[url('/bg_for_faq.webp')] bg-cover bg-center bg-no-repeat h-full px-[20px] lg:pr-[140px] lg:pl-0;
@@ -111,7 +111,7 @@
     @apply text-[22px] lg:text-[32px] text-[#EBEFFDB2] font-[600] leading-[27px] lg:leading-[39px] mt-[16px];
 }
 .how_register_subBlock_subText {
-    @apply block mt-[32px] text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[28px] lg:leading-[32px] opacity-75;
+    @apply block mt-[32px] text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[28px] lg:leading-[32px] opacity-75 whitespace-pre-wrap;
 }
 .howTo_image {
     @apply mx-auto my-[80px] hidden sm:block;

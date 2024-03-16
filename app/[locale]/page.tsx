@@ -1,12 +1,12 @@
 import {Metadata} from "next";
 import {getMeta} from "@/utilities/meta";
-import {MainPage} from "@/layout/wrap/mainPage";
+import { MainPage } from "@/layout/wrap/mainPage";
 import { cookies } from 'next/headers';
 
 
 export const metadata: Metadata = getMeta("Главная",
     "",
-    ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'Name.Market', 'нейм маркет'])
+    ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'CS SELL', 'нейм маркет'])
 
 
 async function Page({

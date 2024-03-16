@@ -1,3 +1,5 @@
+import {ErrorCreateTrade} from "@/interface/types/errorCreateTrade";
+
 export interface TradeInfoI{
     status: boolean
     steamOfferId?: string,
@@ -7,5 +9,7 @@ export interface TradeInfoI{
     paymentInfo?: string,
     appId?: number,
     paymentMethodId?: number
-    errMsg: string | undefined
+    botImage?: string
+    errMsg: ErrorCreateTrade | undefined
+    timeRegistrationBot?: string
 }

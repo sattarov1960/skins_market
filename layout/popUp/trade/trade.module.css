@@ -3,6 +3,11 @@
     backdrop-filter: blur(120px);
     background: rgb(13, 14, 21);
 }
+.trade_wrap_no_created{
+    @apply overflow-hidden w-[335px] h-[755px] rounded-[16px] xl:w-[960px] xl:h-[390px] px-[24px] xl:px-[48px] py-[24px] xl:pt-[40px] xl:pb-[35px];
+    backdrop-filter: blur(120px);
+    background: rgb(13, 14, 21);
+}
 .trade_h1{
     @apply text-[20px] font-medium leading-[24px] text-left xl:text-[32px] xl:leading-[38px];
     color: rgb(235, 239, 253);
@@ -47,7 +52,7 @@
     background: rgba(34, 34, 54, 0.5);
 }
 .trade_part_item_img{
-    @apply w-[54px] h-[40px] xl:w-[65px] xl:h-[50px];
+    @apply w-[54px] h-[40px] xl:w-[97px] xl:h-[75px];
 }
 .trade_part_hr_mobile{
     @apply w-[287px] h-[2px] mt-[24px] xl:h-[235px] xl:w-[2px] xl:mt-[40px];

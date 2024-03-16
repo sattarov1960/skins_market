@@ -13,8 +13,8 @@ export function Contact() {
     const t = useTranslations()
     const contactStore = useContactStore()
 
-    const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        contactStore.setSelectedOption(event.target.value);
+    const handleOptionChange = (option: string) => {
+        contactStore.setSelectedOption(option);
     };
     const createMessage = async () => {
         const toastId = toast(t("Отправляем ваше обращение"), {
@@ -55,25 +55,35 @@ export function Contact() {
             });
             return
         }
-        const resp = await axios.post(`${process.env.api}/send_message`, {
-            name: contactStore.name,
-            telegram: contactStore.telegram,
-            text: contactStore.text,
-            type: contactStore.selectedOption
-        }, {withCredentials: true})
-        const data = resp.data
-        if (data.status){
-            toast.update(toastId, {
-                render: t("Ваше обращение успешно отправлено"),
-                type: toast.TYPE.SUCCESS,
-                isLoading: false,
-                autoClose: 5000
-            });
-            contactStore.setName("")
-            contactStore.setTelegram("")
-            contactStore.setText("")
+        try{
+            const resp = await axios.post(`${process.env.api}/send_message`, {
+                name: contactStore.name,
+                telegram: contactStore.telegram,
+                text: contactStore.text,
+                typeMessage: contactStore.selectedOption
+            }, {withCredentials: true, timeout: 10000})
+            const data = resp.data
+            if (data.status){
+                toast.update(toastId, {
+                    render: t("Ваше обращение успешно отправлено"),
+                    type: toast.TYPE.SUCCESS,
+                    isLoading: false,
+                    autoClose: 5000
+                });
+                contactStore.setName("")
+                contactStore.setTelegram("")
+                contactStore.setText("")
+            }
+            else{
+                toast.update(toastId, {
+                    render: t("Ошибка при отправке обращения"),
+                    type: toast.TYPE.ERROR,
+                    isLoading: false,
+                    autoClose: 5000
+                });
+            }
         }
-        else{
+        catch (e){
             toast.update(toastId, {
                 render: t("Ошибка при отправке обращения"),
                 type: toast.TYPE.ERROR,
@@ -101,14 +111,18 @@ export function Contact() {
                                     <Image src="/telegramOriginal_icon.svg" width={32} height={33} alt="Telegram"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subFrstItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")} в Telegram</span>
-                                        <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>@username</p>
+                                        <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>
+                                            <Link href={"https://t.me/CS_SELL_SUPPORT"}>@CS_SELL_SUPPORT</Link>
+                                        </p>
                                     </div>
                                 </li>
                                 <li className={styles.contactInformation_leftPart_socialNetworks_item}>
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")}</span>
-                                        <p className={`${styles.contactInformation_leftPart_socialNetworks_subItem_mainText} ${styles.contactInformation_leftPart_socialNetworks_subItem_mainText_special}`}>pr@example.com</p>
+                                        <Link href="mailto:cssellsup@mail.ru">
+                                            <p className={`${styles.contactInformation_leftPart_socialNetworks_subItem_mainText} ${styles.contactInformation_leftPart_socialNetworks_subItem_mainText_special}`}>cssellsup@mail.ru</p>
+                                        </Link>
                                     </div>
                                 </li>
                                 <li className={`${styles.contactInformation_leftPart_socialNetworks_item} ${styles.contactInformation_leftPart_socialNetworks_thrdItem}`}>
@@ -117,14 +131,18 @@ export function Contact() {
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>
                                         {t("Сотрудничество")}
                                         </span>
-                                        <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>pr@example.com</p>
+                                        <Link href="mailto:cssellsup@mail.ru">
+                                            <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>cssellsup@mail.ru</p>
+                                        </Link>
                                     </div>
                                 </li>
                                 <li className={`${styles.contactInformation_leftPart_socialNetworks_item} ${styles.contactInformation_leftPart_socialNetworks_frthItem}`}>
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Другое")}</span>
-                                        <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>pr@example.com</p>
+                                        <Link href="mailto:cssellsup@mail.ru">
+                                            <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>cssellsup@mail.ru</p>
+                                        </Link>
                                     </div>
                                 </li>
                             </ul>
@@ -137,43 +155,50 @@ export function Contact() {
                             <div className={styles.contactInformation_rightPart_headerForms}>
                                 <div className={styles.contactInformation_rightPart_headerFrstForm}>
                                     <p className={styles.contactInformation_rightPart_headerForm_text}>{t("Ваше имя")}</p>
-                                    <input className={styles.contactInformation_rightPart_headerForm_input} placeholder={t("Введите имя")} type="text" onChange={(e) => contactStore.setName(e.target.value)}/>
+                                    <input value={contactStore.name} className={styles.contactInformation_rightPart_headerForm_input} placeholder={t("Введите имя")} type="text" onChange={(e) => contactStore.setName(e.target.value)}/>
                                 </div>
                                 <div className={styles.contactInformation_rightPart_headerScndForm}>
                                     <p className={styles.contactInformation_rightPart_headerForm_text}>Telegram</p>
-                                    <input className={`${styles.contactInformation_rightPart_headerForm_input} ${styles.contactInformation_rightPart_headerForm_scnInput}`} placeholder={t("Введите Telegram")} type="text"  onChange={(e) => contactStore.setTelegram(e.target.value)}/>
+                                    <input value={contactStore.telegram} className={`${styles.contactInformation_rightPart_headerForm_input} ${styles.contactInformation_rightPart_headerForm_scnInput}`} placeholder={t("Введите Telegram")} type="text"  onChange={(e) => contactStore.setTelegram(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.contactInformation_rightPart_mainForm}>
                             <p className={styles.contactInformation_rightPart_mainForm_text}>{t("Сообщение")}</p>
-                            <textarea className={styles.contactInformation_rightPart_mainForm_textarea} placeholder={t("Опишите суть обращения")} onChange={(e) => contactStore.setText(e.target.value)}></textarea>
+                            <textarea value={contactStore.text} className={styles.contactInformation_rightPart_mainForm_textarea} placeholder={t("Опишите суть обращения")} onChange={(e) => contactStore.setText(e.target.value)}></textarea>
                         </div>
                         <div className={styles.contactInformation_rightPart_options}>
                             <div className={styles.contactInformation_rightPart_options_leftBlock}>
-                                <label className={`${styles.contactInformation_rightPart_options_leftBlock_customRadio} ${styles.contactInformation_rightPart_options_leftBlock_frstCustomRadio}`}>
-                                  <input name="option" type="radio" value="Общий" checked={contactStore.selectedOption === 'Общий'} onChange={handleOptionChange}/>
-                                  <span className={styles.checkmark}></span>
-                                  <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Общий")}</span>
+                                <label onClick={() => handleOptionChange('Общий')}
+                                    className={`${styles.contactInformation_rightPart_options_leftBlock_customRadio} ${styles.contactInformation_rightPart_options_leftBlock_frstCustomRadio}`}>
+                                    <div className={styles.contactInformation_selected_option_wrap}>
+                                        {contactStore.selectedOption === 'Общий' && <div className={styles.contactInformation_selected_option}/>}
+                                    </div>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Общий")}</span>
                                 </label>
-                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
-                                  <input name="option" type="radio" value="Партнерство" checked={contactStore.selectedOption === 'Партнерство'} onChange={handleOptionChange}/>
-                                  <span className={styles.checkmark}></span>
-                                  <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Партнерство")}</span>
+                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio} onClick={() => handleOptionChange("Партнерство")}>
+                                    <div className={styles.contactInformation_selected_option_wrap}>
+                                        {contactStore.selectedOption === "Партнерство" && <div className={styles.contactInformation_selected_option}/>}
+                                    </div>
+                                    <span
+                                        className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Партнерство")}</span>
                                 </label>
-                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
-                                  <input name="option" type="radio" value="Баг" checked={contactStore.selectedOption === 'Баг'} onChange={handleOptionChange}/>
-                                  <span className={styles.checkmark}></span>
-                                  <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Баг")}</span>
+                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio} onClick={() => handleOptionChange("Баг")}>
+                                    <div className={styles.contactInformation_selected_option_wrap}>
+                                        {contactStore.selectedOption === "Баг" && <div className={styles.contactInformation_selected_option}/>}
+                                    </div>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Баг")}</span>
                                 </label>
-                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio}>
-                                  <input name="option" type="radio" value="Другое" checked={contactStore.selectedOption === 'Другое'} onChange={handleOptionChange}/>
-                                  <span className={styles.checkmark}></span>
-                                  <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Другое")}</span>
+                                <label className={styles.contactInformation_rightPart_options_leftBlock_customRadio} onClick={() => handleOptionChange('Другое')}>
+                                    <div className={styles.contactInformation_selected_option_wrap}>
+                                        {contactStore.selectedOption === 'Другое' && <div className={styles.contactInformation_selected_option}/>}
+                                    </div>
+                                    <span className={styles.contactInformation_rightPart_options_leftBlock_customRadio_text}>{t("Другое")}</span>
                                 </label>
+
                             </div>
                             <button className={styles.contactInformation_rightPart_options_btn} onClick={createMessage}>
-                                {t("Отправить")}
+                            {t("Отправить")}
                             </button>
                         </div>
                     </div>

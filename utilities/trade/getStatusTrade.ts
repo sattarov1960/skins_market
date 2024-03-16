@@ -4,7 +4,7 @@ import {GetStatusTradeI, StatusTradeI} from "@/interface/components/statusTrade"
 
 export const getStatusTrade = async ({tradeId}: GetStatusTradeI) => {
     try{
-        const resp = await axios.post<StatusTradeI>(`${process.env.api}/status_trade`, {tradeId: tradeId}, {withCredentials: true})
+        const resp = await axios.get<StatusTradeI>(`${process.env.api}/status_trade?trade_id=${tradeId}`, {withCredentials: true})
         return resp.data
     }
     catch (e) {

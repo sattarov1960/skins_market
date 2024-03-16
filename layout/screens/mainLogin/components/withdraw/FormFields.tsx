@@ -21,6 +21,7 @@ export const FormFields = ({
 }) => {
     const t = useTranslations()
     const withdrawMainStore = useWithdrawMainStore()
+
     return (
         <div className={`${styles.recieveBlock_formFields} ${!isActivePaymentSystem(withdrawMainStore.activePaymentSystem) && styles.recieveBlock_formFields_inactive}`}>
             <input
@@ -45,6 +46,19 @@ export const FormFields = ({
                 value={withdrawMainStore.email}
             />
             {isEmailError && <p className={styles.recieveBlock_form_error_text}>{t("Проверьте введенные данные")}</p>}
+            {withdrawMainStore.activePaymentSystem === "SBP" &&
+                <>
+                    <input
+                        required={true}
+                        className={`${styles.recieveBlock_form} ${styles.recieveBlock_scndForm}`}
+                        placeholder={t("Название банка")}
+                        type="text"
+                        onChange={(e) => withdrawMainStore.setSbpBank(e.target.value)}
+                        value={withdrawMainStore.sbpBank}
+                        spellCheck={false}
+                    />
+                </>
+            }
         </div>
     )
 }

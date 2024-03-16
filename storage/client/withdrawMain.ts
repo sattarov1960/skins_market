@@ -8,6 +8,7 @@ export const useWithdrawMainStore = create<WithdrawMainI>((set) => ({
     wallet: "+79237289963",
     email: "sattarov.1960@inbox.ru",
     promotionalCode: "",
+    sbpBank: "Сбербанк",
     workingPaymentSystem: {
         "MIR": {
             "active": true,
@@ -64,5 +65,6 @@ export const useWithdrawMainStore = create<WithdrawMainI>((set) => ({
     setWallet: (wallet) => set({ wallet: wallet }),
     setEmail: (email) => set({ email: email }),
     setActivePaymentSystem: (paymentSystem) => set({ activePaymentSystem: paymentSystem }),
-    setPromotionalCode: (promotionalCode) => set({ promotionalCode: promotionalCode })
+    setPromotionalCode: (promotionalCode) => set({ promotionalCode: promotionalCode }),
+    setSbpBank: (sbpBank) => set({ sbpBank: sbpBank }),
 }));

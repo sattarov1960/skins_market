@@ -224,7 +224,7 @@ export const useReferralsStore = create<ReferralsI>((set) => ({
     ],
     referralBalance: 100,
     referralCode: 'b651ed2f9d98',
-    inviteLink: 'https://name.market?ref=b651ed2f9d98',
+    inviteLink: 'https://CS SELL?ref=b651ed2f9d98',
     totalCostSalesReferrals: 0,
     totalEarned: 0,
     totalInvited: 122,

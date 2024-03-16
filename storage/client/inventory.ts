@@ -12,6 +12,7 @@ export const useInventoryStore = create<InventoryI>((set) => ({
     filterRarity: "",
     filterWear: "",
     sortingPrice: "От дорогих",
+    reloadInventory: 0,
     setActiveGame: (gameId) => set({ activeGame: gameId }),
     setItems: (items) => set({ items: items }),
     setViewItems: (items) => set({ viewItems: items }),
@@ -46,4 +47,17 @@ export const useInventoryStore = create<InventoryI>((set) => ({
     setFilterRarity: (filterRarity) => set({ filterRarity: filterRarity }),
     setFilterWear: (filterWear) => set({ filterWear: filterWear }),
     setSortingPrice: (sortingPrice) => set({ sortingPrice: sortingPrice }),
+    setReloadInventory: (reloadInventory) => set({ reloadInventory: reloadInventory }),
+    reset: () => set({
+        items: [],
+        viewItems: [],
+        activeGame: 730,
+        searchQuery: "",
+        searchResult: [],
+        filterMarketHashName: "",
+        filterRarity: "",
+        filterWear: "",
+        sortingPrice: "От дорогих",
+        reloadInventory: 0
+    })
 }));

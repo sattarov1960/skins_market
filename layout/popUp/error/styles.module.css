@@ -13,7 +13,7 @@
     @apply w-[160px] h-[160px] mx-auto xl:w-[206px] xl:h-[206px];
 }
 .error_trade_h1{
-    @apply xl:text-[32px] xl:leading-[39px] mx-auto text-[22px] font-semibold mt-[32px] leading-[27px] xl:mt-[32px];
+    @apply whitespace-normal xl:text-[32px] xl:leading-[39px] mx-auto text-[22px] font-semibold mt-[32px] leading-[27px] xl:mt-[32px];
     color: rgb(235, 239, 253);
 }
 .error_trade_p{
@@ -26,6 +26,6 @@
     background: rgba(34, 34, 54, 0.5);
 }
 .error_trade_button_text{
-    @apply text-[16px] font-semibold leading-[19px] xl:text-[18px];
+    @apply cursor-pointer text-[16px] font-semibold leading-[19px] xl:text-[18px];
     color: rgb(255, 255, 255);
 }

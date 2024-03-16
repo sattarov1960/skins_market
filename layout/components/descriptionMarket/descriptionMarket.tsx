@@ -18,43 +18,8 @@ export function DescriptionMarket() {
                 </div>
                 <div className={styles.detail_information_mainPart}>
                     <span className={styles.detail_information_mainPart_text}>
-            <span className={styles.detail_information_mainPart_specialText}>
-            Avan.market
-            </span>
-            - это оправданная годами площадка для продажи
-            внутриигровых скинов и предметов. Сервис
-            обеспечивает мгновенный и безопасный обмен вещей на
-            реальные деньги для геймеров по всему миру. Игрок
-            CS:GO получает уникальный шанс продать скины КС ГО
-            из своего личного инвентаря. Когда у вас есть
-            дополнительные скины в инвентаре и вам нужны
-            наличные деньги, вы можете продавать скины CS:GO на
-            Avan.Market. На данный момент мы покупаем скины{t("")}
-            <span className={styles.detail_information_mainPart_specialText}>
-            CS:GO
-            </span>
-            ,
-            <span className={styles.detail_information_mainPart_specialText}>
-            Dota2
-            </span>
-            ,
-            <span className={styles.detail_information_mainPart_specialText}>
-            RUST
-            </span>
-            и
-            <span className={styles.detail_information_mainPart_specialText}>
-            TF2
-            </span>
-            .
-            <br/>
-            <br/>
-            Стоимость предметов CS:GO может
-            гарантировать геймерам довольно неплохой доход:
-            некоторые вещи в Counter-Strike: Global Offensive
-            довольно дороги. Так почему бы вам не попытаться
-            заработать хорошие деньги, продавая скины с помощью
-            Avan.Market?{t("")}
-            </span>
+                        <span className={styles.detail_information_mainPart_specialText}>CS SELL</span>
+                        {t("Эта новая платформа предназначена для игроков желающих продать свои скины из игр вроде Counter-Strike и DOTA, и получить за это настоящие деньги Продажа скинов через Namemarket обеспечивает безопасность транзакций и предлагает разнообразие популярных способов оплаты, среди которых каждый пользователь может выбрать наиболее удобный Наша площадка выделяется лучшим сервисом и возможностью быстро конвертировать скины из КС ГО в реальные денежные средства Если у вас есть скины, которые вы хотите продать, то Namemarket это отличное место для этого Для начала торговли вам понадобятся лишь скины и аккаунт в Steam")}</span>
                 </div>
                 <Image src="/character_forDetailInformation.webp" width={171} height={186} alt="человек" className={styles.character_forDetailInformation}/>
             </div>

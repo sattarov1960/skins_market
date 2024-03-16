@@ -9,39 +9,18 @@ import {HeaderMenu} from "@/layout/components/header/headerMenu";
 import {Language} from "@/layout/components/header/language";
 import {Wallet} from "@/layout/components/header/wallet";
 import {Navigate} from "@/layout/components/header/navigate";
-import { usePathname, useSearchParams } from 'next/navigation'
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {LoginWrap} from "@/layout/wrap/login";
 import Cookies from "js-cookie";
 
 
 export function Header() {
-    const pathname = usePathname();
-    const searchParams = useSearchParams()
-    const [authUrl, setAuthUrl] = useState<string>(process.env.api + "/login");
     const t = useTranslations()
     const userStore = useUserStore()
     useEffect(() => {
-        const ref = searchParams.get('r') ? `r=${searchParams.get('r')}` : "";
-        const callback = `callbackUrl=${window.location.href}`
-        const need_return_to = ref || callback ? "?" : "";
-        const return_to = `${need_return_to}${ref}${callback}`;
+        if (!Cookies.get('access_token_cookie')) userStore.reset()
+    }, []);
 
-        const params = new URLSearchParams({
-            openid_ns: "http://specs.openid.net/auth/2.0",
-            openid_identity: "http://specs.openid.net/auth/2.0/identifier_select",
-            openid_claimed_id: "http://specs.openid.net/auth/2.0/identifier_select",
-            openid_mode: 'checkid_setup',
-            openid_return_to: `${process.env.api}/authorize${return_to}`,
-            openid_realm: process.env.api + "/",
-        });
-        const authUrl = `https://steamcommunity.com/openid/login?${params.toString()}`;
-        setAuthUrl(authUrl);
-    }, [pathname, searchParams]);
-    const login = () => {
-        const authId = Math.random().toString(16).slice(2);
-        Cookies.set('getTokens', authId, { path: process.env.api });
-        window.location.href = authUrl;
-    }
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -56,19 +35,23 @@ export function Header() {
                 <Navigate/>
             </nav>
             {!userStore.auth ? <div className={styles.nav_rightBlock}>
-                <button onClick={login} className={styles.nav_rightBlock_button}>
-                    <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.steam_icon}/>
-                    <p className={styles.nav_rightBlock_button_text}>
-                        {t("Войти через Steam")}
-                    </p>
-                    <p className={styles.nav_rightBlock_button_text_mobile}>
-                        {t("Войти")}
-                    </p>
-                </button>
+                <LoginWrap>
+                    <button className={styles.nav_rightBlock_button}>
+                        <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.steam_icon}/>
+                        <p className={styles.nav_rightBlock_button_text}>
+                            {t("Войти через Steam")}
+                        </p>
+                        <p className={styles.nav_rightBlock_button_text_mobile}>
+                            {t("Войти")}
+                        </p>
+                    </button>
+                </LoginWrap>
                 <Image src="/burgerMenu_icon.svg" width={24} height={24} alt="меню" className={styles.burgerMenu_icon}/>
             </div> : <div className={styles.user_wrap}>
                 <Link href="/profile">
-                    <Image className={styles.user_icon} src={`https://avatars.steamstatic.com/${userStore.steamIcon}_full.jpg`} alt="user" width={48} height={48}/>
+                    <Image className={styles.user_icon}
+                           src={`https://avatars.steamstatic.com/${userStore.steamIcon}_full.jpg`} alt="user" width={48}
+                           height={48}/>
                 </Link>
                 <Image alt="Open Menu" className={styles.linear_menu} src={linear_menu} width={24} height={24}/>
                 <HeaderMenu/>

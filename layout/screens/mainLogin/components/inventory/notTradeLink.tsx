@@ -3,7 +3,7 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import Link from "next/link";
 
-export const NotTradeLink = () => {
+export const NotTradeLink = ({setOpenChangeUrl}: {setOpenChangeUrl: (value: boolean) => void}) => {
     const t = useTranslations()
     return (
         <>
@@ -13,9 +13,9 @@ export const NotTradeLink = () => {
             <p className={styles.inventoryBlock_tradeLink_text}>
                 {t("Похоже у вас не указана ссылка на трейд")}
             </p>
-            <Link href={`${process.env.current}/profile`} className={styles.inventoryBlock_tradeLink_button}>
-                {t("Указать в профиле")}
-            </Link>
+            <button onClick={() => setOpenChangeUrl(true)} className={styles.inventoryBlock_tradeLink_button}>
+                {t("Указать Trade-URL")}
+            </button>
         </>
     )
 }

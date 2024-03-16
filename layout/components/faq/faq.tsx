@@ -4,10 +4,12 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useState} from "react";
 import Link from "next/link";
+import {useMetaStore} from "@/storage/client/meta";
 
 export function FaqComponent() {
     const [selectedFaqItem, setSelectedFaqItem] = useState<string | null>(null);
     const t = useTranslations()
+    const metaStore = useMetaStore()
     return (
         <div className={styles.faq}>
             <div>
@@ -15,7 +17,7 @@ export function FaqComponent() {
                     <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек"
                            className={styles.walletCheck_icon}/>
                     <p className={styles.faq_headerPart_selledBlock_text}>
-                        12.000+ {t("предметов продано")}
+                        {metaStore.countSales}+ {t("предметов продано")}
                     </p>
                 </div>
                 <h2 className={styles.faq_headerPart_mainText}>
@@ -23,7 +25,7 @@ export function FaqComponent() {
                 </h2>
                 <span className={styles.faq_headerPart_subText}>
                     {t("Остались еще вопросы? Свяжитесь с нашей")}
-                    <Link href="https://t.me/MannCoSupplyCrateKey" className={styles.faq_headerPart_subTextSpecial}>
+                    <Link href="https://t.me/CS_SELL_SUPPORT" className={styles.faq_headerPart_subTextSpecial}>
                      {t("поддержкой")}
                     </Link>
                     {t(", они обязательно помогут!")}
@@ -37,7 +39,7 @@ export function FaqComponent() {
                             <div className={styles.faq_mainPart_item_headerPart}
                                  onClick={() => setSelectedFaqItem(selectedFaqItem === 'faq_item_1' ? null : 'faq_item_1')}>
                                 <p className={styles.faq_mainPart_item_headerPart_text}>
-                                    {t("Что такое ")} Name.market?
+                                    {t("Что такое ")} CS SELL?
                                 </p>
                                 <Image src="/plus_icon.svg" width={24} height={24} alt="плюс"
                                        className={styles.plus_icon}/>

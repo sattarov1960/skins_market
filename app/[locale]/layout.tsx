@@ -12,7 +12,7 @@ import {Jivo} from "@/layout/components/jivo/jivo";
 
 export const metadata: Metadata = getMeta("Главная",
                                       "",
-                                       ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'Name.Market', 'нейм маркет'])
+                                       ['Продать', 'скины', 'CS2', 'Dota 2', 'Rust', 'TF2', 'CSGO', 'КС', 'CS', 'дорого', 'выгодно', 'деньги', 'безопасно', 'быстро', 'мгновенно', 'CS SELL', 'нейм маркет'])
 type Props = {
     children: ReactNode;
     params: any;

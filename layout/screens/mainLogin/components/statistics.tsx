@@ -1,9 +1,17 @@
 import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {secondsToWord} from "@/utilities/time";
+import {useEffect, useState} from "react";
+import {useMetaStore} from "@/storage/client/meta";
+import {timeT} from "@/interface/types/time";
+import {numberToWord} from "@/utilities/numberToWord";
 
 export const Statistics = () => {
     const t = useTranslations()
+    const metaStore = useMetaStore.getState()
+    const {timeString, value} = secondsToWord(metaStore.timeTrade)
+    const {numberValue, valueString} = numberToWord(metaStore.countSales)
     return (
         <section className={styles.statistic_wrap}>
             <div className={styles.statistic_part}>
@@ -13,7 +21,7 @@ export const Statistics = () => {
                             <Image src="/clock_icon.svg" width={34} height={34} alt="часы"
                                    className={styles.statistic_part_item_icon}/>
                             <p className={styles.statistic_part_item_headerBlock_text}>
-                                5-10 {t("минут")}
+                                {value} {t(timeString)}
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>
@@ -28,7 +36,7 @@ export const Statistics = () => {
                             <Image src="/layer_icon.svg" width={35} height={34} alt="слои"
                                    className={styles.statistic_part_item_icon}/>
                             <p className={styles.statistic_part_item_headerBlock_text}>
-                                12 {t("тысяч")}
+                                {numberValue} {t(valueString)}
                             </p>
                         </div>
                         <span className={styles.statistic_part_item_subText}>

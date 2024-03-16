@@ -30,6 +30,17 @@ export async function DataWrap({ children }: { children: ReactNode}) {
             console.log("Ошибка загрузки авторизации")
         }
     }
+    else{
+        useUserStore.setState({
+            auth: false,
+            email: "",
+            steamIcon: "",
+            steamUserName: "",
+            totalSales: 0,
+            tradeLink: "",
+            telegramUserName: ""
+        })
+    }
     return (
       <>
           <StoreInitializerUser

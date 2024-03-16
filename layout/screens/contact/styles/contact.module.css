@@ -99,7 +99,7 @@
     @apply max-sm:mt-[40px] w-[156px] h-[49px] md:h-[50px] rounded-[48px] bg-[#FDCA76] shadow-[0px_5px_18px_0px_#1b68ff1f] text-[17px] md:text-[18px] text-black font-[500] leading-[17px] md:leading-[18px];
 }
 .contactInformation_rightPart_options_leftBlock_customRadio_text {
-    @apply text-[17px] text-[#8A89A4] font-[500] leading-[20px] ml-[35px];
+    @apply text-[17px] text-[#8A89A4] font-[500] leading-[20px] ml-[15px];
 }
 .contactInformation_rightPart_options_leftBlock_customRadio .checkmark {
     @apply absolute left-0 w-[28px] h-[28px] bg-[#22223680] rounded-[50%];
@@ -112,4 +112,10 @@
 }
 .contactInformation_rightPart_options_leftBlock_customRadio {
     @apply sm:ml-[32px] relative cursor-pointer flex items-center;
+}
+.contactInformation_selected_option_wrap{
+    @apply w-[28px] h-[28px] bg-[#22223680] rounded-full flex justify-center items-center;
+}
+.contactInformation_selected_option{
+    @apply w-[12px] h-[12px] bg-[#8A89A4] rounded-full
 }

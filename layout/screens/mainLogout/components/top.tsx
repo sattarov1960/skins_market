@@ -1,16 +1,22 @@
+"use client"
 import styles from "@/layout/screens/mainLogout/styles/mainLogout.module.css";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {LoginWrap} from "@/layout/wrap/login";
+import Link from "next/link";
+import {scrollInto} from "@/utilities/scrollInto";
+import {useMetaStore} from "@/storage/client/meta";
 
 export function Top() {
     const t = useTranslations()
+    const metaStore = useMetaStore()
   return (
       <section className={styles.basic_part}>
           <div className={styles.main_part}>
               <div className={styles.average_sell}>
                   <Image src="/walletCheck_icon.svg" width={24} height={24} alt="кошелек" className={styles.walletCheck_icon}/>
                   <p className={styles.average_sell_text}>
-                      3795 ₽ - {t("средняя продажа")}
+                      {metaStore.medianPrice} ₽ - {t("средняя продажа")}
                   </p>
               </div>
               <div className={styles.main_part_textBlock}>
@@ -26,12 +32,14 @@ export function Top() {
                   <span className={styles.main_part_subText}>{t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}</span>
               </div>
               <div className={styles.mainPart_startNowBlock}>
-                  <button className={styles.mainPart_startNowBlock_button}>
-                      {t("Начать сейчас")}
-                  </button>
+                  <LoginWrap>
+                      <button className={styles.mainPart_startNowBlock_button}>
+                          {t("Начать сейчас")}
+                      </button>
+                  </LoginWrap>
                   <div className={styles.mainPart_sub_startNowBlock}>
                       <Image src="/star_icon.svg" width={24} height={24} alt="звезда" className={styles.star_icon}/>
-                      <span className={styles.mainPart_sub_startNowBlock_text}>{t("Читать отзывы")}</span>
+                      <Link onClick={(event) => scrollInto({e: event, selector: '#reviews'})} href="/#reviews" className={styles.mainPart_sub_startNowBlock_text}>{t("Читать отзывы")}</Link>
                   </div>
               </div>
           </div>

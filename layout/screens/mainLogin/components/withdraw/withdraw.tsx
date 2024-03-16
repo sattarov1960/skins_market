@@ -198,12 +198,16 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
             tradeStore.setPaymentMethodId(ps.id)
             tradeStore.setGameId(inventoryStore.activeGame)
             tradeStore.setItemsGive(items)
+            tradeStore.setSBPBank(withdrawMainStore.sbpBank)
+            tradeStore.setSBPBank(withdrawMainStore.sbpBank)
+            tradeStore.setWallet(withdrawMainStore.wallet)
             tradeStore.setPrice(round(getWithdrawalPriceWithCommission(), 2))
+            tradeStore.setIsNeedCreateTrade(true)
             createTrade()
         }
     }
     return (
-        <form onSubmit={(e) => validate(e)} className={styles.recieveBlock}>
+        <form onSubmit={(e) => validate(e)} className={`${withdrawMainStore.activePaymentSystem === "SBP" ? styles.recieveBlockSBP : styles.recieveBlock}`}>
             <HeaderPart getCommission={getCommission} />
             <SubHeaderPart getWithdrawalPriceWithCommission={getWithdrawalPriceWithCommission} getMinimalWithdrawalPrice={getMinimalWithdrawalPrice} />
             <hr className={`${styles.recieveBlock_delimiter_line} ${styles.recieveBlock_delimiter_frstLine}`}/>

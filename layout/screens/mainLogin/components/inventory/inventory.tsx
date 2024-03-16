@@ -18,6 +18,7 @@ import {toast} from "react-toastify";
 import {LoadingInventory} from "@/layout/screens/mainLogin/components/inventory/loadingInventory";
 import { usePathname, useRouter } from "next/navigation";
 import reloadImg from "@/public/reload.svg"
+import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
 
 
 export const Inventory = () => {
@@ -29,7 +30,12 @@ export const Inventory = () => {
     const [isSelectedItems, setIsSelectedItems] = useState(false)
     const [isOpenChangeUrl, setOpenChangeUrl] = useState(false)
     const [isLoadingInventory, setIsLoadingInventory] = useState(true)
+    const withdrawMainStore = useWithdrawMainStore()
+
     const loadItems = async (cache: boolean) => {
+        if (!userStore.tradeLink){
+            return
+        }
         try{
             setIsLoadingInventory(true)
             // inventoryStore.setItems(inventoryStore.items.filter((value) => value.appId !== inventoryStore.activeGame))
@@ -63,6 +69,12 @@ export const Inventory = () => {
             setIsLoadingInventory(false)
         }
     }
+    useEffect(() => {
+        if (inventoryStore.reloadInventory !== 0){
+            loadItems(true)
+            inventoryStore.setReloadInventory(0)
+        }
+    }, [inventoryStore.reloadInventory]);
     useEffect(() => {loadItems(false)}, [userStore.tradeLink, inventoryStore.activeGame]);
     useEffect(() => {
         const { items, activeGame, filterMarketHashName, filterRarity, filterWear, sortingPrice } = inventoryStore;
@@ -149,7 +161,7 @@ export const Inventory = () => {
     }
     return (
         <>
-            <div className={styles.inventoryBlock}>
+            <div className={`${withdrawMainStore.activePaymentSystem === "SBP" ? styles.inventoryBlockSBP : styles.inventoryBlock}`}>
                 <div className={styles.inventoryBlock_header}>
                     <div className={styles.inventoryBlock_header_leftPart}>
                         <Image src="/steam_icon.svg" width={24} height={24} alt="иконка стима"
@@ -161,8 +173,7 @@ export const Inventory = () => {
                     <div className={styles.inventoryBlock_filtersInfo_rightPart_mobile}
                          onClick={() => setOpenChangeUrl(true)}>
                         <Image src="/swap_icon.svg" width={16} height={16} alt="свап" className={styles.swap_icon}/>
-                        <span
-                            className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
+                        <span className={styles.inventoryBlock_filtersInfo_rightPart_text}>{t("Изменить Trade-URL")}</span>
                     </div>
                     <div>
                         <div>
@@ -228,7 +239,7 @@ export const Inventory = () => {
                     {userStore.tradeLink && isLoadingInventory ? <LoadingInventory/> :
                         <ul className={`${userStore.tradeLink ? (inventoryStore.viewItems.length ? styles.inventoryBlock_cardsItems : styles.inventoryBlock_cardsItemsNothing) : styles.inventoryBlock_cardsItemsNothing}`}>
                             {userStore.tradeLink ? (inventoryStore.viewItems.length ? inventoryStore.viewItems.map((item, index) =>
-                                <ItemInventory {...item} key={index}/>) : <Nothing/>) : <NotTradeLink/>}
+                                <ItemInventory {...item} key={index}/>) : <Nothing/>) : <NotTradeLink setOpenChangeUrl={setOpenChangeUrl}/>}
                         </ul>}
 
                 </div>

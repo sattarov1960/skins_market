@@ -11,6 +11,7 @@ export interface InventoryI{
     filterRarity: string
     filterMarketHashName: string
     sortingPrice: priceT
+    reloadInventory: number
     setItems: (items: InventoryItemI[]) => void,
     setActiveGame: (gameId: number) => void
     setViewItems: (items: InventoryItemI[]) => void
@@ -23,4 +24,6 @@ export interface InventoryI{
     setFilterWear: (filterWear: string) => void
     setFilterRarity: (filterRarity: string) => void
     setSortingPrice: (sortingPrice: priceT) => void
+    setReloadInventory: (reloadInventory: number) => void
+    reset: () => void
 }

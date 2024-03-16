@@ -9,26 +9,31 @@ import Link from "next/link";
 import 'swiper/css';
 import {useKeenSlider} from "keen-slider/react";
 import {useEffect} from "react";
+import telegram from "@/public/telegram_icon.svg"
+import anonPerson from "@/public/anon_person.png"
 
 
 export function Reviews() {
     const t = useTranslations()
+    const reviewStore = useReviewsStore()
     return (
-        <section id="reviews" className={styles.reviews_wrap}>
-            <div className={styles.reviews}>
-                <div className={styles.reviews_links}>
-                    <button className={`${styles.reviews_link} ${styles.reviews_linkRight}`}>
-                        <Image src="/vk_icon.svg" width={24} height={24} alt="вк" className={styles.vk_icon}/>
-                        <Link href="https://t.me/good_ak777">
-                            <p className={styles.reviews_link_text}>
-                                VK.COM
-                            </p>
-                        </Link>
-                    </button>
+        <>
+            {reviewStore.reviews.length && <section id="reviews" className={styles.reviews_wrap}>
+                <div className={styles.reviews}>
+                    <div className={styles.reviews_links}>
+                        <button className={`${styles.reviews_link} ${styles.reviews_linkRight}`}>
+                            <Image src={telegram} width={24} height={24} alt="telegram" className={styles.vk_icon}/>
+                            <Link href="https://t.me/cs_sell_reviews">
+                                <p className={styles.reviews_link_text}>
+                                    Telegram
+                                </p>
+                            </Link>
+                        </button>
+                    </div>
+                    <SliderReviews/>
                 </div>
-                <SliderReviews/>
-            </div>
-        </section>
+            </section>}
+        </>
     );
 }
 
@@ -119,7 +124,7 @@ export const Review = ({img, link, time, username, desc}: ReviewI) => {
     return (
         <div className={`${styles.reviews_item} keen-slider__slide`}>
             <div className={styles.reviews_item_headerBlock}>
-                <Image src={img} width={60} height={60} alt=""
+                <Image src={img || anonPerson} width={60} height={60} alt=""
                        className={styles.girl_avatar_forReviews}/>
                 <div className={styles.reviews_item_sub_headerBlock}>
                     <p className={styles.reviews_item_sub_headerBlock_mainText}>

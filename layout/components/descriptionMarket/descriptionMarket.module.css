@@ -28,10 +28,10 @@
     @apply mt-[20px] lg:mt-[30px];
 }
 .detail_information_mainPart_text {
-    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px] block max-w-[910px] lg:max-w-[1458px];
+    @apply text-[14px] lg:text-[16px] text-[#6B6E7A] font-[500] leading-[23px] lg:leading-[28px] block max-w-[910px] lg:max-w-[1458px] whitespace-pre-line;
 }
 .detail_information_mainPart_specialText {
-    @apply underline underline-offset-4;
+    @apply underline underline-offset-4 mr-[5px];
 }
 .detail_information_footerPart {
     @apply mt-[36px] lg:mt-[25px];

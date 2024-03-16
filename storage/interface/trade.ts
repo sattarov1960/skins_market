@@ -6,7 +6,13 @@ import {InventoryItemI} from "@/interface/components/inventoryItem";
 export interface TradeSI extends CreateTradeI {
     statusTrade: StatusTradeI
     tradeInfo: TradeInfoI
+    isError: boolean
+    isSuccess: boolean
+    isNeedCreateTrade: boolean
     setEmail: (email: string) => void;
+    sbpBank: string;
+    headerMsg: "" | "Обмен отменён!"
+    wallet: string
     setPaymentMethodId: (paymentMethodId: number) => void;
     setPromocode: (promocode: string) => void;
     setItemsGive: (itemsGive: InventoryItemI[]) => void;
@@ -15,4 +21,11 @@ export interface TradeSI extends CreateTradeI {
     setStatusTrade: (statusTrade: StatusTradeI) => void;
     setGameId: (gameId: number) => void;
     setPrice: (price: number) => void;
+    setIsError: (isError: boolean) => void;
+    setIsSuccess: (isSuccess: boolean) => void;
+    setIsNeedCreateTrade: (isNeedCreateTrade: boolean) => void;
+    setHeaderMsg: (headerMsg:  "" | "Обмен отменён!") => void;
+    setSBPBank: (sbpBankName: string) => void;
+    setWallet: (wallet: string) => void;
+    resetTrade: (value?: any) => void;
 }

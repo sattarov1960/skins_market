@@ -14,10 +14,11 @@ import {useUserStore} from "@/storage/client/user";
 
 
 function LastItem({ skinName, price, time, title, img, rarity }: LastItemProps){
-    const [timePassedString, wordPassed] = TimePassedToString(time)
+    const {timePassedString, wordPassed} = TimePassedToString(time)
     const bgColor = getRarityBGColor(rarity)
     const blurColor = getRarityColor(rarity)
     const [isLastItem, setIsLastItem] = useState(false);
+    const t = useTranslations()
     return (
         <div
             className={`${styles.latest_deals_item} ${isLastItem && styles.latest_deals_lastDarkItem} keen-slider__slide`}
@@ -25,7 +26,7 @@ function LastItem({ skinName, price, time, title, img, rarity }: LastItemProps){
         >
             <div className={styles.latest_deals_item_wrap}>
                 <div className={styles.latest_deals_item_headerBlock}>
-                    <span className={styles.latest_deals_item_headerBlock_text}>{timePassedString} {wordPassed}</span>
+                    <span className={styles.latest_deals_item_headerBlock_text}>{timePassedString} {t(wordPassed)}</span>
                     <span className={styles.latest_deals_item_headerBlock_text}>{formatCurrency(price)}</span>
                 </div>
                 <div style={{
@@ -42,11 +43,11 @@ function LastItem({ skinName, price, time, title, img, rarity }: LastItemProps){
                     transform: 'translate(-50%, -50%)'
                 }}>
                 </div>
-                <Image src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={127}
+                <Image src={`https://community.steamstatic.com/economy/image/${img}/360fx360f`} width={127} quality={100}
                        height={94} alt={skinName} className={styles.latest_deals_item_image}/>
                 <div className={styles.latest_deals_item_footerBlock}>
                     <p className={styles.latest_deals_item_footerBlock_prgrf}>{skinName}</p>
-                    <span className={styles.latest_deals_item_footerBlock_subText}>{title}</span>
+                    {title !== "Unknown" && <span className={styles.latest_deals_item_footerBlock_subText}>{title}</span>}
                 </div>
             </div>
         </div>
@@ -153,38 +154,41 @@ export function LastSales() {
         }
     };
     return (
-        <section className={styles.latest_deals_wrap}>
-            <div className={styles.latest_deals}>
-                <div className={styles.latest_deals_headerPart}>
-                    <h2 className={styles.latest_deals_headerPart_text}>
-                        {t("Последние сделки")}
-                    </h2>
-                    <div className={styles.latest_deals_headerPart_rightSwitches}>
-                        <button
-                            className={`${styles.latest_deals_headerPart_rightSwitches_switch} ${canScrollLeft && styles.latest_deals_headerPart_rightSwitches_scndSwitch_active}`}
-                            onClick={movePrev}>
-                            <Image src="/arrowLeft_forSwitches_icon.svg" width={15} height={14} alt="стрелочка"
-                                   className={styles.arrows_forSwitches_icon}/>
-                        </button>
-                        <button
-                            className={`${styles.latest_deals_headerPart_rightSwitches_switch} ${styles.latest_deals_headerPart_rightSwitches_scndSwitch} ${canScrollRight && styles.latest_deals_headerPart_rightSwitches_scndSwitch_active}`}
-                            onClick={moveNext}>
-                            <Image src="/arrowRight_forSwitches_icon.svg" width={15} height={14} alt="стрелочка"
-                                   className={styles.arrows_forSwitches_icon}/>
-                        </button>
+        <>
+            {lastSalesStore.items.length && <section className={styles.latest_deals_wrap}>
+                <div className={styles.latest_deals}>
+                    <div className={styles.latest_deals_headerPart}>
+                        <h2 className={styles.latest_deals_headerPart_text}>
+                            {t("Последние сделки")}
+                        </h2>
+                        <div className={styles.latest_deals_headerPart_rightSwitches}>
+                            <button
+                                className={`${styles.latest_deals_headerPart_rightSwitches_switch} ${canScrollLeft && styles.latest_deals_headerPart_rightSwitches_scndSwitch_active}`}
+                                onClick={movePrev}>
+                                <Image src="/arrowLeft_forSwitches_icon.svg" width={15} height={14} alt="стрелочка"
+                                       className={styles.arrows_forSwitches_icon}/>
+                            </button>
+                            <button
+                                className={`${styles.latest_deals_headerPart_rightSwitches_switch} ${styles.latest_deals_headerPart_rightSwitches_scndSwitch} ${canScrollRight && styles.latest_deals_headerPart_rightSwitches_scndSwitch_active}`}
+                                onClick={moveNext}>
+                                <Image src="/arrowRight_forSwitches_icon.svg" width={15} height={14} alt="стрелочка"
+                                       className={styles.arrows_forSwitches_icon}/>
+                            </button>
+                        </div>
+                    </div>
+                    <div className={styles.latest_deals_slider_wrap}>
+                        <div
+                            ref={sliderRef}
+                            className={`${styles.latest_deals_items} keen-slider`}
+                        >
+                            {lastSalesStore.items.map((item, index) => (
+                                <LastItem key={index} {...item} />
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className={styles.latest_deals_slider_wrap}>
-                    <div
-                        ref={sliderRef}
-                        className={`${styles.latest_deals_items} keen-slider`}
-                    >
-                        {lastSalesStore.items.map((item, index) => (
-                            <LastItem key={index} {...item} />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>}
+        </>
+
     );
 }

@@ -5,6 +5,7 @@ export interface UserI extends UserStoreI{
     setSteamUserName: (name: string) => void;
     setTotalSales: (total: number) => void;
     setAuth: (auth: boolean) => void;
+    reset: () => void;
 }
 
 export interface UserStoreI{

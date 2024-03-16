@@ -16,4 +16,5 @@ export const useUserStore = create<UserI>((set) => ({
     setSteamUserName: (name: string) => set({ steamUserName: name }),
     setTotalSales: (total: number) => set({ totalSales: total }),
     setAuth: (auth) => set({ auth: auth }),
+    reset: () => set({ auth: false, steamIcon: "", totalSales: 0, steamUserName: "", tradeLink: "", telegramUserName: "", email: ""})
 }));

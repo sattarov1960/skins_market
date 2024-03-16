@@ -3,6 +3,7 @@ const withNextIntl = require('next-intl/plugin')(
 );
 
 module.exports = withNextIntl({
+    reactStrictMode: false,
     publicRuntimeConfig: {
         ENVIRONMENT: process.env.NODE_ENV === 'production' ? 'deploy' : 'development',
     },
