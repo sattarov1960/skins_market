@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Disallow: /cgi-bin/
-Sitemap: http://tf2key.ru/sitemap.xml
+Sitemap: http://cssell.ru/sitemap.xml
