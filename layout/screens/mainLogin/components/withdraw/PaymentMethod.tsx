@@ -3,6 +3,7 @@ import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
 import {useTranslations} from "next-intl";
 import {useWithdrawMainStore} from "@/storage/client/withdrawMain";
 import Image from "next/image";
+import axios from "axios";
 
 // PaymentMethod.tsx
 export const PaymentMethod = ({

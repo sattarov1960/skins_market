@@ -75,7 +75,7 @@ export const RefSubHeader = () => {
                         </p>
                     </div>
                     <Image src="/copy_icon.svg" width={24} height={25} alt="copy"
-                           className={styles.copy_icon} onClick={() => copyValue(refStore.referralCode)}/>
+                           className={styles.copy_icon} onClick={() => copyValue(refStore.inviteLink)}/>
                 </div>
                 <div
                     className={`${styles.profile_rightPart_sub_headerBlock_leftInfo_item} ${styles.profile_rightPart_sub_headerBlock_leftInfo_scndItem}`}>

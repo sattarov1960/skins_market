@@ -127,6 +127,12 @@
 .profile_rightPart_mainBlock_table_body_subItem_avatarBlock {
     @apply flex items-center justify-start;
 }
+.profile_rightPart_mainBlock_table_body_subItem_avatarBlock_href{
+    @apply w-[40px] h-[40px]
+}
+.profile_rightPart_mainBlock_table_body_subItem_avatarBlock_icon{
+    @apply w-[40px] h-[40px] rounded-full
+}
 .profile_rightPart_mainBlock_table_body_subThrdItem {
     @apply w-[20%];
 }

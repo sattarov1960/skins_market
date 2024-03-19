@@ -1,4 +1,5 @@
 import styles from "@/layout/screens/mainLogin/styles/mainLogin.module.css";
+
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 

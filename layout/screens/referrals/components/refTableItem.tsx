@@ -14,10 +14,9 @@ export const RefTableItem = ({cost, id, earned, steamId, steamIcon, date, steamU
                     </p>
                 </td>
                 <td className={`${styles.profile_rightPart_mainBlock_table_body_subItem} ${styles.profile_rightPart_mainBlock_table_body_subScndItem}`}>
-                    <div
-                        className={styles.profile_rightPart_mainBlock_table_body_subItem_avatarBlock}>
-                        <Link href={`https://steamcommunity.com/profiles/${steamId}`}>
-                            <Image src={`https://avatars.steamstatic.com/${steamIcon}_full.jpg`} width={40} height={40} alt={steamUserName}/>
+                    <div className={styles.profile_rightPart_mainBlock_table_body_subItem_avatarBlock}>
+                        <Link href={`https://steamcommunity.com/profiles/${steamId}`} className={styles.profile_rightPart_mainBlock_table_body_subItem_avatarBlock_href}>
+                            <Image src={`https://avatars.steamstatic.com/${steamIcon}_full.jpg`} width={40} height={40} alt={steamUserName} className={styles.profile_rightPart_mainBlock_table_body_subItem_avatarBlock_icon}/>
                         </Link>
                         <p className={styles.profile_rightPart_mainBlock_table_body_subItem_text}>
                             {steamUserName}

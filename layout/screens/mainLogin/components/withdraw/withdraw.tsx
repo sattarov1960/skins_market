@@ -37,6 +37,47 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
         loadWorkingPaymentSystem()
     }, [])
 
+    useEffect(() => {
+        loadPSData()
+    }, [withdrawMainStore.activePaymentSystem]);
+
+    const loadPSData = async () => {
+        const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
+        if (!ps) return
+        try {
+            const queryParameters = {payment_system_id: ps.id}
+            const resp = await axios.get(`${process.env.api}/payment_system_data`, {withCredentials: true, params: queryParameters})
+            if (resp.data.status){
+                withdrawMainStore.setSbpBank(resp.data.sbpBank)
+                withdrawMainStore.setEmail(resp.data.email)
+                withdrawMainStore.setWallet(resp.data.wallet)
+            }
+            else if (resp.data.errMsg === "Invalid payment system"){}
+            else{
+                console.log(`Error getting payment system`)
+                toast.error("Ошибка получения платежных систем", {
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true
+                })
+            }
+        }
+        catch (e) {
+            console.log(`Error getting working payment system: ${e}`)
+            toast.error("Ошибка получения рабочих платежных систем", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+            })
+        }
+    }
+
     const loadWorkingPaymentSystem = async () => {
         try{
             const resp = await axios.get(`${process.env.api}/working_payment_system`, {withCredentials: true})

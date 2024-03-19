@@ -1,0 +1,9 @@
+.mainBlockNothing_img_wrap{
+    @apply w-full flex flex-col items-center mt-[160px] gap-y-[30px]
+}
+.mainBlockNothing{
+    @apply text-[#8A89A4] text-center text-[24px] font-medium leading-[27px]
+}
+.mainBlockNothingUnderline{
+    @apply hover:text-white duration-150
+}

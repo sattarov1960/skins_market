@@ -91,7 +91,7 @@ export function Partner() {
                     <div className={styles.partner_programm_instructions_leftPart}>
                         <div className={styles.partner_programm_instructions_sub_leftPart}>
                             <p className={styles.partner_programm_instructions_leftPart_yellowText}>
-                                {t("Партнерка")} avan.market
+                                {t("Партнерка")} CS Sell
                             </p>
                             <h2 className={styles.partner_programm_instructions_leftPart_mainText}>
                                 {t("У вас есть друзья,")}
@@ -103,7 +103,7 @@ export function Partner() {
                             <div className={styles.partner_programm_instructions_leftPart_footerBlock}>
                                 <hr className={styles.partner_programm_instructions_leftPart_footerBlock_line}/>
                                 <span className={styles.partner_programm_instructions_leftPart_footerBlock_text}>
-                                    {t("Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!")} {t("Зарабатывайте от 1% до 3% за каждую сделку")}
+                                    {t("Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!")} {t("Зарабатывайте от 3% до 5% за каждую сделку")}
                                 </span>
                             </div>
                             <hr className={styles.partner_programm_instructions_sub_leftPart_line_mobile}/>

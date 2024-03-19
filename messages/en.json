@@ -56,7 +56,7 @@
   "которым вы хотите порекомендовать сделки": "whom you want to recommend deals",
   "и получить вознаграждение?": "and receive a reward?",
   "Если ваш ответ да, то партнерская программа может быть именно тем, что вы ищете!": "If your answer is yes, then the affiliate program might be exactly what you are looking for!",
-  "Зарабатывайте от 1% до 3% за каждую сделку": "Earn from 1% to 3% for each transaction",
+  "Зарабатывайте от 3% до 5% за каждую сделку": "Earn up to 5% for each transaction\nInvite users via a link and earn: 3% for 5 users, 4% for 10 and 5% for 25 or more.",
   "Скопируйте ссылку": "Copy the link",
   "Порекомендуйте друзьям": "Recommend to friends",
   "Получайте деньги": "Receive money",
@@ -317,7 +317,8 @@
   "how step four": "Choose your preferred payment method and fill in the payment details. Please ensure the accuracy of the information for withdrawal, as we cannot refund money due to the nature of the automated processing. If you have made a mistake, contact our support service. We may be able to help refund the money if it has not yet been transferred.",
   "how step five": "Click the \"Sell Skins\" button to open the trade window with our bot. Please ensure that you are trading with our bot; otherwise, your skins may be stolen. After a successful trade, you will receive a notification confirming the completion of the transaction. Funds will be deposited into your account within minutes to 24 hours (rarely).",
   "Название банка": "Bank's name",
-  "": "",
-  "": "",
+  "Кажется тут пока ничего нет": "There doesn't seem to be anything here yet.",
+  "сделать первую продажу": "make your first sale",
+  "Пора": "It's time to",
   "": ""
 }
