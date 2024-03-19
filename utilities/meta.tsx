@@ -8,7 +8,7 @@ export function getMeta(title: string,
                         description: string = "",
                         keywords: string[] = []): Metadata {
     return  {
-        metadataBase: new URL('https://tf2key.ru'),
+        metadataBase: new URL('https://cssell.ru'),
         applicationName: 'CS SELL',
         title: getTitle(title),
         description: description,
@@ -25,16 +25,16 @@ export function getMeta(title: string,
             shortcut: '/favicon.ico',
         },
         alternates: {
-            canonical: 'https://CS SELL',
+            canonical: 'https://cssell.ru',
             languages: {
                 'ru-RU': '/ru',
                 'en-US': '/en',
             },
         },
         openGraph: {
-            title: 'TF2KEY',
+            title: 'CS SELL',
             description: 'CS SELL - позволит вам продать скины за реальные деньги. Продать скины КС безопасно и мгновенно можно только у нас. Моментальная продажа скинов с выводом денег на карту.',
-            url: 'https://CS SELL',
+            url: 'https://cssell.ru',
             siteName: 'CS SELL',
             images: [
                 {
