@@ -3,10 +3,15 @@ import styles from "@/layout/screens/partner/styles/partner.module.css"
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import Link from "next/link";
+import {usePartnerStore} from "@/storage/client/partner";
+import {LoginWrap} from "@/layout/wrap/login";
+import {useUserStore} from "@/storage/client/user";
 
 
 export function Partner() {
     const t = useTranslations()
+    const partnerStore = usePartnerStore()
+    const userStore = useUserStore()
     return (
         <main className={styles.main}>
             <section className={styles.basic_part}>
@@ -23,19 +28,26 @@ export function Partner() {
                         <p className={styles.partner_programm_rightPart_text}>
                             {t("Продавай игровые скины проще и быстрее Безопасные платежи Без скрытых комиссий или налогов")}
                         </p>
-                        <Link href={`${process.env.api}/login`} className={styles.partner_programm_rightPart_btn}>
-                            <Image src="/stem_icon.svg" width={24} height={24} alt="стим" className={styles.partner_programm_rightPart_btn_steamIcon}/>
+                        {userStore.auth ? <Link href={process.env.current + "/referrals"} className={styles.partner_programm_rightPart_btn}>
                             <p className={styles.partner_programm_rightPart_btn_text}>
-                                {t("Войти через Steam")}
+                                {t("Попробовать")}
                             </p>
-                        </Link>
+                        </Link> : <LoginWrap>
+                            <button className={styles.partner_programm_rightPart_btn}>
+                                <Image src="/stem_icon.svg" width={24} height={24} alt="стим"
+                                       className={styles.partner_programm_rightPart_btn_steamIcon}/>
+                                <p className={styles.partner_programm_rightPart_btn_text}>
+                                    {t("Войти через Steam")}
+                                </p>
+                            </button>
+                        </LoginWrap>}
                     </div>
                 </div>
                 <div className={styles.partner_programm_statistic}>
                     <ul className={styles.partner_programm_statistic_items}>
                         <li className={styles.partner_programm_statistic_frstItem}>
                             <p className={styles.partner_programm_statistic_item_mainText}>
-                                $37.015+
+                                {partnerStore.totalEarnings} ₽
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
                {t("Заработано партнёрами")}
@@ -44,7 +56,7 @@ export function Partner() {
                         <hr className={styles.partner_programm_statistic_items_line}/>
                         <li className={styles.partner_programm_statistic_scndItem}>
                             <p className={styles.partner_programm_statistic_item_mainText}>
-                                102.279
+                                {partnerStore.totalInvited}
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
                {t("Всего приглашенных")}
@@ -53,7 +65,7 @@ export function Partner() {
                         <hr className={styles.partner_programm_statistic_items_line}/>
                         <li className={styles.partner_programm_statistic_thrdItem}>
                             <p className={styles.partner_programm_statistic_item_mainText}>
-                                $5.904
+                                {partnerStore.maxEarning} ₽
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
                {t("Самый богатый партнер")}
@@ -62,7 +74,7 @@ export function Partner() {
                         <hr className={styles.partner_programm_statistic_items_line}/>
                         <li className={styles.partner_programm_statistic_frthItem}>
                             <p className={styles.partner_programm_statistic_item_mainText}>
-                                20
+                                {partnerStore.averageInvited}
                             </p>
                             <span className={styles.partner_programm_statistic_item_subText}>
                {t("Приглашенных в среднем")}
