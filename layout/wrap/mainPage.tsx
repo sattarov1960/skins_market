@@ -37,9 +37,15 @@ export const MainPage = async ({
         useInventoryStore.setState({activeGame: appId})
     }
     try{
-        const response = await fetch(`${process.env.localhost_api}/last_sales`, {
-            // next: { revalidate: 60 }
-        })
+        let response;
+        try {
+            response = await fetch(`${process.env.localhost_api}/last_sales`, {
+                next: { revalidate: 60 }
+            });
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            return;
+        }
         const data = await response.json()
         if (data.status){
             lastItems = data.items
@@ -51,12 +57,17 @@ export const MainPage = async ({
     }
     catch (e) {
         console.log("Ошибка загрузки последних продаж")
-        throw e
     }
     try{
-        const response = await fetch(`${process.env.localhost_api}/reviews`, {
-            // next: { revalidate: 3600 }
-        })
+        let response;
+        try {
+            response = await fetch(`${process.env.localhost_api}/reviews`, {
+                next: { revalidate: 3600 }
+            });
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            return;
+        }
         const data = await response.json()
         if (data.status){
             reviews = data.reviews
@@ -71,9 +82,15 @@ export const MainPage = async ({
         throw e
     }
     try{
-        const response = await fetch(`${process.env.localhost_api}/meta`, {
-            // next: { revalidate: 3600 },
-        })
+        let response;
+        try {
+            response = await fetch(`${process.env.localhost_api}/meta`, {
+                next: { revalidate: 3600 }
+            });
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            return;
+        }
         const data = await response.json()
         if (data.status){
             meta = data
