@@ -163,7 +163,7 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const getCommission = () => {
         let ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
         const withdrawPrice = getWithdrawalPrice()
-        if (ps?.minPrice && ps?.fixedCommission){
+        if (ps){
             return (withdrawPrice * (ps.commission / 100)) + ps.fixedCommission
         }
         else {
@@ -197,11 +197,12 @@ export const Withdraw = ({createTrade}: {createTrade: () => void}) => {
     const getWithdrawalPriceWithCommission = () => {
         const withdrawPrice = getWithdrawalPrice()
         if (withdrawMainStore.activePaymentSystem === ""){
-            return withdrawPrice
+            return 0
         }
         const ps = withdrawMainStore.workingPaymentSystem[withdrawMainStore.activePaymentSystem]
-        if (ps?.commission && ps?.fixedCommission){
-            return withdrawPrice - getCommission()
+        if (ps){
+            const coms = getCommission()
+            return withdrawPrice - coms
         }
         else {
             return withdrawPrice
