@@ -26,7 +26,7 @@ export function Header() {
             <nav className={styles.nav}>
                 <div className={styles.nav_leftBlock}>
                     <Link href="/">
-                        <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.logo}/>
+                        <Image src="/logo.svg" width={146} height={24} alt="лого" className={styles.logo}/>
                     </Link>
                     <hr className={styles.nav_line}/>
                     <Language/>
@@ -53,7 +53,6 @@ export function Header() {
                            src={`https://avatars.steamstatic.com/${userStore.steamIcon}_full.jpg`} alt="user" width={48}
                            height={48}/>
                 </Link>
-                <Image alt="Open Menu" className={styles.linear_menu} src={linear_menu} width={24} height={24}/>
                 <HeaderMenu/>
             </div>}
         </header>

@@ -355,7 +355,7 @@
     @apply text-[24px] lg:text-[60px] text-white font-[600] leading-[29px] lg:leading-[72px];
 }
 .reference_mainBlock_logo {
-    @apply w-[117px] lg:w-[322px] h-[17px] lg:h-[42px] ml-[6px] lg:ml-0;
+    @apply w-[117px] lg:w-[345px] h-[17px] lg:h-[39px] ml-[6px] lg:ml-[20px];
 }
 .reference_subText {
     @apply block text-center mx-auto mt-[20px] lg:mt-[30px] text-[15px] lg:text-[21px] text-[#CAC6DD] font-[500] leading-[19.5px] lg:leading-[32px] opacity-75 max-w-[335px] lg:max-w-none;

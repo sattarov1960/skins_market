@@ -28,7 +28,7 @@ export function FooterInfo() {
                     <h2 className={styles.reference_mainBlock_text}>
                         {t("Продавай скины с")}
                     </h2>
-                    <Image src="/logo.svg" width={122} height={18} alt="лого" className={styles.reference_mainBlock_logo}/>
+                    <Image src="/logo_2.svg" width={345} height={39} alt="лого" className={styles.reference_mainBlock_logo}/>
                 </div>
                 <span className={styles.reference_subText}>{t("Более человек уже выбрали нас", { countUsers:  metaStore.countUsers, valueTimeTrade: timePassedString, wordTimeTrade: t(wordPassed).replace(" назад", "").replace(" back", ""), countReviews: numberValue})}</span>
                 <LoginWrap>

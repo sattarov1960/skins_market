@@ -112,7 +112,7 @@ export function Contact() {
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subFrstItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")} в Telegram</span>
                                         <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>
-                                            <Link href={"https://t.me/CS_SELL_SUPPORT"}>@CS_SELL_SUPPORT</Link>
+                                            <Link href={"https://t.me/CS_SELL_SUPPORT"} target={"_blank"}>@CS_SELL_SUPPORT</Link>
                                         </p>
                                     </div>
                                 </li>
@@ -120,7 +120,7 @@ export function Contact() {
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Поддержка")}</span>
-                                        <Link href="mailto:cssellsup@mail.ru">
+                                        <Link href="mailto:cssellsup@mail.ru" target={"_blank"}>
                                             <p className={`${styles.contactInformation_leftPart_socialNetworks_subItem_mainText} ${styles.contactInformation_leftPart_socialNetworks_subItem_mainText_special}`}>cssellsup@mail.ru</p>
                                         </Link>
                                     </div>
@@ -131,7 +131,7 @@ export function Contact() {
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>
                                         {t("Сотрудничество")}
                                         </span>
-                                        <Link href="mailto:cssellsup@mail.ru">
+                                        <Link href="mailto:cssellsup@mail.ru" target={"_blank"}>
                                             <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>cssellsup@mail.ru</p>
                                         </Link>
                                     </div>
@@ -140,7 +140,7 @@ export function Contact() {
                                     <Image src="/sms_icon.svg" width={24} height={25} alt="SMS"/>
                                     <div className={styles.contactInformation_leftPart_socialNetworks_subItem}>
                                         <span className={styles.contactInformation_leftPart_socialNetworks_subItem_subText}>{t("Другое")}</span>
-                                        <Link href="mailto:cssellsup@mail.ru">
+                                        <Link href="mailto:cssellsup@mail.ru" target={"_blank"}>
                                             <p className={styles.contactInformation_leftPart_socialNetworks_subItem_mainText}>cssellsup@mail.ru</p>
                                         </Link>
                                     </div>

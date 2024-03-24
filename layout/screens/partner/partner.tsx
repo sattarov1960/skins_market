@@ -103,7 +103,7 @@ export function Partner() {
                     <div className={styles.partner_programm_instructions_leftPart}>
                         <div className={styles.partner_programm_instructions_sub_leftPart}>
                             <p className={styles.partner_programm_instructions_leftPart_yellowText}>
-                                {t("Партнерка")} CS Sell
+                                {t("Партнерка")} CS SELL
                             </p>
                             <h2 className={styles.partner_programm_instructions_leftPart_mainText}>
                                 {t("У вас есть друзья,")}

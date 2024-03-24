@@ -13,6 +13,7 @@ import profile_logout from "@/public/profile_logout.svg";
 import axios from "axios";
 import {toast} from "react-toastify";
 import Cookies from "js-cookie";
+import linear_menu from "@/public/linear_menu.svg";
 
 export const HeaderMenu = () => {
     const t = useTranslations()
@@ -61,6 +62,7 @@ export const HeaderMenu = () => {
     }
     return (
         <>
+            <Image alt="Open Menu" className={styles.linear_menu} src={linear_menu} width={24} height={24} onClick={() => setIsOpenMenu(!isOpenMenu)}/>
             <Image alt="Open Menu" className={styles.caret_icon} src={caret_down} width={8} height={8} onClick={() => setIsOpenMenu(!isOpenMenu)}/>
             {isOpenMenu &&
                 <section className={styles.header_menu_wrap}>
