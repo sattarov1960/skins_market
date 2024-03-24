@@ -20,10 +20,6 @@ export function getMeta(title: string,
                 follow: true,
             },
         },
-        icons: {
-            icon: '/favicon.ico',
-            shortcut: '/favicon.ico',
-        },
         alternates: {
             canonical: 'https://cssell.ru',
             languages: {
@@ -36,14 +32,6 @@ export function getMeta(title: string,
             description: 'CS SELL - позволит вам продать скины за реальные деньги. Продать скины КС безопасно и мгновенно можно только у нас. Моментальная продажа скинов с выводом денег на карту.',
             url: 'https://cssell.ru',
             siteName: 'CS SELL',
-            images: [
-                {
-                    url: '/images/tild6536-3537-4337-a533-343232346665__tf2key1.jpg',
-                    width: 800,
-                    height: 600,
-                    alt: 'CS SELL',
-                },
-            ],
             locale: 'ru_RU',
             type: 'website',
         }
