@@ -20,6 +20,10 @@ export function getMeta(title: string,
                 follow: true,
             },
         },
+        icons: {
+            icon: '../favicon-16x16.png',
+            shortcut: '../favicon-16x16.png',
+        },
         alternates: {
             canonical: 'https://cssell.ru',
             languages: {

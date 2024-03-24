@@ -21,7 +21,7 @@ type Props = {
 export default function Layout({children, params}: Props) {
     const messages = useMessages();
     return (
-            <html lang={params.locale}>
+        <html lang={params.locale}>
             <body style={{fontFamily: "TTFirsNeue"}}>
                 <NextIntlClientProvider locale={params.locale} messages={messages}>
                     <DataWrap>
@@ -30,8 +30,8 @@ export default function Layout({children, params}: Props) {
                 </NextIntlClientProvider>
                 <YandexMetrika/>
                 <Jivo/>
-                <ToastContainer />
+                <ToastContainer/>
             </body>
-            </html>
+        </html>
     );
 }
