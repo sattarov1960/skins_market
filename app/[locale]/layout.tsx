@@ -21,16 +21,19 @@ type Props = {
 export default function Layout({children, params}: Props) {
     const messages = useMessages();
     return (
-        <html lang={params.locale}>
+        <html lang={params.locale} className="notranslate" translate="no">
+            <head>
+                <meta name="google" content="notranslate"/>
+            </head>
             <body style={{fontFamily: "TTFirsNeue"}}>
-                <NextIntlClientProvider locale={params.locale} messages={messages}>
-                    <DataWrap>
-                        {children}
-                    </DataWrap>
-                </NextIntlClientProvider>
-                <YandexMetrika/>
-                <Jivo/>
-                <ToastContainer/>
+            <NextIntlClientProvider locale={params.locale} messages={messages}>
+                <DataWrap>
+                    {children}
+                </DataWrap>
+            </NextIntlClientProvider>
+            <YandexMetrika/>
+            <Jivo/>
+            <ToastContainer/>
             </body>
         </html>
     );
